@@ -5,7 +5,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Bridge - Belgian Administration Guide',
+  title: 'BRIDGE - Belgian Administration Guide',
   description: 'Your personal guide through Belgian administrative processes for seasonal workers',
   manifest: '/manifest.json',
   themeColor: '#1e40af',

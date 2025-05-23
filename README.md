@@ -1,4 +1,4 @@
-# Bridge - Belgian Administration Guide
+# BRIDGE - Belgian Administration Guide
 
 A modern mobile-first Progressive Web App (PWA) designed to help Polish seasonal workers navigate Belgian administrative processes.
 

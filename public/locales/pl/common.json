@@ -15,8 +15,8 @@
   "completed": "Ukończone",
   "pending": "Oczekujące",
 
-  "intakeQuestions": [
-    {
+  "intakeQuestions": {
+    
       "duration": {
         "question": "Jak długo planujesz zostać w Belgii?",
         "options": [
@@ -25,9 +25,8 @@
           "Więcej niż 6 miesięcy",
           "Nie jestem pewien"
         ]
-      }
-    },
-    {
+      },
+    
       "workType": {
         "question": "Jaki rodzaj pracy będziesz wykonywać?",
         "options": [
@@ -36,9 +35,9 @@
           "Usługi",
           "Inne"
         ]
-      }
+      
     },
-    {
+    
       "experience": {
         "question": "Czy to Twój pierwszy pobyt w Belgii?",
         "options": [
@@ -46,9 +45,9 @@
           "Nie, byłem wcześniej",
           "Pracuję tu regularnie"
         ]
-      }
+      
     },
-    {
+    
       "housing": {
         "question": "Czy masz już mieszkanie?",
         "options": [
@@ -57,9 +56,9 @@
           "Nie, jeszcze szukam",
           "Mieszkam z rodziną/znajomymi"
         ]
-      }
+      
     },
-    {
+    
       "family": {
         "question": "Czy przyjeżdżasz z rodziną?",
         "options": [
@@ -68,9 +67,9 @@
           "Tylko z małżonkiem",
           "Z dziećmi"
         ]
-      }
+      
     }
-  ],
+  },
 
   "tasks": {
     "limosa": {

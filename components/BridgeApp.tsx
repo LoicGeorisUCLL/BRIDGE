@@ -22,7 +22,7 @@ const BridgeApp: React.FC = () => {
     if (typeof window !== 'undefined') {
       const savedProfile = JSON.parse(localStorage.getItem('bridgeProfile') || '{}');
       const savedTasks = JSON.parse(localStorage.getItem('bridgeCompletedTasks') || '[]');
-      const savedLanguage = (localStorage.getItem('bridgeLanguage') as Language) || 'pl';
+      const savedLanguage = (localStorage.getItem('bridgeLanguage') as Language) || 'en';
       
       setUserProfile(savedProfile);
       setCompletedTasks(savedTasks);

@@ -1,0 +1,102 @@
+{
+  "welcome": "Welcome to Bridge",
+  "subtitle": "Your guide through Belgian administration",
+  "startButton": "Get Started",
+  "languageSelector": "Select Language",
+  "backButton": "Back",
+  "nextButton": "Next",
+  "homeButton": "Home",
+  "profileButton": "Profile",
+  "questionsTitle": "A few questions about your situation",
+  "checklistTitle": "Your task list",
+  "taskCompleted": "Completed",
+  "taskPending": "To do",
+  "viewDetails": "View details",
+  "completed": "Completed",
+  "pending": "Pending",
+  
+  "intakeQuestions": {
+
+    "duration": {
+      "question": "How long do you plan to stay in Belgium?",
+      "options": [
+        "Less than 3 months",
+        "3-6 months",
+        "More than 6 months",
+        "Not sure"
+        ]
+        },
+    
+    "workType": {
+      "question": "What type of work will you be doing?",
+      "options": [
+        "Agricultural work",
+        "Construction work",
+        "Services",
+        "Other"
+     ]
+        },
+    
+    "experience": {
+      "question": "Is this your first time in Belgium?",
+      "options": [
+        "Yes, first time",
+        "No, I've been before",
+        "I work here regularly"
+        ]
+        },
+    
+    "housing": {
+      "question": "Do you already have accommodation?",
+      "options": [
+        "Yes, provided by employer",
+        "Yes, I rent myself",
+        "No, still looking",
+        "Living with family/friends"
+        ]
+        },
+    
+    "family":{
+      "question": "Are you traveling with family?",
+      "options": [
+        "Yes, with family",
+        "No, alone",
+        "Only with spouse",
+        "With children"
+        ]
+        }
+    },
+
+  "tasks": {
+    "limosa": {
+      "title": "LIMOSA Registration",
+      "description": "Seasonal work declaration",
+      "icon": "FileText"
+    },
+    "municipality": {
+      "title": "Municipal Registration",
+      "description": "Register at town hall",
+      "icon": "Building"
+    },
+    "health": {
+      "title": "Health Insurance",
+      "description": "Enroll in health insurance",
+      "icon": "Shield"
+    },
+    "bank": {
+      "title": "Bank Account",
+      "description": "Open a bank account",
+      "icon": "CreditCard"
+    },
+    "tax": {
+      "title": "Tax Number",
+      "description": "Tax registration",
+      "icon": "FileText"
+    },
+    "emergency": {
+      "title": "Emergency Contact",
+      "description": "Set up emergency contact",
+      "icon": "Phone"
+    }
+  }
+}

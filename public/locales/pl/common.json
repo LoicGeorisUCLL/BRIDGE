@@ -1,0 +1,107 @@
+{
+  "welcome": "Witamy w Bridge",
+  "subtitle": "Twój przewodnik po belgijskiej administracji",
+  "startButton": "Rozpocznij",
+  "languageSelector": "Wybierz język",
+  "backButton": "Wstecz",
+  "nextButton": "Dalej",
+  "homeButton": "Strona główna",
+  "profileButton": "Profil",
+  "questionsTitle": "Kilka pytań o Twoją sytuację",
+  "checklistTitle": "Twoja lista zadań",
+  "taskCompleted": "Ukończone",
+  "taskPending": "Do zrobienia",
+  "viewDetails": "Zobacz szczegóły",
+  "completed": "Ukończone",
+  "pending": "Oczekujące",
+
+  "intakeQuestions": [
+    {
+      "duration": {
+        "question": "Jak długo planujesz zostać w Belgii?",
+        "options": [
+          "Mniej niż 3 miesiące",
+          "3-6 miesięcy",
+          "Więcej niż 6 miesięcy",
+          "Nie jestem pewien"
+        ]
+      }
+    },
+    {
+      "workType": {
+        "question": "Jaki rodzaj pracy będziesz wykonywać?",
+        "options": [
+          "Praca w rolnictwie",
+          "Praca budowlana",
+          "Usługi",
+          "Inne"
+        ]
+      }
+    },
+    {
+      "experience": {
+        "question": "Czy to Twój pierwszy pobyt w Belgii?",
+        "options": [
+          "Tak, pierwszy raz",
+          "Nie, byłem wcześniej",
+          "Pracuję tu regularnie"
+        ]
+      }
+    },
+    {
+      "housing": {
+        "question": "Czy masz już mieszkanie?",
+        "options": [
+          "Tak, zapewnione przez pracodawcę",
+          "Tak, wynajmuję sam",
+          "Nie, jeszcze szukam",
+          "Mieszkam z rodziną/znajomymi"
+        ]
+      }
+    },
+    {
+      "family": {
+        "question": "Czy przyjeżdżasz z rodziną?",
+        "options": [
+          "Tak, z rodziną",
+          "Nie, sam",
+          "Tylko z małżonkiem",
+          "Z dziećmi"
+        ]
+      }
+    }
+  ],
+
+  "tasks": {
+    "limosa": {
+      "title": "Rejestracja LIMOSA",
+      "description": "Zgłoszenie pracy sezonowej",
+      "icon": "FileText"
+    },
+    "municipality": {
+      "title": "Rejestracja w gminie",
+      "description": "Zameldowanie w urzędzie miasta",
+      "icon": "Building"
+    },
+    "health": {
+      "title": "Ubezpieczenie zdrowotne",
+      "description": "Zapisanie się do ubezpieczenia",
+      "icon": "Shield"
+    },
+    "bank": {
+      "title": "Konto bankowe",
+      "description": "Otwarcie konta w banku",
+      "icon": "CreditCard"
+    },
+    "tax": {
+      "title": "Numer podatkowy",
+      "description": "Rejestracja podatkowa",
+      "icon": "FileText"
+    },
+    "emergency": {
+      "title": "Kontakt alarmowy",
+      "description": "Ustawienie kontaktu awaryjnego",
+      "icon": "Phone"
+    }
+  }
+}

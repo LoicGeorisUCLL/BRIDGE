@@ -1,40 +1,183 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# BRIDGE - Belgian Administration Guide
+
+A modern mobile-first Progressive Web App (PWA) designed to help Polish seasonal workers navigate Belgian administrative processes.
+
+## Features
+
+- **Personalized Guidance**: Customized task lists based on user circumstances
+- **Bilingual Support**: Polish and English interfaces
+- **Progress Tracking**: Mark tasks as complete and track overall progress
+- **Mobile-First Design**: Optimized for smartphones and tablets
+- **Offline Storage**: Data saved locally for privacy and offline access
+- **PWA Ready**: Can be installed as a native app on mobile devices
+
+## Administrative Tasks Covered
+
+The app helps users complete essential Belgian administrative tasks:
+
+1. **LIMOSA Registration** - Mandatory seasonal work declaration
+2. **Municipal Registration** - Required for stays longer than 6 months
+3. **Health Insurance** - Essential healthcare coverage enrollment
+4. **Bank Account** - Opening a Belgian bank account
+5. **Tax Number** - Tax registration for longer stays
+6. **Emergency Contact** - Safety contact setup
+
+## Tech Stack
+
+- **Next.js 14** - React framework with App Router
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Utility-first CSS framework
+- **Lucide React** - Beautiful icon library
+- **PWA Ready** - Progressive Web App capabilities
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ installed
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd bridge-app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+3. Start the development server:
+```bash
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+### Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+bridge-app/
+├── app/
+│   ├── components/
+│   │   └── BridgeApp.tsx     # Main application component
+│   ├── globals.css           # Global styles
+│   ├── layout.tsx           # Root layout
+│   └── page.tsx             # Home page
+├── public/
+│   ├── manifest.json        # PWA manifest
+│   └── icons/               # App icons
+├── next.config.js           # Next.js configuration
+├── tailwind.config.ts       # Tailwind CSS configuration
+└── package.json
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## Key Components
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### BridgeApp Component
 
-## Deploy on Vercel
+The main application component includes:
+- **Welcome Screen**: Language selection and introduction
+- **Questions Flow**: 5-step intake questionnaire
+- **Checklist Screen**: Personalized task management
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Data Management
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+- **Local Storage**: All user data stored locally for privacy
+- **TypeScript Interfaces**: Strongly typed data structures
+- **State Management**: React hooks for application state
+
+## Customization
+
+### Adding New Languages
+
+1. Add language code to the `Language` type in `BridgeApp.tsx`
+2. Add translations to the `translations` object
+3. Update the language selector options
+
+### Adding New Tasks
+
+1. Add task definition to the `tasks` object in translations
+2. Update the `generatePersonalizedTasks` function logic
+3. Add corresponding icon to the `getIconComponent` function
+
+### Styling
+
+The app uses Tailwind CSS with a custom blue color palette. Main colors:
+- Primary: `blue-900` (#1e3a8a)
+- Secondary: `blue-800` (#1e40af)
+- Accent: `blue-600` (#2563eb)
+
+## PWA Features
+
+The app includes Progressive Web App capabilities:
+- **Installable**: Can be added to home screen
+- **Responsive**: Works on all device sizes
+- **Fast Loading**: Optimized performance
+- **Offline Ready**: Core functionality works without internet
+
+## Deployment
+
+### Vercel (Recommended)
+
+1. Push code to GitHub repository
+2. Connect repository to Vercel
+3. Deploy automatically with zero configuration
+
+### Other Platforms
+
+The app can be deployed to any platform supporting Next.js:
+- Netlify
+- AWS Amplify
+- Railway
+- DigitalOcean App Platform
+
+## Development Notes
+
+### TypeScript
+
+The app is fully typed with TypeScript interfaces for:
+- User profiles and questionnaire data
+- Translation objects and language support
+- Component props and state management
+
+### Mobile Optimization
+
+- Touch-friendly interface with large tap targets
+- Smooth animations and transitions
+- Fixed bottom navigation for easy thumb access
+- Responsive design for various screen sizes
+
+### Privacy & Security
+
+- No server-side data storage
+- All user data remains on device
+- GDPR compliant by design
+- No external tracking or analytics
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add TypeScript types for new features
+5. Test on mobile devices
+6. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.
+
+## Support
+
+For questions or support, please open an issue in the GitHub repository.

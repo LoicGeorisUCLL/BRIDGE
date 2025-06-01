@@ -36,15 +36,6 @@ const BridgeApp: React.FC = () => {
     }
   };
 
-  const getQuestionName = (index: number): string => {
-    const name = index === 0 ? 'duration' : 
-     index === 1 ? 'workType' : 
-     index === 2 ? 'experience' : 
-     index === 3 ? 'housing' : 
-     'family'
-     return name;
-  };
-
   const handleLanguageChange = (newLanguage: Language) => {
     setLanguage(newLanguage);
     localStorage.setItem('bridgeLanguage', newLanguage);

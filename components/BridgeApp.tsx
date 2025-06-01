@@ -53,7 +53,7 @@ const BridgeApp: React.FC = () => {
     localStorage.setItem('bridgeLanguage', newLanguage);
   };
 
-  const handleStartQuestions = () => {
+  const handleIntakeQuestions = () => {
     setCurrentScreen('questions');
   };
 
@@ -105,7 +105,7 @@ const BridgeApp: React.FC = () => {
       {currentScreen === 'welcome' && (
         <WelcomeScreen
           language={language}
-          onStart={handleStartQuestions}
+          onStart={handleIntakeQuestions}
           onLanguageChange={handleLanguageChange}
         />
       )}

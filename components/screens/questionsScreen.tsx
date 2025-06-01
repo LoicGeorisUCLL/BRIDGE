@@ -7,7 +7,6 @@ import { Language, Screen, UserProfile } from '@/types';
 interface QuestionsScreenProps {
   setUserProfile: (profile: any) => void;
   userProfile: UserProfile;
-  onBack: () => void;
   saveData: (profile: UserProfile, tasks: string[], lang: Language) => void;
   completedTasks: string[];
   language: Language;
@@ -18,7 +17,6 @@ interface QuestionsScreenProps {
 const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
   setUserProfile,
   userProfile,
-  onBack,
   saveData,
   completedTasks,
   language,
@@ -40,6 +38,13 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
      return name;
   };
 
+    const handleBack = () => {
+      if (currentQuestionIndex > 0) {
+        setCurrentQuestionIndex(currentQuestionIndex - 1);
+      }
+      else if (currentQuestionIndex === 0)
+      setCurrentScreen('welcome');
+  };
 
   const handleQuestionAnswer = (index: number) => {
     const key = getQuestionName(currentQuestionIndex);
@@ -66,7 +71,7 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
     <div className="min-h-screen bg-gray-50">
       <div className="bg-blue-900 text-white p-4">
         <div className="flex items-center justify-between">
-          <button onClick={onBack} className="p-2">
+          <button onClick={handleBack} className="p-2">
             <ChevronLeft className="w-6 h-6" />
           </button>
           <h2 className="font-semibold">{t("questionsTitle")}</h2>

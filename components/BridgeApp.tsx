@@ -49,9 +49,6 @@ const BridgeApp: React.FC = () => {
     setCurrentScreen('questions');
   };
 
-  const handleBackToWelcome = () => {
-    setCurrentScreen('welcome');
-  };
 
   const handleToggleTask = (taskId: string) => {
     const newCompletedTasks = completedTasks.includes(taskId)
@@ -89,7 +86,6 @@ const BridgeApp: React.FC = () => {
         <QuestionsScreen
           userProfile={userProfile}
           setUserProfile={setUserProfile}
-          onBack={handleBackToWelcome}
           saveData={saveData}
           completedTasks={completedTasks}
           language={language}

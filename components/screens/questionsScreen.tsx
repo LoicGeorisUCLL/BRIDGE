@@ -41,11 +41,11 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
   };
 
 
-  const handleQuestionAnswer = (answer: string) => {
+  const handleQuestionAnswer = (index: number) => {
     const key = getQuestionName(currentQuestionIndex);
     const updatedProfile = {
       ...userProfile,
-      [key]: answer,
+      [key]: index,
     };
     
     setUserProfile(updatedProfile);
@@ -59,7 +59,7 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
   };
 
   const currentQuestion = getQuestionName(currentQuestionIndex);
-  const currentAnswer = userProfile[currentQuestion as keyof UserProfile] || "";
+  const currentAnswer = userProfile[currentQuestion as keyof UserProfile] || 99;
 
 
   return (
@@ -94,15 +94,15 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
           {((t(`intakeQuestions.${currentQuestion}.${"options"}`, { returnObjects: true })) as string[]).map((option, index) => (
             <button
               key={index}
-              onClick={() => handleQuestionAnswer(option)}
+              onClick={() => handleQuestionAnswer(index)}
               className={`w-full p-4 text-left rounded-lg border transition-colors ${
-                    currentAnswer === option 
+                    currentAnswer === index 
                       ? "bg-green-100 border-green-500 hover:bg-green-200" 
                       : "bg-white border-gray-200 hover:border-blue-500 hover:bg-blue-50"
                   }`}
             >
               <span className="text-gray-900">{option}</span>
-              <ChevronRight className={`w-5 h-5 float-right mt-0.5 ${ currentAnswer === option? "text-green-600": "text-gray-400"}`} />
+              <ChevronRight className={`w-5 h-5 float-right mt-0.5 ${ currentAnswer === index? "text-green-600": "text-gray-400"}`} />
             </button>
           ))}
         </div>

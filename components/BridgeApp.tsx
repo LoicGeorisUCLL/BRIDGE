@@ -24,6 +24,10 @@ const BridgeApp: React.FC = () => {
       setUserProfile(savedProfile);
       setCompletedTasks(savedTasks);
       setLanguage(savedLanguage);
+
+      if (Object.keys(savedProfile).length > 0) {
+        setCurrentScreen('checklist');
+      }
     }
   }, []);
 
@@ -45,9 +49,6 @@ const BridgeApp: React.FC = () => {
     setCurrentScreen('questions');
   };
 
-  const handleBackToWelcome = () => {
-    setCurrentScreen('welcome');
-  };
 
   const handleToggleTask = (taskId: string) => {
     const newCompletedTasks = completedTasks.includes(taskId)
@@ -71,6 +72,13 @@ const BridgeApp: React.FC = () => {
     return null;
   }
 
+  const handleResetAndGoToWelcome = () => {
+    setUserProfile({});
+    setCompletedTasks([]);
+    setCurrentScreen('welcome');
+    saveData({}, [], language);
+  };
+
   return (
     <div className="max-w-md mx-auto bg-white min-h-screen">
       {currentScreen === 'welcome' && (
@@ -85,7 +93,6 @@ const BridgeApp: React.FC = () => {
         <QuestionsScreen
           userProfile={userProfile}
           setUserProfile={setUserProfile}
-          onBack={handleBackToWelcome}
           saveData={saveData}
           completedTasks={completedTasks}
           language={language}
@@ -100,6 +107,7 @@ const BridgeApp: React.FC = () => {
           onToggleTask={handleToggleTask}
           onGoHome={handleGoHome}
           onGoToProfile={handleGoToProfile}
+          onResetAndGoToWelcome={handleResetAndGoToWelcome}
         />
       )}
     </div>

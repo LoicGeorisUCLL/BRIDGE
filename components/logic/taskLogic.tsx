@@ -4,15 +4,15 @@ import { UserProfile } from "@/types";
     const allTasks = ['limosa'];
     
     // Add municipality registration if staying more than 6 months
-    if (profile.duration === 'Więcej niż 6 miesięcy' || profile.duration === 'More than 6 months') {
+    if (profile.duration === "2") {
       allTasks.push('municipality');
     }
     
     // Always add health insurance and bank account
     allTasks.push('health', 'bank');
     
-    // Add tax number if staying longer or working regularly
-    if (profile.duration !== 'Mniej niż 3 miesiące' && profile.duration !== 'Less than 3 months') {
+    // Add tax number if staying more than 3 months
+    if (profile.duration !== undefined && profile.duration > "1") {
       allTasks.push('tax');
     }
     

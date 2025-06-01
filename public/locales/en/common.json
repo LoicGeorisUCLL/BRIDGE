@@ -6,7 +6,7 @@
   "backButton": "Back",
   "nextButton": "Next",
   "homeButton": "Home",
-  "profileButton": "Profile",
+  "editProfileButton": "Edit Profile",
   "questionsTitle": "A few questions about your situation",
   "checklistTitle": "Your task list",
   "taskCompleted": "Completed",
@@ -14,6 +14,10 @@
   "viewDetails": "View details",
   "completed": "Completed",
   "pending": "Pending",
+
+  "congratulations": "Congratulations!",
+  "congratulationsMessage": "You have completed all your tasks! Good luck on your journey in Belgium.",
+  "startOver": "Start Over",
   
   "intakeQuestions": {
 

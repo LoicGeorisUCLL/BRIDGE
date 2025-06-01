@@ -64,8 +64,9 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
   };
 
   const currentQuestion = getQuestionName(currentQuestionIndex);
-  const currentAnswer = userProfile[currentQuestion as keyof UserProfile] || 99;
+  const currentAnswer = userProfile[currentQuestion as keyof UserProfile] ?? null;
 
+  console.log(currentAnswer)
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -101,13 +102,13 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
               key={index}
               onClick={() => handleQuestionAnswer(index)}
               className={`w-full p-4 text-left rounded-lg border transition-colors ${
-                    currentAnswer === index 
+                    currentAnswer !== null && parseInt(currentAnswer) === index 
                       ? "bg-green-100 border-green-500 hover:bg-green-200" 
                       : "bg-white border-gray-200 hover:border-blue-500 hover:bg-blue-50"
                   }`}
             >
               <span className="text-gray-900">{option}</span>
-              <ChevronRight className={`w-5 h-5 float-right mt-0.5 ${ currentAnswer === index? "text-green-600": "text-gray-400"}`} />
+              <ChevronRight className={`w-5 h-5 float-right mt-0.5 ${ currentAnswer !== null && parseInt(currentAnswer) === index? "text-green-600": "text-gray-400"}`} />
             </button>
           ))}
         </div>

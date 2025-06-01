@@ -88,7 +88,7 @@ const ChecklistScreen: React.FC<ChecklistScreenProps> = ({
         })}
       </div>
       
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4">
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 max-w-md mx-auto">
         <div className="flex space-x-4">
           <button
             onClick={onGoHome}

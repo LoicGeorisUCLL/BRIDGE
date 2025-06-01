@@ -14,6 +14,7 @@ interface QuestionsScreenProps {
   setCurrentScreen: (screen: Screen) => void;
 }
 
+
 const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
   setUserProfile,
   userProfile,
@@ -31,13 +32,14 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
   const TOTAL_QUESTIONS = 5;
 
   const getQuestionName = (index: number): string => {
-    const name = index === 0 ? 'duration' : 
-     index === 1 ? 'workType' : 
-     index === 2 ? 'experience' : 
-     index === 3 ? 'housing' : 
-     'family'
+    const name = index === 0 ? "duration" : 
+     index === 1 ? "workType" : 
+     index === 2 ? "experience" : 
+     index === 3 ? "housing" : 
+     "family"
      return name;
   };
+
 
   const handleQuestionAnswer = (answer: string) => {
     const key = getQuestionName(currentQuestionIndex);
@@ -57,7 +59,9 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
   };
 
   const currentQuestion = getQuestionName(currentQuestionIndex);
-  
+  const currentAnswer = userProfile[currentQuestion as keyof UserProfile] || "";
+
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="bg-blue-900 text-white p-4">
@@ -87,14 +91,18 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
         </h3>
         
         <div className="space-y-3">
-          {((t(`intakeQuestions.${currentQuestion}.${'options'}`, { returnObjects: true })) as string[]).map((option, index) => (
+          {((t(`intakeQuestions.${currentQuestion}.${"options"}`, { returnObjects: true })) as string[]).map((option, index) => (
             <button
               key={index}
               onClick={() => handleQuestionAnswer(option)}
-              className="w-full p-4 text-left bg-white rounded-lg border border-gray-200 hover:border-blue-500 hover:bg-blue-50 transition-colors"
+              className={`w-full p-4 text-left rounded-lg border transition-colors ${
+                    currentAnswer === option 
+                      ? "bg-green-100 border-green-500 hover:bg-green-200" 
+                      : "bg-white border-gray-200 hover:border-blue-500 hover:bg-blue-50"
+                  }`}
             >
               <span className="text-gray-900">{option}</span>
-              <ChevronRight className="w-5 h-5 text-gray-400 float-right mt-0.5" />
+              <ChevronRight className={`w-5 h-5 float-right mt-0.5 ${ currentAnswer === option? "text-green-600": "text-gray-400"}`} />
             </button>
           ))}
         </div>

@@ -14,6 +14,10 @@
   "viewDetails": "View details",
   "completed": "Completed",
   "pending": "Pending",
+
+  "congratulations": "Congratulations!",
+  "congratulationsMessage": "You have completed all your tasks! Good luck on your journey in Belgium.",
+  "startOver": "Start Over",
   
   "intakeQuestions": {
 

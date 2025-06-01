@@ -6,14 +6,11 @@ import WelcomeScreen from './screens/welcomeScreen';
 import QuestionsScreen from './screens/questionsScreen';
 import ChecklistScreen from './screens/checklistScreen';
 
-const TOTAL_QUESTIONS = 5;
-
 const BridgeApp: React.FC = () => {
   const [currentScreen, setCurrentScreen] = useState<Screen>('welcome');
   const [userProfile, setUserProfile] = useState<UserProfile>({});
-  const [language, setLanguage] = useState<Language>('pl');
+  const [language, setLanguage] = useState<Language>('en');
   const [completedTasks, setCompletedTasks] = useState<string[]>([]);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [mounted, setMounted] = useState(false);
 
   // Load saved data on component mount
@@ -57,23 +54,6 @@ const BridgeApp: React.FC = () => {
     setCurrentScreen('questions');
   };
 
-  const handleQuestionAnswer = (answer: string) => {
-    const key = getQuestionName(currentQuestionIndex);
-    const updatedProfile = {
-      ...userProfile,
-      [key]: answer,
-    };
-    
-    setUserProfile(updatedProfile);
-    
-    if (currentQuestionIndex < TOTAL_QUESTIONS - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-    } else {
-      saveData(updatedProfile, completedTasks, language);
-      setCurrentScreen('checklist');
-    }
-  };
-
   const handleBackToWelcome = () => {
     setCurrentScreen('welcome');
   };
@@ -112,10 +92,13 @@ const BridgeApp: React.FC = () => {
       
       {currentScreen === 'questions' && (
         <QuestionsScreen
-          currentQuestionIndex={currentQuestionIndex}
-          totalQuestions={TOTAL_QUESTIONS}
+          userProfile={userProfile}
+          setUserProfile={setUserProfile}
           onBack={handleBackToWelcome}
-          onAnswer={handleQuestionAnswer}
+          saveData={saveData}
+          completedTasks={completedTasks}
+          language={language}
+          setCurrentScreen={setCurrentScreen}
         />
       )}
       

@@ -102,7 +102,7 @@ const ChecklistScreen: React.FC<ChecklistScreenProps> = ({
             className="flex-1 flex items-center justify-center space-x-2 py-3 bg-blue-100 rounded-lg"
           >
             <User className="w-5 h-5 text-blue-600" />
-            <span className="text-blue-600 font-medium">{t("profileButton")}</span>
+            <span className="text-blue-600 font-medium">{t("editProfileButton")}</span>
           </button>
         </div>
       </div>

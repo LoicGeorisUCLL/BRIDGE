@@ -24,6 +24,10 @@ const BridgeApp: React.FC = () => {
       setUserProfile(savedProfile);
       setCompletedTasks(savedTasks);
       setLanguage(savedLanguage);
+
+      if (Object.keys(savedProfile).length > 0) {
+        setCurrentScreen('checklist');
+      }
     }
   }, []);
 

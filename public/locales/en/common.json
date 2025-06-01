@@ -6,7 +6,7 @@
   "backButton": "Back",
   "nextButton": "Next",
   "homeButton": "Home",
-  "profileButton": "Profile",
+  "editProfileButton": "Edit Profile",
   "questionsTitle": "A few questions about your situation",
   "checklistTitle": "Your task list",
   "taskCompleted": "Completed",

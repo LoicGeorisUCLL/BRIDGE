@@ -72,6 +72,13 @@ const BridgeApp: React.FC = () => {
     return null;
   }
 
+  const handleResetAndGoToWelcome = () => {
+    setUserProfile({});
+    setCompletedTasks([]);
+    setCurrentScreen('welcome');
+    saveData({}, [], language);
+  };
+
   return (
     <div className="max-w-md mx-auto bg-white min-h-screen">
       {currentScreen === 'welcome' && (
@@ -100,6 +107,7 @@ const BridgeApp: React.FC = () => {
           onToggleTask={handleToggleTask}
           onGoHome={handleGoHome}
           onGoToProfile={handleGoToProfile}
+          onResetAndGoToWelcome={handleResetAndGoToWelcome}
         />
       )}
     </div>

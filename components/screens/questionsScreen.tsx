@@ -57,8 +57,8 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
     
     if (currentQuestionIndex < TOTAL_QUESTIONS - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
-    } else {
       saveData(updatedProfile, completedTasks, language);
+    } else {
       setCurrentScreen('checklist');
     }
   };

@@ -11,6 +11,7 @@ interface ChecklistScreenProps {
   onToggleTask: (taskId: string) => void;
   onGoHome: () => void;
   onGoToProfile: () => void;
+  onResetAndGoToWelcome?: () => void;
 }
 
 const ChecklistScreen: React.FC<ChecklistScreenProps> = ({
@@ -18,7 +19,8 @@ const ChecklistScreen: React.FC<ChecklistScreenProps> = ({
   completedTasks,
   onToggleTask,
   onGoHome,
-  onGoToProfile
+  onGoToProfile,
+  onResetAndGoToWelcome
 }) => {
 
 const [showCongratulations, setShowCongratulations] = useState(false);
@@ -51,12 +53,6 @@ useEffect(() => {
 
   const handleCloseCongratulations = () => {
     setShowCongratulations(false);
-  };
-
-  const handleResetAndGoToWelcome = () => {
-    localStorage.clear();
-    router.reload()
-    onGoHome();
   };
   
   return (
@@ -156,7 +152,7 @@ useEffect(() => {
                 
                     
                     <button
-                      onClick={handleResetAndGoToWelcome}
+                      onClick={onResetAndGoToWelcome}
                       className="w-full flex items-center justify-center space-x-2 py-3 bg-blue-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
                     >
                       <RotateCcw className="w-5 h-5" />

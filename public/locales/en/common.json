@@ -19,153 +19,169 @@
   "congratulationsMessage": "You have completed all your tasks! Good luck on your journey in Belgium.",
   "startOver": "Start Over",
   
-  "intakeQuestions": {
-
-    "duration": {
-      "question": "How long do you plan to stay in Belgium?",
-      "options": [
-        "Less than 3 months",
-        "3-6 months",
-        "More than 6 months",
-        "Not sure"
-        ]
-        },
-    
-    "workType": {
-      "question": "What type of work will you be doing?",
-      "options": [
-        "Agricultural work",
-        "Construction work",
-        "Services",
-        "Other"
-     ]
-        },
-    
-    "experience": {
-      "question": "Is this your first time in Belgium?",
-      "options": [
-        "Yes, first time",
-        "No, I've been before",
-        "I work here regularly"
-        ]
-        },
-    
-    "housing": {
-      "question": "Do you already have accommodation?",
-      "options": [
-        "Yes, provided by employer",
-        "Yes, I rent myself",
-        "No, still looking",
-        "Living with family/friends"
-        ]
-        },
-    
-    "family":{
-      "question": "Are you traveling with family?",
-      "options": [
-        "Yes, with family",
-        "No, alone",
-        "Only with spouse",
-        "With children"
-        ]
-        }
-    },
+"intakeQuestions": {
+  "europeanID": {
+    "question": "Do you have a valid European ID or passport?",
+    "options": [
+      "Yes, I have a European ID or passport",
+      "No, I only have a non-EU document",
+      "I’m not sure"
+    ]
+  },
+  "contract": {
+    "question": "Do you already have a signed employment contract?",
+    "options": [
+      "Yes, it's already signed",
+      "No, not yet",
+      "I'm in the process"
+    ]
+  },
+  "plukkaart": {
+    "question": "Do you have a plukkaart (seasonal work permit)?",
+    "options": [
+      "Yes, I already have it",
+      "No, I still need to get it",
+      "I don't know what that is"
+    ]
+  },
+  "duration": {
+    "question": "How long do you plan to work in Belgium?",
+    "options": [
+      "Less than 3 months",
+      "3–6 months",
+      "More than 6 months",
+      "Not sure yet"
+    ]
+  },
+  "workProvince": {
+    "question": "In which province will you be working?",
+    "options": [
+      "Antwerp",
+      "Limburg",
+      "East Flanders",
+      "West Flanders",
+      "Flemish Brabant",
+      "Walloon provinces",
+      "Not sure"
+    ]
+  },
+  "bankAccount": {
+    "question": "Do you already have a Belgian bank account?",
+    "options": [
+      "Yes, I already opened one",
+      "No, I need to open one",
+      "I plan to use a foreign account"
+    ]
+  }
+}
+,
 
   "tasks": {
-    "limosa": {
-      "title": "LIMOSA Registration",
-      "description": "Seasonal work declaration",
+    "municipality": {
+      "title": "Municipal Registration",
+      "description": "Register at the town hall",
+      "icon": "Building",
+      "steps": [
+        "Visit your local municipality",
+        "Bring your documents",
+        "Complete the registration process"
+      ],
+      "documents": [
+        "Passport or ID",
+        "Proof of address",
+        "Employment contract"
+      ],
+      "estimatedTime": "1 hour"
+    },
+    "contract": {
+      "title": "Employment Contract & Plukkaart",
+      "description": "Sign your contract and receive your plukkaart",
       "icon": "FileText",
       "steps": [
-        "Visit the LIMOSA website",
-        "Fill out the online form",
-        "Submit your declaration"
+        "Review and sign the employment contract",
+        "Request and obtain your plukkaart",
+        "Store both documents safely"
+      ],
+      "documents": [
+        "Passport or ID",
+        "Employer details"
+      ],
+      "estimatedTime": "30 minutes"
+    },
+    "health": {
+      "title": "Health Insurance",
+      "description": "Arrange health insurance via your employer or independently",
+      "icon": "Shield",
+      "steps": [
+        "Ask your employer about included health insurance",
+        "If not covered, choose a health fund (mutualiteit)",
+        "Register and submit required documents"
       ],
       "documents": [
         "Passport or ID",
         "Employment contract",
-        "Proof of accommodation"
-      ],
-      "estimatedTime": "30 minutes"
-    },
-    "municipality": {
-      "title": "Municipal Registration",
-      "description": "Register at town hall",
-      "icon": "Building",
-      "steps": [
-        "Visit your local municipality",
-        "Bring required documents",
-        "Complete registration form"
-      ],
-      "documents": [
-        "Passport or ID",
-        "Proof of address",
-        "Employment contract"
-      ],
-      "estimatedTime": "1 hour"
-    },
-    "health": {
-      "title": "Health Insurance",
-      "description": "Enroll in health insurance",
-      "icon": "Shield",
-      "steps": [
-        "Choose a health insurance provider",
-        "Fill out the application form",
-        "Submit required documents"
-      ],
-      "documents": [
-        "Passport or ID",
-        "Proof of employment",
-        "Proof of address"
+        "Municipal registration"
       ],
       "estimatedTime": "45 minutes"
     },
-    "bank": {
-      "title": "Bank Account",
-      "description": "Open a bank account",
-      "icon": "CreditCard",
-      "steps": [
-        "Choose a bank",
-        "Visit the bank branch",
-        "Provide required documents"
-      ],
-      "documents": [
-        "Passport or ID",
-        "Proof of address",
-        "Employment contract"
-      ],
-      "estimatedTime": "1 hour"
-    },
-    "tax": {
-      "title": "Tax Number",
-      "description": "Tax registration",
+    "bijlage3": {
+      "title": "Bijlage 3",
+      "description": "Temporary residence document (Annex 3)",
       "icon": "FileText",
       "steps": [
-        "Visit the tax office",
-        "Fill out the tax registration form",
-        "Submit required documents"
+        "Go to the local municipality",
+        "Request Bijlage 3 document",
+        "Wait for approval and collect"
       ],
       "documents": [
         "Passport or ID",
-        "Proof of employment",
-        "Proof of address"
+        "Proof of residence",
+        "Employment contract"
       ],
       "estimatedTime": "30 minutes"
     },
     "emergency": {
       "title": "Emergency Contact",
-      "description": "Set up emergency contact",
+      "description": "Set up an emergency contact",
       "icon": "Phone",
       "steps": [
-        "Choose an emergency contact",
-        "Inform them about your stay",
-        "Share your contact details"
+        "Choose a contact person",
+        "Share their information with your employer",
+        "Keep their details accessible"
       ],
       "documents": [
-        "Emergency contact details",
-        "Your contact information"
+        "Name and phone number",
+        "Relationship to you"
       ],
       "estimatedTime": "15 minutes"
+    },
+    "bank": {
+      "title": "Bank Account",
+      "description": "Open a Belgian bank account",
+      "icon": "CreditCard",
+      "steps": [
+        "Choose a bank",
+        "Visit a branch or apply online",
+        "Submit the required documents"
+      ],
+      "documents": [
+        "Passport or ID",
+        "Proof of address",
+        "Employment contract"
+      ],
+      "estimatedTime": "1 hour"
+    },
+    "practical": {
+      "title": "Practical Information",
+      "description": "Useful tips for living and working in Belgium",
+      "icon": "FileText",
+      "steps": [
+        "Understand your worker rights",
+        "Learn local emergency numbers",
+        "Know your employer responsibilities"
+      ],
+      "documents": [],
+      "estimatedTime": "Variable"
     }
   },
 
@@ -175,5 +191,4 @@
   "detailedStepsComingSoon": "Detailed steps coming soon",
   "markIncomplete": "Mark as Incomplete",
   "markComplete": "Mark as Complete"
-
 }

@@ -27,14 +27,15 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
   
   const { t } = useTranslation();
 
-  const TOTAL_QUESTIONS = 5;
+  const TOTAL_QUESTIONS = 6;
 
   const getQuestionName = (index: number): string => {
-    const name = index === 0 ? "duration" : 
-     index === 1 ? "workType" : 
-     index === 2 ? "experience" : 
-     index === 3 ? "housing" : 
-     "family"
+    const name = index === 0 ? "europeanID" : 
+     index === 1 ? "contract" : 
+     index === 2 ? "plukkaart" : 
+     index === 3 ? "duration" : 
+     index === 4 ? "workProvince" :
+     "bankAccount"
      return name;
   };
 

@@ -24,16 +24,14 @@
       "question": "Czy masz ważny europejski dowód osobisty lub paszport?",
       "options": [
         "Tak, mam europejski dokument tożsamości lub paszport",
-        "Nie, mam tylko dokument spoza UE",
-        "Nie jestem pewien"
+        "Nie, mam tylko dokument spoza UE"
       ]
     },
     "contract": {
       "question": "Czy masz już podpisaną umowę o pracę?",
       "options": [
         "Tak, już podpisana",
-        "Nie, jeszcze nie",
-        "Jestem w trakcie"
+        "Nie, jeszcze nie"
       ]
     },
     "plukkaart": {
@@ -61,6 +59,7 @@
         "Flandria Wschodnia",
         "Flandria Zachodnia",
         "Brabancja Flamandzka",
+        "Bruksela",
         "Prowincje walońskie",
         "Nie wiem"
       ]

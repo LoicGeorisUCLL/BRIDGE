@@ -24,16 +24,14 @@
     "question": "Do you have a valid European ID or passport?",
     "options": [
       "Yes, I have a European ID or passport",
-      "No, I only have a non-EU document",
-      "I’m not sure"
+      "No, I only have a non-EU document"
     ]
   },
   "contract": {
     "question": "Do you already have a signed employment contract?",
     "options": [
       "Yes, it's already signed",
-      "No, not yet",
-      "I'm in the process"
+      "No, not yet"
     ]
   },
   "plukkaart": {
@@ -61,6 +59,7 @@
       "East Flanders",
       "West Flanders",
       "Flemish Brabant",
+      "Brussels-Capital Region",
       "Walloon provinces",
       "Not sure"
     ]

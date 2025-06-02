@@ -1,23 +1,24 @@
 import { UserProfile } from "@/types";
 
   export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
-    const allTasks = ['municipality', 'contract', 'health', 'bijlage3', 'bank', 'emergency', 'practical'];
+    const allTasks = [];
     
-    // // Add municipality registration if staying more than 6 months
-    // if (profile.duration === "2") {
-    //   allTasks.push('municipality');
-    // }
-    
-    // // Always add health insurance and bank account
-    // allTasks.push('health', 'bank');
-    
-    // // Add tax number if staying more than 3 months
-    // if (profile.duration !== undefined && profile.duration > "1") {
-    //   allTasks.push('tax');
-    // }
-    
-    // // Always add emergency contact
-    // allTasks.push('emergency');
-    
+    // Always add municipality registration
+    allTasks.push('municipality');
+
+    if (profile.contract !== undefined && profile.contract > "0") {
+      allTasks.push('contract');
+    }
+
+    // Always add health insurance & bijlage3
+    allTasks.push('health', 'bijlage3');
+
+    if (profile.bankAccount !== undefined && profile.bankAccount == "1") {
+      allTasks.push('bank');
+    }
+
+    // Always add emergency contact & practical information
+    allTasks.push('emergency', 'practical');
+
     return allTasks;
   };

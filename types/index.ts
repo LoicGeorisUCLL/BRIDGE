@@ -19,6 +19,9 @@ export interface Task {
   title: string;
   description: string;
   icon: string;
+  steps: string[];
+  documents: string[];
+  estimatedTime: string;
 }
 
 export interface Tasks {

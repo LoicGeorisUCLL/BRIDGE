@@ -20,58 +20,49 @@
   "startOver": "Zacznij od nowa",
 
   "intakeQuestions": {
-    
-      "duration": {
-        "question": "Jak długo planujesz zostać w Belgii?",
-        "options": [
-          "Mniej niż 3 miesiące",
-          "3-6 miesięcy",
-          "Więcej niż 6 miesięcy",
-          "Nie jestem pewien"
-        ]
-      },
-    
-      "workType": {
-        "question": "Jaki rodzaj pracy będziesz wykonywać?",
-        "options": [
-          "Praca w rolnictwie",
-          "Praca budowlana",
-          "Usługi",
-          "Inne"
-        ]
-      
+    "duration": {
+      "question": "Jak długo planujesz zostać w Belgii?",
+      "options": [
+        "Mniej niż 3 miesiące",
+        "3-6 miesięcy",
+        "Więcej niż 6 miesięcy",
+        "Nie jestem pewien"
+      ]
     },
-    
-      "experience": {
-        "question": "Czy to Twój pierwszy pobyt w Belgii?",
-        "options": [
-          "Tak, pierwszy raz",
-          "Nie, byłem wcześniej",
-          "Pracuję tu regularnie"
-        ]
-      
+    "workType": {
+      "question": "Jaki rodzaj pracy będziesz wykonywać?",
+      "options": [
+        "Praca w rolnictwie",
+        "Praca budowlana",
+        "Usługi",
+        "Inne"
+      ]
     },
-    
-      "housing": {
-        "question": "Czy masz już mieszkanie?",
-        "options": [
-          "Tak, zapewnione przez pracodawcę",
-          "Tak, wynajmuję sam",
-          "Nie, jeszcze szukam",
-          "Mieszkam z rodziną/znajomymi"
-        ]
-      
+    "experience": {
+      "question": "Czy to Twój pierwszy pobyt w Belgii?",
+      "options": [
+        "Tak, pierwszy raz",
+        "Nie, byłem wcześniej",
+        "Pracuję tu regularnie"
+      ]
     },
-    
-      "family": {
-        "question": "Czy przyjeżdżasz z rodziną?",
-        "options": [
-          "Tak, z rodziną",
-          "Nie, sam",
-          "Tylko z małżonkiem",
-          "Z dziećmi"
-        ]
-      
+    "housing": {
+      "question": "Czy masz już mieszkanie?",
+      "options": [
+        "Tak, zapewnione przez pracodawcę",
+        "Tak, wynajmuję sam",
+        "Nie, jeszcze szukam",
+        "Mieszkam z rodziną/znajomymi"
+      ]
+    },
+    "family": {
+      "question": "Czy przyjeżdżasz z rodziną?",
+      "options": [
+        "Tak, z rodziną",
+        "Nie, sam",
+        "Tylko z małżonkiem",
+        "Z dziećmi"
+      ]
     }
   },
 
@@ -79,32 +70,104 @@
     "limosa": {
       "title": "Rejestracja LIMOSA",
       "description": "Zgłoszenie pracy sezonowej",
-      "icon": "FileText"
+      "icon": "FileText",
+      "steps": [
+        "Odwiedź stronę LIMOSA",
+        "Wypełnij formularz online",
+        "Złóż swoje zgłoszenie"
+      ],
+      "documents": [
+        "Paszport lub dowód osobisty",
+        "Umowa o pracę",
+        "Dowód zakwaterowania"
+      ],
+      "estimatedTime": "30 minut"
     },
     "municipality": {
       "title": "Rejestracja w gminie",
       "description": "Zameldowanie w urzędzie miasta",
-      "icon": "Building"
+      "icon": "Building",
+      "steps": [
+        "Odwiedź lokalny urząd gminy",
+        "Zabierz wymagane dokumenty",
+        "Wypełnij formularz meldunkowy"
+      ],
+      "documents": [
+        "Paszport lub dowód osobisty",
+        "Dowód adresu zamieszkania",
+        "Umowa o pracę"
+      ],
+      "estimatedTime": "1 godzina"
     },
     "health": {
       "title": "Ubezpieczenie zdrowotne",
       "description": "Zapisanie się do ubezpieczenia",
-      "icon": "Shield"
+      "icon": "Shield",
+      "steps": [
+        "Wybierz dostawcę ubezpieczenia zdrowotnego",
+        "Wypełnij formularz zgłoszeniowy",
+        "Złóż wymagane dokumenty"
+      ],
+      "documents": [
+        "Paszport lub dowód osobisty",
+        "Dowód zatrudnienia",
+        "Dowód adresu zamieszkania"
+      ],
+      "estimatedTime": "45 minut"
     },
     "bank": {
       "title": "Konto bankowe",
       "description": "Otwarcie konta w banku",
-      "icon": "CreditCard"
+      "icon": "CreditCard",
+      "steps": [
+        "Wybierz bank",
+        "Odwiedź oddział banku",
+        "Przedstaw wymagane dokumenty"
+      ],
+      "documents": [
+        "Paszport lub dowód osobisty",
+        "Dowód adresu zamieszkania",
+        "Umowa o pracę"
+      ],
+      "estimatedTime": "1 godzina"
     },
     "tax": {
       "title": "Numer podatkowy",
       "description": "Rejestracja podatkowa",
-      "icon": "FileText"
+      "icon": "FileText",
+      "steps": [
+        "Odwiedź urząd skarbowy",
+        "Wypełnij formularz rejestracyjny",
+        "Złóż wymagane dokumenty"
+      ],
+      "documents": [
+        "Paszport lub dowód osobisty",
+        "Dowód zatrudnienia",
+        "Dowód adresu zamieszkania"
+      ],
+      "estimatedTime": "30 minut"
     },
     "emergency": {
       "title": "Kontakt alarmowy",
       "description": "Ustawienie kontaktu awaryjnego",
-      "icon": "Phone"
+      "icon": "Phone",
+      "steps": [
+        "Wybierz osobę kontaktową",
+        "Poinformuj ją o swoim pobycie",
+        "Udostępnij swoje dane kontaktowe"
+      ],
+      "documents": [
+        "Dane kontaktowe osoby alarmowej",
+        "Twoje dane kontaktowe"
+      ],
+      "estimatedTime": "15 minut"
     }
-  }
+  },
+
+  "stepsToComplete": "Kroki do ukończenia",
+  "requiredDocuments": "Wymagane dokumenty",
+  "estimatedTime": "Szacowany czas realizacji",
+  "detailedStepsComingSoon": "Szczegółowe kroki wkrótce dostępne",
+  "markIncomplete": "Oznacz jako nieukończone",
+  "markComplete": "Oznacz jako ukończone"
 }

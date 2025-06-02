@@ -75,32 +75,105 @@
     "limosa": {
       "title": "LIMOSA Registration",
       "description": "Seasonal work declaration",
-      "icon": "FileText"
+      "icon": "FileText",
+      "steps": [
+        "Visit the LIMOSA website",
+        "Fill out the online form",
+        "Submit your declaration"
+      ],
+      "documents": [
+        "Passport or ID",
+        "Employment contract",
+        "Proof of accommodation"
+      ],
+      "estimatedTime": "30 minutes"
     },
     "municipality": {
       "title": "Municipal Registration",
       "description": "Register at town hall",
-      "icon": "Building"
+      "icon": "Building",
+      "steps": [
+        "Visit your local municipality",
+        "Bring required documents",
+        "Complete registration form"
+      ],
+      "documents": [
+        "Passport or ID",
+        "Proof of address",
+        "Employment contract"
+      ],
+      "estimatedTime": "1 hour"
     },
     "health": {
       "title": "Health Insurance",
       "description": "Enroll in health insurance",
-      "icon": "Shield"
+      "icon": "Shield",
+      "steps": [
+        "Choose a health insurance provider",
+        "Fill out the application form",
+        "Submit required documents"
+      ],
+      "documents": [
+        "Passport or ID",
+        "Proof of employment",
+        "Proof of address"
+      ],
+      "estimatedTime": "45 minutes"
     },
     "bank": {
       "title": "Bank Account",
       "description": "Open a bank account",
-      "icon": "CreditCard"
+      "icon": "CreditCard",
+      "steps": [
+        "Choose a bank",
+        "Visit the bank branch",
+        "Provide required documents"
+      ],
+      "documents": [
+        "Passport or ID",
+        "Proof of address",
+        "Employment contract"
+      ],
+      "estimatedTime": "1 hour"
     },
     "tax": {
       "title": "Tax Number",
       "description": "Tax registration",
-      "icon": "FileText"
+      "icon": "FileText",
+      "steps": [
+        "Visit the tax office",
+        "Fill out the tax registration form",
+        "Submit required documents"
+      ],
+      "documents": [
+        "Passport or ID",
+        "Proof of employment",
+        "Proof of address"
+      ],
+      "estimatedTime": "30 minutes"
     },
     "emergency": {
       "title": "Emergency Contact",
       "description": "Set up emergency contact",
-      "icon": "Phone"
+      "icon": "Phone",
+      "steps": [
+        "Choose an emergency contact",
+        "Inform them about your stay",
+        "Share your contact details"
+      ],
+      "documents": [
+        "Emergency contact details",
+        "Your contact information"
+      ],
+      "estimatedTime": "15 minutes"
     }
-  }
+  },
+
+  "stepsToComplete": "Steps to complete",
+  "requiredDocuments": "Documents required",
+  "estimatedTime": "Estimated time to complete",
+  "detailedStepsComingSoon": "Detailed steps coming soon",
+  "markIncomplete": "Mark as Incomplete",
+  "markComplete": "Mark as Complete"
+
 }

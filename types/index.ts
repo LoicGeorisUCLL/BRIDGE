@@ -3,11 +3,12 @@ export type Language = 'pl' | 'en';
 export type Screen = 'welcome' | 'questions' | 'checklist';
 
 export interface UserProfile {
+  europeanID?: string;
+  contract?: string;
+  plukkaart?: string;
   duration?: string;
-  workType?: string;
-  experience?: string;
-  housing?: string;
-  family?: string;
+  workProvince?: string;
+  bankAccount?: string;
 }
 
 export interface Question {

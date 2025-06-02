@@ -12,7 +12,13 @@ export const metadata: Metadata = {
 export default function Document() {
   return (
     <Html lang="en">
-      <Head />
+       <Head>
+        {/* PWA stuff */}
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#1e40af" />
+        <link rel="apple-touch-icon" href="/icon-192x192.png" />
+        {/* viewport kan hier ook, maar Next voegt standaard al viewport toe in pages/_app.tsx */}
+      </Head>
       <body className="antialiased">
         <Main />
         <NextScript />

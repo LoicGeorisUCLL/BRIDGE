@@ -1,18 +1,3 @@
 {
-  "welcome": "Welcome to Bridge",
-  "subtitle": "Your guide through Belgian administration",
-  "startButton": "Get Started",
-  "languageSelector": "Select Language",
-  "backButton": "Back",
-  "nextButton": "Next",
-  "homeButton": "Home",
-  "editProfileButton": "Edit Profile",
-  "questionsTitle": "A few questions about your situation",
-  "checklistTitle": "Your task list",
-  "taskCompleted": "Completed",
-  "taskPending": "To do",
-  "viewDetails": "View details",
-  "completed": "Completed",
-  "pending": "Pending",
-  "AAA": "Acesta este un șir de testare pentru sistemul de traducere."
+
 }

@@ -13,7 +13,5 @@
   "taskPending": "To do",
   "viewDetails": "View details",
   "completed": "Completed",
-  "pending": "Pending",
-
-  "AAA": "This is a test string for the translation system."
+  "pending": "Pending"
 }

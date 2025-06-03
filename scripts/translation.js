@@ -1,6 +1,6 @@
-import fs from 'fs';
-import path from 'path';
-import { translate } from '@vitalets/google-translate-api';
+const fs = require('fs');
+const path = require('path');
+const { translate } = require('@vitalets/google-translate-api');
 // import { HttpProxyAgent } from 'http-proxy-agent';
 
 // const agent = new HttpProxyAgent('http://103.152.112.162:80');

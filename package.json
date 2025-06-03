@@ -28,6 +28,5 @@
     "tailwindcss": "^4.1.8",
     "tailwindcss-cli": "^0.1.2",
     "typescript": "^5"
-  },
-  "type": "module"
+  }
 }

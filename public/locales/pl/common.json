@@ -17,8 +17,7 @@
   "congratulations": "Gratulacje!",
   "congratulationsMessage": "Ukończyłeś wszystkie zadania! Powodzenia w Belgii.",
   "startOver": "Zacznij od nowa",
-
-"intakeQuestions": {
+  "intakeQuestions": {
     "europeanID": {
       "question": "Czy masz ważny europejski dowód osobisty lub paszport?",
       "options": [
@@ -188,5 +187,6 @@
   "markComplete": "Oznacz jako ukończone",
   "noEUTitle": "Wymagany Europejski Dowód Osobisty",
   "noEUMessage": "Ta aplikacja jest obecnie dostępna tylko dla osób z europejskimi dowodami osobistymi. Opcja dla osób spoza Europy nie jest jeszcze dostępna.",
-  "understood": "Rozumiem"
+  "understood": "Rozumiem",
+  "test": "Tłumaczenie testowe"
 }

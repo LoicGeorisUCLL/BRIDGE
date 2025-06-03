@@ -70,8 +70,7 @@
         "Am de gând să folosesc un cont străin"
       ]
     }
-},
-  
+  },
   "tasks": {
     "municipality": {
       "title": "Înregistrare la Primărie",
@@ -180,7 +179,6 @@
       "estimatedTime": "Variabil"
     }
   },
-
   "stepsToComplete": "Pași de urmat",
   "requiredDocuments": "Documente necesare",
   "estimatedTime": "Timp estimat pentru finalizare",
@@ -192,4 +190,3 @@
   "understood": "Am înțeles",
   "test": "Testare Traducere"
 }
-

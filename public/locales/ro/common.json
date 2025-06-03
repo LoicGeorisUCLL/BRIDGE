@@ -13,5 +13,62 @@
   "taskPending": "A face",
   "viewDetails": "Vizualizați detalii",
   "completed": "Completat",
-  "pending": "În așteptare"
+  "pending": "În așteptare",
+  "congratulations": "Felicitări!",
+  "congratulationsMessage": "Ați finalizat toate sarcinile! Noroc în călătoria ta în Belgia.",
+  "startOver": "Începeți din nou",
+  "intakeQuestions": {
+    "europeanID": {
+      "question": "Aveți un ID european sau pașaport valabil?",
+      "options": [
+        "Da, am un ID european sau un pașaport",
+        "Nu, am doar un document non-UE"
+      ]
+    },
+    "contract": {
+      "question": "Aveți deja un contract de muncă semnat?",
+      "options": [
+        "Da, este deja semnat",
+        "Nu, încă nu"
+      ]
+    },
+    "plukkaart": {
+      "question": "Aveți un Plukkaart (permis de muncă sezonier)?",
+      "options": [
+        "Da, îl am deja",
+        "Nu, mai trebuie să -l obțin",
+        "Nu știu ce este asta"
+      ]
+    },
+    "duration": {
+      "question": "Cât timp intenționați să lucrați în Belgia?",
+      "options": [
+        "Mai puțin de 3 luni",
+        "3–6 luni",
+        "Mai mult de 6 luni",
+        "Încă nu sunt sigur"
+      ]
+    },
+    "workProvince": {
+      "question": "În ce provincie veți lucra?",
+      "options": [
+        "Anvers",
+        "Limburg",
+        "East Flandra",
+        "West Flandra",
+        "Brabant flamand",
+        "Regiunea Bruxelles-Capital",
+        "Provinciile Paltoon",
+        "Nu sunt sigur"
+      ]
+    },
+    "bankAccount": {
+      "question": "Aveți deja un cont bancar belgian?",
+      "options": [
+        "Da, am deschis deja unul",
+        "Nu, trebuie să deschid unul",
+        "Am de gând să folosesc un cont străin"
+      ]
+    }
+  }
 }

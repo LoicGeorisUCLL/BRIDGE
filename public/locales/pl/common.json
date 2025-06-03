@@ -13,5 +13,62 @@
   "taskPending": "Do zrobienia",
   "viewDetails": "Zobacz szczegóły",
   "completed": "Ukończone",
-  "pending": "Oczekujące"
+  "pending": "Oczekujące",
+  "congratulations": "Gratulacje!",
+  "congratulationsMessage": "Wykonałeś wszystkie swoje zadania! Powodzenia w podróży w Belgii.",
+  "startOver": "Zacznij od nowa",
+  "intakeQuestions": {
+    "europeanID": {
+      "question": "Czy masz ważny europejski identyfikator lub paszport?",
+      "options": [
+        "Tak, mam europejski identyfikator lub paszport",
+        "Nie, mam tylko dokument spoza UE"
+      ]
+    },
+    "contract": {
+      "question": "Czy masz już podpisaną umowę o pracę?",
+      "options": [
+        "Tak, to już podpisano",
+        "Nie, jeszcze nie"
+      ]
+    },
+    "plukkaart": {
+      "question": "Czy masz Plukkaart (sezonowe pozwolenie na pracę)?",
+      "options": [
+        "Tak, już to mam",
+        "Nie, nadal muszę to zdobyć",
+        "Nie wiem, co to jest"
+      ]
+    },
+    "duration": {
+      "question": "Jak długo planujesz pracować w Belgii?",
+      "options": [
+        "Mniej niż 3 miesiące",
+        "3–6 miesięcy",
+        "Ponad 6 miesięcy",
+        "Jeszcze nie jestem pewien"
+      ]
+    },
+    "workProvince": {
+      "question": "W jakiej prowincji będziesz pracował?",
+      "options": [
+        "Antwerpia",
+        "Limburg",
+        "East Flanders",
+        "West Flanders",
+        "Flamandzki Brabant",
+        "Region Brukseli-kapitałowy",
+        "Prowincje Walloon",
+        "Nie jestem pewien"
+      ]
+    },
+    "bankAccount": {
+      "question": "Czy masz już belgijskie konto bankowe?",
+      "options": [
+        "Tak, już jeden otworzyłem",
+        "Nie, muszę otworzyć jeden",
+        "Planuję korzystać z konta zagranicznego"
+      ]
+    }
+  }
 }

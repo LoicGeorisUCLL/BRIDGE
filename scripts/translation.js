@@ -1,13 +1,24 @@
 import fs from 'fs';
 import path from 'path';
-import { translateText } from './translation-api'; // Same as before
+import { translate } from '@vitalets/google-translate-api';
 
+ 
 const baseLang = 'en';
-const localesDir = path.join(process.cwd(), 'locales');
+const localesDir = path.join(process.cwd(), 'public/locales');
 const baseFilePath = path.join(localesDir, baseLang, 'common.json');
 const baseFile = JSON.parse(fs.readFileSync(baseFilePath, 'utf-8'));
 
 const supportedLocales = fs.readdirSync(localesDir).filter((l) => l !== baseLang);
+
+async function translateText(text, to) {
+  try {
+    const res = await translate(text, { to });
+    return res.text;
+  } catch (e) {
+    console.error(`Translation failed for "${text}" to "${to}":`, e);
+    return '';
+  }
+}
 
 async function updateTranslations() {
   for (const locale of supportedLocales) {
@@ -24,7 +35,7 @@ async function updateTranslations() {
 
     for (const key in baseFile) {
       if (!targetTranslations[key]) {
-        const translated = await translateText(baseFile[key], baseLang, locale);
+        const translated = await translateText(baseFile[key], locale);
         updatedTranslations[key] = translated;
         console.log(`Translated [${key}]: ${baseFile[key]} → ${translated}`);
       }

@@ -14,11 +14,9 @@
   "viewDetails": "Zobacz szczegóły",
   "completed": "Ukończone",
   "pending": "Oczekujące",
-
   "congratulations": "Gratulacje!",
   "congratulationsMessage": "Ukończyłeś wszystkie zadania! Powodzenia w Belgii.",
   "startOver": "Zacznij od nowa",
-
   "intakeQuestions": {
     "europeanID": {
       "question": "Czy masz ważny europejski dowód osobisty lub paszport?",
@@ -73,7 +71,6 @@
       ]
     }
   },
-
   "tasks": {
     "municipality": {
       "title": "Rejestracja w gminie",
@@ -182,7 +179,6 @@
       "estimatedTime": "Zmienny"
     }
   },
-
   "stepsToComplete": "Kroki do ukończenia",
   "requiredDocuments": "Wymagane dokumenty",
   "estimatedTime": "Szacowany czas realizacji",
@@ -191,5 +187,6 @@
   "markComplete": "Oznacz jako ukończone",
   "noEUTitle": "Wymagany Europejski Dowód Osobisty",
   "noEUMessage": "Ta aplikacja jest obecnie dostępna tylko dla osób z europejskimi dowodami osobistymi. Opcja dla osób spoza Europy nie jest jeszcze dostępna.",
-  "understood": "Rozumiem"
+  "understood": "Rozumiem",
+  "test": "To jest przesłanie testowe."
 }

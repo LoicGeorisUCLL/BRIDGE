@@ -17,7 +17,6 @@
   "congratulations": "Čestitamo!",
   "congratulationsMessage": "Dovršili ste sve zadatke! Sretno u vašem boravku u Belgiji.",
   "startOver": "Započni ispočetka",
-
   "intakeQuestions": {
     "europeanID": {
       "question": "Imate li valjanu europsku osobnu iskaznicu ili putovnicu?",
@@ -72,7 +71,6 @@
       ]
     }
   },
-
   "tasks": {
     "municipality": {
       "title": "Općinska registracija",
@@ -181,7 +179,6 @@
       "estimatedTime": "Varira"
     }
   },
-
   "stepsToComplete": "Koraci za dovršetak",
   "requiredDocuments": "Potrebni dokumenti",
   "estimatedTime": "Procijenjeno vrijeme za dovršetak",
@@ -190,6 +187,5 @@
   "markComplete": "Označi kao dovršeno",
   "noEUTitle": "Potreban europski dokument",
   "noEUMessage": "Aplikacija je trenutno dostupna samo osobama s europskim dokumentima. Verzija za osobe izvan Europe još nije dostupna.",
-  "understood": "Razumijem",
-  "test": "Testni prijevod"
+  "understood": "Razumijem"
 }

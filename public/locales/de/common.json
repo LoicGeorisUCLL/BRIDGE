@@ -17,7 +17,6 @@
   "congratulations": "Herzlichen Glückwunsch!",
   "congratulationsMessage": "Sie haben alle Ihre Aufgaben erledigt! Viel Erfolg auf Ihrer Reise in Belgien.",
   "startOver": "Neu starten",
-
   "intakeQuestions": {
     "europeanID": {
       "question": "Haben Sie einen gültigen europäischen Ausweis oder Reisepass?",
@@ -72,7 +71,6 @@
       ]
     }
   },
-
   "tasks": {
     "municipality": {
       "title": "Anmeldung bei der Gemeinde",
@@ -181,7 +179,6 @@
       "estimatedTime": "Variabel"
     }
   },
-
   "stepsToComplete": "Schritte zum Abschluss",
   "requiredDocuments": "Benötigte Dokumente",
   "estimatedTime": "Geschätzte Dauer",
@@ -190,6 +187,5 @@
   "markComplete": "Als abgeschlossen markieren",
   "noEUTitle": "Europäischer Ausweis erforderlich",
   "noEUMessage": "Diese App ist derzeit nur für Personen mit europäischem Ausweis verfügbar. Eine Option für Nicht-EU-Bürger ist noch in Arbeit.",
-  "understood": "Verstanden",
-  "test": "Testübersetzung"
+  "understood": "Verstanden"
 }

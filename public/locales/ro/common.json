@@ -1,3 +1,17 @@
 {
-
+  "welcome": "Bine ați venit la pod",
+  "subtitle": "Ghidul dvs. prin administrația belgiană",
+  "startButton": "Începeți",
+  "languageSelector": "Selectați limba",
+  "backButton": "Spate",
+  "nextButton": "Următorul",
+  "homeButton": "Acasă",
+  "editProfileButton": "Editați profilul",
+  "questionsTitle": "Câteva întrebări despre situația dvs.",
+  "checklistTitle": "Lista de sarcini",
+  "taskCompleted": "Completat",
+  "taskPending": "A face",
+  "viewDetails": "Vizualizați detalii",
+  "completed": "Completat",
+  "pending": "În așteptare"
 }

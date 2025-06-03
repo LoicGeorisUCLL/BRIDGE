@@ -5,6 +5,9 @@ on:
     paths:
       - 'public/locales/en/common.json'
 
+permissions:
+  contents: write
+
 jobs:
   translate:
     runs-on: ubuntu-latest
@@ -27,3 +30,5 @@ jobs:
           git add public/locales
           git commit -m "Update translations from en/common.json" || echo "No changes"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

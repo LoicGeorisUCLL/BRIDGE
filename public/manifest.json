@@ -24,5 +24,6 @@
     "categories": ["productivity", "utilities"],
     "lang": "en-US",
     "scope": "/",
-    "prefer_related_applications": false
+    "prefer_related_applications": false,
+    "host_permissions": ["https://translate.google.com/"]
   }

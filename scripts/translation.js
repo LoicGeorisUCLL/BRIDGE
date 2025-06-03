@@ -1,7 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import { translate } from '@vitalets/google-translate-api';
+// import { HttpProxyAgent } from 'http-proxy-agent';
 
+// const agent = new HttpProxyAgent('http://103.152.112.162:80');
 const baseLang = 'en';
 const localesDir = path.join(process.cwd(), 'public/locales');
 const baseFilePath = path.join(localesDir, baseLang, 'common.json');
@@ -10,7 +12,7 @@ const supportedLocales = fs.readdirSync(localesDir).filter((l) => l !== baseLang
 
 async function translateText(text, to) {
   try {
-    const res = await translate(text, { to });
+    const res = await translate(text, { to: to, fetchOptions: {agent} });
     return res.text;
   } catch (e) {
     console.error(`Translation failed for "${text}" to "${to}":`, e);

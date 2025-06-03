@@ -47,6 +47,11 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
               <option value="en">English</option>
               <option value="pl">Polski</option>
               <option value="ro">Română</option>
+              <option value="cs">Čeština</option>
+              <option value="hr">Hrvatski</option>
+              <option value="ru">Русский</option>
+              <option value="uk">Українська</option>
+              <option value="de">Deutsch</option>
             </select>
           </div>
           

@@ -1,0 +1,195 @@
+{
+  "welcome": "Vítejte v Bridge",
+  "subtitle": "Váš průvodce belgickou administrativou",
+  "startButton": "Začít",
+  "languageSelector": "Vyberte jazyk",
+  "backButton": "Zpět",
+  "nextButton": "Další",
+  "homeButton": "Domů",
+  "editProfileButton": "Upravit profil",
+  "questionsTitle": "Několik otázek o vaší situaci",
+  "checklistTitle": "Váš seznam úkolů",
+  "taskCompleted": "Dokončeno",
+  "taskPending": "K vyřízení",
+  "viewDetails": "Zobrazit podrobnosti",
+  "completed": "Dokončeno",
+  "pending": "Nevyřízeno",
+  "congratulations": "Gratulujeme!",
+  "congratulationsMessage": "Dokončili jste všechny úkoly! Hodně štěstí v Belgii.",
+  "startOver": "Začít znovu",
+
+  "intakeQuestions": {
+    "europeanID": {
+      "question": "Máte platný evropský občanský průkaz nebo pas?",
+      "options": [
+        "Ano, mám evropský občanský průkaz nebo pas",
+        "Ne, mám pouze dokument mimo EU"
+      ]
+    },
+    "contract": {
+      "question": "Máte již podepsanou pracovní smlouvu?",
+      "options": [
+        "Ano, už je podepsaná",
+        "Ne, zatím ne"
+      ]
+    },
+    "plukkaart": {
+      "question": "Máte plukkaart (povolení k sezónní práci)?",
+      "options": [
+        "Ano, už ji mám",
+        "Ne, ještě ji musím získat",
+        "Nevím, co to je"
+      ]
+    },
+    "duration": {
+      "question": "Jak dlouho plánujete pracovat v Belgii?",
+      "options": [
+        "Méně než 3 měsíce",
+        "3–6 měsíců",
+        "Více než 6 měsíců",
+        "Ještě nevím"
+      ]
+    },
+    "workProvince": {
+      "question": "Ve které provincii budete pracovat?",
+      "options": [
+        "Antverpy",
+        "Limburk",
+        "Východní Flandry",
+        "Západní Flandry",
+        "Vlámský Brabant",
+        "Bruselský region",
+        "Valonské provincie",
+        "Ještě nevím"
+      ]
+    },
+    "bankAccount": {
+      "question": "Máte již belgický bankovní účet?",
+      "options": [
+        "Ano, už jsem si ho založil(a)",
+        "Ne, potřebuji si ho založit",
+        "Plánuji používat zahraniční účet"
+      ]
+    }
+  },
+
+  "tasks": {
+    "municipality": {
+      "title": "Registrace na obecním úřadě",
+      "description": "Zaregistrujte se na obecním úřadě",
+      "icon": "Building",
+      "steps": [
+        "Navštivte místní obecní úřad",
+        "Přineste si potřebné dokumenty",
+        "Dokončete proces registrace"
+      ],
+      "documents": [
+        "Pas nebo občanský průkaz",
+        "Doklad o adrese",
+        "Pracovní smlouva"
+      ],
+      "estimatedTime": "1 hodina"
+    },
+    "contract": {
+      "title": "Pracovní smlouva a Plukkaart",
+      "description": "Podepište smlouvu a získejte plukkaart",
+      "icon": "FileText",
+      "steps": [
+        "Zkontrolujte a podepište pracovní smlouvu",
+        "Požádejte o plukkaart a získejte ji",
+        "Bezpečně uložte oba dokumenty"
+      ],
+      "documents": [
+        "Pas nebo občanský průkaz",
+        "Údaje o zaměstnavateli"
+      ],
+      "estimatedTime": "30 minut"
+    },
+    "health": {
+      "title": "Zdravotní pojištění",
+      "description": "Zařiďte si zdravotní pojištění přes zaměstnavatele nebo samostatně",
+      "icon": "Shield",
+      "steps": [
+        "Zeptejte se zaměstnavatele, zda je pojištění součástí",
+        "Pokud není, vyberte si zdravotní pojišťovnu (mutualiteit)",
+        "Zaregistrujte se a odevzdejte potřebné dokumenty"
+      ],
+      "documents": [
+        "Pas nebo občanský průkaz",
+        "Pracovní smlouva",
+        "Registrace na obecním úřadě"
+      ],
+      "estimatedTime": "45 minut"
+    },
+    "bijlage3": {
+      "title": "Bijlage 3",
+      "description": "Dočasný pobytový dokument (Příloha 3)",
+      "icon": "FileText",
+      "steps": [
+        "Navštivte místní obecní úřad",
+        "Požádejte o dokument Bijlage 3",
+        "Počkejte na schválení a vyzvedněte si dokument"
+      ],
+      "documents": [
+        "Pas nebo občanský průkaz",
+        "Doklad o pobytu",
+        "Pracovní smlouva"
+      ],
+      "estimatedTime": "30 minut"
+    },
+    "emergency": {
+      "title": "Nouzový kontakt",
+      "description": "Nastavte kontakt pro nouzové situace",
+      "icon": "Phone",
+      "steps": [
+        "Vyberte kontaktní osobu",
+        "Sdělte její údaje zaměstnavateli",
+        "Mějte tyto informace po ruce"
+      ],
+      "documents": [
+        "Jméno a telefonní číslo",
+        "Váš vztah k osobě"
+      ],
+      "estimatedTime": "15 minut"
+    },
+    "bank": {
+      "title": "Bankovní účet",
+      "description": "Založte si belgický bankovní účet",
+      "icon": "CreditCard",
+      "steps": [
+        "Vyberte si banku",
+        "Navštivte pobočku nebo zažádejte online",
+        "Dodejte potřebné dokumenty"
+      ],
+      "documents": [
+        "Pas nebo občanský průkaz",
+        "Doklad o adrese",
+        "Pracovní smlouva"
+      ],
+      "estimatedTime": "1 hodina"
+    },
+    "practical": {
+      "title": "Praktické informace",
+      "description": "Užitečné tipy pro život a práci v Belgii",
+      "icon": "FileText",
+      "steps": [
+        "Seznamte se se svými pracovními právy",
+        "Zjistěte nouzová čísla",
+        "Poznejte odpovědnosti zaměstnavatele"
+      ],
+      "documents": [],
+      "estimatedTime": "Různé"
+    }
+  },
+
+  "stepsToComplete": "Kroky k dokončení",
+  "requiredDocuments": "Požadované dokumenty",
+  "estimatedTime": "Odhadovaný čas dokončení",
+  "detailedStepsComingSoon": "Podrobné kroky brzy přibudou",
+  "markIncomplete": "Označit jako nedokončené",
+  "markComplete": "Označit jako dokončené",
+  "noEUTitle": "Vyžadován evropský doklad",
+  "noEUMessage": "Tato aplikace je momentálně dostupná pouze pro osoby s evropskými doklady. Verze pro mimoevropské občany zatím není dostupná.",
+  "understood": "Rozumím",
+  "test": "Testovací překlad"
+}

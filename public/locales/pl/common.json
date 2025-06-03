@@ -188,5 +188,6 @@
   "noEUTitle": "Wymagany Europejski Dowód Osobisty",
   "noEUMessage": "Ta aplikacja jest obecnie dostępna tylko dla osób z europejskimi dowodami osobistymi. Opcja dla osób spoza Europy nie jest jeszcze dostępna.",
   "understood": "Rozumiem",
-  "test": "To jest przesłanie testowe."
+  "test": "To jest przesłanie testowe.",
+  "AAA": "To jest niewielka wiadomość testowa."
 }

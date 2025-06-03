@@ -190,7 +190,5 @@
   "markComplete": "Mark as Complete",
   "noEUTitle": "European ID Required",
   "noEUMessage": "This app is currently only available for people with European IDs. The option for non-European people is not out yet.",
-  "understood": "Understood",
-  "test": "Test Translation"
-
+  "understood": "Understood"
 }

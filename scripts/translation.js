@@ -12,7 +12,8 @@ const supportedLocales = fs.readdirSync(localesDir).filter((l) => l !== baseLang
 
 async function translateText(text, to) {
   try {
-    const res = await translate(text, { to: to, fetchOptions: {agent} });
+    const res = await translate(text, { to });
+    // const res = await translate(text, { to: to, fetchOptions: {agent} });
     return res.text;
   } catch (e) {
     console.error(`Translation failed for "${text}" to "${to}":`, e);

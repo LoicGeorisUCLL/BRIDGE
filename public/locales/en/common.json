@@ -71,6 +71,126 @@
       "I plan to use a foreign account"
     ]
   }
-}
+},
+
+  "tasks": {
+    "municipality": {
+      "title": "Municipal Registration",
+      "description": "Register at the town hall",
+      "icon": "Building",
+      "steps": [
+        "Visit your local municipality",
+        "Bring your documents",
+        "Complete the registration process"
+      ],
+      "documents": [
+        "Passport or ID",
+        "Proof of address",
+        "Employment contract"
+      ],
+      "estimatedTime": "1 hour"
+    },
+    "contract": {
+      "title": "Employment Contract & Plukkaart",
+      "description": "Sign your contract and receive your plukkaart",
+      "icon": "FileText",
+      "steps": [
+        "Review and sign the employment contract",
+        "Request and obtain your plukkaart",
+        "Store both documents safely"
+      ],
+      "documents": [
+        "Passport or ID",
+        "Employer details"
+      ],
+      "estimatedTime": "30 minutes"
+    },
+    "health": {
+      "title": "Health Insurance",
+      "description": "Arrange health insurance via your employer or independently",
+      "icon": "Shield",
+      "steps": [
+        "Ask your employer about included health insurance",
+        "If not covered, choose a health fund (mutualiteit)",
+        "Register and submit required documents"
+      ],
+      "documents": [
+        "Passport or ID",
+        "Employment contract",
+        "Municipal registration"
+      ],
+      "estimatedTime": "45 minutes"
+    },
+    "bijlage3": {
+      "title": "Bijlage 3",
+      "description": "Temporary residence document (Annex 3)",
+      "icon": "FileText",
+      "steps": [
+        "Go to the local municipality",
+        "Request Bijlage 3 document",
+        "Wait for approval and collect"
+      ],
+      "documents": [
+        "Passport or ID",
+        "Proof of residence",
+        "Employment contract"
+      ],
+      "estimatedTime": "30 minutes"
+    },
+    "emergency": {
+      "title": "Emergency Contact",
+      "description": "Set up an emergency contact",
+      "icon": "Phone",
+      "steps": [
+        "Choose a contact person",
+        "Share their information with your employer",
+        "Keep their details accessible"
+      ],
+      "documents": [
+        "Name and phone number",
+        "Relationship to you"
+      ],
+      "estimatedTime": "15 minutes"
+    },
+    "bank": {
+      "title": "Bank Account",
+      "description": "Open a Belgian bank account",
+      "icon": "CreditCard",
+      "steps": [
+        "Choose a bank",
+        "Visit a branch or apply online",
+        "Submit the required documents"
+      ],
+      "documents": [
+        "Passport or ID",
+        "Proof of address",
+        "Employment contract"
+      ],
+      "estimatedTime": "1 hour"
+    },
+    "practical": {
+      "title": "Practical Information",
+      "description": "Useful tips for living and working in Belgium",
+      "icon": "FileText",
+      "steps": [
+        "Understand your worker rights",
+        "Learn local emergency numbers",
+        "Know your employer responsibilities"
+      ],
+      "documents": [],
+      "estimatedTime": "Variable"
+    }
+  },
+
+  "stepsToComplete": "Steps to complete",
+  "requiredDocuments": "Documents required",
+  "estimatedTime": "Estimated time to complete",
+  "detailedStepsComingSoon": "Detailed steps coming soon",
+  "markIncomplete": "Mark as Incomplete",
+  "markComplete": "Mark as Complete",
+  "noEUTitle": "European ID Required",
+  "noEUMessage": "This app is currently only available for people with European IDs. The option for non-European people is not out yet.",
+  "understood": "Understood",
+  "test": "Test Translation"
 
 }

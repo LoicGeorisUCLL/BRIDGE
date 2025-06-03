@@ -41,6 +41,11 @@ async function translateNestedObject(obj, locale, existingTranslations = {}) {
           result[key][i] = existingTranslations[key][i];
         } else {
           // Translate new array item
+          if (key === "icon") { // Special case for icons, do not translate
+          result[key][i] = obj[key][i];
+          console.log(`Skipping translation for icon [${key}[${i}]]: ${obj[key][i]}`);
+          continue; 
+        }
           const translated = await translateText(obj[key][i], locale);
           result[key][i] = translated;
           console.log(`Translated [${key}[${i}]]: ${obj[key][i]} → ${translated}`);

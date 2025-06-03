@@ -194,5 +194,6 @@
   "noEUMessage": "This app is currently only available for people with European IDs. The option for non-European people is not out yet.",
   "understood": "Understood",
 
-  "AAA": "This is a small test message."
+  "AAA": "This is a small test message.",
+  "BBB": "This is another test message."
 }

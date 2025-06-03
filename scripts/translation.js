@@ -1,21 +1,22 @@
 import fs from 'fs';
 import path from 'path';
-import { translateText } from './translate-api'; // Your wrapper for DeepL/Google Translate
+import { translateText } from './translation-api'; // Same as before
 
 const baseLang = 'en';
 const localesDir = path.join(process.cwd(), 'locales');
-const baseFile = require(path.join(localesDir, baseLang, 'common.js'));
+const baseFilePath = path.join(localesDir, baseLang, 'common.json');
+const baseFile = JSON.parse(fs.readFileSync(baseFilePath, 'utf-8'));
 
-const supportedLocales = fs.readdirSync(localesDir).filter(l => l !== baseLang);
+const supportedLocales = fs.readdirSync(localesDir).filter((l) => l !== baseLang);
 
 async function updateTranslations() {
   for (const locale of supportedLocales) {
-    const targetPath = path.join(localesDir, locale, 'common.js');
+    const targetPath = path.join(localesDir, locale, 'common.json');
     let targetTranslations = {};
 
     try {
-      targetTranslations = require(targetPath);
-    } catch (e) {
+      targetTranslations = JSON.parse(fs.readFileSync(targetPath, 'utf-8'));
+    } catch {
       console.warn(`Could not load ${locale}, starting fresh.`);
     }
 
@@ -29,11 +30,7 @@ async function updateTranslations() {
       }
     }
 
-    fs.writeFileSync(
-      targetPath,
-      'module.exports = ' + JSON.stringify(updatedTranslations, null, 2),
-      'utf-8'
-    );
+    fs.writeFileSync(targetPath, JSON.stringify(updatedTranslations, null, 2), 'utf-8');
   }
 }
 

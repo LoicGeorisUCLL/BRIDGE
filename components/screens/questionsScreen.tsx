@@ -3,6 +3,7 @@ import { ChevronRight, ChevronLeft } from 'lucide-react';
 import { useTranslation } from "next-i18next";
 import { Screen, UserProfile } from '@/types';
 import NoEUPopup from '../popups/noEUPopup';
+import QuestionsJSON from '../../public/locales/en/questions.json';
 
 interface QuestionsScreenProps {
   setUserProfile: (profile: any) => void;
@@ -20,21 +21,11 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
   setCurrentScreen
 }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [showNoEUPopup, setShowNoEUPopup] = useState(false);
+  // const [showNoEUPopup, setShowNoEUPopup] = useState(false);
   const { t: tq } = useTranslation("questions");
   const { t } = useTranslation("common");
 
-  const TOTAL_QUESTIONS = 6;
-
-  const getQuestionName = (index: number): string => {
-    const name = index === 0 ? "europeanID" :
-      index === 1 ? "contract" :
-      index === 2 ? "plukkaart" :
-      index === 3 ? "duration" :
-      index === 4 ? "workProvince" :
-      "bankAccount"
-    return name;
-  };
+  const TOTAL_QUESTIONS = Object.keys(QuestionsJSON.intakeQuestions).length;
 
   const handleBack = () => {
     if (currentQuestionIndex > 0) {
@@ -44,18 +35,19 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
       setCurrentScreen('welcome');
   };
 
-  const handleQuestionAnswer = (index: number) => {
-    const key = getQuestionName(currentQuestionIndex);
+  const handleQuestionAnswer = (answerIndex: number) => {
+    // Initialize answers array if it doesn't exist
+    const currentAnswers = userProfile?.answers || [];
     
-    if (key === "europeanID" && index === 1) {
-      setShowNoEUPopup(true);
-      return;
-    }
+    // Create a new answers array with the answer at the correct position
+    const updatedAnswers = [...currentAnswers];
+    updatedAnswers[currentQuestionIndex] = answerIndex;
 
     const updatedProfile = {
       ...userProfile,
-      [key]: index,
+      answers: updatedAnswers,
     };
+    
     setUserProfile(updatedProfile);
 
     if (currentQuestionIndex < TOTAL_QUESTIONS - 1) {
@@ -66,13 +58,30 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
     }
   };
 
-  const handleCloseNoEUPopup = () => {
-    setShowNoEUPopup(false);
-  };
+  // const handleCloseNoEUPopup = () => {
+  //   setShowNoEUPopup(false);
+  // };
 
-  const currentQuestion = getQuestionName(currentQuestionIndex);
-  const currentAnswer = userProfile[currentQuestion as keyof UserProfile] ?? null;
-  console.log(currentAnswer)
+  const currentAnswer = userProfile?.answers?.[currentQuestionIndex];
+
+  // Early return if no questions available
+  if (TOTAL_QUESTIONS === 0) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <h3 className="text-xl font-semibold text-gray-900 mb-4">
+            {t("noQuestionsAvailable") || "No questions available"}
+          </h3>
+          <button 
+            onClick={() => setCurrentScreen('welcome')}
+            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+          >
+            {t("goBack") || "Go Back"}
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -100,31 +109,31 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
 
         <div className="p-6">
           <h3 className="text-xl font-semibold text-gray-900 mb-6">
-            {tq(`intakeQuestions.${currentQuestion}.question`)}
+            {tq(`intakeQuestions.${String(currentQuestionIndex)}.question`)}
           </h3>
           <div className="space-y-3">
-            {((tq(`intakeQuestions.${currentQuestion}.${"options"}`, { returnObjects: true })) as string[]).map((option, index) => (
+            {((tq(`intakeQuestions.${String(currentQuestionIndex)}.${"options"}`, { returnObjects: true })) as string[]).map((option, index) => (
               <button
                 key={index}
                 onClick={() => handleQuestionAnswer(index)}
                 className={`w-full p-4 text-left rounded-lg border transition-colors ${
-                  currentAnswer !== null && parseInt(currentAnswer) === index
+                  currentAnswer !== undefined && currentAnswer === index
                     ? "bg-green-100 border-green-500 hover:bg-green-200"
                     : "bg-white border-gray-200 hover:border-blue-500 hover:bg-blue-50"
                 }`}
               >
                 <span className="text-gray-900">{option}</span>
-                <ChevronRight className={`w-5 h-5 float-right mt-0.5 ${ currentAnswer !== null && parseInt(currentAnswer) === index? "text-green-600": "text-gray-400"}`} />
+                <ChevronRight className={`w-5 h-5 float-right mt-0.5 ${ currentAnswer !== undefined && currentAnswer === index? "text-green-600": "text-gray-400"}`} />
               </button>
             ))}
           </div>
         </div>
       </div>
 
-      <NoEUPopup 
+      {/* <NoEUPopup 
         show={showNoEUPopup} 
         onClose={handleCloseNoEUPopup} 
-      />
+      /> */}
     </>
   );
 };

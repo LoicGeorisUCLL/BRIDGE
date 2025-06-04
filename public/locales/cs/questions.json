@@ -1,20 +1,20 @@
 {
   "intakeQuestions": {
-    "europeanID": {
+    "0": {
       "question": "Máte platný evropský občanský průkaz nebo pas?",
       "options": [
         "Ano, mám evropský občanský průkaz nebo pas",
         "Ne, mám pouze dokument mimo EU"
       ]
     },
-    "contract": {
+    "1": {
       "question": "Máte již podepsanou pracovní smlouvu?",
       "options": [
         "Ano, už je podepsaná",
         "Ne, zatím ne"
       ]
     },
-    "plukkaart": {
+    "2": {
       "question": "Máte plukkaart (povolení k sezónní práci)?",
       "options": [
         "Ano, už ji mám",
@@ -22,7 +22,7 @@
         "Nevím, co to je"
       ]
     },
-    "duration": {
+    "3": {
       "question": "Jak dlouho plánujete pracovat v Belgii?",
       "options": [
         "Méně než 3 měsíce",
@@ -31,7 +31,7 @@
         "Ještě nevím"
       ]
     },
-    "workProvince": {
+    "4": {
       "question": "Ve které provincii budete pracovat?",
       "options": [
         "Antverpy",
@@ -44,7 +44,7 @@
         "Ještě nevím"
       ]
     },
-    "bankAccount": {
+    "5": {
       "question": "Máte již belgický bankovní účet?",
       "options": [
         "Ano, už jsem si ho založil(a)",

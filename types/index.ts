@@ -1,12 +1,7 @@
 export type Screen = 'welcome' | 'questions' | 'checklist';
 
 export interface UserProfile {
-  europeanID?: string;
-  contract?: string;
-  plukkaart?: string;
-  duration?: string;
-  workProvince?: string;
-  bankAccount?: string;
+  answers: number[];
 }
 
 export interface Question {

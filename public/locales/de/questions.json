@@ -1,20 +1,20 @@
 {
   "intakeQuestions": {
-    "europeanID": {
+    "0": {
       "question": "Haben Sie einen gültigen europäischen Ausweis oder Reisepass?",
       "options": [
         "Ja, ich habe einen europäischen Ausweis oder Reisepass",
         "Nein, ich habe nur ein Nicht-EU-Dokument"
       ]
     },
-    "contract": {
+    "1": {
       "question": "Haben Sie bereits einen unterzeichneten Arbeitsvertrag?",
       "options": [
         "Ja, er ist bereits unterzeichnet",
         "Nein, noch nicht"
       ]
     },
-    "plukkaart": {
+    "2": {
       "question": "Haben Sie eine Plukkaart (Saisonarbeitserlaubnis)?",
       "options": [
         "Ja, ich habe sie bereits",
@@ -22,7 +22,7 @@
         "Ich weiß nicht, was das ist"
       ]
     },
-    "duration": {
+    "3": {
       "question": "Wie lange planen Sie, in Belgien zu arbeiten?",
       "options": [
         "Weniger als 3 Monate",
@@ -31,7 +31,7 @@
         "Noch nicht sicher"
       ]
     },
-    "workProvince": {
+    "4": {
       "question": "In welcher Provinz werden Sie arbeiten?",
       "options": [
         "Antwerpen",
@@ -44,7 +44,7 @@
         "Noch nicht sicher"
       ]
     },
-    "bankAccount": {
+    "5": {
       "question": "Haben Sie bereits ein belgisches Bankkonto?",
       "options": [
         "Ja, ich habe bereits eines eröffnet",

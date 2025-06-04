@@ -1,20 +1,20 @@
 {
   "intakeQuestions": {
-    "europeanID": {
+    "0": {
       "question": "Aveți un ID european sau pașaport valabil?",
       "options": [
         "Da, am un ID european sau un pașaport",
         "Nu, am doar un document non-UE"
       ]
     },
-    "contract": {
+    "1": {
       "question": "Aveți deja un contract de muncă semnat?",
       "options": [
         "Da, este deja semnat",
         "Nu, încă nu"
       ]
     },
-    "plukkaart": {
+    "2": {
       "question": "Aveți un Plukkaart (permis de muncă sezonier)?",
       "options": [
         "Da, îl am deja",
@@ -22,7 +22,7 @@
         "Nu știu ce este asta"
       ]
     },
-    "duration": {
+    "3": {
       "question": "Cât timp intenționați să lucrați în Belgia?",
       "options": [
         "Mai puțin de 3 luni",
@@ -31,7 +31,7 @@
         "Încă nu sunt sigur"
       ]
     },
-    "workProvince": {
+    "4": {
       "question": "În ce provincie veți lucra?",
       "options": [
         "Anvers",
@@ -44,7 +44,7 @@
         "Nu sunt sigur"
       ]
     },
-    "bankAccount": {
+    "5": {
       "question": "Aveți deja un cont bancar belgian?",
       "options": [
         "Da, am deschis deja unul",

@@ -160,34 +160,65 @@ TASK DEFINITIONS FROM BRIDGE APP:
 - practical: Practical information and worker rights
 
 USER PROFILE STRUCTURE:
-- europeanID: "0" (No EU ID) or "1" (Has EU ID)
-- contract: "0" (No contract) or "1" (Has contract)
-- plukkaart: "0" (No plukkaart), "1" (Has plukkaart), "2" (Don't know what it is)
-- duration: "0" (<3 months), "1" (3-6 months), "2" (>6 months), "3" (Not sure)
-- workProvince: "0"-"7" (Antwerp, Limburg, East Flanders, West Flanders, Flemish Brabant, Brussels, Walloon, Not sure)
-- bankAccount: "0" (Need to open), "1" (Already have), "2" (Use foreign account)
+The user answers are stored in a UserProfile.answers array where each index corresponds to a question:
 
-The numbers must be strings, not integers.
+QUESTIONS AND ANSWER MAPPING:
+- answers[0]: European ID question
+  - 0: "Yes, I have a European ID or passport"
+  - 1: "No, I only have a non-EU document"
+
+- answers[1]: Employment contract question
+  - 0: "Yes, it's already signed"
+  - 1: "No, not yet"
+
+- answers[2]: Plukkaart (seasonal work permit) question
+  - 0: "Yes, I already have it"
+  - 1: "No, I still need to get it"
+  - 2: "I don't know what that is"
+
+- answers[3]: Work duration question
+  - 0: "Less than 3 months"
+  - 1: "3–6 months"
+  - 2: "More than 6 months"
+  - 3: "Not sure yet"
+
+- answers[4]: Work province question
+  - 0: "Antwerp"
+  - 1: "Limburg"
+  - 2: "East Flanders"
+  - 3: "West Flanders"
+  - 4: "Flemish Brabant"
+  - 5: "Brussels-Capital Region"
+  - 6: "Walloon provinces"
+  - 7: "Not sure"
+
+- answers[5]: Bank account question
+  - 0: "Yes, I already opened one"
+  - 1: "No, I need to open one"
+  - 2: "I plan to use a foreign account"
 
 INSTRUCTIONS:
 1. Analyze the updated regulations for changes in Belgian work permit requirements
 2. Update the generatePersonalizedTasks function logic based on new regulations
-3. Pay special attention to:
-   - EU vs non-EU worker requirements
-   - Work duration thresholds (90 days rule, single permit requirements)
-   - Regional differences (Flanders vs Wallonia vs Brussels)
-   - Seasonal work permit (plukkaart) requirements
-   - Banking and residence requirements
+3. The function should access user responses via profile.answers[questionIndex]
+4. Pay special attention to:
+   - EU vs non-EU worker requirements (answers[0])
+   - Work duration thresholds - 90 days rule, single permit requirements (answers[3])
+   - Regional differences - Flanders vs Wallonia vs Brussels (answers[4])
+   - Seasonal work permit (plukkaart) requirements (answers[2])
+   - Banking and residence requirements (answers[5])
+   - Employment contract status (answers[1])
 
-4. Maintain the existing TypeScript structure and imports
-5. Only include tasks that are actually required based on the regulations
-6. Add comments explaining the regulatory basis for each decision
+5. Maintain the existing TypeScript structure and imports
+6. Only include tasks that are actually required based on the regulations
+7. Add comments explaining the regulatory basis for each decision
 
 IMPORTANT: 
 - Return ONLY the complete TypeScript file content
 - Keep the existing import structure
 - Ensure all logic is based on the current Belgian regulations provided
 - Focus on work permits, residence requirements, and mandatory registrations
+- Use profile.answers[index] to access user responses
 
 Based on the regulations above, generate the updated logic.tsx file:
 

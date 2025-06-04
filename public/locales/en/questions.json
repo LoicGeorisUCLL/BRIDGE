@@ -1,19 +1,19 @@
 {"intakeQuestions": {
-  "europeanID": {
+  "0": {
     "question": "Do you have a valid European ID or passport?",
     "options": [
       "Yes, I have a European ID or passport",
       "No, I only have a non-EU document"
     ]
   },
-  "contract": {
+  "1": {
     "question": "Do you already have a signed employment contract?",
     "options": [
       "Yes, it's already signed",
       "No, not yet"
     ]
   },
-  "plukkaart": {
+  "2": {
     "question": "Do you have a plukkaart (seasonal work permit)?",
     "options": [
       "Yes, I already have it",
@@ -21,7 +21,7 @@
       "I don't know what that is"
     ]
   },
-  "duration": {
+  "3": {
     "question": "How long do you plan to work in Belgium?",
     "options": [
       "Less than 3 months",
@@ -30,7 +30,7 @@
       "Not sure yet"
     ]
   },
-  "workProvince": {
+  "4": {
     "question": "In which province will you be working?",
     "options": [
       "Antwerp",
@@ -43,7 +43,7 @@
       "Not sure"
     ]
   },
-  "bankAccount": {
+  "5": {
     "question": "Do you already have a Belgian bank account?",
     "options": [
       "Yes, I already opened one",

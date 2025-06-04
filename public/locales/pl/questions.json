@@ -1,20 +1,20 @@
 {
   "intakeQuestions": {
-    "europeanID": {
+    "0": {
       "question": "Czy masz ważny europejski dowód osobisty lub paszport?",
       "options": [
         "Tak, mam europejski dokument tożsamości lub paszport",
         "Nie, mam tylko dokument spoza UE"
       ]
     },
-    "contract": {
+    "1": {
       "question": "Czy masz już podpisaną umowę o pracę?",
       "options": [
         "Tak, już podpisana",
         "Nie, jeszcze nie"
       ]
     },
-    "plukkaart": {
+    "2": {
       "question": "Czy masz plukkaart (zezwolenie na pracę sezonową)?",
       "options": [
         "Tak, już mam",
@@ -22,7 +22,7 @@
         "Nie wiem, co to jest"
       ]
     },
-    "duration": {
+    "3": {
       "question": "Jak długo planujesz zostać w Belgii?",
       "options": [
         "Mniej niż 3 miesiące",
@@ -31,7 +31,7 @@
         "Jeszcze nie wiem"
       ]
     },
-    "workProvince": {
+    "4": {
       "question": "W jakiej prowincji będziesz pracować?",
       "options": [
         "Antwerpia",
@@ -44,7 +44,7 @@
         "Nie wiem"
       ]
     },
-    "bankAccount": {
+    "5": {
       "question": "Czy masz już belgijskie konto bankowe?",
       "options": [
         "Tak, już je otworzyłem(-am)",

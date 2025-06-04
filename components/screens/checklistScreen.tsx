@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { Home, User, CheckCircle, Circle, ChevronRight, MapPin, FileText, Globe, Phone, Building, CreditCard, Shield, Briefcase, Trophy, X, RotateCcw } from 'lucide-react';
 import { UserProfile, Tasks } from '@/types';
 import { useTranslation } from "next-i18next";

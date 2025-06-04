@@ -1,5 +1,5 @@
 {
-    "intakeQuestions": {
+  "intakeQuestions": {
     "europeanID": {
       "question": "У вас есть действительный европейский паспорт или удостоверение личности?",
       "options": [

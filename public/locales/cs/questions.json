@@ -1,4 +1,5 @@
-{"intakeQuestions": {
+{
+  "intakeQuestions": {
     "europeanID": {
       "question": "Máte platný evropský občanský průkaz nebo pas?",
       "options": [

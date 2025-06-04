@@ -1,0 +1,22 @@
+{
+  "regulations": [
+    {
+      "id": 1,
+      "content": "All seasonal workers stayin for more than 3 months must be registered with the local authorities."
+    },
+    {
+      "id": 2,
+      "content": "All seasonal workers must have a valid work contract issued by their employer."
+    },
+    {
+      "id": 3,
+      "content": "All seasonal workers must have health insurance coverage for the duration of their stay."
+    },
+    {
+      "id": 4,
+      "content": "All seasonal workers must have a bank account in the country of employment to receive their wages."
+    }
+  ],
+  "lastUpdated": "2025-06-04T17:44:05.954Z",
+  "source": "https://bridgeregulations.up.railway.app"
+}

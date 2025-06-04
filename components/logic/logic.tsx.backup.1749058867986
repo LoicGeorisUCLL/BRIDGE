@@ -1,0 +1,43 @@
+Here is the updated `generatePersonalizedTasks` function based on the new regulations:
+
+```typescript
+import { UserProfile } from "@/types";
+
+export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
+  const allTasks = [];
+
+  // All seasonal workers staying for more than 3 months must be registered with the local authorities (municipality)
+  if (profile.duration === 1 || profile.duration === 2) {
+    allTasks.push('municipality');
+  }
+
+  // All seasonal workers must have a valid work contract issued by their employer (contract)
+  if (profile.contract === 0) {
+    allTasks.push('contract');
+  }
+
+  // All seasonal workers must have health insurance coverage for the duration of their stay (health)
+  allTasks.push('health');
+
+  // All seasonal workers must have a bank account in the country of employment to receive their wages (bank)
+  if (profile.bankAccount === 0) {
+    allTasks.push('bank');
+  }
+
+  // Always add Annex 3 (bijlage3) for temporary residence document
+  allTasks.push('bijlage3');
+
+  // Always add emergency contact setup and practical information
+  allTasks.push('emergency', 'practical');
+
+  return allTasks;
+};
+```
+
+Explanation of changes:
+
+1. The condition for the "municipality" task has been updated to check if the user's stay duration is longer than 3 months (profile.duration === 1 || profile.duration === 2).
+2. The condition for the "contract" task has been updated to check if the user does not have a valid work contract (profile.contract === 0).
+3. The "health" task is now always included, as it is a mandatory requirement for all seasonal workers.
+4. The condition for the "bank" task has been updated to check if the user does not have a Belgian bank account (profile.bankAccount === 0).
+5. The "bijlage3", "emergency", and "practical" tasks are still included as before, as they are mandatory for all seasonal workers.

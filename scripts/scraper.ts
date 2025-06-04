@@ -3,6 +3,8 @@ import { JSDOM } from 'jsdom';
 import fetch from 'node-fetch';
 import fs from 'fs/promises';
 import path from 'path';
+import 'dotenv/config';
+import puppeteer from 'puppeteer';
 
 interface Regulation {
   id: number;
@@ -19,53 +21,73 @@ class RegulationScraper {
   private htmlUrl: string;
   private outputPath: string;
 
-  constructor(htmlUrl: string, outputPath: string = '../../components/logic/logic.tsx') {
+  constructor(htmlUrl: string, outputPath: string = '.components/logic/logic.tsx') {
     this.htmlUrl = htmlUrl;
     this.outputPath = outputPath;
   }
 
   /**
-   * Scrape regulations from the HTML website
+   * Scrape regulations from the HTML website with async
    */
-  async scrapeRegulations(): Promise<ScrapedRegulations> {
+async scrapeRegulations(): Promise<ScrapedRegulations> {
+  try {
+    console.log('🔍 Scraping regulations from:', this.htmlUrl);
+    
+    // Option 1: Use Puppeteer for full browser automation
+    const browser = await puppeteer.launch();
     try {
-      console.log('🔍 Scraping regulations from:', this.htmlUrl);
+      const page = await browser.newPage();
       
-      const response = await fetch(this.htmlUrl);
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-      }
-
-      const html = await response.text();
-      const dom = new JSDOM(html);
-      const document = dom.window.document;
-
-      // Extract regulations from the HTML structure
-      const regulationElements = document.querySelectorAll('.regulation');
-      const regulations: Regulation[] = [];
-
-      regulationElements.forEach((element, index) => {
-        const content = element.querySelector('p[data-field="content"]')?.textContent?.trim();
-        if (content) {
-          regulations.push({
-            id: index + 1,
-            content: content
-          });
-        }
+      // Set longer timeout for slow-loading content
+      await page.setDefaultTimeout(30000);
+      
+      // Navigate to the page
+      await page.goto(this.htmlUrl, { 
+        waitUntil: 'networkidle2', // Wait until network is idle
+        timeout: 30000 
       });
-
+      
+      // Wait for specific elements to load
+      await page.waitForSelector('.regulation', { 
+        timeout: 20000,
+        visible: true 
+      });
+      
+      // Extract regulations using page.evaluate to run code in browser context
+      const regulations = await page.evaluate(() => {
+        const regulationElements = document.querySelectorAll('.regulation');
+        const results: { id: number; content: string }[] = [];
+        
+        regulationElements.forEach((element, index) => {
+          const content = element.querySelector('p[data-field="content"]')?.textContent?.trim();
+          if (content) {
+            results.push({
+              id: index + 1,
+              content: content
+            });
+          }
+        });
+        
+        return results;
+      });
+      
       console.log(`✅ Found ${regulations.length} regulations`);
-
+      
       return {
         regulations,
         lastUpdated: new Date().toISOString(),
         source: this.htmlUrl
       };
-    } catch (error) {
-      console.error('❌ Error scraping regulations:', error);
-      throw error;
+      
+    } finally {
+      await browser.close();
     }
+    
+  } catch (error) {
+    console.error('❌ Error scraping regulations:', error);
+    throw error;
   }
+}
 
   /**
    * Call LLM to generate new logic based on regulations
@@ -85,7 +107,7 @@ class RegulationScraper {
           'anthropic-version': '2023-06-01'
         },
         body: JSON.stringify({
-          model: 'claude-3-sonnet-20240229',
+          model: 'claude-3-haiku-20240307',
           max_tokens: 4000,
           messages: [{
             role: 'user',
@@ -95,6 +117,7 @@ class RegulationScraper {
       });
 
       if (!response.ok) {
+        console.error('❌ LLM API call failed:', response);
         throw new Error(`LLM API Error: ${response.status}`);
       }
 
@@ -137,12 +160,14 @@ TASK DEFINITIONS FROM BRIDGE APP:
 - practical: Practical information and worker rights
 
 USER PROFILE STRUCTURE:
-- europeanID: 0 (No EU ID) or 1 (Has EU ID)
-- contract: 0 (No contract) or 1 (Has contract)
-- plukkaart: 0 (No plukkaart), 1 (Has plukkaart), 2 (Don't know what it is)
-- duration: 0 (<3 months), 1 (3-6 months), 2 (>6 months), 3 (Not sure)
-- workProvince: 0-7 (Antwerp, Limburg, East Flanders, West Flanders, Flemish Brabant, Brussels, Walloon, Not sure)
-- bankAccount: 0 (Need to open), 1 (Already have), 2 (Use foreign account)
+- europeanID: "0" (No EU ID) or "1" (Has EU ID)
+- contract: "0" (No contract) or "1" (Has contract)
+- plukkaart: "0" (No plukkaart), "1" (Has plukkaart), "2" (Don't know what it is)
+- duration: "0" (<3 months), "1" (3-6 months), "2" (>6 months), "3" (Not sure)
+- workProvince: "0"-"7" (Antwerp, Limburg, East Flanders, West Flanders, Flemish Brabant, Brussels, Walloon, Not sure)
+- bankAccount: "0" (Need to open), "1" (Already have), "2" (Use foreign account)
+
+The numbers must be strings, not integers.
 
 INSTRUCTIONS:
 1. Analyze the updated regulations for changes in Belgian work permit requirements
@@ -165,6 +190,8 @@ IMPORTANT:
 - Focus on work permits, residence requirements, and mandatory registrations
 
 Based on the regulations above, generate the updated logic.tsx file:
+
+RETURN ONLY THE UPDATED LOGIC FILE CONTENT NO EXTRA TEXT OR COMMENTS
 `;
   }
 
@@ -185,12 +212,16 @@ Based on the regulations above, generate the updated logic.tsx file:
         console.log('ℹ️  No existing file to backup');
       }
 
+      //Cleanup prompt
+      const cleaned = newLogic.replace(/^```[a-zA-Z]*\n?/, '').replace(/```$/, '');
+
+
       // Write new logic
-      await fs.writeFile(this.outputPath, newLogic);
+      await fs.writeFile(this.outputPath, cleaned);
       console.log(`✅ Logic file updated: ${this.outputPath}`);
       
       // Validate TypeScript syntax
-      await this.validateTypeScript(newLogic);
+      await this.validateTypeScript(cleaned);
       
     } catch (error) {
       console.error('❌ Error updating logic file:', error);
@@ -239,26 +270,27 @@ Based on the regulations above, generate the updated logic.tsx file:
       
       // 1. Scrape current regulations
       const regulations = await this.scrapeRegulations();
-      
+
       // 2. Read current logic file
       let currentLogic = '';
       try {
+        console.log(`📂 Reading current logic file from: ${this.outputPath}`) ;
         currentLogic = await fs.readFile(this.outputPath, 'utf-8');
       } catch (error) {
-        console.log('ℹ️  No existing logic file found, creating new one');
-        currentLogic = `import { UserProfile } from "@/types";
+        console.log('ℹ️  No existing logic file found');
+//         currentLogic = `import { UserProfile } from "@/types";
 
-export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
-  const allTasks = [];
-  // Default implementation
-  allTasks.push('municipality', 'health', 'practical');
-  return allTasks;
-};`;
-      }
+// export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
+//   const allTasks = [];
+//   // Default implementation
+//   allTasks.push('municipality', 'health', 'practical');
+//   return allTasks;
+// };`;
+       }
       
       // 3. Generate new logic with LLM
       const newLogic = await this.generateLogicWithLLM(regulations, currentLogic);
-      
+      console.log('🤖 New logic generated successfully!');
       // 4. Update the logic file
       await this.updateLogicFile(newLogic);
       
@@ -287,7 +319,7 @@ export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
 async function main() {
   const args = process.argv.slice(2);
   const htmlUrl = args[0] || process.env.REGULATIONS_URL;
-  const logicPath = args[1] || '../../components/logic/logic.tsx';
+  const logicPath = args[1] || './components/logic/logic.tsx';
 
   if (!htmlUrl) {
     console.error('❌ Please provide the HTML regulations URL as first argument or REGULATIONS_URL env var');

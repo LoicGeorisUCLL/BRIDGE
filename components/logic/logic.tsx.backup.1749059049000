@@ -4,12 +4,12 @@ export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
   const allTasks = [];
 
   // All seasonal workers staying for more than 3 months must be registered with the local authorities (municipality)
-  if (profile.duration === '1' || profile.duration === '2') {
+  if (profile.duration === 1 || profile.duration === 2) {
     allTasks.push('municipality');
   }
 
   // All seasonal workers must have a valid work contract issued by their employer (contract)
-  if (profile.contract === '0') {
+  if (profile.contract === 0) {
     allTasks.push('contract');
   }
 
@@ -17,7 +17,7 @@ export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
   allTasks.push('health');
 
   // All seasonal workers must have a bank account in the country of employment to receive their wages (bank)
-  if (profile.bankAccount === '0') {
+  if (profile.bankAccount === 0) {
     allTasks.push('bank');
   }
 

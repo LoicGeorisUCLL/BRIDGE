@@ -18,60 +18,7 @@
   "congratulationsMessage": "You have completed all your tasks! Good luck on your journey in Belgium.",
   "startOver": "Start Over",
   
-"intakeQuestions": {
-  "europeanID": {
-    "question": "Do you have a valid European ID or passport?",
-    "options": [
-      "Yes, I have a European ID or passport",
-      "No, I only have a non-EU document"
-    ]
-  },
-  "contract": {
-    "question": "Do you already have a signed employment contract?",
-    "options": [
-      "Yes, it's already signed",
-      "No, not yet"
-    ]
-  },
-  "plukkaart": {
-    "question": "Do you have a plukkaart (seasonal work permit)?",
-    "options": [
-      "Yes, I already have it",
-      "No, I still need to get it",
-      "I don't know what that is"
-    ]
-  },
-  "duration": {
-    "question": "How long do you plan to work in Belgium?",
-    "options": [
-      "Less than 3 months",
-      "3–6 months",
-      "More than 6 months",
-      "Not sure yet"
-    ]
-  },
-  "workProvince": {
-    "question": "In which province will you be working?",
-    "options": [
-      "Antwerp",
-      "Limburg",
-      "East Flanders",
-      "West Flanders",
-      "Flemish Brabant",
-      "Brussels-Capital Region",
-      "Walloon provinces",
-      "Not sure"
-    ]
-  },
-  "bankAccount": {
-    "question": "Do you already have a Belgian bank account?",
-    "options": [
-      "Yes, I already opened one",
-      "No, I need to open one",
-      "I plan to use a foreign account"
-    ]
-  }
-},
+
 
   "tasks": {
     "municipality": {

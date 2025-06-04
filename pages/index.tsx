@@ -2,6 +2,7 @@ import BridgeApp from "../components/BridgeApp";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export default function Home() {
+  <title>BRIDGE</title>
   return <BridgeApp />;
 }
 
@@ -10,7 +11,7 @@ export const getServerSideProps = async (context: { locale: any }) => {
 
   return{
       props: {
-          ...(await serverSideTranslations(locale ?? "en", ["common"]))
+          ...(await serverSideTranslations(locale ?? "en", ["common", "questions"]))
       }
   }
 };

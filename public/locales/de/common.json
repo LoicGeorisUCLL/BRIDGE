@@ -17,60 +17,7 @@
   "congratulations": "Herzlichen Glückwunsch!",
   "congratulationsMessage": "Sie haben alle Ihre Aufgaben erledigt! Viel Erfolg auf Ihrer Reise in Belgien.",
   "startOver": "Neu starten",
-  "intakeQuestions": {
-    "europeanID": {
-      "question": "Haben Sie einen gültigen europäischen Ausweis oder Reisepass?",
-      "options": [
-        "Ja, ich habe einen europäischen Ausweis oder Reisepass",
-        "Nein, ich habe nur ein Nicht-EU-Dokument"
-      ]
-    },
-    "contract": {
-      "question": "Haben Sie bereits einen unterzeichneten Arbeitsvertrag?",
-      "options": [
-        "Ja, er ist bereits unterzeichnet",
-        "Nein, noch nicht"
-      ]
-    },
-    "plukkaart": {
-      "question": "Haben Sie eine Plukkaart (Saisonarbeitserlaubnis)?",
-      "options": [
-        "Ja, ich habe sie bereits",
-        "Nein, ich muss sie noch beantragen",
-        "Ich weiß nicht, was das ist"
-      ]
-    },
-    "duration": {
-      "question": "Wie lange planen Sie, in Belgien zu arbeiten?",
-      "options": [
-        "Weniger als 3 Monate",
-        "3–6 Monate",
-        "Mehr als 6 Monate",
-        "Noch nicht sicher"
-      ]
-    },
-    "workProvince": {
-      "question": "In welcher Provinz werden Sie arbeiten?",
-      "options": [
-        "Antwerpen",
-        "Limburg",
-        "Ostflandern",
-        "Westflandern",
-        "Flämisch-Brabant",
-        "Region Brüssel-Hauptstadt",
-        "Wallonische Provinzen",
-        "Noch nicht sicher"
-      ]
-    },
-    "bankAccount": {
-      "question": "Haben Sie bereits ein belgisches Bankkonto?",
-      "options": [
-        "Ja, ich habe bereits eines eröffnet",
-        "Nein, ich muss noch eines eröffnen",
-        "Ich plane, ein ausländisches Konto zu verwenden"
-      ]
-    }
-  },
+  
   "tasks": {
     "municipality": {
       "title": "Anmeldung bei der Gemeinde",

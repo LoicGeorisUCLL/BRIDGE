@@ -21,7 +21,8 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
 }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [showNoEUPopup, setShowNoEUPopup] = useState(false);
-  const { t } = useTranslation();
+  const { t: tq } = useTranslation("questions");
+  const { t } = useTranslation("common");
 
   const TOTAL_QUESTIONS = 6;
 
@@ -99,10 +100,10 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
 
         <div className="p-6">
           <h3 className="text-xl font-semibold text-gray-900 mb-6">
-            {t(`intakeQuestions.${currentQuestion}.question`)}
+            {tq(`intakeQuestions.${currentQuestion}.question`)}
           </h3>
           <div className="space-y-3">
-            {((t(`intakeQuestions.${currentQuestion}.${"options"}`, { returnObjects: true })) as string[]).map((option, index) => (
+            {((tq(`intakeQuestions.${currentQuestion}.${"options"}`, { returnObjects: true })) as string[]).map((option, index) => (
               <button
                 key={index}
                 onClick={() => handleQuestionAnswer(index)}

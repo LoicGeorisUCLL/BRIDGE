@@ -17,60 +17,7 @@
   "congratulations": "Čestitamo!",
   "congratulationsMessage": "Dovršili ste sve zadatke! Sretno u vašem boravku u Belgiji.",
   "startOver": "Započni ispočetka",
-  "intakeQuestions": {
-    "europeanID": {
-      "question": "Imate li valjanu europsku osobnu iskaznicu ili putovnicu?",
-      "options": [
-        "Da, imam europsku osobnu iskaznicu ili putovnicu",
-        "Ne, imam samo dokument izvan EU"
-      ]
-    },
-    "contract": {
-      "question": "Imate li već potpisan ugovor o radu?",
-      "options": [
-        "Da, već je potpisan",
-        "Ne, još nije"
-      ]
-    },
-    "plukkaart": {
-      "question": "Imate li plukkaart (dozvolu za sezonski rad)?",
-      "options": [
-        "Da, već ga imam",
-        "Ne, još ga moram dobiti",
-        "Ne znam što je to"
-      ]
-    },
-    "duration": {
-      "question": "Koliko dugo planirate raditi u Belgiji?",
-      "options": [
-        "Manje od 3 mjeseca",
-        "3–6 mjeseci",
-        "Više od 6 mjeseci",
-        "Još nisam siguran/na"
-      ]
-    },
-    "workProvince": {
-      "question": "U kojoj pokrajini ćete raditi?",
-      "options": [
-        "Antwerpen",
-        "Limburg",
-        "Istočna Flandrija",
-        "Zapadna Flandrija",
-        "Flamanski Brabant",
-        "Bruxelles - Glavni grad",
-        "Valonske pokrajine",
-        "Još nisam siguran/na"
-      ]
-    },
-    "bankAccount": {
-      "question": "Imate li već belgijski bankovni račun?",
-      "options": [
-        "Da, već sam ga otvorio/la",
-        "Ne, trebam ga otvoriti",
-        "Planiram koristiti strani račun"
-      ]
-    }
-  },
+  
   "tasks": {
     "municipality": {
       "title": "Općinska registracija",

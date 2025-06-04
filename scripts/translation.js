@@ -2,12 +2,14 @@ const fs = require('fs');
 const path = require('path');
 const { translate } = require('@vitalets/google-translate-api');
 // import { HttpProxyAgent } from 'http-proxy-agent';
-
 // const agent = new HttpProxyAgent('http://103.152.112.162:80');
+
 const baseLang = 'en';
 const localesDir = path.join(process.cwd(), 'public/locales');
-const baseFilePath = path.join(localesDir, baseLang, 'common.json');
-const baseFile = JSON.parse(fs.readFileSync(baseFilePath, 'utf-8'));
+
+// Files to translate
+const filesToTranslate = ['common.json', 'questions.json'];
+
 const supportedLocales = fs.readdirSync(localesDir).filter((l) => l !== baseLang);
 
 async function translateText(text, to) {
@@ -28,8 +30,8 @@ async function translateNestedObject(obj, locale, existingTranslations = {}) {
     if (typeof obj[key] === 'object' && obj[key] !== null && !Array.isArray(obj[key])) {
       // Handle nested objects recursively
       result[key] = await translateNestedObject(
-        obj[key], 
-        locale, 
+        obj[key],
+        locale,
         existingTranslations[key] || {}
       );
     } else if (Array.isArray(obj[key])) {
@@ -42,10 +44,10 @@ async function translateNestedObject(obj, locale, existingTranslations = {}) {
         } else {
           // Translate new array item
           if (key === "icon") { // Special case for icons, do not translate
-          result[key][i] = obj[key][i];
-          console.log(`Skipping translation for icon [${key}[${i}]]: ${obj[key][i]}`);
-          continue; 
-        }
+            result[key][i] = obj[key][i];
+            console.log(`Skipping translation for icon [${key}[${i}]]: ${obj[key][i]}`);
+            continue;
+          }
           const translated = await translateText(obj[key][i], locale);
           result[key][i] = translated;
           console.log(`Translated [${key}[${i}]]: ${obj[key][i]} → ${translated}`);
@@ -73,27 +75,49 @@ async function translateNestedObject(obj, locale, existingTranslations = {}) {
   return result;
 }
 
+async function translateFile(fileName, locale) {
+  const baseFilePath = path.join(localesDir, baseLang, fileName);
+  const targetPath = path.join(localesDir, locale, fileName);
+  
+  // Check if base file exists
+  if (!fs.existsSync(baseFilePath)) {
+    console.warn(`Base file ${baseFilePath} does not exist, skipping.`);
+    return;
+  }
+  
+  const baseFile = JSON.parse(fs.readFileSync(baseFilePath, 'utf-8'));
+  let targetTranslations = {};
+  
+  try {
+    targetTranslations = JSON.parse(fs.readFileSync(targetPath, 'utf-8'));
+  } catch {
+    console.warn(`Could not load ${locale}/${fileName}, starting fresh.`);
+  }
+  
+  console.log(`\nProcessing ${fileName} for locale: ${locale}`);
+  
+  // Create a completely new structure based on the base file
+  // This ensures deletions are handled and structure is maintained
+  const updatedTranslations = await translateNestedObject(baseFile, locale, targetTranslations);
+  
+  // Ensure the target directory exists
+  const targetDir = path.dirname(targetPath);
+  if (!fs.existsSync(targetDir)) {
+    fs.mkdirSync(targetDir, { recursive: true });
+  }
+  
+  // Write with the same formatting as the base file (2-space indentation)
+  fs.writeFileSync(targetPath, JSON.stringify(updatedTranslations, null, 2), 'utf-8');
+  console.log(`✅ Updated ${locale}/${fileName}`);
+}
+
 async function updateTranslations() {
   for (const locale of supportedLocales) {
-    const targetPath = path.join(localesDir, locale, 'common.json');
-    let targetTranslations = {};
+    console.log(`\n🌍 Processing locale: ${locale}`);
     
-    try {
-      targetTranslations = JSON.parse(fs.readFileSync(targetPath, 'utf-8'));
-    } catch {
-      console.warn(`Could not load ${locale}, starting fresh.`);
+    for (const fileName of filesToTranslate) {
+      await translateFile(fileName, locale);
     }
-    
-    console.log(`\nProcessing locale: ${locale}`);
-    
-    // Create a completely new structure based on the base file
-    // This ensures deletions are handled and structure is maintained
-    const updatedTranslations = await translateNestedObject(baseFile, locale, targetTranslations);
-    
-    // Write with the same formatting as the base file (2-space indentation)
-    fs.writeFileSync(targetPath, JSON.stringify(updatedTranslations, null, 2), 'utf-8');
-    
-    console.log(`✅ Updated ${locale}/common.json`);
   }
   
   console.log('\n🎉 All translations updated successfully!');

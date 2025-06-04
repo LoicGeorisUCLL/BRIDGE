@@ -17,60 +17,7 @@
   "congratulations": "Gratulujeme!",
   "congratulationsMessage": "Dokončili jste všechny úkoly! Hodně štěstí v Belgii.",
   "startOver": "Začít znovu",
-  "intakeQuestions": {
-    "europeanID": {
-      "question": "Máte platný evropský občanský průkaz nebo pas?",
-      "options": [
-        "Ano, mám evropský občanský průkaz nebo pas",
-        "Ne, mám pouze dokument mimo EU"
-      ]
-    },
-    "contract": {
-      "question": "Máte již podepsanou pracovní smlouvu?",
-      "options": [
-        "Ano, už je podepsaná",
-        "Ne, zatím ne"
-      ]
-    },
-    "plukkaart": {
-      "question": "Máte plukkaart (povolení k sezónní práci)?",
-      "options": [
-        "Ano, už ji mám",
-        "Ne, ještě ji musím získat",
-        "Nevím, co to je"
-      ]
-    },
-    "duration": {
-      "question": "Jak dlouho plánujete pracovat v Belgii?",
-      "options": [
-        "Méně než 3 měsíce",
-        "3–6 měsíců",
-        "Více než 6 měsíců",
-        "Ještě nevím"
-      ]
-    },
-    "workProvince": {
-      "question": "Ve které provincii budete pracovat?",
-      "options": [
-        "Antverpy",
-        "Limburk",
-        "Východní Flandry",
-        "Západní Flandry",
-        "Vlámský Brabant",
-        "Bruselský region",
-        "Valonské provincie",
-        "Ještě nevím"
-      ]
-    },
-    "bankAccount": {
-      "question": "Máte již belgický bankovní účet?",
-      "options": [
-        "Ano, už jsem si ho založil(a)",
-        "Ne, potřebuji si ho založit",
-        "Plánuji používat zahraniční účet"
-      ]
-    }
-  },
+  
   "tasks": {
     "municipality": {
       "title": "Registrace na obecním úřadě",

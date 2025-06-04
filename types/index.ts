@@ -1,5 +1,3 @@
-export type Language = 'pl' | 'en';
-
 export type Screen = 'welcome' | 'questions' | 'checklist';
 
 export interface UserProfile {

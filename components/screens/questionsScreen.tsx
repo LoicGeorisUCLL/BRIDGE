@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 import { useTranslation } from "next-i18next";
-import { Language, Screen, UserProfile } from '@/types';
+import { Screen, UserProfile } from '@/types';
 import NoEUPopup from '../popups/noEUPopup';
 
 interface QuestionsScreenProps {
   setUserProfile: (profile: any) => void;
   userProfile: UserProfile;
-  saveData: (profile: UserProfile, tasks: string[], lang: Language) => void;
+  saveData: (profile: UserProfile, tasks: string[]) => void;
   completedTasks: string[];
-  language: Language;
   setCurrentScreen: (screen: Screen) => void;
 }
 
@@ -18,7 +17,6 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
   userProfile,
   saveData,
   completedTasks,
-  language,
   setCurrentScreen
 }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -61,7 +59,7 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
 
     if (currentQuestionIndex < TOTAL_QUESTIONS - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
-      saveData(updatedProfile, completedTasks, language);
+      saveData(updatedProfile, completedTasks);
     } else {
       setCurrentScreen('checklist');
     }

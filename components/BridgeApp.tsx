@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Screen, UserProfile, Language } from '@/types';
+import { Screen, UserProfile } from '@/types';
 import WelcomeScreen from './screens/welcomeScreen';
 import QuestionsScreen from './screens/questionsScreen';
 import ChecklistScreen from './screens/checklistScreen';
@@ -9,7 +9,6 @@ import ChecklistScreen from './screens/checklistScreen';
 const BridgeApp: React.FC = () => {
   const [currentScreen, setCurrentScreen] = useState<Screen>('welcome');
   const [userProfile, setUserProfile] = useState<UserProfile>({});
-  const [language, setLanguage] = useState<Language>('en');
   const [completedTasks, setCompletedTasks] = useState<string[]>([]);
   const [mounted, setMounted] = useState(false);
 
@@ -19,11 +18,9 @@ const BridgeApp: React.FC = () => {
     if (typeof window !== 'undefined') {
       const savedProfile = JSON.parse(localStorage.getItem('bridgeProfile') || '{}');
       const savedTasks = JSON.parse(localStorage.getItem('bridgeCompletedTasks') || '[]');
-      const savedLanguage = (localStorage.getItem('bridgeLanguage') as Language) || 'en';
       
       setUserProfile(savedProfile);
       setCompletedTasks(savedTasks);
-      setLanguage(savedLanguage);
 
       if (Object.keys(savedProfile).length > 0) {
         setCurrentScreen('checklist');
@@ -32,17 +29,11 @@ const BridgeApp: React.FC = () => {
   }, []);
 
   // Save data to localStorage
-  const saveData = (profile: UserProfile, tasks: string[], lang: Language) => {
+  const saveData = (profile: UserProfile, tasks: string[]) => {
     if (typeof window !== 'undefined') {
       localStorage.setItem('bridgeProfile', JSON.stringify(profile));
       localStorage.setItem('bridgeCompletedTasks', JSON.stringify(tasks));
-      localStorage.setItem('bridgeLanguage', lang);
     }
-  };
-
-  const handleLanguageChange = (newLanguage: Language) => {
-    setLanguage(newLanguage);
-    localStorage.setItem('bridgeLanguage', newLanguage);
   };
 
   const handleIntakeQuestions = () => {
@@ -56,7 +47,7 @@ const BridgeApp: React.FC = () => {
       : [...completedTasks, taskId];
     
     setCompletedTasks(newCompletedTasks);
-    saveData(userProfile, newCompletedTasks, language);
+    saveData(userProfile, newCompletedTasks);
   };
 
   const handleGoHome = () => {
@@ -76,16 +67,14 @@ const BridgeApp: React.FC = () => {
     setUserProfile({});
     setCompletedTasks([]);
     setCurrentScreen('welcome');
-    saveData({}, [], language);
+    saveData({}, []);
   };
 
   return (
     <div className="max-w-md mx-auto bg-white min-h-screen">
       {currentScreen === 'welcome' && (
         <WelcomeScreen
-          language={language}
           onStart={handleIntakeQuestions}
-          onLanguageChange={handleLanguageChange}
         />
       )}
       
@@ -95,7 +84,6 @@ const BridgeApp: React.FC = () => {
           setUserProfile={setUserProfile}
           saveData={saveData}
           completedTasks={completedTasks}
-          language={language}
           setCurrentScreen={setCurrentScreen}
         />
       )}

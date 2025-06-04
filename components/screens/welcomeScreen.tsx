@@ -1,27 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Building } from 'lucide-react';
-import { Language } from '@/types';
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 
 interface WelcomeScreenProps {
-  language: Language;
   onStart: () => void;
-  onLanguageChange: (language: Language) => void;
 }
 
 const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
-  language,
-  onStart,
-  onLanguageChange
+  onStart
 }) => {
   const { t } = useTranslation();
   const router = useRouter();
   const { pathname, asPath, query } = router;
+  const [language, setLanguage] = useState("en");
+  
 
   const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const newLang = event.target.value as Language;
-    onLanguageChange(newLang);
+    const newLang = event.target.value as string;
+    setLanguage(newLang);
     router.push({ pathname, query }, asPath, { locale: newLang });
   };
 

@@ -41,6 +41,13 @@
       "I don't know what that is"
     ]
   },
+   "previousWork": {
+    "question": "Have you previously worked as a seasonal worker in Belgium within the last 5 years?",
+    "options": [
+      "Yes",
+      "No"
+    ]
+  },
   "duration": {
     "question": "How long do you plan to work in Belgium?",
     "options": [
@@ -48,6 +55,14 @@
       "3–6 months",
       "More than 6 months",
       "Not sure yet"
+    ]
+  },
+  "medicalCertificate": {
+    "question": "Have you obtained a medical certificate confirming you are free from certain diseases?",
+    "options": [
+      "Yes, I have it",
+      "No, I need to get one",
+      "Not required for my job"
     ]
   },
   "workProvince": {
@@ -76,109 +91,103 @@
   "tasks": {
     "municipality": {
       "title": "Municipal Registration",
-      "description": "Register at the town hall",
+      "description": "You need to register where you live in Belgium. This is your official entry into the system.",
       "icon": "Building",
       "steps": [
-        "Visit your local municipality",
-        "Bring your documents",
-        "Complete the registration process"
+        "Go to your local municipality office",
+        "Give your personal details (work contract & address)",
+        "Wait for the police to verify your residence",
+        "Return to complete the registration once approved"
       ],
       "documents": [
-        "Passport or ID",
+        "Valid European ID or passport",
         "Proof of address",
         "Employment contract"
       ],
-      "estimatedTime": "1 hour"
+      "estimatedTime": "1-2 hours (plus waiting time for police check)"
     },
     "contract": {
       "title": "Employment Contract & Plukkaart",
-      "description": "Sign your contract and receive your plukkaart",
+      "description": "Get your official work contract signed and ask for your plukkaart (work permit for seasonal jobs).",
       "icon": "FileText",
       "steps": [
-        "Review and sign the employment contract",
-        "Request and obtain your plukkaart",
-        "Store both documents safely"
+        "Meet with your employer to receive your contract",
+        "Read it carefully (ask for help if needed!)",
+        "Sign the contract",
+        "Ask your employer to apply for your plukkaart",
+        "Keep both documents safe (digitally too)"
       ],
       "documents": [
-        "Passport or ID",
+        "Valid European ID or passport",
         "Employer details"
       ],
-      "estimatedTime": "30 minutes"
+      "estimatedTime": "30-60 minutes"
     },
     "health": {
-      "title": "Health Insurance",
-      "description": "Arrange health insurance via your employer or independently",
+      "title": "Health Insurance (Mutualiteit)",
+      "description": "Belgium requires everyone to be insured for medical care. This can be through your employer or a mutualiteit.",
       "icon": "Shield",
       "steps": [
-        "Ask your employer about included health insurance",
-        "If not covered, choose a health fund (mutualiteit)",
-        "Register and submit required documents"
+        "Ask your employer if health insurance is included",
+        "If not, choose a health fund (CM, Helan, Partena, etc.)",
+        "Go to their office or register online",
+        "Provide necessary documents and wait for confirmation"
       ],
       "documents": [
-        "Passport or ID",
+        "Valid European ID or passport",
         "Employment contract",
-        "Municipal registration"
+        "Proof of municipal registration"
       ],
-      "estimatedTime": "45 minutes"
+      "estimatedTime": "45-60 minutes"
     },
     "bijlage3": {
-      "title": "Bijlage 3",
-      "description": "Temporary residence document (Annex 3)",
+      "title": "Temporary Residence Document (Bijlage 3)",
+      "description": "You receive this document after your municipal registration. This documents allows you to live and work in Belgium legally.",
       "icon": "FileText",
       "steps": [
-        "Go to the local municipality",
-        "Request Bijlage 3 document",
-        "Wait for approval and collect"
+        "After registering at the municipality, ask for Bijlage 3",
+        "Wait for processing time",
+        "Pick up the document or receive it via mail"
       ],
       "documents": [
-        "Passport or ID",
+        "Valid European ID or passport",
         "Proof of residence",
         "Employment contract"
       ],
-      "estimatedTime": "30 minutes"
-    },
-    "emergency": {
-      "title": "Emergency Contact",
-      "description": "Set up an emergency contact",
-      "icon": "Phone",
-      "steps": [
-        "Choose a contact person",
-        "Share their information with your employer",
-        "Keep their details accessible"
-      ],
-      "documents": [
-        "Name and phone number",
-        "Relationship to you"
-      ],
-      "estimatedTime": "15 minutes"
+      "estimatedTime": "30 minutes (processing time may take longer)"
     },
     "bank": {
       "title": "Bank Account",
-      "description": "Open a Belgian bank account",
+      "description": "Open a Belgian bank account, if you want but this is not mandatory. It makes receiving your salary faster and easier.",
       "icon": "CreditCard",
       "steps": [
-        "Choose a bank",
-        "Visit a branch or apply online",
-        "Submit the required documents"
+        "Choose a bank (Belfius, KBC, ING, BNP Paribas, etc.)",
+        "Visit a nearby branch or start the online process",
+        "Show required documents and confirm your identity",
+        "Activate your account and mobile banking app"
       ],
       "documents": [
-        "Passport or ID",
+        "Valid European ID or passport",
         "Proof of address",
         "Employment contract"
       ],
       "estimatedTime": "1 hour"
     },
-    "practical": {
-      "title": "Practical Information",
-      "description": "Useful tips for living and working in Belgium",
-      "icon": "FileText",
+    "medicalCheck": {
+      "title": "Medical Check-up",
+      "description": "A medical exam may be required to confirm you are fit for work. This can be provided by your employer or done independently.",
+      "icon": "Stethoscope",
       "steps": [
-        "Understand your worker rights",
-        "Learn local emergency numbers",
-        "Know your employer responsibilities"
+        "Schedule an appointment with a certified medical doctor",
+        "Go to your check-up and get a medical certificate",
+        "Submit the certificate to your employer or relevant authority"
       ],
-      "documents": [],
-      "estimatedTime": "Variable"
+      "documents": [
+        "Valid European ID or passport",
+        "Proof of employment",
+        "Health insurance details"
+      ],
+      "estimatedTime": "1 hour"
     }
   },
 

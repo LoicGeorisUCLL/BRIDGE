@@ -25,15 +25,17 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
   const [showNoEUPopup, setShowNoEUPopup] = useState(false);
   const { t } = useTranslation();
 
-  const TOTAL_QUESTIONS = 6;
+  const TOTAL_QUESTIONS = 8;
 
   const getQuestionName = (index: number): string => {
     const name = index === 0 ? "europeanID" :
       index === 1 ? "contract" :
       index === 2 ? "plukkaart" :
-      index === 3 ? "duration" :
-      index === 4 ? "workProvince" :
-      "bankAccount"
+      index === 3 ? "previousWork" :
+      index === 4 ? "duration" :
+      index === 5 ? "medicalCertificate" :
+      index === 6 ? "workProvince" :
+      "bankAccount"; 
     return name;
   };
 

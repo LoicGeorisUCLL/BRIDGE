@@ -9,6 +9,9 @@ export interface UserProfile {
   duration?: string;
   workProvince?: string;
   bankAccount?: string;
+  medicalCheck?: string;
+  previousWork?: string;
+  
 }
 
 export interface Question {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Home, User, CheckCircle, Circle, ChevronRight, MapPin, FileText, Globe, Phone, Building, CreditCard, Shield, Briefcase, Trophy, X, RotateCcw } from 'lucide-react';
+import { Home, User, CheckCircle, Circle, ChevronRight, MapPin, FileText, Globe, Phone, Building, CreditCard, Shield, Briefcase, Trophy, X, RotateCcw, Stethoscope } from 'lucide-react';
 import { UserProfile, Tasks } from '@/types';
 import { useTranslation } from "next-i18next";
 import { generatePersonalizedTasks } from '../logic/taskLogic';
@@ -44,9 +44,9 @@ useEffect(() => {
       Building,
       Shield,
       CreditCard,
-      Phone,
       MapPin,
-      Briefcase
+      Briefcase,
+      Stethoscope
     };
     return icons[iconName] || FileText;
   };
@@ -141,7 +141,7 @@ useEffect(() => {
       {selectedTaskDetails && (
 
         <div className="fixed inset-0 bg-gray-200/75 flex items-center justify-center p-4 z-50">
-          <div className="relative bg-white rounded-lg p-6 max-w-sm w-full mx-4 text-center max-h-[80vh] overflow-auto">
+          <div className="relative bg-white rounded-lg p-6 max-w-sm w-full mx-4 text-left max-h-[80vh] overflow-auto">
             <button
               onClick={handleCloseDetails}
               className="absolute top-4 right-4 p-1 text-gray-400 hover:text-gray-600 transition-colors"

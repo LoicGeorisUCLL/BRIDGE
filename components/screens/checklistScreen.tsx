@@ -4,6 +4,8 @@ import { UserProfile, Tasks } from '@/types';
 import { useTranslation } from "next-i18next";
 import { generatePersonalizedTasks } from '../logic/taskLogic';
 import { useRouter } from 'next/router';
+import { HelpCircle } from "lucide-react";
+
 
 
 interface ChecklistScreenProps {
@@ -26,6 +28,11 @@ const ChecklistScreen: React.FC<ChecklistScreenProps> = ({
 
 const [showCongratulations, setShowCongratulations] = useState(false);
 const [selectedTaskDetails, setSelectedTaskDetails] = useState<string | null>(null);
+const [showFAQ, setShowFAQ] = useState(false);
+const faqButtonRef = React.useRef<HTMLButtonElement>(null);
+
+
+
 
 const { t } = useTranslation();
 const router = useRouter();
@@ -38,6 +45,9 @@ useEffect(() => {
       setShowCongratulations(true);
     }
   }, [allCompleted, personalizedTasks.length]);
+  
+
+  
 
   const getIconComponent = (iconName: string) => {
     const icons: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -134,6 +144,12 @@ useEffect(() => {
           >
             <User className="w-5 h-5 text-blue-600" />
             <span className="text-blue-600 font-medium">{t("editProfileButton")}</span>
+          </button>
+          <button
+            ref={faqButtonRef}
+            onClick={() => setShowFAQ(true)}
+            className="flex items-center justify-center p-3 rounded-lg bg-yellow-100">
+            <HelpCircle className="w-5 h-5 text-yellow-700" />
           </button>
         </div>
       </div>
@@ -269,7 +285,36 @@ useEffect(() => {
           </div>
         </div>
       )}
+       {showFAQ && (
+        <div className="fixed inset-0 bg-gray-200/75 flex items-center justify-center p-4 z-50">
+          <div className="relative bg-white rounded-lg p-6 max-w-md w-full mx-4 max-h-[80vh] overflow-auto">
+            <button
+              onClick={() => setShowFAQ(false)}
+              className="absolute top-4 right-4 p-1 text-gray-400 hover:text-gray-600 transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <h3 className="text-xl font-bold text-gray-900 mb-4">{t("faqTitle")}</h3>
+
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => {
+              const question = t(`faq.faq${num}.question`);
+              const answer = t(`faq.faq${num}.answer`);
+
+              return (
+                <div key={num} className="mb-4">
+                  <h4 className="font-semibold text-gray-800">{question}</h4>
+                  <p className="text-sm text-gray-700 mt-1">{answer}</p>
+                </div>
+              );
+              
+            })}
+            
+          </div>
+        </div>
+        )}
     </div>
+    
   );
 };
 

@@ -40,6 +40,13 @@
         "Nie wiem, co to jest"
       ]
     },
+    "previousWork": {
+      "question": "Czy wcześniej pracowałeś jako pracownik sezonowy w Belgii w ciągu ostatnich 5 lat?",
+      "options": [
+        "Tak",
+        "NIE"
+      ]
+    },
     "duration": {
       "question": "Jak długo planujesz zostać w Belgii?",
       "options": [
@@ -47,6 +54,14 @@
         "3–6 miesięcy",
         "Ponad 6 miesięcy",
         "Jeszcze nie wiem"
+      ]
+    },
+    "medicalCertificate": {
+      "question": "Czy uzyskałeś certyfikat lekarski potwierdzający, że jesteś wolny od niektórych chorób?",
+      "options": [
+        "Tak, mam to",
+        "Nie, muszę go zdobyć",
+        "Nie wymagane do mojej pracy"
       ]
     },
     "workProvince": {
@@ -79,7 +94,8 @@
       "steps": [
         "Odwiedź lokalny urząd gminy",
         "Zabierz wymagane dokumenty",
-        "Wypełnij formularz meldunkowy"
+        "Wypełnij formularz meldunkowy",
+        "Wróć, aby zakończyć rejestrację po zatwierdzeniu"
       ],
       "documents": [
         "Paszport lub dowód osobisty",
@@ -95,7 +111,9 @@
       "steps": [
         "Przejrzyj i podpisz umowę o pracę",
         "Poproś o plukkaart",
-        "Zachowaj oba dokumenty w bezpiecznym miejscu"
+        "Zachowaj oba dokumenty w bezpiecznym miejscu",
+        "Poproś pracodawcę o ubieganie się o swój Plukkaart",
+        "Dbaj o bezpieczeństwo oba dokumenty (również cyfrowo)"
       ],
       "documents": [
         "Paszport lub dowód osobisty",
@@ -110,7 +128,8 @@
       "steps": [
         "Zapytaj pracodawcę, czy obejmuje Cię ubezpieczenie",
         "Jeśli nie, wybierz fundusz zdrowia (mutualiteit)",
-        "Zarejestruj się i złóż wymagane dokumenty"
+        "Zarejestruj się i złóż wymagane dokumenty",
+        "Podaj niezbędne dokumenty i poczekaj na potwierdzenie"
       ],
       "documents": [
         "Paszport lub dowód osobisty",
@@ -135,21 +154,6 @@
       ],
       "estimatedTime": "30 minut"
     },
-    "emergency": {
-      "title": "Kontakt alarmowy",
-      "description": "Ustaw kontakt awaryjny",
-      "icon": "Phone",
-      "steps": [
-        "Wybierz osobę kontaktową",
-        "Przekaż jej dane pracodawcy",
-        "Zachowaj dane kontaktowe w łatwo dostępnym miejscu"
-      ],
-      "documents": [
-        "Imię i numer telefonu",
-        "Relacja z Tobą"
-      ],
-      "estimatedTime": "15 minut"
-    },
     "bank": {
       "title": "Konto bankowe",
       "description": "Otwórz belgijskie konto bankowe",
@@ -157,7 +161,8 @@
       "steps": [
         "Wybierz bank",
         "Odwiedź oddział lub złóż wniosek online",
-        "Złóż wymagane dokumenty"
+        "Złóż wymagane dokumenty",
+        "Aktywuj swoje konto i aplikację bankowości mobilnej"
       ],
       "documents": [
         "Paszport lub dowód osobisty",
@@ -166,17 +171,21 @@
       ],
       "estimatedTime": "1 godzina"
     },
-    "practical": {
-      "title": "Informacje praktyczne",
-      "description": "Przydatne wskazówki dotyczące życia i pracy w Belgii",
-      "icon": "FileText",
+    "medicalCheck": {
+      "title": "Kontrola medyczna",
+      "description": "Egzamin lekarski może być wymagany do potwierdzenia, że ​​jesteś odpowiedni do pracy. Może to być dostarczone przez twojego pracodawcę lub wykonane niezależnie.",
+      "icon": "Stetoskop",
       "steps": [
-        "Poznaj swoje prawa jako pracownik",
-        "Zapamiętaj numery alarmowe",
-        "Dowiedz się o obowiązkach pracodawcy"
+        "Umówić się na wizytę u certyfikowanego lekarza",
+        "Przejdź do kontroli i uzyskaj certyfikat lekarski",
+        "Prześlij certyfikat swojemu pracodawcy lub odpowiedniemu organowi"
       ],
-      "documents": [],
-      "estimatedTime": "Zmienny"
+      "documents": [
+        "Ważny europejski identyfikator lub paszport",
+        "Dowód zatrudnienia",
+        "Health insurance details"
+      ],
+      "estimatedTime": "1 hour"
     }
   },
   "stepsToComplete": "Kroki do ukończenia",

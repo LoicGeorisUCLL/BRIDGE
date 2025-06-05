@@ -40,6 +40,13 @@
         "Ne znam što je to"
       ]
     },
+    "previousWork": {
+      "question": "Jeste li prethodno radili kao sezonski radnik u Belgiji u posljednjih 5 godina?",
+      "options": [
+        "Da",
+        "Ne"
+      ]
+    },
     "duration": {
       "question": "Koliko dugo planirate raditi u Belgiji?",
       "options": [
@@ -47,6 +54,14 @@
         "3–6 mjeseci",
         "Više od 6 mjeseci",
         "Još nisam siguran/na"
+      ]
+    },
+    "medicalCertificate": {
+      "question": "Jeste li stekli medicinsku potvrdu koja potvrđuje da ste bez određenih bolesti?",
+      "options": [
+        "Da, imam ga",
+        "Ne, moram ga dobiti",
+        "Nije potrebno za moj posao"
       ]
     },
     "workProvince": {
@@ -79,7 +94,8 @@
       "steps": [
         "Posjetite svoju lokalnu općinu",
         "Ponesite dokumente",
-        "Završite postupak registracije"
+        "Završite postupak registracije",
+        "Vratite se dovršiti registraciju nakon odobrenja"
       ],
       "documents": [
         "Putovnica ili osobna iskaznica",
@@ -95,7 +111,9 @@
       "steps": [
         "Pregledajte i potpišite ugovor o radu",
         "Zatražite i dobijte plukkaart",
-        "Sigurno pohranite oba dokumenta"
+        "Sigurno pohranite oba dokumenta",
+        "Zamolite svog poslodavca da se prijavi za vaš Plukkaart",
+        "Oba dokumenta čuvajte (digitalno)"
       ],
       "documents": [
         "Putovnica ili osobna iskaznica",
@@ -110,7 +128,8 @@
       "steps": [
         "Pitajte poslodavca uključuje li zdravstveno osiguranje",
         "Ako nije uključeno, izaberite zdravstveni fond (mutualiteit)",
-        "Registrirajte se i pošaljite potrebne dokumente"
+        "Registrirajte se i pošaljite potrebne dokumente",
+        "Navedite potrebne dokumente i pričekajte potvrdu"
       ],
       "documents": [
         "Putovnica ili osobna iskaznica",
@@ -135,21 +154,6 @@
       ],
       "estimatedTime": "30 minuta"
     },
-    "emergency": {
-      "title": "Kontakt za hitne slučajeve",
-      "description": "Postavite kontakt osobu za hitne slučajeve",
-      "icon": "Phone",
-      "steps": [
-        "Odaberite kontakt osobu",
-        "Podijelite njezine podatke s poslodavcem",
-        "Držite podatke pri ruci"
-      ],
-      "documents": [
-        "Ime i broj telefona",
-        "Vaš odnos s osobom"
-      ],
-      "estimatedTime": "15 minuta"
-    },
     "bank": {
       "title": "Bankovni račun",
       "description": "Otvorite belgijski bankovni račun",
@@ -157,7 +161,8 @@
       "steps": [
         "Izaberite banku",
         "Posjetite poslovnicu ili se prijavite online",
-        "Predajte potrebne dokumente"
+        "Predajte potrebne dokumente",
+        "Aktivirajte svoj račun i aplikaciju za mobilno bankarstvo"
       ],
       "documents": [
         "Putovnica ili osobna iskaznica",
@@ -166,17 +171,21 @@
       ],
       "estimatedTime": "1 sat"
     },
-    "practical": {
-      "title": "Praktične informacije",
-      "description": "Korisni savjeti za život i rad u Belgiji",
-      "icon": "FileText",
+    "medicalCheck": {
+      "title": "Medicinski pregled",
+      "description": "Medicinski pregled može biti potreban da se potvrdi da ste prikladni za posao. To može osigurati vaš poslodavac ili samostalno.",
+      "icon": "Stetoskop",
       "steps": [
-        "Upoznajte se s pravima radnika",
-        "Naučite hitne brojeve",
-        "Znajte odgovornosti poslodavca"
+        "Zakažite sastanak s certificiranim liječnikom",
+        "Idite na pregled i dobijte medicinsku potvrdu",
+        "Pošaljite potvrdu svom poslodavcu ili relevantnom tijelu"
       ],
-      "documents": [],
-      "estimatedTime": "Varira"
+      "documents": [
+        "Valjana europska ID ili putovnica",
+        "Dokaz o zaposlenju",
+        "Pojedinosti o zdravstvenom osiguranju"
+      ],
+      "estimatedTime": "1 sat"
     }
   },
   "stepsToComplete": "Koraci za dovršetak",

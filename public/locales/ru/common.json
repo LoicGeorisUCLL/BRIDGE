@@ -40,6 +40,13 @@
         "Я не знаю, что это"
       ]
     },
+    "previousWork": {
+      "question": "Have you previously worked as a seasonal worker in Belgium within the last 5 years?",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
     "duration": {
       "question": "Как долго вы планируете работать в Бельгии?",
       "options": [
@@ -47,6 +54,14 @@
         "3–6 месяцев",
         "Больше 6 месяцев",
         "Пока не уверен(а)"
+      ]
+    },
+    "medicalCertificate": {
+      "question": "Have you obtained a medical certificate confirming you are free from certain diseases?",
+      "options": [
+        "Yes, I have it",
+        "No, I need to get one",
+        "Not required for my job"
       ]
     },
     "workProvince": {
@@ -79,7 +94,8 @@
       "steps": [
         "Посетите местный муниципалитет",
         "Принесите свои документы",
-        "Завершите процесс регистрации"
+        "Завершите процесс регистрации",
+        "Return to complete the registration once approved"
       ],
       "documents": [
         "Паспорт или удостоверение личности",
@@ -95,7 +111,9 @@
       "steps": [
         "Ознакомьтесь и подпишите трудовой контракт",
         "Запросите и получите plukkaart",
-        "Храните оба документа в безопасном месте"
+        "Храните оба документа в безопасном месте",
+        "Ask your employer to apply for your plukkaart",
+        "Keep both documents safe (digitally too)"
       ],
       "documents": [
         "Паспорт или удостоверение личности",
@@ -110,7 +128,8 @@
       "steps": [
         "Спросите у работодателя о наличии страховки",
         "Если не включена — выберите страховой фонд (mutualiteit)",
-        "Зарегистрируйтесь и подайте необходимые документы"
+        "Зарегистрируйтесь и подайте необходимые документы",
+        "Provide necessary documents and wait for confirmation"
       ],
       "documents": [
         "Паспорт или удостоверение личности",
@@ -135,21 +154,6 @@
       ],
       "estimatedTime": "30 минут"
     },
-    "emergency": {
-      "title": "Экстренный контакт",
-      "description": "Укажите контактное лицо на случай экстренной ситуации",
-      "icon": "Phone",
-      "steps": [
-        "Выберите контактное лицо",
-        "Сообщите его данные работодателю",
-        "Храните его данные под рукой"
-      ],
-      "documents": [
-        "Имя и номер телефона",
-        "Ваше отношение к этому человеку"
-      ],
-      "estimatedTime": "15 минут"
-    },
     "bank": {
       "title": "Банковский счет",
       "description": "Откройте бельгийский банковский счет",
@@ -157,7 +161,8 @@
       "steps": [
         "Выберите банк",
         "Посетите отделение или подайте заявку онлайн",
-        "Предоставьте необходимые документы"
+        "Предоставьте необходимые документы",
+        "Activate your account and mobile banking app"
       ],
       "documents": [
         "Паспорт или удостоверение личности",
@@ -166,17 +171,21 @@
       ],
       "estimatedTime": "1 час"
     },
-    "practical": {
-      "title": "Практическая информация",
-      "description": "Полезные советы для жизни и работы в Бельгии",
-      "icon": "FileText",
+    "medicalCheck": {
+      "title": "Medical Check-up",
+      "description": "A medical exam may be required to confirm you are fit for work. This can be provided by your employer or done independently.",
+      "icon": "Stethoscope",
       "steps": [
-        "Изучите свои трудовые права",
-        "Узнайте номера экстренных служб",
-        "Уточните обязанности работодателя"
+        "Schedule an appointment with a certified medical doctor",
+        "Go to your check-up and get a medical certificate",
+        "Submit the certificate to your employer or relevant authority"
       ],
-      "documents": [],
-      "estimatedTime": "Переменное"
+      "documents": [
+        "Valid European ID or passport",
+        "Proof of employment",
+        "Health insurance details"
+      ],
+      "estimatedTime": "1 hour"
     }
   },
   "stepsToComplete": "Шаги к выполнению",

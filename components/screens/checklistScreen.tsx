@@ -5,6 +5,7 @@ import { useTranslation } from "next-i18next";
 import { generatePersonalizedTasks } from '../logic/taskLogic';
 import { useRouter } from 'next/router';
 
+
 interface ChecklistScreenProps {
   userProfile: UserProfile;
   completedTasks: string[];

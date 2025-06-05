@@ -188,6 +188,41 @@
       "estimatedTime": "1 hodina"
     }
   },
+  "faqTitle": "Často kladené otázky",
+  "faq": {
+    "faq1": {
+      "question": "Co mám dělat v případě nouze?",
+      "answer": "Volejte 112 pro sanitku, policii nebo hasičskou sboru. Je to zdarma a funguje, i když nemáte mobilní kredit."
+    },
+    "faq2": {
+      "question": "Jak mohu kontaktovat své velvyslanectví?",
+      "answer": "Hledejte online velvyslanectví vaší země v Belgii. Mohou pomoci se ztracenými dokumenty, právními otázkami a mimořádnými událostmi."
+    },
+    "faq3": {
+      "question": "Kde najdu bezplatné právní rady?",
+      "answer": "Některé organizace jako „Juridisch Loket“ nebo „CAW“ nabízejí bezplatné právní konzultace. Podívejte se na oficiální web svého města nebo se zeptejte OCMW."
+    },
+    "faq4": {
+      "question": "Kde mohu získat pomoc, pokud se cítím nebezpečný nebo vykořisťovaný?",
+      "answer": "Volejte 1712 (zdarma) pro pomoc v případě násilí nebo vykořisťování. Je to důvěrné a vícejazyčné. Můžete také kontaktovat Fairwork Belgium."
+    },
+    "faq5": {
+      "question": "Mohu získat nápovědu bezplatné interpretace?",
+      "answer": "V některých případech ano. Integrační centra a sociální služby někdy poskytují tlumočníky. Vždy se zeptejte!"
+    },
+    "faq6": {
+      "question": "Jak se mohu naučit holandské nebo francouzštiny?",
+      "answer": "Můžete absolvovat zdarma nebo levné kurzy prostřednictvím „Huis Van Het Nederlands“ nebo „Ligo“. Zeptejte se své obce, kde se zaregistrujete."
+    },
+    "faq7": {
+      "question": "Jaké aplikace jsou užitečné v Belgii?",
+      "answer": "Mezi užitečné aplikace patří: „Delijn“ (Bus), „NMBS“ (Trains), „Google Translate“ a aplikace vaší banky."
+    },
+    "faq8": {
+      "question": "Jaký je rozdíl mezi OCMW a Gemeente?",
+      "answer": "Gemeente zpracovává vaši registraci a dokumenty. OCMW pomáhá se sociální podporou, jako je bydlení nebo finance."
+    }
+  },
   "stepsToComplete": "Kroky k dokončení",
   "requiredDocuments": "Požadované dokumenty",
   "estimatedTime": "Odhadovaný čas dokončení",

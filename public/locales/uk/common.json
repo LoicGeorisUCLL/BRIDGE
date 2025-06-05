@@ -188,6 +188,41 @@
       "estimatedTime": "1 hour"
     }
   },
+  "faqTitle": "Часті запитання",
+  "faq": {
+    "faq1": {
+      "question": "Що мені робити в разі надзвичайної ситуації?",
+      "answer": "Зателефонуйте 112 для швидкої допомоги, поліції чи пожежної бригади. Це безкоштовно і працює, навіть якщо у вас немає мобільного кредиту."
+    },
+    "faq2": {
+      "question": "Як я можу зв’язатися зі своїм посольством?",
+      "answer": "Шукайте в Інтернеті посольство вашої країни в Бельгії. Вони можуть допомогти у втрачених документах, юридичних питаннях та надзвичайних ситуаціях."
+    },
+    "faq3": {
+      "question": "Де я можу знайти безкоштовну юридичну пораду?",
+      "answer": "Some organizations like 'Juridisch Loket' or 'CAW' offer free legal consultations. Check your city’s official website or ask the OCMW."
+    },
+    "faq4": {
+      "question": "Where can I get help if I feel unsafe or exploited?",
+      "answer": "Call 1712 (free) for help in case of violence or exploitation. It’s confidential and multilingual. You can also contact FairWork Belgium."
+    },
+    "faq5": {
+      "question": "Can I get free interpretation help?",
+      "answer": "In some cases, yes. Integration centers and social services sometimes provide interpreters. Always ask!"
+    },
+    "faq6": {
+      "question": "How can I learn Dutch or French?",
+      "answer": "You can take free or low-cost courses via 'Huis van het Nederlands' or 'Ligo'. Ask your municipality where to register."
+    },
+    "faq7": {
+      "question": "What apps are useful in Belgium?",
+      "answer": "Useful apps include: 'DeLijn' (bus), 'NMBS' (trains), 'Google Translate', and your bank’s app."
+    },
+    "faq8": {
+      "question": "What’s the difference between OCMW and gemeente?",
+      "answer": "The gemeente handles your registration and documents. The OCMW helps with social support like housing or finances."
+    }
+  },
   "stepsToComplete": "Кроки для завершення",
   "requiredDocuments": "Необхідні документи",
   "estimatedTime": "Орієнтовний час виконання",

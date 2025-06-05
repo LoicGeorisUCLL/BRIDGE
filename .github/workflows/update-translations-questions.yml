@@ -3,7 +3,7 @@ name: Update Translations
 on:
   push:
     paths:
-      - 'public/locales/en/common.json'
+      - 'public/locales/en/questions.json'
 
 permissions:
   contents: write
@@ -21,7 +21,7 @@ jobs:
         run: npm ci
 
       - name: Run translation script
-        run: node scripts/translation.js
+        run: node scripts/translation.js questions.json
 
       - name: Commit changes
         run: |

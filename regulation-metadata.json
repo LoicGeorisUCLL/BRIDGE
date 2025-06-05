@@ -2,7 +2,7 @@
   "regulations": [
     {
       "id": 1,
-      "content": "All seasonal workers stayin for 6 months or more must be registered with the local authorities."
+      "content": "All seasonal workers stayin for more than 3 months must be registered with the local authorities."
     },
     {
       "id": 2,
@@ -15,8 +15,12 @@
     {
       "id": 4,
       "content": "All seasonal workers must have a bank account in the country of employment to receive their wages."
+    },
+    {
+      "id": 5,
+      "content": "All seasonal workers must have between 6 and 12 kids"
     }
   ],
-  "lastUpdated": "2025-06-04T21:20:36.971Z",
+  "lastUpdated": "2025-06-05T10:35:03.226Z",
   "source": "https://bridgeregulations.up.railway.app"
 }

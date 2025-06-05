@@ -1,55 +1,47 @@
-{"intakeQuestions": {
-  "0": {
-    "question": "Do you have a valid European ID or passport?",
-    "options": [
-      "Yes, I have a European ID or passport",
-      "No, I only have a non-EU document"
-    ]
-  },
-  "1": {
-    "question": "Do you already have a signed employment contract?",
-    "options": [
-      "Yes, it's already signed",
-      "No, not yet"
-    ]
-  },
-  "2": {
-    "question": "Do you have a plukkaart (seasonal work permit)?",
-    "options": [
-      "Yes, I already have it",
-      "No, I still need to get it",
-      "I don't know what that is"
-    ]
-  },
-  "3": {
-    "question": "How long do you plan to work in Belgium?",
-    "options": [
-      "Less than 3 months",
-      "3–6 months",
-      "More than 6 months",
-      "Not sure yet"
-    ]
-  },
-  "4": {
-    "question": "In which province will you be working?",
-    "options": [
-      "Antwerp",
-      "Limburg",
-      "East Flanders",
-      "West Flanders",
-      "Flemish Brabant",
-      "Brussels-Capital Region",
-      "Walloon provinces",
-      "Not sure"
-    ]
-  },
-  "5": {
-    "question": "Do you already have a Belgian bank account?",
-    "options": [
-      "Yes, I already opened one",
-      "No, I need to open one",
-      "I plan to use a foreign account"
-    ]
+{
+  "intakeQuestions": {
+    "0": {
+      "question": "What is your citizenship status?",
+      "options": [
+        "EU citizen",
+        "Non-EU citizen"
+      ]
+    },
+    "1": {
+      "question": "How long will you be working in Belgium?",
+      "options": [
+        "Less than 3 months",
+        "3 months or more"
+      ]
+    },
+    "2": {
+      "question": "Do you have a valid work contract issued by your employer?",
+      "options": [
+        "Yes, I have a valid work contract",
+        "No, I don't have a work contract"
+      ]
+    },
+    "3": {
+      "question": "Do you have health insurance coverage for the duration of your stay in Belgium?",
+      "options": [
+        "Yes, I have health insurance",
+        "No, I don't have health insurance"
+      ]
+    },
+    "4": {
+      "question": "Do you have a bank account in Belgium to receive your wages?",
+      "options": [
+        "Yes, I have a Belgian bank account",
+        "No, I don't have a Belgian bank account"
+      ]
+    },
+    "5": {
+      "question": "How many parents do you have?",
+      "options": [
+        "6 to 12 children",
+        "Less than 6 children",
+        "More than 12 children"
+      ]
+    }
   }
-}
 }

@@ -18,30 +18,21 @@
       "question": "Imate li plukkaart (dozvolu za sezonski rad)?",
       "options": [
         "Da, već ga imam",
-        "Ne, još ga moram dobiti",
-        "Ne znam što je to"
+        "Ne, još ga moram dobiti"
       ]
     },
     "3": {
       "question": "Koliko dugo planirate raditi u Belgiji?",
       "options": [
         "Manje od 3 mjeseca",
-        "3–6 mjeseci",
-        "Više od 6 mjeseci",
-        "Još nisam siguran/na"
+        "3–6 mjeseci"
       ]
     },
     "4": {
       "question": "U kojoj pokrajini ćete raditi?",
       "options": [
         "Antwerpen",
-        "Limburg",
-        "Istočna Flandrija",
-        "Zapadna Flandrija",
-        "Flamanski Brabant",
-        "Bruxelles - Glavni grad",
-        "Valonske pokrajine",
-        "Još nisam siguran/na"
+        "Limburg"
       ]
     },
     "5": {

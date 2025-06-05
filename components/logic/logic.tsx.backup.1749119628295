@@ -1,0 +1,29 @@
+import { UserProfile } from "@/types";
+
+export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
+  const allTasks = [];
+
+  console.log('Generating tasks for profile:', profile.answers);
+
+  // All seasonal workers staying for 6 months or more must be registered with the local authorities (municipality)
+  if (profile.answers[3] === 1 || profile.answers[3] === 2) {
+    allTasks.push('municipality');
+  }
+
+  // All seasonal workers must have a valid work contract issued by their employer (contract)
+  allTasks.push('contract');
+
+  // All seasonal workers must have health insurance coverage for the duration of their stay (health)
+  allTasks.push('health');
+
+  // All seasonal workers must have a bank account in the country of employment to receive their wages (bank)
+  allTasks.push('bank');
+
+  // Always add Annex 3 (bijlage3) for temporary residence document
+  allTasks.push('bijlage3');
+
+  // Always add emergency contact setup and practical information
+  allTasks.push('emergency', 'practical');
+
+  return allTasks;
+};

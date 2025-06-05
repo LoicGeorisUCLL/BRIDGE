@@ -18,30 +18,21 @@
       "question": "Haben Sie eine Plukkaart (Saisonarbeitserlaubnis)?",
       "options": [
         "Ja, ich habe sie bereits",
-        "Nein, ich muss sie noch beantragen",
-        "Ich weiß nicht, was das ist"
+        "Nein, ich muss sie noch beantragen"
       ]
     },
     "3": {
       "question": "Wie lange planen Sie, in Belgien zu arbeiten?",
       "options": [
         "Weniger als 3 Monate",
-        "3–6 Monate",
-        "Mehr als 6 Monate",
-        "Noch nicht sicher"
+        "3–6 Monate"
       ]
     },
     "4": {
       "question": "In welcher Provinz werden Sie arbeiten?",
       "options": [
         "Antwerpen",
-        "Limburg",
-        "Ostflandern",
-        "Westflandern",
-        "Flämisch-Brabant",
-        "Region Brüssel-Hauptstadt",
-        "Wallonische Provinzen",
-        "Noch nicht sicher"
+        "Limburg"
       ]
     },
     "5": {

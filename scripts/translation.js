@@ -7,9 +7,6 @@ const { translate } = require('@vitalets/google-translate-api');
 const baseLang = 'en';
 const localesDir = path.join(process.cwd(), 'public/locales');
 
-// Files to translate
-const filesToTranslate = ['common.json', 'questions.json'];
-
 const supportedLocales = fs.readdirSync(localesDir).filter((l) => l !== baseLang);
 
 async function translateText(text, to) {
@@ -111,16 +108,46 @@ async function translateFile(fileName, locale) {
   console.log(`✅ Updated ${locale}/${fileName}`);
 }
 
-async function updateTranslations() {
-  for (const locale of supportedLocales) {
-    console.log(`\n🌍 Processing locale: ${locale}`);
-    
-    for (const fileName of filesToTranslate) {
-      await translateFile(fileName, locale);
-    }
+async function updateTranslations(fileName) {
+  // Validate file name
+  if (!fileName.endsWith('.json')) {
+    fileName += '.json';
   }
   
-  console.log('\n🎉 All translations updated successfully!');
+  // Check if the base file exists
+  const baseFilePath = path.join(localesDir, baseLang, fileName);
+  if (!fs.existsSync(baseFilePath)) {
+    console.error(`❌ Base file ${baseFilePath} does not exist!`);
+    console.log('Available files:');
+    const baseDir = path.join(localesDir, baseLang);
+    if (fs.existsSync(baseDir)) {
+      const availableFiles = fs.readdirSync(baseDir).filter(f => f.endsWith('.json'));
+      availableFiles.forEach(file => console.log(`  - ${file}`));
+    }
+    return;
+  }
+  
+  console.log(`🌍 Translating ${fileName} for all locales...`);
+  
+  for (const locale of supportedLocales) {
+    console.log(`\n📍 Processing locale: ${locale}`);
+    await translateFile(fileName, locale);
+  }
+  
+  console.log('\n🎉 Translation completed successfully!');
 }
 
-updateTranslations().catch(console.error);
+// Get command line argument
+const fileName = process.argv[2];
+
+if (!fileName) {
+  console.error('❌ Please provide a file name as an argument.');
+  console.log('Usage: node script.js <filename>');
+  console.log('Examples:');
+  console.log('  node script.js common.json');
+  console.log('  node script.js questions');
+  console.log('  node script.js common');
+  process.exit(1);
+}
+
+updateTranslations(fileName).catch(console.error);

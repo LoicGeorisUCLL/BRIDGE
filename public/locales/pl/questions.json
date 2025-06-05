@@ -18,30 +18,21 @@
       "question": "Czy masz plukkaart (zezwolenie na pracę sezonową)?",
       "options": [
         "Tak, już mam",
-        "Nie, muszę ją jeszcze uzyskać",
-        "Nie wiem, co to jest"
+        "Nie, muszę ją jeszcze uzyskać"
       ]
     },
     "3": {
       "question": "Jak długo planujesz zostać w Belgii?",
       "options": [
         "Mniej niż 3 miesiące",
-        "3–6 miesięcy",
-        "Ponad 6 miesięcy",
-        "Jeszcze nie wiem"
+        "3–6 miesięcy"
       ]
     },
     "4": {
       "question": "W jakiej prowincji będziesz pracować?",
       "options": [
         "Antwerpia",
-        "Limburgia",
-        "Flandria Wschodnia",
-        "Flandria Zachodnia",
-        "Brabancja Flamandzka",
-        "Bruksela",
-        "Prowincje walońskie",
-        "Nie wiem"
+        "Limburgia"
       ]
     },
     "5": {

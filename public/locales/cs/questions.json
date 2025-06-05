@@ -18,30 +18,21 @@
       "question": "Máte plukkaart (povolení k sezónní práci)?",
       "options": [
         "Ano, už ji mám",
-        "Ne, ještě ji musím získat",
-        "Nevím, co to je"
+        "Ne, ještě ji musím získat"
       ]
     },
     "3": {
       "question": "Jak dlouho plánujete pracovat v Belgii?",
       "options": [
         "Méně než 3 měsíce",
-        "3–6 měsíců",
-        "Více než 6 měsíců",
-        "Ještě nevím"
+        "3–6 měsíců"
       ]
     },
     "4": {
       "question": "Ve které provincii budete pracovat?",
       "options": [
         "Antverpy",
-        "Limburk",
-        "Východní Flandry",
-        "Západní Flandry",
-        "Vlámský Brabant",
-        "Bruselský region",
-        "Valonské provincie",
-        "Ještě nevím"
+        "Limburk"
       ]
     },
     "5": {

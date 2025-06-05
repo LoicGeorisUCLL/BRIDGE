@@ -18,30 +18,21 @@
       "question": "Aveți un Plukkaart (permis de muncă sezonier)?",
       "options": [
         "Da, îl am deja",
-        "Nu, mai trebuie să -l obțin",
-        "Nu știu ce este asta"
+        "Nu, mai trebuie să -l obțin"
       ]
     },
     "3": {
       "question": "Cât timp intenționați să lucrați în Belgia?",
       "options": [
         "Mai puțin de 3 luni",
-        "3–6 luni",
-        "Mai mult de 6 luni",
-        "Încă nu sunt sigur"
+        "3–6 luni"
       ]
     },
     "4": {
       "question": "În ce provincie veți lucra?",
       "options": [
         "Anvers",
-        "Limburg",
-        "East Flandra",
-        "West Flandra",
-        "Brabant flamand",
-        "Regiunea Bruxelles-Capital",
-        "Provinciile Paltoon",
-        "Nu sunt sigur"
+        "Limburg"
       ]
     },
     "5": {

@@ -40,6 +40,13 @@
         "Я не знаю, що це таке"
       ]
     },
+    "previousWork": {
+      "question": "Have you previously worked as a seasonal worker in Belgium within the last 5 years?",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
     "duration": {
       "question": "Як довго ви плануєте працювати в Бельгії?",
       "options": [
@@ -47,6 +54,14 @@
         "3–6 місяців",
         "Більше 6 місяців",
         "Ще не впевнений"
+      ]
+    },
+    "medicalCertificate": {
+      "question": "Have you obtained a medical certificate confirming you are free from certain diseases?",
+      "options": [
+        "Yes, I have it",
+        "No, I need to get one",
+        "Not required for my job"
       ]
     },
     "workProvince": {
@@ -79,7 +94,8 @@
       "steps": [
         "Відвідайте місцеву міську раду",
         "Візьміть з собою документи",
-        "Пройдіть процес реєстрації"
+        "Пройдіть процес реєстрації",
+        "Return to complete the registration once approved"
       ],
       "documents": [
         "Паспорт або посвідчення особи",
@@ -95,7 +111,9 @@
       "steps": [
         "Ознайомтесь і підпишіть трудовий контракт",
         "Запросіть та отримайте ваш plukkaart",
-        "Зберігайте обидва документи в безпеці"
+        "Зберігайте обидва документи в безпеці",
+        "Ask your employer to apply for your plukkaart",
+        "Keep both documents safe (digitally too)"
       ],
       "documents": [
         "Паспорт або посвідчення особи",
@@ -110,7 +128,8 @@
       "steps": [
         "Запитайте у роботодавця про включене медичне страхування",
         "Якщо не покрито, оберіть медичну касу (mutualiteit)",
-        "Зареєструйтесь і подайте необхідні документи"
+        "Зареєструйтесь і подайте необхідні документи",
+        "Provide necessary documents and wait for confirmation"
       ],
       "documents": [
         "Паспорт або посвідчення особи",
@@ -135,21 +154,6 @@
       ],
       "estimatedTime": "30 хвилин"
     },
-    "emergency": {
-      "title": "Контакт на випадок надзвичайної ситуації",
-      "description": "Вкажіть контактну особу на випадок надзвичайної ситуації",
-      "icon": "Phone",
-      "steps": [
-        "Оберіть контактну особу",
-        "Передайте її дані вашому роботодавцю",
-        "Тримайте інформацію про неї під рукою"
-      ],
-      "documents": [
-        "Ім’я та номер телефону",
-        "Ступінь спорідненості"
-      ],
-      "estimatedTime": "15 хвилин"
-    },
     "bank": {
       "title": "Банківський рахунок",
       "description": "Відкрийте бельгійський банківський рахунок",
@@ -157,7 +161,8 @@
       "steps": [
         "Оберіть банк",
         "Відвідайте відділення або подайте заявку онлайн",
-        "Подайте необхідні документи"
+        "Подайте необхідні документи",
+        "Activate your account and mobile banking app"
       ],
       "documents": [
         "Паспорт або посвідчення особи",
@@ -166,17 +171,21 @@
       ],
       "estimatedTime": "1 година"
     },
-    "practical": {
-      "title": "Практична інформація",
-      "description": "Корисні поради для життя та роботи в Бельгії",
-      "icon": "FileText",
+    "medicalCheck": {
+      "title": "Medical Check-up",
+      "description": "A medical exam may be required to confirm you are fit for work. This can be provided by your employer or done independently.",
+      "icon": "Stethoscope",
       "steps": [
-        "Ознайомтесь зі своїми правами працівника",
-        "Вивчіть місцеві номери екстрених служб",
-        "Дізнайтесь про обов’язки вашого роботодавця"
+        "Schedule an appointment with a certified medical doctor",
+        "Go to your check-up and get a medical certificate",
+        "Submit the certificate to your employer or relevant authority"
       ],
-      "documents": [],
-      "estimatedTime": "Змінний"
+      "documents": [
+        "Valid European ID or passport",
+        "Proof of employment",
+        "Health insurance details"
+      ],
+      "estimatedTime": "1 hour"
     }
   },
   "stepsToComplete": "Кроки для завершення",

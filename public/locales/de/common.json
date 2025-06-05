@@ -40,6 +40,13 @@
         "Ich weiß nicht, was das ist"
       ]
     },
+    "previousWork": {
+      "question": "Haben Sie zuvor in den letzten 5 Jahren als Saisonarbeiter in Belgien gearbeitet?",
+      "options": [
+        "Ja",
+        "NEIN"
+      ]
+    },
     "duration": {
       "question": "Wie lange planen Sie, in Belgien zu arbeiten?",
       "options": [
@@ -47,6 +54,14 @@
         "3–6 Monate",
         "Mehr als 6 Monate",
         "Noch nicht sicher"
+      ]
+    },
+    "medicalCertificate": {
+      "question": "Haben Sie ein ärztliches Zertifikat erhalten, in dem Sie bestätigt haben, dass Sie frei von bestimmten Krankheiten sind?",
+      "options": [
+        "Ja, ich habe es",
+        "Nein, ich muss einen bekommen",
+        "Nicht für meinen Job erforderlich"
       ]
     },
     "workProvince": {
@@ -79,7 +94,8 @@
       "steps": [
         "Besuchen Sie Ihre Gemeindeverwaltung",
         "Bringen Sie Ihre Dokumente mit",
-        "Führen Sie die Anmeldung durch"
+        "Führen Sie die Anmeldung durch",
+        "Kehren Sie zurück, um die Registrierung nach der Genehmigung abzuschließen"
       ],
       "documents": [
         "Ausweis oder Reisepass",
@@ -95,7 +111,9 @@
       "steps": [
         "Überprüfen und unterzeichnen Sie den Arbeitsvertrag",
         "Beantragen und erhalten Sie Ihre Plukkaart",
-        "Bewahren Sie beide Dokumente sicher auf"
+        "Bewahren Sie beide Dokumente sicher auf",
+        "Bitten Sie Ihren Arbeitgeber, sich für Ihr Plukkaart zu bewerben",
+        "Halten Sie beide Dokumente sicher (auch digital)"
       ],
       "documents": [
         "Ausweis oder Reisepass",
@@ -110,7 +128,8 @@
       "steps": [
         "Fragen Sie Ihren Arbeitgeber nach inkludierter Versicherung",
         "Falls nicht, wählen Sie eine Krankenkasse (Mutualität)",
-        "Registrieren Sie sich und reichen Sie die erforderlichen Dokumente ein"
+        "Registrieren Sie sich und reichen Sie die erforderlichen Dokumente ein",
+        "Geben Sie die erforderlichen Dokumente an und warten Sie auf Bestätigung"
       ],
       "documents": [
         "Ausweis oder Reisepass",
@@ -135,21 +154,6 @@
       ],
       "estimatedTime": "30 Minuten"
     },
-    "emergency": {
-      "title": "Notfallkontakt",
-      "description": "Legen Sie einen Notfallkontakt fest",
-      "icon": "Phone",
-      "steps": [
-        "Wählen Sie eine Kontaktperson",
-        "Geben Sie die Informationen an Ihren Arbeitgeber weiter",
-        "Halten Sie die Angaben griffbereit"
-      ],
-      "documents": [
-        "Name und Telefonnummer",
-        "Beziehung zu Ihnen"
-      ],
-      "estimatedTime": "15 Minuten"
-    },
     "bank": {
       "title": "Bankkonto",
       "description": "Eröffnen Sie ein belgisches Bankkonto",
@@ -157,7 +161,8 @@
       "steps": [
         "Wählen Sie eine Bank",
         "Besuchen Sie eine Filiale oder beantragen Sie online",
-        "Reichen Sie die erforderlichen Dokumente ein"
+        "Reichen Sie die erforderlichen Dokumente ein",
+        "Aktivieren Sie Ihr Konto und Ihr Mobile Banking App"
       ],
       "documents": [
         "Ausweis oder Reisepass",
@@ -166,17 +171,21 @@
       ],
       "estimatedTime": "1 Stunde"
     },
-    "practical": {
-      "title": "Praktische Informationen",
-      "description": "Nützliche Tipps zum Leben und Arbeiten in Belgien",
-      "icon": "FileText",
+    "medicalCheck": {
+      "title": "Medizinische Untersuchung",
+      "description": "Eine medizinische Untersuchung kann verpflichtet sein, zu bestätigen, dass Sie für die Arbeit geeignet sind. Dies kann von Ihrem Arbeitgeber bereitgestellt oder unabhängig durchgeführt werden.",
+      "icon": "Stethoskop",
       "steps": [
-        "Kennen Sie Ihre Arbeitnehmerrechte",
-        "Lernen Sie lokale Notrufnummern",
-        "Verstehen Sie die Pflichten Ihres Arbeitgebers"
+        "Vereinbaren Sie einen Termin mit einem zertifizierten Arzt",
+        "Gehen Sie zu Ihrer Untersuchung und erhalten Sie ein medizinisches Zertifikat",
+        "Senden Sie das Zertifikat an Ihren Arbeitgeber oder die zuständige Behörde"
       ],
-      "documents": [],
-      "estimatedTime": "Variabel"
+      "documents": [
+        "Gültiger europäischer ID oder Reisepass",
+        "Beschäftigungsnachweis",
+        "Krankenversicherung Details"
+      ],
+      "estimatedTime": "1 Stunde"
     }
   },
   "stepsToComplete": "Schritte zum Abschluss",

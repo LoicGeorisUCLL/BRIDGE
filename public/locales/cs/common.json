@@ -40,6 +40,13 @@
         "Nevím, co to je"
       ]
     },
+    "previousWork": {
+      "question": "Už jste dříve pracovali jako sezónní pracovník v Belgii za posledních 5 let?",
+      "options": [
+        "Ano",
+        "Žádný"
+      ]
+    },
     "duration": {
       "question": "Jak dlouho plánujete pracovat v Belgii?",
       "options": [
@@ -47,6 +54,14 @@
         "3–6 měsíců",
         "Více než 6 měsíců",
         "Ještě nevím"
+      ]
+    },
+    "medicalCertificate": {
+      "question": "Získali jste lékařský certifikát potvrzující, že jste bez některých nemocí?",
+      "options": [
+        "Ano, mám to",
+        "Ne, musím jeden získat",
+        "Není nutné pro mou práci"
       ]
     },
     "workProvince": {
@@ -79,7 +94,8 @@
       "steps": [
         "Navštivte místní obecní úřad",
         "Přineste si potřebné dokumenty",
-        "Dokončete proces registrace"
+        "Dokončete proces registrace",
+        "Po schválení se vrátíte k dokončení registrace"
       ],
       "documents": [
         "Pas nebo občanský průkaz",
@@ -95,7 +111,9 @@
       "steps": [
         "Zkontrolujte a podepište pracovní smlouvu",
         "Požádejte o plukkaart a získejte ji",
-        "Bezpečně uložte oba dokumenty"
+        "Bezpečně uložte oba dokumenty",
+        "Požádejte svého zaměstnavatele, aby požádal o svůj Plukkaart",
+        "Udržujte oba dokumenty v bezpečí (digitálně)"
       ],
       "documents": [
         "Pas nebo občanský průkaz",
@@ -110,7 +128,8 @@
       "steps": [
         "Zeptejte se zaměstnavatele, zda je pojištění součástí",
         "Pokud není, vyberte si zdravotní pojišťovnu (mutualiteit)",
-        "Zaregistrujte se a odevzdejte potřebné dokumenty"
+        "Zaregistrujte se a odevzdejte potřebné dokumenty",
+        "Poskytněte potřebné dokumenty a počkejte na potvrzení"
       ],
       "documents": [
         "Pas nebo občanský průkaz",
@@ -135,21 +154,6 @@
       ],
       "estimatedTime": "30 minut"
     },
-    "emergency": {
-      "title": "Nouzový kontakt",
-      "description": "Nastavte kontakt pro nouzové situace",
-      "icon": "Phone",
-      "steps": [
-        "Vyberte kontaktní osobu",
-        "Sdělte její údaje zaměstnavateli",
-        "Mějte tyto informace po ruce"
-      ],
-      "documents": [
-        "Jméno a telefonní číslo",
-        "Váš vztah k osobě"
-      ],
-      "estimatedTime": "15 minut"
-    },
     "bank": {
       "title": "Bankovní účet",
       "description": "Založte si belgický bankovní účet",
@@ -157,7 +161,8 @@
       "steps": [
         "Vyberte si banku",
         "Navštivte pobočku nebo zažádejte online",
-        "Dodejte potřebné dokumenty"
+        "Dodejte potřebné dokumenty",
+        "Aktivujte svůj účet a aplikaci pro mobilní bankovnictví"
       ],
       "documents": [
         "Pas nebo občanský průkaz",
@@ -166,17 +171,21 @@
       ],
       "estimatedTime": "1 hodina"
     },
-    "practical": {
-      "title": "Praktické informace",
-      "description": "Užitečné tipy pro život a práci v Belgii",
-      "icon": "FileText",
+    "medicalCheck": {
+      "title": "Lékařská kontrola",
+      "description": "Lékařská zkouška může být vyžadována k potvrzení, že jste vhodné pro práci. To může poskytnout váš zaměstnavatel nebo se provádí nezávisle.",
+      "icon": "Stetoskop",
       "steps": [
-        "Seznamte se se svými pracovními právy",
-        "Zjistěte nouzová čísla",
-        "Poznejte odpovědnosti zaměstnavatele"
+        "Naplánujte si schůzku s certifikovaným lékařem",
+        "Přejděte na kontrolu a získejte lékařský certifikát",
+        "Osvědčte osvědčení svému zaměstnavateli nebo příslušnému orgánu"
       ],
-      "documents": [],
-      "estimatedTime": "Různé"
+      "documents": [
+        "Platné evropské ID nebo pas",
+        "Důkaz o zaměstnání",
+        "Podrobnosti o zdravotním pojištění"
+      ],
+      "estimatedTime": "1 hodina"
     }
   },
   "stepsToComplete": "Kroky k dokončení",

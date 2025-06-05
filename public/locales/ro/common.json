@@ -40,6 +40,13 @@
         "Nu știu ce este asta"
       ]
     },
+    "previousWork": {
+      "question": "Have you previously worked as a seasonal worker in Belgium within the last 5 years?",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
     "duration": {
       "question": "Cât timp intenționați să lucrați în Belgia?",
       "options": [
@@ -47,6 +54,14 @@
         "3–6 luni",
         "Mai mult de 6 luni",
         "Încă nu sunt sigur"
+      ]
+    },
+    "medicalCertificate": {
+      "question": "Have you obtained a medical certificate confirming you are free from certain diseases?",
+      "options": [
+        "Yes, I have it",
+        "No, I need to get one",
+        "Not required for my job"
       ]
     },
     "workProvince": {
@@ -79,7 +94,8 @@
       "steps": [
         "Vizitează primăria locală",
         "Adu documentele necesare",
-        "Finalizează procesul de înregistrare"
+        "Finalizează procesul de înregistrare",
+        "Return to complete the registration once approved"
       ],
       "documents": [
         "Pașaport sau carte de identitate",
@@ -95,7 +111,9 @@
       "steps": [
         "Citește și semnează contractul de muncă",
         "Solicită și obține plukkaart-ul",
-        "Păstrează ambele documente în siguranță"
+        "Păstrează ambele documente în siguranță",
+        "Ask your employer to apply for your plukkaart",
+        "Keep both documents safe (digitally too)"
       ],
       "documents": [
         "Pașaport sau carte de identitate",
@@ -110,7 +128,8 @@
       "steps": [
         "Întreabă angajatorul dacă oferă asigurare de sănătate",
         "Dacă nu este inclusă, alege o casă de asigurări (mutualiteit)",
-        "Înregistrează-te și trimite documentele necesare"
+        "Înregistrează-te și trimite documentele necesare",
+        "Provide necessary documents and wait for confirmation"
       ],
       "documents": [
         "Pașaport sau carte de identitate",
@@ -135,21 +154,6 @@
       ],
       "estimatedTime": "30 de minute"
     },
-    "emergency": {
-      "title": "Contact de urgență",
-      "description": "Stabilește un contact de urgență",
-      "icon": "Phone",
-      "steps": [
-        "Alege o persoană de contact",
-        "Trimite informațiile sale angajatorului",
-        "Păstrează detaliile la îndemână"
-      ],
-      "documents": [
-        "Nume și număr de telefon",
-        "Relația cu tine"
-      ],
-      "estimatedTime": "15 minute"
-    },
     "bank": {
       "title": "Cont bancar",
       "description": "Deschide un cont bancar belgian",
@@ -157,7 +161,8 @@
       "steps": [
         "Alege o bancă",
         "Mergi la o sucursală sau aplică online",
-        "Trimite documentele necesare"
+        "Trimite documentele necesare",
+        "Activate your account and mobile banking app"
       ],
       "documents": [
         "Pașaport sau carte de identitate",
@@ -166,17 +171,21 @@
       ],
       "estimatedTime": "1 oră"
     },
-    "practical": {
-      "title": "Informații practice",
-      "description": "Sfaturi utile pentru a trăi și lucra în Belgia",
-      "icon": "FileText",
+    "medicalCheck": {
+      "title": "Medical Check-up",
+      "description": "A medical exam may be required to confirm you are fit for work. This can be provided by your employer or done independently.",
+      "icon": "Stethoscope",
       "steps": [
-        "Înțelege-ți drepturile ca lucrător",
-        "Învață numerele de urgență locale",
-        "Cunoaște responsabilitățile angajatorului"
+        "Schedule an appointment with a certified medical doctor",
+        "Go to your check-up and get a medical certificate",
+        "Submit the certificate to your employer or relevant authority"
       ],
-      "documents": [],
-      "estimatedTime": "Variabil"
+      "documents": [
+        "Valid European ID or passport",
+        "Proof of employment",
+        "Health insurance details"
+      ],
+      "estimatedTime": "1 hour"
     }
   },
   "stepsToComplete": "Pași de urmat",

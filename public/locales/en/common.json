@@ -190,7 +190,50 @@
       "estimatedTime": "1 hour"
     }
   },
+"faqTitle": "Frequently Asked Questions", 
+  "faq": {
+  
+    "faq1": {
+      "question": "What should I do in case of an emergency?",
+      "answer": "Call 112 for ambulance, police, or fire brigade. It's free and works even if you don’t have mobile credit."
+    },
+  
+    "faq2": {
+      "question": "How do I contact my embassy?",
+      "answer": "Search online for your country’s embassy in Belgium. They can help with lost documents, legal issues, and emergencies."
+    },
+  
+    "faq3": {
+      "question": "Where can I find free legal advice?",
+      "answer": "Some organizations like 'Juridisch Loket' or 'CAW' offer free legal consultations. Check your city’s official website or ask the OCMW."
+    },
 
+    "faq4": {
+      "question": "Where can I get help if I feel unsafe or exploited?",
+      "answer": "Call 1712 (free) for help in case of violence or exploitation. It’s confidential and multilingual. You can also contact FairWork Belgium."
+    },
+  
+    "faq5": {
+      "question": "Can I get free interpretation help?",
+      "answer": "In some cases, yes. Integration centers and social services sometimes provide interpreters. Always ask!"
+    },
+  
+    "faq6": {
+      "question": "How can I learn Dutch or French?",
+      "answer": "You can take free or low-cost courses via 'Huis van het Nederlands' or 'Ligo'. Ask your municipality where to register."
+    },
+  
+    "faq7": {
+      "question": "What apps are useful in Belgium?",
+      "answer": "Useful apps include: 'DeLijn' (bus), 'NMBS' (trains), 'Google Translate', and your bank’s app."
+    },
+  
+    "faq8": {
+      "question": "What’s the difference between OCMW and gemeente?",
+      "answer": "The gemeente handles your registration and documents. The OCMW helps with social support like housing or finances."
+    }
+  },
+  
   "stepsToComplete": "Steps to complete",
   "requiredDocuments": "Documents required",
   "estimatedTime": "Estimated time to complete",

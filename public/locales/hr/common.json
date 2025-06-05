@@ -188,6 +188,41 @@
       "estimatedTime": "1 sat"
     }
   },
+  "faqTitle": "Često postavljana pitanja",
+  "faq": {
+    "faq1": {
+      "question": "Što trebam učiniti u slučaju nužde?",
+      "answer": "Nazovite 112 za hitnu pomoć, policiju ili vatrogasnu brigadu. Besplatno je i djeluje čak i ako nemate mobilni kredit."
+    },
+    "faq2": {
+      "question": "Kako mogu kontaktirati svoju ambasadu?",
+      "answer": "Pretražite na mreži veleposlanstvo svoje zemlje u Belgiji. Oni mogu pomoći u izgubljenim dokumentima, pravnim pitanjima i hitnim slučajevima."
+    },
+    "faq3": {
+      "question": "Gdje mogu pronaći besplatne pravne savjete?",
+      "answer": "Neke organizacije poput 'Juridisch Loket' ili 'CAW' nude besplatne pravne konzultacije. Provjerite službenu web stranicu vašeg grada ili pitajte OCMW."
+    },
+    "faq4": {
+      "question": "Gdje mogu dobiti pomoć ako se osjećam nesigurno ili iskorištavano?",
+      "answer": "Nazovite 1712 (besplatno) za pomoć u slučaju nasilja ili iskorištavanja. To je povjerljivo i višejezično. Možete se obratiti i Fairwork Belgiji."
+    },
+    "faq5": {
+      "question": "Mogu li dobiti besplatnu pomoć za tumačenje?",
+      "answer": "U nekim slučajevima, da. Integracijski centri i socijalne usluge ponekad pružaju tumače. Uvijek pitajte!"
+    },
+    "faq6": {
+      "question": "Kako mogu naučiti nizozemski ili francuski?",
+      "answer": "Možete pohađati besplatne ili jeftine tečajeve putem 'Huis van Het Nederlands' ili 'Ligo'. Pitajte svoju općinu gdje se registriraju."
+    },
+    "faq7": {
+      "question": "Koje su aplikacije korisne u Belgiji?",
+      "answer": "Korisne aplikacije uključuju: 'Delijn' (Bus), 'NMBS' (vlakovi), 'Google Translate' i aplikaciju vaše banke."
+    },
+    "faq8": {
+      "question": "Koja je razlika između OCMW -a i Gemeentea?",
+      "answer": "Gemeente obrađuje vašu registraciju i dokumente. OCMW pomaže u socijalnoj podršci poput stanovanja ili financija."
+    }
+  },
   "stepsToComplete": "Koraci za dovršetak",
   "requiredDocuments": "Potrebni dokumenti",
   "estimatedTime": "Procijenjeno vrijeme za dovršetak",

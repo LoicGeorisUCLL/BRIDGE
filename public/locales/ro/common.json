@@ -188,6 +188,41 @@
       "estimatedTime": "1 hour"
     }
   },
+  "faqTitle": "Întrebări frecvente",
+  "faq": {
+    "faq1": {
+      "question": "Ce ar trebui să fac în caz de urgență?",
+      "answer": "Sunați la 112 pentru ambulanță, poliție sau brigadă de pompieri. Este gratuit și funcționează chiar dacă nu aveți credit mobil."
+    },
+    "faq2": {
+      "question": "Cum pot contacta ambasada mea?",
+      "answer": "Căutați online pentru ambasada țării dvs. în Belgia. Acestea pot ajuta cu documente pierdute, probleme legale și situații de urgență."
+    },
+    "faq3": {
+      "question": "Unde pot găsi sfaturi juridice gratuite?",
+      "answer": "Unele organizații precum „Juridisch Loket” sau „CAW” oferă consultări legale gratuite. Verificați site -ul oficial al orașului sau întrebați OCMW."
+    },
+    "faq4": {
+      "question": "Unde pot primi ajutor dacă mă simt nesigur sau exploatat?",
+      "answer": "Sunați la 1712 (gratuit) pentru ajutor în caz de violență sau exploatare. Este confidențial și multilingv. Puteți contacta, de asemenea, Fairwork Belgia."
+    },
+    "faq5": {
+      "question": "Pot obține ajutor gratuit de interpretare?",
+      "answer": "În unele cazuri, da. Centrele de integrare și serviciile sociale oferă uneori interpreți. Întotdeauna întreabă!"
+    },
+    "faq6": {
+      "question": "Cum pot învăța olandeză sau franceză?",
+      "answer": "Puteți lua cursuri gratuite sau cu costuri reduse prin „Huis van Het Nederlands” sau „Ligo”. Întrebați -vă municipalitatea unde să vă înregistrați."
+    },
+    "faq7": {
+      "question": "Ce aplicații sunt utile în Belgia?",
+      "answer": "Useful apps include: 'DeLijn' (bus), 'NMBS' (trains), 'Google Translate', and your bank’s app."
+    },
+    "faq8": {
+      "question": "Care este diferența dintre OCMW și Gemeente?",
+      "answer": "The gemeente handles your registration and documents. The OCMW helps with social support like housing or finances."
+    }
+  },
   "stepsToComplete": "Pași de urmat",
   "requiredDocuments": "Documente necesare",
   "estimatedTime": "Timp estimat pentru finalizare",

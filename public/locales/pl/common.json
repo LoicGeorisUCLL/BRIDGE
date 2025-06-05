@@ -188,6 +188,41 @@
       "estimatedTime": "1 hour"
     }
   },
+  "faqTitle": "Często zadawane pytania",
+  "faq": {
+    "faq1": {
+      "question": "Co powinienem zrobić w nagłych wypadkach?",
+      "answer": "Zadzwoń pod numer 112 po karetkę, policję lub straż pożarną. Jest bezpłatny i działa, nawet jeśli nie masz kredytu mobilnego."
+    },
+    "faq2": {
+      "question": "Jak skontaktować się z moją ambasadą?",
+      "answer": "Wyszukaj online ambasadę swojego kraju w Belgii. Mogą pomóc w utraconych dokumentach, kwestiach prawnych i sytuacjach kryzysowych."
+    },
+    "faq3": {
+      "question": "Gdzie mogę znaleźć bezpłatną poradę prawną?",
+      "answer": "Niektóre organizacje, takie jak „Juridisch Loet” lub „CAW”, oferują bezpłatne konsultacje prawne. Sprawdź oficjalną stronę miasta lub zapytaj OCMW."
+    },
+    "faq4": {
+      "question": "Gdzie mogę uzyskać pomoc, jeśli czuję się niebezpieczny lub wykorzystywany?",
+      "answer": "Zadzwoń pod numer 1712 (bezpłatny), aby uzyskać pomoc w przypadku przemocy lub wyzysku. Jest poufny i wielojęzyczny. Możesz także skontaktować się z Belgią Belgii."
+    },
+    "faq5": {
+      "question": "Czy mogę uzyskać bezpłatną pomoc w interpretacji?",
+      "answer": "W niektórych przypadkach tak. Centra integracyjne i usługi społeczne czasami zapewniają tłumacze. Zawsze pytaj!"
+    },
+    "faq6": {
+      "question": "Jak mogę nauczyć się holenderskiego czy francuskiego?",
+      "answer": "Możesz wziąć bezpłatne lub tanie kursy za pośrednictwem „Huis van Het Nederlands” lub „LIGO”. Zapytaj swoją gminę, gdzie się zarejestrować."
+    },
+    "faq7": {
+      "question": "Jakie aplikacje są przydatne w Belgii?",
+      "answer": "Przydatne aplikacje obejmują: „Delijn” (autobus), „NMBS” (pociągi), „Tłumacz Google” i aplikacja banku."
+    },
+    "faq8": {
+      "question": "Jaka jest różnica między OCMW a Gemeente?",
+      "answer": "Gemeente obsługuje rejestrację i dokumenty. OCMW pomaga w wsparciu społecznym, takim jak mieszkania lub finanse."
+    }
+  },
   "stepsToComplete": "Kroki do ukończenia",
   "requiredDocuments": "Wymagane dokumenty",
   "estimatedTime": "Szacowany czas realizacji",

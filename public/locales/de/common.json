@@ -188,6 +188,41 @@
       "estimatedTime": "1 Stunde"
     }
   },
+  "faqTitle": "Häufig gestellte Fragen",
+  "faq": {
+    "faq1": {
+      "question": "Was soll ich im Notfall tun?",
+      "answer": "Rufen Sie 112 für Krankenwagen, Polizei oder Feuerwehr an. Es ist kostenlos und funktioniert auch, wenn Sie kein mobiles Guthaben haben."
+    },
+    "faq2": {
+      "question": "Wie kontaktiere ich meine Botschaft?",
+      "answer": "Suchen Sie online nach der Botschaft Ihres Landes in Belgien. Sie können bei verlorenen Dokumenten, rechtlichen Fragen und Notfällen helfen."
+    },
+    "faq3": {
+      "question": "Wo finde ich kostenlose Rechtsberatung?",
+      "answer": "Einige Organisationen wie \"Juridisch Loket\" oder \"CAW\" bieten kostenlose juristische Konsultationen an. Überprüfen Sie die offizielle Website Ihrer Stadt oder fragen Sie die OCMW."
+    },
+    "faq4": {
+      "question": "Wo kann ich Hilfe bekommen, wenn ich mich unsicher oder ausgenutzt fühle?",
+      "answer": "Rufen Sie 1712 (kostenlos) um Hilfe bei Gewalt oder Ausbeutung an. Es ist vertraulich und mehrsprachig. Sie können sich auch an Fairwork Belgien wenden."
+    },
+    "faq5": {
+      "question": "Kann ich kostenlose Interpretationshilfe erhalten?",
+      "answer": "In einigen Fällen ja. Integrationszentren und soziale Dienste bieten manchmal Dolmetscher. Immer fragen!"
+    },
+    "faq6": {
+      "question": "Wie kann ich Niederländisch oder Französisch lernen?",
+      "answer": "Sie können kostenlose oder kostengünstige Kurse über 'Huis van Het Nederlands' oder 'Ligo' belegen. Fragen Sie Ihre Gemeinde, wo Sie sich registrieren sollen."
+    },
+    "faq7": {
+      "question": "Welche Apps sind in Belgien nützlich?",
+      "answer": "Nützliche Apps umfassen: \"Delijn\" (Bus), \"NMBS\" (Züge), \"Google Translate\" und die App Ihrer Bank."
+    },
+    "faq8": {
+      "question": "Was ist der Unterschied zwischen OCMW und Gemeente?",
+      "answer": "Der Gemeente kümmert sich um Ihre Registrierung und Dokumente. Der OCMW hilft bei der sozialen Unterstützung wie Wohnen oder Finanzen."
+    }
+  },
   "stepsToComplete": "Schritte zum Abschluss",
   "requiredDocuments": "Benötigte Dokumente",
   "estimatedTime": "Geschätzte Dauer",

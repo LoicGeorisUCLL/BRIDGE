@@ -1,11 +1,16 @@
 import type { NextConfig } from "next";
 import { i18n } from './next-i18next.config.js';
+const withPWA = require("next-pwa")({
+  dest: "public",
+  register: true,
+  skipWaiting: true,
+  disable: process.env.NODE_ENV === "development",
+});
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactStrictMode: true,
 
-    // PWA Configuration
+  // Optional: Serve your manifest with cache control
   async headers() {
     return [
       {
@@ -20,22 +25,11 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // Image optimization
   images: {
     formats: ['image/webp', 'image/avif'],
   },
 
-
-
-
-
-  // // Internationalization
   i18n,
-
-
-
 };
 
-
-
-export default nextConfig;
+export default withPWA(nextConfig);

@@ -148,8 +148,8 @@ useEffect(() => {
           <button
             ref={faqButtonRef}
             onClick={() => setShowFAQ(true)}
-            className="flex items-center justify-center p-3 rounded-lg bg-yellow-100">
-            <HelpCircle className="w-5 h-5 text-yellow-700" />
+            className="flex items-center justify-center p-3 rounded-lg bg-gray-100">
+            <HelpCircle className="w-5 h-5 text-gray-600" />
           </button>
         </div>
       </div>
@@ -287,7 +287,7 @@ useEffect(() => {
       )}
        {showFAQ && (
         <div className="fixed inset-0 bg-gray-200/75 flex items-center justify-center p-4 z-50">
-          <div className="relative bg-white rounded-lg p-6 max-w-md w-full mx-4 max-h-[80vh] overflow-auto">
+          <div className="relative bg-white rounded-lg p-6 max-w-sm w-full mx-4 text-left max-h-[80vh] overflow-auto">
             <button
               onClick={() => setShowFAQ(false)}
               className="absolute top-4 right-4 p-1 text-gray-400 hover:text-gray-600 transition-colors"
@@ -295,7 +295,7 @@ useEffect(() => {
               <X className="w-5 h-5" />
             </button>
 
-            <h3 className="text-xl font-bold text-gray-900 mb-4">{t("faqTitle")}</h3>
+            <h3 className="text-xl font-bold text-blue-600 mb-4">{t("faqTitle")}</h3>
 
             {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => {
               const question = t(`faq.faq${num}.question`);
@@ -303,7 +303,7 @@ useEffect(() => {
 
               return (
                 <div key={num} className="mb-4">
-                  <h4 className="font-semibold text-gray-800">{question}</h4>
+                  <h4 className="font-semibold text-blue-900">{question}</h4>
                   <p className="text-sm text-gray-700 mt-1">{answer}</p>
                 </div>
               );

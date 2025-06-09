@@ -1,0 +1,108 @@
+{"tasks": {
+    "municipality": {
+      "title": "Općinska registracija",
+      "description": "Registrirajte se u gradskoj vijećnici",
+      "icon": "Building",
+      "steps": [
+        "Posjetite svoju lokalnu općinu",
+        "Ponesite dokumente",
+        "Završite postupak registracije"
+      ],
+      "documents": [
+        "Putovnica ili osobna iskaznica",
+        "Dokaz o adresi",
+        "Ugovor o radu"
+      ],
+      "estimatedTime": "1 sat"
+    },
+    "contract": {
+      "title": "Ugovor o radu i Plukkaart",
+      "description": "Potpišite svoj ugovor i preuzmite plukkaart",
+      "icon": "FileText",
+      "steps": [
+        "Pregledajte i potpišite ugovor o radu",
+        "Zatražite i dobijte plukkaart",
+        "Sigurno pohranite oba dokumenta"
+      ],
+      "documents": [
+        "Putovnica ili osobna iskaznica",
+        "Podaci o poslodavcu"
+      ],
+      "estimatedTime": "30 minuta"
+    },
+    "health": {
+      "title": "Zdravstveno osiguranje",
+      "description": "Sklopite zdravstveno osiguranje preko poslodavca ili samostalno",
+      "icon": "Shield",
+      "steps": [
+        "Pitajte poslodavca uključuje li zdravstveno osiguranje",
+        "Ako nije uključeno, izaberite zdravstveni fond (mutualiteit)",
+        "Registrirajte se i pošaljite potrebne dokumente"
+      ],
+      "documents": [
+        "Putovnica ili osobna iskaznica",
+        "Ugovor o radu",
+        "Općinska registracija"
+      ],
+      "estimatedTime": "45 minuta"
+    },
+    "bijlage3": {
+      "title": "Bijlage 3",
+      "description": "Privremeni boravišni dokument (Dodatak 3)",
+      "icon": "FileText",
+      "steps": [
+        "Idite u lokalnu općinu",
+        "Zatražite dokument Bijlage 3",
+        "Pričekajte odobrenje i preuzmite"
+      ],
+      "documents": [
+        "Putovnica ili osobna iskaznica",
+        "Dokaz o prebivalištu",
+        "Ugovor o radu"
+      ],
+      "estimatedTime": "30 minuta"
+    },
+    "emergency": {
+      "title": "Kontakt za hitne slučajeve",
+      "description": "Postavite kontakt osobu za hitne slučajeve",
+      "icon": "Phone",
+      "steps": [
+        "Odaberite kontakt osobu",
+        "Podijelite njezine podatke s poslodavcem",
+        "Držite podatke pri ruci"
+      ],
+      "documents": [
+        "Ime i broj telefona",
+        "Vaš odnos s osobom"
+      ],
+      "estimatedTime": "15 minuta"
+    },
+    "bank": {
+      "title": "Bankovni račun",
+      "description": "Otvorite belgijski bankovni račun",
+      "icon": "CreditCard",
+      "steps": [
+        "Izaberite banku",
+        "Posjetite poslovnicu ili se prijavite online",
+        "Predajte potrebne dokumente"
+      ],
+      "documents": [
+        "Putovnica ili osobna iskaznica",
+        "Dokaz o adresi",
+        "Ugovor o radu"
+      ],
+      "estimatedTime": "1 sat"
+    },
+    "practical": {
+      "title": "Praktične informacije",
+      "description": "Korisni savjeti za život i rad u Belgiji",
+      "icon": "FileText",
+      "steps": [
+        "Upoznajte se s pravima radnika",
+        "Naučite hitne brojeve",
+        "Znajte odgovornosti poslodavca"
+      ],
+      "documents": [],
+      "estimatedTime": "Varira"
+    }
+  }}

@@ -26,7 +26,8 @@ const ChecklistScreen: React.FC<ChecklistScreenProps> = ({
 const [showCongratulations, setShowCongratulations] = useState(false);
 const [selectedTaskDetails, setSelectedTaskDetails] = useState<string | null>(null);
 
-const { t } = useTranslation();
+const { t: tt } = useTranslation("tasks");
+const { t } = useTranslation("common");
 const router = useRouter();
 
 const personalizedTasks = generatePersonalizedTasks(userProfile);
@@ -75,7 +76,10 @@ useEffect(() => {
       
       <div className="p-4 space-y-3 pb-24">
         {personalizedTasks.map((taskId) => {
-          const tasks = t('tasks', { returnObjects: true }) as Tasks;
+          console.log(personalizedTasks);
+          console.log(taskId);
+          console.log(tt(`tasks`)) 
+          const tasks = tt('tasks', { returnObjects: true }) as Tasks;
           const task = tasks[taskId];
           const isCompleted = completedTasks.includes(taskId);
           const IconComponent = getIconComponent(task.icon);

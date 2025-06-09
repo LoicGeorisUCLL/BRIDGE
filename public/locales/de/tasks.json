@@ -1,0 +1,110 @@
+{
+  "tasks": {
+    "municipality": {
+      "title": "Anmeldung bei der Gemeinde",
+      "description": "Melde dich im Gemeindeamt an",
+      "icon": "Building",
+      "steps": [
+        "Besuche das örtliche Gemeindeamt",
+        "Bringe die erforderlichen Dokumente mit",
+        "Fülle das Anmeldeformular aus"
+      ],
+      "documents": [
+        "Reisepass oder Personalausweis",
+        "Nachweis der Wohnadresse",
+        "Arbeitsvertrag"
+      ],
+      "estimatedTime": "1 Stunde"
+    },
+    "contract": {
+      "title": "Arbeitsvertrag und Plukkaart",
+      "description": "Unterschreibe den Vertrag und erhalte die Plukkaart",
+      "icon": "FileText",
+      "steps": [
+        "Lies und unterschreibe den Arbeitsvertrag",
+        "Fordere die Plukkaart an",
+        "Bewahre beide Dokumente sicher auf"
+      ],
+      "documents": [
+        "Reisepass oder Personalausweis",
+        "Arbeitgeberdaten"
+      ],
+      "estimatedTime": "30 Minuten"
+    },
+    "health": {
+      "title": "Krankenversicherung",
+      "description": "Melde dich bei einer Krankenversicherung an",
+      "icon": "Shield",
+      "steps": [
+        "Frage deinen Arbeitgeber, ob du versichert bist",
+        "Falls nicht, wähle eine Krankenkasse (Mutualität)",
+        "Registriere dich und reiche die erforderlichen Unterlagen ein"
+      ],
+      "documents": [
+        "Reisepass oder Personalausweis",
+        "Arbeitsvertrag",
+        "Anmeldung bei der Gemeinde"
+      ],
+      "estimatedTime": "45 Minuten"
+    },
+    "bijlage3": {
+      "title": "Anlage 3",
+      "description": "Vorübergehendes Aufenthaltsdokument (Bijlage 3)",
+      "icon": "FileText",
+      "steps": [
+        "Gehe zum örtlichen Gemeindeamt",
+        "Beantrage das Dokument Bijlage 3",
+        "Warte auf die Genehmigung und hole das Dokument ab"
+      ],
+      "documents": [
+        "Reisepass oder Personalausweis",
+        "Nachweis der Wohnadresse",
+        "Arbeitsvertrag"
+      ],
+      "estimatedTime": "30 Minuten"
+    },
+    "emergency": {
+      "title": "Notfallkontakt",
+      "description": "Richte einen Notfallkontakt ein",
+      "icon": "Phone",
+      "steps": [
+        "Wähle eine Kontaktperson",
+        "Gib ihr die Daten deines Arbeitgebers",
+        "Bewahre die Kontaktdaten leicht zugänglich auf"
+      ],
+      "documents": [
+        "Name und Telefonnummer",
+        "Beziehung zu dir"
+      ],
+      "estimatedTime": "15 Minuten"
+    },
+    "bank": {
+      "title": "Bankkonto",
+      "description": "Eröffne ein belgisches Bankkonto",
+      "icon": "CreditCard",
+      "steps": [
+        "Wähle eine Bank",
+        "Besuche eine Filiale oder beantrage online",
+        "Reiche die erforderlichen Unterlagen ein"
+      ],
+      "documents": [
+        "Reisepass oder Personalausweis",
+        "Nachweis der Wohnadresse",
+        "Arbeitsvertrag"
+      ],
+      "estimatedTime": "1 Stunde"
+    },
+    "practical": {
+      "title": "Praktische Informationen",
+      "description": "Nützliche Tipps zum Leben und Arbeiten in Belgien",
+      "icon": "FileText",
+      "steps": [
+        "Informiere dich über deine Rechte als Arbeitnehmer",
+        "Merke dir die Notrufnummern",
+        "Erfahre mehr über die Pflichten des Arbeitgebers"
+      ],
+      "documents": [],
+      "estimatedTime": "Variabel"
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{  "tasks": {
+    "municipality": {
+      "title": "Rejestracja w gminie",
+      "description": "Zameldowanie w urzędzie miasta",
+      "icon": "Building",
+      "steps": [
+        "Odwiedź lokalny urząd gminy",
+        "Zabierz wymagane dokumenty",
+        "Wypełnij formularz meldunkowy"
+      ],
+      "documents": [
+        "Paszport lub dowód osobisty",
+        "Dowód adresu zamieszkania",
+        "Umowa o pracę"
+      ],
+      "estimatedTime": "1 godzina"
+    },
+    "contract": {
+      "title": "Umowa o pracę i Plukkaart",
+      "description": "Podpisz umowę i uzyskaj plukkaart",
+      "icon": "FileText",
+      "steps": [
+        "Przejrzyj i podpisz umowę o pracę",
+        "Poproś o plukkaart",
+        "Zachowaj oba dokumenty w bezpiecznym miejscu"
+      ],
+      "documents": [
+        "Paszport lub dowód osobisty",
+        "Dane pracodawcy"
+      ],
+      "estimatedTime": "30 minut"
+    },
+    "health": {
+      "title": "Ubezpieczenie zdrowotne",
+      "description": "Zapisz się do ubezpieczenia zdrowotnego",
+      "icon": "Shield",
+      "steps": [
+        "Zapytaj pracodawcę, czy obejmuje Cię ubezpieczenie",
+        "Jeśli nie, wybierz fundusz zdrowia (mutualiteit)",
+        "Zarejestruj się i złóż wymagane dokumenty"
+      ],
+      "documents": [
+        "Paszport lub dowód osobisty",
+        "Umowa o pracę",
+        "Rejestracja w gminie"
+      ],
+      "estimatedTime": "45 minut"
+    },
+    "bijlage3": {
+      "title": "Załącznik 3",
+      "description": "Tymczasowy dokument pobytowy (Bijlage 3)",
+      "icon": "FileText",
+      "steps": [
+        "Udaj się do lokalnego urzędu gminy",
+        "Poproś o dokument Bijlage 3",
+        "Poczekaj na zatwierdzenie i odbierz dokument"
+      ],
+      "documents": [
+        "Paszport lub dowód osobisty",
+        "Dowód adresu zamieszkania",
+        "Umowa o pracę"
+      ],
+      "estimatedTime": "30 minut"
+    },
+    "emergency": {
+      "title": "Kontakt alarmowy",
+      "description": "Ustaw kontakt awaryjny",
+      "icon": "Phone",
+      "steps": [
+        "Wybierz osobę kontaktową",
+        "Przekaż jej dane pracodawcy",
+        "Zachowaj dane kontaktowe w łatwo dostępnym miejscu"
+      ],
+      "documents": [
+        "Imię i numer telefonu",
+        "Relacja z Tobą"
+      ],
+      "estimatedTime": "15 minut"
+    },
+    "bank": {
+      "title": "Konto bankowe",
+      "description": "Otwórz belgijskie konto bankowe",
+      "icon": "CreditCard",
+      "steps": [
+        "Wybierz bank",
+        "Odwiedź oddział lub złóż wniosek online",
+        "Złóż wymagane dokumenty"
+      ],
+      "documents": [
+        "Paszport lub dowód osobisty",
+        "Dowód adresu zamieszkania",
+        "Umowa o pracę"
+      ],
+      "estimatedTime": "1 godzina"
+    },
+    "practical": {
+      "title": "Informacje praktyczne",
+      "description": "Przydatne wskazówki dotyczące życia i pracy w Belgii",
+      "icon": "FileText",
+      "steps": [
+        "Poznaj swoje prawa jako pracownik",
+        "Zapamiętaj numery alarmowe",
+        "Dowiedz się o obowiązkach pracodawcy"
+      ],
+      "documents": [],
+      "estimatedTime": "Zmienny"
+    }
+  }}

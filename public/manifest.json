@@ -1,6 +1,6 @@
 {
-  "name": "Bridge - Belgian Administration Guide",
-  "short_name": "Bridge",
+  "name": "BRIDGE - Belgian Administration Guide",
+  "short_name": "BRIDGE",
   "description": "Your personal guide through Belgian administrative processes for seasonal workers",
   "start_url": "/",
   "display": "standalone",
@@ -12,18 +12,29 @@
       "src": "/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "/icon-512x512.png", 
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "categories": ["productivity", "utilities"],
   "lang": "en-US",
   "scope": "/",
-  "prefer_related_applications": false,
-  "host_permissions": ["https://translate.google.com/"]
+  "prefer_related_applications": false
 }

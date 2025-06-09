@@ -8,7 +8,7 @@ import ChecklistScreen from './screens/checklistScreen';
 
 const BridgeApp: React.FC = () => {
   const [currentScreen, setCurrentScreen] = useState<Screen>('welcome');
-  const [userProfile, setUserProfile] = useState<UserProfile>({});
+  const [userProfile, setUserProfile] = useState<UserProfile>({ answers: [] });
   const [completedTasks, setCompletedTasks] = useState<string[]>([]);
   const [mounted, setMounted] = useState(false);
 
@@ -64,10 +64,10 @@ const BridgeApp: React.FC = () => {
   }
 
   const handleResetAndGoToWelcome = () => {
-    setUserProfile({});
+    setUserProfile({ answers: [] });
     setCompletedTasks([]);
     setCurrentScreen('welcome');
-    saveData({}, []);
+    saveData({ answers: [] }, []);
   };
 
   return (

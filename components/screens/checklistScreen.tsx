@@ -57,8 +57,7 @@ useEffect(() => {
       Shield,
       CreditCard,
       MapPin,
-      Briefcase,
-      Stethoscope
+      Briefcase
     };
     return icons[iconName] || FileText;
   };

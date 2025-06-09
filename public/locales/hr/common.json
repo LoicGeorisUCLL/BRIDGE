@@ -25,5 +25,50 @@
   "markComplete": "Označi kao potpuni",
   "noEUTitle": "Europska ID potrebna",
   "noEUMessage": "Ova je aplikacija trenutno dostupna samo za ljude s europskim ID -ovima. Opcija za neeuropske ljude još nije van.",
-  "understood": "Shvaćen"
+  "understood": "Shvaćen",
+
+  "faqTitle": "Često postavljana pitanja",
+"faq": {
+
+  "faq1": {
+    "question": "Što trebam učiniti u hitnom slučaju?",
+    "answer": "Nazovite 112 za hitnu pomoć, policiju ili vatrogasce. Poziv je besplatan i radi čak i ako nemate kredita na mobitelu."
+  },
+
+  "faq2": {
+    "question": "Kako mogu kontaktirati svoje veleposlanstvo?",
+    "answer": "Pretražite internet za veleposlanstvo svoje zemlje u Belgiji. Oni vam mogu pomoći s izgubljenim dokumentima, pravnim problemima i hitnim situacijama."
+  },
+
+  "faq3": {
+    "question": "Gdje mogu dobiti besplatnu pravnu pomoć?",
+    "answer": "Neke organizacije poput 'Juridisch Loket' ili 'CAW' nude besplatno pravno savjetovanje. Provjerite službenu web stranicu svog grada ili pitajte OCMW."
+  },
+
+  "faq4": {
+    "question": "Gdje mogu potražiti pomoć ako se osjećam nesigurno ili iskorišteno?",
+    "answer": "Nazovite 1712 (besplatno) ako ste žrtva nasilja ili iskorištavanja. Poziv je povjerljiv i dostupan na više jezika. Možete se također obratiti FairWork Belgium."
+  },
+
+  "faq5": {
+    "question": "Mogu li dobiti besplatnu pomoć pri prevođenju?",
+    "answer": "U nekim slučajevima, da. Centri za integraciju i socijalne službe ponekad osiguravaju prevoditelje. Uvijek pitajte!"
+  },
+
+  "faq6": {
+    "question": "Kako mogu naučiti nizozemski ili francuski?",
+    "answer": "Možete pohađati besplatne ili jeftine tečajeve preko 'Huis van het Nederlands' ili 'Ligo'. Pitajte svoju općinu gdje se prijaviti."
+  },
+
+  "faq7": {
+    "question": "Koje su aplikacije korisne u Belgiji?",
+    "answer": "Korisne aplikacije uključuju: 'DeLijn' (autobus), 'NMBS' (vlakovi), 'Google Translate' i aplikaciju vaše banke."
+  },
+
+  "faq8": {
+    "question": "Koja je razlika između OCMW-a i općine (gemeente)?",
+    "answer": "Općina (gemeente) je zadužena za vašu registraciju i dokumente. OCMW pomaže s društvenom pomoći poput stanovanja i financija."
+  }
+}
+
 }

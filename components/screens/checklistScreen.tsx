@@ -86,9 +86,6 @@ useEffect(() => {
       
       <div className="p-4 space-y-3 pb-24">
         {personalizedTasks.map((taskId) => {
-          console.log(personalizedTasks);
-          console.log(taskId);
-          console.log(tt(`tasks`)) 
           const tasks = tt('tasks', { returnObjects: true }) as Tasks;
           const task = tasks[taskId];
           const isCompleted = completedTasks.includes(taskId);
@@ -170,7 +167,7 @@ useEffect(() => {
             </button>
 
             {(() => {
-              const tasks = t('tasks', { returnObjects: true }) as Tasks;
+              const tasks = tt('tasks', { returnObjects: true }) as Tasks;
               const task = tasks[selectedTaskDetails];
               const IconComponent = getIconComponent(task.icon);
               const isCompleted = completedTasks.includes(selectedTaskDetails);

@@ -17,8 +17,9 @@ import { UserProfile } from "@/types";
       allTasks.push('bank');
     }
 
-    // Always add emergency contact & practical information
-    allTasks.push('emergency', 'practical');
+    if (profile.medicalCheck !== undefined && profile.medicalCheck == "1") {
+      allTasks.push('medicalCheck');
+    }
 
     return allTasks;
   };

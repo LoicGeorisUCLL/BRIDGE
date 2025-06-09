@@ -4,6 +4,9 @@ import { UserProfile, Tasks } from '@/types';
 import { useTranslation } from "next-i18next";
 import { generatePersonalizedTasks } from '../logic/logic';
 import { useRouter } from 'next/router';
+import { HelpCircle } from "lucide-react";
+
+
 
 interface ChecklistScreenProps {
   userProfile: UserProfile;
@@ -25,6 +28,11 @@ const ChecklistScreen: React.FC<ChecklistScreenProps> = ({
 
 const [showCongratulations, setShowCongratulations] = useState(false);
 const [selectedTaskDetails, setSelectedTaskDetails] = useState<string | null>(null);
+const [showFAQ, setShowFAQ] = useState(false);
+const faqButtonRef = React.useRef<HTMLButtonElement>(null);
+
+
+
 
 const { t: tt } = useTranslation("tasks");
 const { t } = useTranslation("common");
@@ -38,6 +46,9 @@ useEffect(() => {
       setShowCongratulations(true);
     }
   }, [allCompleted, personalizedTasks.length]);
+  
+
+  
 
   const getIconComponent = (iconName: string) => {
     const icons: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -45,9 +56,9 @@ useEffect(() => {
       Building,
       Shield,
       CreditCard,
-      Phone,
       MapPin,
-      Briefcase
+      Briefcase,
+      Stethoscope
     };
     return icons[iconName] || FileText;
   };
@@ -138,6 +149,12 @@ useEffect(() => {
             <User className="w-5 h-5 text-blue-600" />
             <span className="text-blue-600 font-medium">{t("editProfileButton")}</span>
           </button>
+          <button
+            ref={faqButtonRef}
+            onClick={() => setShowFAQ(true)}
+            className="flex items-center justify-center p-3 rounded-lg bg-gray-100">
+            <HelpCircle className="w-5 h-5 text-gray-600" />
+          </button>
         </div>
       </div>
 
@@ -145,7 +162,7 @@ useEffect(() => {
       {selectedTaskDetails && (
 
         <div className="fixed inset-0 bg-gray-200/75 flex items-center justify-center p-4 z-50">
-          <div className="relative bg-white rounded-lg p-6 max-w-sm w-full mx-4 text-center max-h-[80vh] overflow-auto">
+          <div className="relative bg-white rounded-lg p-6 max-w-sm w-full mx-4 text-left max-h-[80vh] overflow-auto">
             <button
               onClick={handleCloseDetails}
               className="absolute top-4 right-4 p-1 text-gray-400 hover:text-gray-600 transition-colors"
@@ -272,7 +289,36 @@ useEffect(() => {
           </div>
         </div>
       )}
+       {showFAQ && (
+        <div className="fixed inset-0 bg-gray-200/75 flex items-center justify-center p-4 z-50">
+          <div className="relative bg-white rounded-lg p-6 max-w-sm w-full mx-4 text-left max-h-[80vh] overflow-auto">
+            <button
+              onClick={() => setShowFAQ(false)}
+              className="absolute top-4 right-4 p-1 text-gray-400 hover:text-gray-600 transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <h3 className="text-xl font-bold text-blue-600 mb-4">{t("faqTitle")}</h3>
+
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => {
+              const question = t(`faq.faq${num}.question`);
+              const answer = t(`faq.faq${num}.answer`);
+
+              return (
+                <div key={num} className="mb-4">
+                  <h4 className="font-semibold text-blue-900">{question}</h4>
+                  <p className="text-sm text-gray-700 mt-1">{answer}</p>
+                </div>
+              );
+              
+            })}
+            
+          </div>
+        </div>
+        )}
     </div>
+    
   );
 };
 

@@ -1,29 +1,29 @@
 {
-    "name": "Bridge - Belgian Administration Guide",
-    "short_name": "Bridge",
-    "description": "Your personal guide through Belgian administrative processes for seasonal workers",
-    "start_url": "/",
-    "display": "standalone",
-    "background_color": "#1e40af",
-    "theme_color": "#1e40af",
-    "orientation": "portrait",
-    "icons": [
-      {
-        "src": "/icon-192x192.png",
-        "sizes": "192x192",
-        "type": "image/png",
-        "purpose": "any maskable"
-      },
-      {
-        "src": "/icon-512x512.png", 
-        "sizes": "512x512",
-        "type": "image/png",
-        "purpose": "any maskable"
-      }
-    ],
-    "categories": ["productivity", "utilities"],
-    "lang": "en-US",
-    "scope": "/",
-    "prefer_related_applications": false,
-    "host_permissions": ["https://translate.google.com/"]
-  }
+  "name": "Bridge - Belgian Administration Guide",
+  "short_name": "Bridge",
+  "description": "Your personal guide through Belgian administrative processes for seasonal workers",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1e40af",
+  "theme_color": "#1e40af",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png", 
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["productivity", "utilities"],
+  "lang": "en-US",
+  "scope": "/",
+  "prefer_related_applications": false,
+  "host_permissions": ["https://translate.google.com/"]
+}

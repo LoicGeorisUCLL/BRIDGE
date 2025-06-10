@@ -8,17 +8,83 @@ const withPWA = require('next-pwa')({
   disable: process.env.NODE_ENV === 'development',
   runtimeCaching: [
     {
-      urlPattern: /^https:\/\/translate\.google\.com\/.*/i,
+      urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
       handler: 'CacheFirst',
       options: {
-        cacheName: 'google-translate-cache',
+        cacheName: 'google-fonts-cache',
         expiration: {
-          maxEntries: 32,
-          maxAgeSeconds: 24 * 60 * 60 // 24 hours
-        }
-      }
-    }
-  ]
+          maxEntries: 10,
+          maxAgeSeconds: 60 * 60 * 24 * 365, // 365 days
+        },
+      },
+    },
+    {
+      urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i,
+      handler: 'CacheFirst',
+      options: {
+        cacheName: 'google-fonts-cache',
+        expiration: {
+          maxEntries: 10,
+          maxAgeSeconds: 60 * 60 * 24 * 365, // 365 days
+        },
+      },
+    },
+    {
+      urlPattern: /\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i,
+      handler: 'StaleWhileRevalidate',
+      options: {
+        cacheName: 'static-font-assets',
+        expiration: {
+          maxEntries: 4,
+          maxAgeSeconds: 60 * 60 * 24 * 7, // 7 days
+        },
+      },
+    },
+    {
+      urlPattern: /\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,
+      handler: 'StaleWhileRevalidate',
+      options: {
+        cacheName: 'static-image-assets',
+        expiration: {
+          maxEntries: 64,
+          maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+        },
+      },
+    },
+    {
+      urlPattern: /\/_next\/static.+\.js$/i,
+      handler: 'CacheFirst',
+      options: {
+        cacheName: 'next-static-js-assets',
+        expiration: {
+          maxEntries: 64,
+          maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+        },
+      },
+    },
+    {
+      urlPattern: /\/_next\/static.+\.css$/i,
+      handler: 'CacheFirst',
+      options: {
+        cacheName: 'next-static-css-assets',
+        expiration: {
+          maxEntries: 64,
+          maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+        },
+      },
+    },
+    {
+      urlPattern: /^https?.*/i,
+      handler: 'NetworkFirst',
+      options: {
+        cacheName: 'offlineCache',
+        expiration: {
+          maxEntries: 200,
+          maxAgeSeconds: 60 * 60 * 24, // 24 hours
+        },
+      },
+    },
+  ],
 });
 
 const nextConfig: NextConfig = {

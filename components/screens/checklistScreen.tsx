@@ -89,6 +89,7 @@ useEffect(() => {
           const tasks = tt('tasks', { returnObjects: true }) as Tasks;
           const task = tasks[taskId];
           const isCompleted = completedTasks.includes(taskId);
+          console.log("Task ID:", taskId, "Task:", task);
           const IconComponent = getIconComponent(task.icon);
           
           return (

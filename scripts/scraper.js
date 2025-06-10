@@ -1,50 +1,28 @@
-// regulation-scraper.ts
-import { JSDOM } from 'jsdom';
-import fetch from 'node-fetch';
-import fs from 'fs/promises';
-import path from 'path';
-import 'dotenv/config';
-import puppeteer from 'puppeteer';
-
-interface Regulation {
-  id: number;
-  content: string;
-}
-
-interface ScrapedRegulations {
-  regulations: Regulation[];
-  lastUpdated: string;
-  source: string;
-}
-
-interface QuestionOption {
-  question: string;
-  options: string[];
-}
-
-interface Questions {
-  intakeQuestions: Record<string, QuestionOption>;
-}
+// regulation-scraper.js
+const { JSDOM } = require('jsdom');
+const fetch = require('node-fetch').default || require('node-fetch');
+const fs = require('fs').promises;
+const path = require('path');
+require('dotenv/config');
+const puppeteer = require('puppeteer');
 
 class RegulationScraper {
-  private htmlUrl: string;
-  private outputPath: string;
-  private questionsPath: string;
-
   constructor(
-    htmlUrl: string, 
-    outputPath: string = './components/logic/logic.tsx',
-    questionsPath: string = './public/locales/en/questions.json'
+    htmlUrl, 
+    outputPath = './components/logic/logic.tsx',
+    questionsPath = './public/locales/en/questions.json',
+    tasksPath = './public/locales/en/tasks.json'
   ) {
     this.htmlUrl = htmlUrl;
     this.outputPath = outputPath;
     this.questionsPath = questionsPath;
+    this.tasksPath = tasksPath;
   }
 
   /**
    * Scrape regulations from the HTML website with async
    */
-  async scrapeRegulations(): Promise<ScrapedRegulations> {
+  async scrapeRegulations() {
     try {
       console.log('🔍 Scraping regulations from:', this.htmlUrl);
       
@@ -71,7 +49,7 @@ class RegulationScraper {
         // Extract regulations using page.evaluate to run code in browser context
         const regulations = await page.evaluate(() => {
           const regulationElements = document.querySelectorAll('.regulation');
-          const results: { id: number; content: string }[] = [];
+          const results = [];
           
           regulationElements.forEach((element, index) => {
             const content = element.querySelector('p[data-field="content"]')?.textContent?.trim();
@@ -107,7 +85,7 @@ class RegulationScraper {
   /**
    * Generate questions using LLM based on regulations
    */
-  async generateQuestionsWithLLM(regulations: ScrapedRegulations): Promise<Questions> {
+  async generateQuestionsWithLLM(regulations) {
     const prompt = this.buildQuestionsPrompt(regulations);
     
     try {
@@ -135,11 +113,11 @@ class RegulationScraper {
         throw new Error(`LLM API Error: ${response.status}`);
       }
 
-      const data = await response.json() as { content: { text: string }[] };
+      const data = await response.json();
       const questionsText = data.content[0].text;
 
       // Parse the JSON response
-      let questions: Questions;
+      let questions;
       try {
         // Clean up the response by removing markdown code blocks if present
         const cleanedResponse = questionsText.replace(/^```json\n?/, '').replace(/```$/, '').trim();
@@ -149,8 +127,7 @@ class RegulationScraper {
         console.log('Raw response:', questionsText);
         throw new Error('Failed to parse questions JSON from LLM response');
       }
-      console.log(questions)
-      console.log(questions.intakeQuestions)
+      
       console.log(`✅ Generated ${Object.keys(questions.intakeQuestions).length} questions`);
       return questions;
     } catch (error) {
@@ -160,9 +137,63 @@ class RegulationScraper {
   }
 
   /**
+   * Generate tasks using LLM based on regulations and current tasks
+   */
+  async generateTasksWithLLM(regulations, questions) {
+    const prompt = await this.buildTasksPrompt(regulations, questions);
+    
+    try {
+      console.log('🤖 Generating tasks based on regulations...');
+      
+      const response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': process.env.ANTHROPIC_API_KEY || '',
+          'anthropic-version': '2023-06-01'
+        },
+        body: JSON.stringify({
+          model: 'claude-3-haiku-20240307',
+          max_tokens: 4000,
+          messages: [{
+            role: 'user',
+            content: prompt
+          }]
+        })
+      });
+
+      if (!response.ok) {
+        console.error('❌ LLM API call failed:', response);
+        throw new Error(`LLM API Error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      const tasksText = data.content[0].text;
+
+      // Parse the JSON response
+      let tasks;
+      try {
+        // Clean up the response by removing markdown code blocks if present
+        const cleanedResponse = tasksText.replace(/^```json\n?/, '').replace(/```$/, '').trim();
+        tasks = JSON.parse(cleanedResponse);
+      } catch (parseError) {
+        console.error('❌ Error parsing tasks JSON:', parseError);
+        console.log('Raw response:', tasksText);
+        throw new Error('Failed to parse tasks JSON from LLM response');
+      }
+      
+      console.log(`✅ Generated ${Object.keys(tasks.tasks).length} tasks`);
+      return tasks;
+    } catch (error) {
+      console.error('❌ Error generating tasks:', error);
+      throw error;
+    }
+  }
+
+  /**
    * Build the prompt for generating questions
    */
-  private buildQuestionsPrompt(regulations: ScrapedRegulations): string {
+  buildQuestionsPrompt(regulations) {
     return `
 You are an expert in Belgian administrative procedures for foreign workers.
 
@@ -227,13 +258,169 @@ Generate the questions now:
   }
 
   /**
-   * Call LLM to generate new logic based on regulations and questions
+   * Build the prompt for generating tasks
    */
-  async generateLogicWithLLM(regulations: ScrapedRegulations, questions: Questions, currentLogic: string): Promise<string> {
-    const prompt = this.buildLogicPrompt(regulations, questions, currentLogic);
+  async buildTasksPrompt(regulations, questions) {
+    // Read current tasks to use as examples
+    let currentTasks = '';
+    try {
+      const tasksContent = await fs.readFile(this.tasksPath, 'utf-8');
+      currentTasks = tasksContent;
+    } catch (error) {
+      console.log('ℹ️  No existing tasks file found, will use default structure');
+    }
+
+    const questionsList = Object.entries(questions.intakeQuestions)
+      .map(([index, q]) => `${index}. ${q.question} (Options: ${q.options.join(', ')})`)
+      .join('\n');
+
+    return `
+You are an expert in Belgian administrative procedures for foreign workers and a TypeScript developer.
+
+CONTEXT:
+Bridge is an app that helps foreign workers navigate Belgian bureaucracy by providing personalized task lists based on their situation.
+
+UPDATED REGULATIONS:
+${regulations.regulations.map(reg => `${reg.id}. ${reg.content}`).join('\n')}
+
+GENERATED QUESTIONS:
+${questionsList}
+
+TASK EXAMPLE:
+  {"tasks": {
+    "municipality": {
+      "title": "Municipal Registration",
+      "description": "Register at the town hall",
+      "icon": "Building",
+      "steps": [
+        "Visit your local municipality",
+        "Bring your documents",
+        "Complete the registration process"
+      ],
+      "documents": [
+        "Passport or ID",
+        "Proof of address",
+        "Employment contract"
+      ],
+      "estimatedTime": "1 hour"
+    },
+    "health": {
+      "title": "Health Insurance",
+      "description": "Arrange health insurance via your employer or independently",
+      "icon": "Shield",
+      "steps": [
+        "Ask your employer about included health insurance",
+        "If not covered, choose a health fund (mutualiteit)",
+        "Register and submit required documents"
+      ],
+      "documents": [
+        "Passport or ID",
+        "Employment contract",
+        "Municipal registration"
+      ],
+      "estimatedTime": "45 minutes"
+    },
+    "practical": {
+      "title": "Practical Information",
+      "description": "Useful tips for living and working in Belgium",
+      "icon": "FileText",
+      "steps": [
+        "Understand your worker rights",
+        "Learn local emergency numbers",
+        "Know your employer responsibilities"
+      ],
+      "documents": [],
+      "estimatedTime": "Variable"
+    }
+  }
+}
+
+TASK GENERATION REQUIREMENTS:
+1. Extract all administrative tasks/requirements mentioned in the regulations
+2. Create comprehensive tasks that foreign workers need to complete
+3. Each task should have a descriptive ID (e.g., "municipality_registration", "work_permit_application", "tax_registration")
+4. Focus on tasks that are specifically mentioned or implied in the regulations
+5. Include both mandatory and conditional tasks based on different worker situations
+
+TASK STRUCTURE REQUIREMENTS:
+- title: Clear, concise task name
+- description: Brief explanation of what needs to be done
+- icon: ONLY choose from these options: "FileText", "Building", "Shield", "CreditCard", "MapPin", "Briefcase"
+- steps: Array of 2-5 actionable steps to complete the task
+- documents: Array of required documents/information needed
+- estimatedTime: Realistic time estimate (e.g., "30 minutes", "1 hour", "2-3 days")
+
+IMPORTANT GUIDELINES:
+- Base tasks directly on the scraped regulations
+- Use descriptive task IDs that clearly indicate the administrative procedure
+- Include both existing task categories and new ones found in regulations
+- Make steps specific and actionable
+- List realistic document requirements
+- The tasks must be logical
+- Provide helpful time estimates
+- Choose appropriate icons based on task type:
+  * FileText: Documentation/paperwork tasks
+  * Building: Municipal/government office visits
+  * Shield: Insurance/protection related
+  * CreditCard: Banking/financial tasks
+  * MapPin: Location/residence related
+  * Briefcase: Employment/work related
+
+OUTPUT FORMAT:
+Return ONLY a valid JSON object in this exact structure:
+
+{
+  "tasks": {
+    "task_id_1": {
+      "title": "Task Title",
+      "description": "Task description",
+      "icon": "Building",
+      "steps": [
+        "Step 1 description",
+        "Step 2 description",
+        "Step 3 description"
+      ],
+      "documents": [
+        "Document 1",
+        "Document 2"
+      ],
+      "estimatedTime": "1 hour"
+    },
+    "task_id_2": {
+      "title": "Another Task Title",
+      "description": "Another task description",
+      "icon": "FileText",
+      "steps": [
+        "Step 1",
+        "Step 2"
+      ],
+      "documents": [
+        "Required document"
+      ],
+      "estimatedTime": "30 minutes"
+    }
+  }
+}
+
+CRITICAL:
+- Return ONLY the JSON object, no additional text or explanation
+- Ensure the JSON is valid and properly formatted
+- Base all tasks on the actual regulations provided
+- Use descriptive task IDs that clearly indicate the administrative procedure
+- Include all tasks mentioned or implied in the regulations
+
+Generate the tasks now:
+`;
+  }
+
+  /**
+   * Call LLM to generate new logic based on regulations, questions, and tasks
+   */
+  async generateLogicWithLLM(regulations, questions, tasks, currentLogic) {
+    const prompt = this.buildLogicPrompt(regulations, questions, tasks, currentLogic);
     
     try {
-      console.log('🤖 Calling LLM to generate new logic based on questions...');
+      console.log('🤖 Calling LLM to generate new logic based on questions and tasks...');
       
       const response = await fetch('https://api.anthropic.com/v1/messages', {
         method: 'POST',
@@ -257,7 +444,7 @@ Generate the questions now:
         throw new Error(`LLM API Error: ${response.status}`);
       }
 
-      const data = await response.json() as { content: { text: string }[] };
+      const data = await response.json();
       const newLogic = data.content[0].text;
 
       console.log('✅ Generated new logic from LLM');
@@ -269,9 +456,9 @@ Generate the questions now:
   }
 
   /**
-   * Build the prompt for generating logic based on questions
+   * Build the prompt for generating logic based on questions and tasks
    */
-  private buildLogicPrompt(regulations: ScrapedRegulations, questions: Questions, currentLogic: string): string {
+  buildLogicPrompt(regulations, questions, tasks, currentLogic) {
     // Build question mapping documentation
     const questionMapping = Object.entries(questions.intakeQuestions)
       .map(([index, q]) => {
@@ -279,6 +466,9 @@ Generate the questions now:
         return `- answers[${index}]: ${q.question}\n${optionsList}`;
       })
       .join('\n\n');
+
+    // Build available tasks list
+    const availableTasks = Object.keys(tasks.tasks).join(', ');
 
     return `
 You are an expert TypeScript developer working on a Belgian administrative guidance app called "BRIDGE".
@@ -297,21 +487,15 @@ ${regulations.regulations.map(reg => `${reg.id}. ${reg.content}`).join('\n')}
 GENERATED QUESTIONS AND ANSWER MAPPING:
 ${questionMapping}
 
-TASK DEFINITIONS FROM BRIDGE APP:
-- municipality: Municipal registration at town hall
-- contract: Employment contract & plukkaart (seasonal work permit)
-- health: Health insurance arrangement
-- bijlage3: Temporary residence document (Annex 3)
-- emergency: Emergency contact setup
-- bank: Belgian bank account opening
-- practical: Practical information and worker rights
+AVAILABLE TASKS:
+${availableTasks}
 
 USER PROFILE STRUCTURE:
 The user answers are stored in a UserProfile.answers array where each index corresponds to a question as mapped above.
 
 INSTRUCTIONS:
 1. Analyze the updated regulations for changes in Belgian work permit requirements
-2. Update the generatePersonalizedTasks function logic based on new regulations and the generated questions
+2. Update the generatePersonalizedTasks function logic based on new regulations, questions, and available tasks
 3. The function should access user responses via profile.answers[questionIndex] where questionIndex corresponds to the question mapping above
 4. Pay special attention to:
    - EU vs non-EU worker requirements
@@ -325,16 +509,18 @@ INSTRUCTIONS:
 6. Only include tasks that are actually required based on the regulations
 7. Add comments explaining the regulatory basis for each decision
 8. Use the exact question indices from the mapping above
+9. Return task IDs from the available tasks list only
 
 IMPORTANT: 
 - Return ONLY the complete TypeScript file content
 - Keep the existing import structure
 - Ensure all logic is based on the current Belgian regulations provided
 - Use profile.answers[index] to access user responses based on the question mapping provided
-- You must ONLY choose tasks from the defined task list: municipality, contract, health, bijlage3, emergency, bank, practical
+- Add detailed comments explaining the regulatory reasoning for each task assignment
 
-Based on the regulations and questions above, generate the updated logic.tsx file:
+Based on the regulations, questions, and available tasks above, generate the updated logic.tsx file:
 
+ONLY CHOOSE TASKS FROM THE AVAILABLE TASKS LIST
 RETURN ONLY THE UPDATED LOGIC FILE CONTENT NO EXTRA TEXT OR COMMENTS
 `;
   }
@@ -342,7 +528,7 @@ RETURN ONLY THE UPDATED LOGIC FILE CONTENT NO EXTRA TEXT OR COMMENTS
   /**
    * Save questions to JSON file
    */
-  async saveQuestions(questions: Questions): Promise<void> {
+  async saveQuestions(questions) {
     try {
       console.log('📝 Saving questions to file...');
       
@@ -361,9 +547,30 @@ RETURN ONLY THE UPDATED LOGIC FILE CONTENT NO EXTRA TEXT OR COMMENTS
   }
 
   /**
+   * Save tasks to JSON file
+   */
+  async saveTasks(tasks) {
+    try {
+      console.log('📝 Saving tasks to file...');
+      
+      // Ensure directory exists
+      const dir = path.dirname(this.tasksPath);
+      await fs.mkdir(dir, { recursive: true });
+      
+      // Write tasks file
+      await fs.writeFile(this.tasksPath, JSON.stringify(tasks, null, 2));
+      console.log(`✅ Tasks saved: ${this.tasksPath}`);
+      
+    } catch (error) {
+      console.error('❌ Error saving tasks:', error);
+      throw error;
+    }
+  }
+
+  /**
    * Update the logic file with new content
    */
-  async updateLogicFile(newLogic: string): Promise<void> {
+  async updateLogicFile(newLogic) {
     try {
       console.log('📝 Updating logic file...');
       
@@ -396,9 +603,9 @@ RETURN ONLY THE UPDATED LOGIC FILE CONTENT NO EXTRA TEXT OR COMMENTS
   /**
    * Basic TypeScript syntax validation
    */
-  private async validateTypeScript(content: string): Promise<void> {
+  async validateTypeScript(content) {
     // Basic validation - check for common syntax issues
-    const issues: string[] = [];
+    const issues = [];
     
     if (!content.includes('export')) {
       issues.push('Missing export statement');
@@ -426,23 +633,54 @@ RETURN ONLY THE UPDATED LOGIC FILE CONTENT NO EXTRA TEXT OR COMMENTS
   }
 
   /**
-   * Main update process - now includes questions generation
+   * Main update process - now includes task generation
    */
-  async updateLogic(): Promise<void> {
+  async updateLogic() {
     try {
       console.log('🚀 Starting Bridge logic update process...');
       
       // 1. Scrape current regulations
       const regulations = await this.scrapeRegulations();
+      console.log(regulations);
 
-      // 2. Generate questions based on regulations
+      // 2. Read existing regulation metadata
+      const metadataPath = './regulation-metadata.json';
+      let existingMetadata = null;
+      try {
+        const metadataContent = await fs.readFile(metadataPath, 'utf-8');
+        existingMetadata = JSON.parse(metadataContent);
+        console.log('Loaded existing regulation metadata.');
+      } catch (error) {
+        console.log('ℹ️  No existing regulation metadata found.');
+      }
+
+      console.log(existingMetadata)
+      // // 3. Compare scraped regulations with metadata
+      // if (existingMetadata && JSON.stringify(regulations.regulations) === JSON.stringify(existingMetadata.regulations)) {
+      //   console.log('✅ Scraped regulations are identical to existing metadata. Exiting update process.');
+      //   return; // Exit early if no changes
+      // }
+
+      // 4. Save regulation metadata
+      await this.saveRegulationMetadata(regulations);
+
+      // 5. Generate questions based on regulations
       console.log('📋 Generating questions based on regulations...');
       const questions = await this.generateQuestionsWithLLM(regulations);
-      
-      // 3. Save questions to file
+      console.log(questions.intakeQuestions);
+
+      // 6. Save questions to file
       await this.saveQuestions(questions);
       
-      // 4. Read current logic file
+      // 7. Generate tasks based on regulations and questions
+      console.log('📋 Generating tasks based on regulations...');
+      const tasks = await this.generateTasksWithLLM(regulations, questions);
+      console.log(tasks.tasks);
+
+      // 8. Save tasks to file
+      await this.saveTasks(tasks);
+      
+      // 9. Read current logic file
       let currentLogic = '';
       try {
         console.log(`📂 Reading current logic file from: ${this.outputPath}`);
@@ -451,17 +689,14 @@ RETURN ONLY THE UPDATED LOGIC FILE CONTENT NO EXTRA TEXT OR COMMENTS
         console.log('ℹ️  No existing logic file found');
       }
       
-      // 5. Generate new logic with LLM based on questions and regulations
-      const newLogic = await this.generateLogicWithLLM(regulations, questions, currentLogic);
+      // 10. Generate new logic with LLM based on questions, tasks, and regulations
+      const newLogic = await this.generateLogicWithLLM(regulations, questions, tasks, currentLogic);
       console.log(newLogic)
-      
-      // 6. Update the logic file
+      // 11. Update the logic file
       await this.updateLogicFile(newLogic);
+
       
-      // 7. Save regulation metadata
-      await this.saveRegulationMetadata(regulations);
-      
-      console.log('✅ Bridge logic and questions update completed successfully!');
+      console.log('✅ Bridge logic, questions, and tasks update completed successfully!');
       
     } catch (error) {
       console.error('❌ Update process failed:', error);
@@ -472,7 +707,7 @@ RETURN ONLY THE UPDATED LOGIC FILE CONTENT NO EXTRA TEXT OR COMMENTS
   /**
    * Save regulation metadata for tracking
    */
-  private async saveRegulationMetadata(regulations: ScrapedRegulations): Promise<void> {
+  async saveRegulationMetadata(regulations) {
     const metadataPath = './regulation-metadata.json';
     await fs.writeFile(metadataPath, JSON.stringify(regulations, null, 2));
     console.log(`📋 Regulation metadata saved: ${metadataPath}`);
@@ -485,6 +720,7 @@ async function main() {
   const htmlUrl = args[0] || process.env.REGULATIONS_URL;
   const logicPath = args[1] || './components/logic/logic.tsx';
   const questionsPath = args[2] || './public/locales/en/questions.json';
+  const tasksPath = args[3] || './public/locales/en/tasks.json';
 
   if (!htmlUrl) {
     console.error('❌ Please provide the HTML regulations URL as first argument or REGULATIONS_URL env var');
@@ -496,7 +732,7 @@ async function main() {
     process.exit(1);
   }
 
-  const scraper = new RegulationScraper(htmlUrl, logicPath, questionsPath);
+  const scraper = new RegulationScraper(htmlUrl, logicPath, questionsPath, tasksPath);
   
   try {
     await scraper.updateLogic();
@@ -508,7 +744,7 @@ async function main() {
 }
 
 // Export for use as module
-export { RegulationScraper };
+module.exports = { RegulationScraper };
 
 // Run if called directly
 if (require.main === module) {

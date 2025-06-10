@@ -11,7 +11,7 @@
       "question": "How long will you be working in Belgium?",
       "options": [
         "Less than 3 months",
-        "3 months or more"
+        "More than 3 months"
       ]
     },
     "2": {
@@ -36,11 +36,10 @@
       ]
     },
     "5": {
-      "question": "How many parents do you have?",
+      "question": "What is your age?",
       "options": [
-        "6 to 12 children",
-        "Less than 6 children",
-        "More than 12 children"
+        "Under 25 years old",
+        "25 years old or above"
       ]
     }
   }

@@ -33,7 +33,6 @@ async function translateText(text, to) {
     }
     
     const result = await response.json();
-    console.log(`TRANSLATETDDDD "${result.translatedText}"`);
 
     return result.translatedText;
   } catch (e) {

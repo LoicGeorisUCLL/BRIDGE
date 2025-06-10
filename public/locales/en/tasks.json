@@ -1,11 +1,12 @@
-  {"tasks": {
-    "municipality": {
+{
+  "tasks": {
+    "municipal_registration": {
       "title": "Municipal Registration",
-      "description": "Register at the town hall",
+      "description": "Register with the local authorities for stays longer than 3 months",
       "icon": "Building",
       "steps": [
         "Visit your local municipality",
-        "Bring your documents",
+        "Bring your passport/ID and proof of address",
         "Complete the registration process"
       ],
       "documents": [
@@ -15,28 +16,27 @@
       ],
       "estimatedTime": "1 hour"
     },
-    "contract": {
-      "title": "Employment Contract & Plukkaart",
-      "description": "Sign your contract and receive your plukkaart",
-      "icon": "FileText",
+    "work_contract_validation": {
+      "title": "Validate Work Contract",
+      "description": "Ensure you have a valid work contract issued by your employer",
+      "icon": "Briefcase",
       "steps": [
-        "Review and sign the employment contract",
-        "Request and obtain your plukkaart",
-        "Store both documents safely"
+        "Obtain a work contract from your employer",
+        "Review the contract to ensure it meets legal requirements",
+        "Submit the contract to the authorities if required"
       ],
       "documents": [
-        "Passport or ID",
-        "Employer details"
+        "Employment contract"
       ],
       "estimatedTime": "30 minutes"
     },
-    "health": {
-      "title": "Health Insurance",
-      "description": "Arrange health insurance via your employer or independently",
+    "health_insurance_coverage": {
+      "title": "Obtain Health Insurance",
+      "description": "Arrange health insurance coverage for the duration of your stay",
       "icon": "Shield",
       "steps": [
-        "Ask your employer about included health insurance",
-        "If not covered, choose a health fund (mutualiteit)",
+        "Check if your employer provides health insurance",
+        "If not, choose a health insurance provider (mutualiteit)",
         "Register and submit required documents"
       ],
       "documents": [
@@ -46,45 +46,14 @@
       ],
       "estimatedTime": "45 minutes"
     },
-    "bijlage3": {
-      "title": "Bijlage 3",
-      "description": "Temporary residence document (Annex 3)",
-      "icon": "FileText",
-      "steps": [
-        "Go to the local municipality",
-        "Request Bijlage 3 document",
-        "Wait for approval and collect"
-      ],
-      "documents": [
-        "Passport or ID",
-        "Proof of residence",
-        "Employment contract"
-      ],
-      "estimatedTime": "30 minutes"
-    },
-    "emergency": {
-      "title": "Emergency Contact",
-      "description": "Set up an emergency contact",
-      "icon": "Phone",
-      "steps": [
-        "Choose a contact person",
-        "Share their information with your employer",
-        "Keep their details accessible"
-      ],
-      "documents": [
-        "Name and phone number",
-        "Relationship to you"
-      ],
-      "estimatedTime": "15 minutes"
-    },
-    "bank": {
-      "title": "Bank Account",
-      "description": "Open a Belgian bank account",
+    "open_belgian_bank_account": {
+      "title": "Open Belgian Bank Account",
+      "description": "Obtain a bank account in Belgium to receive your wages",
       "icon": "CreditCard",
       "steps": [
-        "Choose a bank",
-        "Visit a branch or apply online",
-        "Submit the required documents"
+        "Visit a local bank",
+        "Provide required identification documents",
+        "Complete the account opening process"
       ],
       "documents": [
         "Passport or ID",
@@ -93,17 +62,19 @@
       ],
       "estimatedTime": "1 hour"
     },
-    "practical": {
-      "title": "Practical Information",
-      "description": "Useful tips for living and working in Belgium",
+    "age_verification": {
+      "title": "Age Verification",
+      "description": "Confirm you are at least 25 years old to be eligible for seasonal work",
       "icon": "FileText",
       "steps": [
-        "Understand your worker rights",
-        "Learn local emergency numbers",
-        "Know your employer responsibilities"
+        "Provide a valid identification document",
+        "Verify your age meets the minimum requirement",
+        "Submit the age verification to the authorities"
       ],
-      "documents": [],
-      "estimatedTime": "Variable"
+      "documents": [
+        "Passport or ID"
+      ],
+      "estimatedTime": "30 minutes"
     }
   }
 }

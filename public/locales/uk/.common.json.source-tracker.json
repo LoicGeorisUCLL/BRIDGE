@@ -26,49 +26,39 @@
   "noEUTitle": "European ID Required",
   "noEUMessage": "This app is currently only available for people with European IDs. The option for non-European people is not out yet.",
   "understood": "Understood",
-
-  "faqTitle": "Часті запитання",
-"faq": {
-
-  "faq1": {
-    "question": "Що робити у разі надзвичайної ситуації?",
-    "answer": "Телефонуйте за номером 112 для швидкої допомоги, поліції або пожежної служби. Дзвінок безкоштовний і працює навіть без мобільного балансу."
-  },
-
-  "faq2": {
-    "question": "Як зв’язатися з посольством?",
-    "answer": "Знайдіть в Інтернеті посольство вашої країни в Бельгії. Вони можуть допомогти з втраченими документами, юридичними питаннями та надзвичайними ситуаціями."
-  },
-
-  "faq3": {
-    "question": "Де можна отримати безкоштовну юридичну консультацію?",
-    "answer": "Деякі організації, такі як 'Juridisch Loket' або 'CAW', пропонують безкоштовні юридичні консультації. Перевірте офіційний сайт вашого міста або зверніться до OCMW."
-  },
-
-  "faq4": {
-    "question": "Де я можу отримати допомогу, якщо почуваюся небезпечно або мене експлуатують?",
-    "answer": "Телефонуйте за номером 1712 (безкоштовно) за допомогою у випадку насильства або експлуатації. Дзвінок конфіденційний і багатомовний. Ви також можете звернутися до FairWork Belgium."
-  },
-
-  "faq5": {
-    "question": "Чи можу я отримати безкоштовну допомогу перекладача?",
-    "answer": "В деяких випадках так. Центри інтеграції та соціальні служби іноді надають послуги перекладачів. Завжди запитуйте!"
-  },
-
-  "faq6": {
-    "question": "Як я можу вивчити нідерландську або французьку мови?",
-    "answer": "Ви можете відвідувати безкоштовні або недорогі курси через 'Huis van het Nederlands' або 'Ligo'. Запитайте у своїй муніципалітет, де можна зареєструватися."
-  },
-
-  "faq7": {
-    "question": "Які додатки корисні в Бельгії?",
-    "answer": "Корисні додатки: 'DeLijn' (автобуси), 'NMBS' (потяги), 'Google Translate' та додаток вашого банку."
-  },
-
-  "faq8": {
-    "question": "У чому різниця між OCMW та gemeente?",
-    "answer": "Gemeente займається вашою реєстрацією та документами. OCMW допомагає з соціальною підтримкою, такою як житло або фінанси."
+  "faqTitle": "Frequently Asked Questions",
+  "faq": {
+    "faq1": {
+      "question": "What should I do in case of an emergency?",
+      "answer": "Call 112 for ambulance, police, or fire brigade. It's free and works even if you don’t have mobile credit."
+    },
+    "faq2": {
+      "question": "How do I contact my embassy?",
+      "answer": "Search online for your country’s embassy in Belgium. They can help with lost documents, legal issues, and emergencies."
+    },
+    "faq3": {
+      "question": "Where can I find free legal advice?",
+      "answer": "Some organizations like 'Juridisch Loket' or 'CAW' offer free legal consultations. Check your city’s official website or ask the OCMW."
+    },
+    "faq4": {
+      "question": "Where can I get help if I feel unsafe or exploited?",
+      "answer": "Call 1712 (free) for help in case of violence or exploitation. It’s confidential and multilingual. You can also contact FairWork Belgium."
+    },
+    "faq5": {
+      "question": "Can I get free interpretation help?",
+      "answer": "In some cases, yes. Integration centers and social services sometimes provide interpreters. Always ask!"
+    },
+    "faq6": {
+      "question": "How can I learn Dutch or French?",
+      "answer": "You can take free or low-cost courses via 'Huis van het Nederlands' or 'Ligo'. Ask your municipality where to register."
+    },
+    "faq7": {
+      "question": "What apps are useful in Belgium?",
+      "answer": "Useful apps include: 'DeLijn' (bus), 'NMBS' (trains), 'Google Translate', and your bank’s app."
+    },
+    "faq8": {
+      "question": "What’s the difference between OCMW and gemeente?",
+      "answer": "The gemeente handles your registration and documents. The OCMW helps with social support like housing or finances."
+    }
   }
-}
-
 }

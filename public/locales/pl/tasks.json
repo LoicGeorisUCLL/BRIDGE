@@ -1,94 +1,95 @@
-{  "tasks": {
+{
+  "tasks": {
     "municipality": {
-      "title": "Rejestracja w gminie",
-      "description": "Zameldowanie w urzędzie miasta",
+      "title": "Rejestracja komunalna",
+      "description": "Zarejestruj się w ratuszu",
       "icon": "Building",
       "steps": [
-        "Odwiedź lokalny urząd gminy",
-        "Zabierz wymagane dokumenty",
-        "Wypełnij formularz meldunkowy"
+        "Odwiedź miejscową gminę",
+        "Przynieś dokumenty",
+        "Zakończenie procesu rejestracji"
       ],
       "documents": [
-        "Paszport lub dowód osobisty",
-        "Dowód adresu zamieszkania",
+        "Paszport lub dowód tożsamości",
+        "Dowód adresu",
         "Umowa o pracę"
       ],
       "estimatedTime": "1 godzina"
     },
     "contract": {
       "title": "Umowa o pracę i Plukkaart",
-      "description": "Podpisz umowę i uzyskaj plukkaart",
+      "description": "Podpisz kontrakt i otrzymasz plukkaart",
       "icon": "FileText",
       "steps": [
-        "Przejrzyj i podpisz umowę o pracę",
-        "Poproś o plukkaart",
-        "Zachowaj oba dokumenty w bezpiecznym miejscu"
+        "Przegląd i podpisanie umowy o pracę",
+        "Poproś i uzyskaj swój plukkaart",
+        "Przechowywać oba dokumenty bezpiecznie"
       ],
       "documents": [
-        "Paszport lub dowód osobisty",
-        "Dane pracodawcy"
+        "Paszport lub dowód tożsamości",
+        "Szczegóły dotyczące pracowników"
       ],
       "estimatedTime": "30 minut"
     },
     "health": {
       "title": "Ubezpieczenie zdrowotne",
-      "description": "Zapisz się do ubezpieczenia zdrowotnego",
+      "description": "Umów ubezpieczenie zdrowotne za pośrednictwem pracodawcy lub niezależnie",
       "icon": "Shield",
       "steps": [
-        "Zapytaj pracodawcę, czy obejmuje Cię ubezpieczenie",
-        "Jeśli nie, wybierz fundusz zdrowia (mutualiteit)",
-        "Zarejestruj się i złóż wymagane dokumenty"
+        "Zapytaj pracodawcę o zawarte ubezpieczenie zdrowotne",
+        "Jeśli nie są objęte ubezpieczeniem, wybierz fundusz opieki zdrowotnej (mutualiteit)",
+        "Rejestr i składanie wymaganych dokumentów"
       ],
       "documents": [
-        "Paszport lub dowód osobisty",
+        "Paszport lub dowód tożsamości",
         "Umowa o pracę",
-        "Rejestracja w gminie"
+        "Rejestracja miejska"
       ],
       "estimatedTime": "45 minut"
     },
     "bijlage3": {
-      "title": "Załącznik 3",
-      "description": "Tymczasowy dokument pobytowy (Bijlage 3)",
+      "title": "Bijlage 3",
+      "description": "Dokument pobytowy tymczasowy (załącznik 3)",
       "icon": "FileText",
       "steps": [
-        "Udaj się do lokalnego urzędu gminy",
-        "Poproś o dokument Bijlage 3",
-        "Poczekaj na zatwierdzenie i odbierz dokument"
+        "Idź do lokalnej gminy",
+        "Wniosek Bijlage 3 dokument",
+        "Czekaj na zatwierdzenie i zbieraj"
       ],
       "documents": [
-        "Paszport lub dowód osobisty",
-        "Dowód adresu zamieszkania",
+        "Paszport lub dowód tożsamości",
+        "Dowód zamieszkania",
         "Umowa o pracę"
       ],
       "estimatedTime": "30 minut"
     },
     "emergency": {
-      "title": "Kontakt alarmowy",
-      "description": "Ustaw kontakt awaryjny",
+      "title": "Kontakt awaryjny",
+      "description": "Ustawić kontakt awaryjny",
       "icon": "Phone",
       "steps": [
         "Wybierz osobę kontaktową",
-        "Przekaż jej dane pracodawcy",
-        "Zachowaj dane kontaktowe w łatwo dostępnym miejscu"
+        "Wymiana informacji z pracodawcą",
+        "Utrzymuj dostępność ich danych"
       ],
       "documents": [
-        "Imię i numer telefonu",
-        "Relacja z Tobą"
+        "Nazwa i numer telefonu",
+        "Związek z tobą"
       ],
       "estimatedTime": "15 minut"
     },
     "bank": {
-      "title": "Konto bankowe",
-      "description": "Otwórz belgijskie konto bankowe",
+      "title": "Rachunek bankowy",
+      "description": "Otwarcie belgijskiego konta bankowego",
       "icon": "CreditCard",
       "steps": [
         "Wybierz bank",
-        "Odwiedź oddział lub złóż wniosek online",
-        "Złóż wymagane dokumenty"
+        "Odwiedź oddział lub aplikuj online",
+        "Prześlij wymagane dokumenty"
       ],
       "documents": [
-        "Paszport lub dowód osobisty",
-        "Dowód adresu zamieszkania",
+        "Paszport lub dowód tożsamości",
+        "Dowód adresu",
         "Umowa o pracę"
       ],
       "estimatedTime": "1 godzina"
@@ -98,11 +99,12 @@
       "description": "Przydatne wskazówki dotyczące życia i pracy w Belgii",
       "icon": "FileText",
       "steps": [
-        "Poznaj swoje prawa jako pracownik",
-        "Zapamiętaj numery alarmowe",
-        "Dowiedz się o obowiązkach pracodawcy"
+        "Zrozum swoje prawa pracownicze",
+        "Ucz się lokalnych numerów alarmowych",
+        "Znaj swoje obowiązki pracodawcy"
       ],
       "documents": [],
-      "estimatedTime": "Zmienny"
+      "estimatedTime": "Zmienna"
     }
-  }}
+  }
+}

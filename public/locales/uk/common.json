@@ -1,29 +1,64 @@
 {
-  "welcome": "Welcome to Bridge",
-  "subtitle": "Your guide through Belgian administration",
-  "startButton": "Get Started",
-  "languageSelector": "Select Language",
-  "backButton": "Back",
-  "nextButton": "Next",
-  "homeButton": "Home",
-  "editProfileButton": "Edit Profile",
-  "questionsTitle": "A few questions about your situation",
-  "checklistTitle": "Your task list",
-  "taskCompleted": "Completed",
-  "taskPending": "To do",
-  "viewDetails": "View details",
-  "completed": "Completed",
-  "pending": "Pending",
-  "congratulations": "Congratulations!",
-  "congratulationsMessage": "You have completed all your tasks! Good luck on your journey in Belgium.",
-  "startOver": "Start Over",
-  "stepsToComplete": "Steps to complete",
-  "requiredDocuments": "Documents required",
-  "estimatedTime": "Estimated time to complete",
-  "detailedStepsComingSoon": "Detailed steps coming soon",
-  "markIncomplete": "Mark as Incomplete",
-  "markComplete": "Mark as Complete",
-  "noEUTitle": "European ID Required",
-  "noEUMessage": "This app is currently only available for people with European IDs. The option for non-European people is not out yet.",
-  "understood": "Understood"
+  "welcome": "Ласкаво просимо до Bridge",
+  "subtitle": "Ваше керівництво по Бельгійському управлінні",
+  "startButton": "Почати",
+  "languageSelector": "Виберіть мову",
+  "backButton": "Зареєструватися",
+  "nextButton": "Про нас",
+  "homeButton": "Головна",
+  "editProfileButton": "Редагування профілю",
+  "questionsTitle": "Кілька питань про ситуацію",
+  "checklistTitle": "Список завдань",
+  "taskCompleted": "Виконаний",
+  "taskPending": "Для цього",
+  "viewDetails": "Докладніше",
+  "completed": "Виконаний",
+  "pending": "Закінчення",
+  "congratulations": "Вітаємо!",
+  "congratulationsMessage": "Ви завершили всі завдання! Успіхів у вашій подорожі в Бельгія.",
+  "startOver": "Почати",
+  "stepsToComplete": "Етапи завершення",
+  "requiredDocuments": "Документи",
+  "estimatedTime": "Оцініть час, щоб завершити",
+  "detailedStepsComingSoon": "Детальні кроки",
+  "markIncomplete": "Оцінка як неповний",
+  "markComplete": "Марка як повну",
+  "noEUTitle": "Європейський ID",
+  "noEUMessage": "Цей додаток доступний тільки для людей з європейськими ідентифікаторами. Варіант для неєвропейських людей ще не виходить.",
+  "understood": "Підвод",
+  "faqTitle": "Питання і відповіді",
+  "faq": {
+    "faq1": {
+      "question": "Що робити при надзвичайних ситуаціях?",
+      "answer": "Дзвоните до 112 для швидкої допомоги, поліції або пожежної бригади. Це безкоштовно і працює навіть якщо у вас немає мобільного кредиту."
+    },
+    "faq2": {
+      "question": "Як зв'язатися з нами?",
+      "answer": "Пошук посольства країни в Бельгії. Вони можуть допомогти з втраченими документами, юридичними питаннями та надзвичайними ситуаціями."
+    },
+    "faq3": {
+      "question": "Де можна знайти безкоштовну консультацію?",
+      "answer": "Деякі організації, такі як «Juridisch Loket» або «CAW» пропонують безкоштовні юридичні консультації. Перевірити офіційний сайт міста або попросити OCMW."
+    },
+    "faq4": {
+      "question": "Де я можу допомогти, якщо я відчуваю себе небезпечним або експлуатованим?",
+      "answer": "Зателефонуйте 1712 (безкоштовно) за допомогу у разі насильства або експлуатації. Конфіденційність та багатомовність. Ви також можете звернутися до FairWork Belgium."
+    },
+    "faq5": {
+      "question": "Чи можу я отримати безкоштовну допомогу?",
+      "answer": "У деяких випадках так. Інтеграційні центри та соціальні послуги іноді надають перекладачам. Завжди запитати!"
+    },
+    "faq6": {
+      "question": "Як дізнатися нідерландську або французьку?",
+      "answer": "Ви можете взяти безкоштовні або недорогі курси через 'Huis van het English' або 'Ligo'. Запитайте вашу муніципалітет, де зареєструватися."
+    },
+    "faq7": {
+      "question": "Які додатки корисні в Бельгії?",
+      "answer": "Користувальницькі програми включають: «DeLijn» (автобус), «NMBS», «Google Translate» та додаток Вашого банку."
+    },
+    "faq8": {
+      "question": "Що різниця між OCMW і gemeente?",
+      "answer": "Виконайте реєстрацію та документи. OCMW допомагає з соціальним забезпеченням, як житло або фінанси."
+    }
+  }
 }

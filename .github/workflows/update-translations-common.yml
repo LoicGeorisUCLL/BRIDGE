@@ -22,7 +22,9 @@ jobs:
 
       - name: Run translation script
         run: node scripts/translation.js common.json
-
+        env:
+          TRANSLATE_URL: ${{ secrets.TRANSLATE_URL }}
+          
       - name: Commit changes
         run: |
           git config --global user.name 'github-actions'

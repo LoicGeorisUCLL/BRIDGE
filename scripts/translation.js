@@ -1,8 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { translate } = require('@vitalets/google-translate-api');
-// import { HttpProxyAgent } from 'http-proxy-agent';
-// const agent = new HttpProxyAgent('http://103.152.112.162:80');
+require('dotenv').config();
 
 const baseLang = 'en';
 const localesDir = path.join(process.cwd(), 'public/locales');
@@ -11,15 +10,35 @@ const supportedLocales = fs.readdirSync(localesDir).filter((l) => l !== baseLang
 
 async function translateText(text, to) {
   try {
-    // Add delay to avoid rate limiting
-    await new Promise(resolve => setTimeout(resolve, 100));
+    await new Promise(resolve => setTimeout(resolve, 200));
     
-    const res = await translate(text, { to });
-    // const res = await translate(text, { to: to, fetchOptions: {agent} });
-    return res.text;
+    const baseUrl = process.env.TRANSLATE_URL;
+    console.log(`Using translation service: ${baseUrl}`);
+    
+    const response = await fetch(`${baseUrl}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        q: text,
+        source: 'en',
+        target: to,
+        format: 'text'
+      })
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const result = await response.json();
+    console.log(`TRANSLATETDDDD "${result.translatedText}"`);
+
+    return result.translatedText;
   } catch (e) {
     console.error(`Translation failed for "${text}" to "${to}":`, e);
-    return text; // Return original text if translation fails
+    return text;
   }
 }
 
@@ -38,13 +57,44 @@ function setNestedValue(obj, path, value) {
   const keys = path.split('.');
   const lastKey = keys.pop();
   const target = keys.reduce((current, key) => {
-    if (!(key in current)) current[key] = {};
+    if (!(key in current)) {
+      // Check if the next key is a number to determine if we should create an array
+      const nextKey = keys[keys.indexOf(key) + 1];
+      if (nextKey && !isNaN(parseInt(nextKey))) {
+        current[key] = [];
+      } else {
+        current[key] = {};
+      }
+    }
     return current[key];
   }, obj);
-  target[lastKey] = value;
+  
+  // Handle array indices
+  if (!isNaN(parseInt(lastKey))) {
+    const index = parseInt(lastKey);
+    if (!Array.isArray(target)) {
+      // Convert object to array if needed
+      const arr = [];
+      Object.keys(target).forEach(k => {
+        if (!isNaN(parseInt(k))) {
+          arr[parseInt(k)] = target[k];
+        }
+      });
+      // Replace the target with the array
+      const parentKeys = keys.slice(0, -1);
+      const parentTarget = parentKeys.reduce((current, key) => current[key], obj);
+      const parentKey = keys[keys.length - 1];
+      parentTarget[parentKey] = arr;
+      arr[index] = value;
+    } else {
+      target[index] = value;
+    }
+  } else {
+    target[lastKey] = value;
+  }
 }
 
-// Function to get all paths in a nested object
+// Function to get all paths in a nested object - FIXED VERSION
 function getAllPaths(obj, prefix = '') {
   const paths = [];
   
@@ -55,15 +105,21 @@ function getAllPaths(obj, prefix = '') {
       // Handle nested objects recursively
       paths.push(...getAllPaths(obj[key], currentPath));
     } else if (Array.isArray(obj[key])) {
-      // Handle arrays - check if they contain strings or objects
-      for (let i = 0; i < obj[key].length; i++) {
-        if (typeof obj[key][i] === 'string') {
-          paths.push(`${currentPath}.${i}`);
-        } else if (typeof obj[key][i] === 'object' && obj[key][i] !== null) {
-          // Handle arrays of objects
-          paths.push(...getAllPaths(obj[key][i], `${currentPath}.${i}`));
-        } else {
-          paths.push(`${currentPath}.${i}`);
+      // Handle arrays - translate the entire array as one unit
+      if (obj[key].every(item => typeof item === 'string')) {
+        // If all items in array are strings, add the array path itself
+        paths.push(currentPath);
+      } else {
+        // Handle arrays with mixed content or objects
+        for (let i = 0; i < obj[key].length; i++) {
+          if (typeof obj[key][i] === 'string') {
+            paths.push(`${currentPath}.${i}`);
+          } else if (typeof obj[key][i] === 'object' && obj[key][i] !== null) {
+            // Handle arrays of objects
+            paths.push(...getAllPaths(obj[key][i], `${currentPath}.${i}`));
+          } else {
+            paths.push(`${currentPath}.${i}`);
+          }
         }
       }
     } else {
@@ -73,6 +129,25 @@ function getAllPaths(obj, prefix = '') {
   }
   
   return paths;
+}
+
+// New function to translate arrays of strings
+async function translateStringArray(arr, locale) {
+  const translatedArray = [];
+  for (const item of arr) {
+    if (typeof item === 'string' && item.trim() !== '') {
+      try {
+        const translated = await translateText(item, locale);
+        translatedArray.push(translated);
+      } catch (error) {
+        console.error(`Failed to translate array item: "${item}"`);
+        translatedArray.push(item);
+      }
+    } else {
+      translatedArray.push(item);
+    }
+  }
+  return translatedArray;
 }
 
 async function translateNestedObject(baseObj, locale, existingTranslations = {}, sourceTracker = {}) {
@@ -107,12 +182,36 @@ async function translateNestedObject(baseObj, locale, existingTranslations = {},
     } else if (trackedSourceValue === undefined) {
       needsTranslation = true;
       reason = 'no source tracking (legacy)';
-    } else if (trackedSourceValue !== baseValue) {
+    } else if (JSON.stringify(trackedSourceValue) !== JSON.stringify(baseValue)) {
       needsTranslation = true;
       reason = 'source value changed';
     }
     
-    if (needsTranslation && typeof baseValue === 'string' && baseValue.trim() !== '') {
+    // Handle array of strings
+    if (Array.isArray(baseValue) && baseValue.every(item => typeof item === 'string')) {
+      if (needsTranslation) {
+        try {
+          const translatedArray = await translateStringArray(baseValue, locale);
+          setNestedValue(result, path, translatedArray);
+          setNestedValue(newSourceTracker, path, baseValue);
+          translationCount += baseValue.length;
+          console.log(`🔄 Translated array [${path}] (${reason}): ${JSON.stringify(baseValue)} → ${JSON.stringify(translatedArray)}`);
+        } catch (error) {
+          console.error(`❌ Failed to translate array [${path}]: ${JSON.stringify(baseValue)}`);
+          setNestedValue(result, path, baseValue);
+          setNestedValue(newSourceTracker, path, baseValue);
+        }
+      } else if (existingTranslation) {
+        setNestedValue(result, path, existingTranslation);
+        setNestedValue(newSourceTracker, path, baseValue);
+        console.log(`✅ Kept existing array [${path}]: ${JSON.stringify(existingTranslation)}`);
+      } else {
+        setNestedValue(result, path, baseValue);
+        setNestedValue(newSourceTracker, path, baseValue);
+      }
+    }
+    // Handle single strings
+    else if (needsTranslation && typeof baseValue === 'string' && baseValue.trim() !== '') {
       try {
         const translated = await translateText(baseValue, locale);
         setNestedValue(result, path, translated);

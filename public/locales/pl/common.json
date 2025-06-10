@@ -26,49 +26,39 @@
   "noEUTitle": "Wymagany jest identyfikator europejski",
   "noEUMessage": "Ta aplikacja jest obecnie dostępna tylko dla osób z europejskimi identyfikatorami. Opcja dla ludności nieeuropejskiej jeszcze nie jest dostępna.",
   "understood": "Zrozumiany",
-
-  "faqTitle": "Najczęściej zadawane pytania",
-"faq": {
-
-  "faq1": {
-    "question": "Co powinienem zrobić w nagłym wypadku?",
-    "answer": "Zadzwoń pod numer 112, aby wezwać pogotowie, policję lub straż pożarną. To bezpłatne i działa nawet bez środków na koncie."
-  },
-
-  "faq2": {
-    "question": "Jak skontaktować się ze swoją ambasadą?",
-    "answer": "Wyszukaj w Internecie ambasadę swojego kraju w Belgii. Mogą pomóc w przypadku utraty dokumentów, problemów prawnych i sytuacji awaryjnych."
-  },
-
-  "faq3": {
-    "question": "Gdzie mogę uzyskać bezpłatną poradę prawną?",
-    "answer": "Niektóre organizacje, takie jak 'Juridisch Loket' lub 'CAW', oferują bezpłatne konsultacje prawne. Sprawdź oficjalną stronę swojego miasta lub zapytaj w OCMW."
-  },
-
-  "faq4": {
-    "question": "Gdzie mogę uzyskać pomoc, jeśli czuję się niebezpiecznie lub jestem wykorzystywany?",
-    "answer": "Zadzwoń pod numer 1712 (bezpłatny), jeśli doświadczasz przemocy lub wyzysku. To poufne i dostępne w wielu językach. Możesz też skontaktować się z FairWork Belgium."
-  },
-
-  "faq5": {
-    "question": "Czy mogę otrzymać bezpłatną pomoc tłumacza?",
-    "answer": "W niektórych przypadkach tak. Centra integracyjne i służby socjalne czasami zapewniają tłumaczy. Zawsze pytaj!"
-  },
-
-  "faq6": {
-    "question": "Jak mogę nauczyć się niderlandzkiego lub francuskiego?",
-    "answer": "Możesz uczęszczać na bezpłatne lub tanie kursy przez 'Huis van het Nederlands' lub 'Ligo'. Zapytaj w swoim urzędzie gminy, gdzie się zapisać."
-  },
-
-  "faq7": {
-    "question": "Jakie aplikacje są przydatne w Belgii?",
-    "answer": "Przydatne aplikacje to: 'DeLijn' (autobusy), 'NMBS' (pociągi), 'Google Translate' oraz aplikacja twojego banku."
-  },
-
-  "faq8": {
-    "question": "Jaka jest różnica między OCMW a gminą (gemeente)?",
-    "answer": "Gmina (gemeente) zajmuje się rejestracją i dokumentami. OCMW pomaga w sprawach socjalnych, takich jak mieszkanie czy finanse."
+  "faqTitle": "Często zadawane pytania",
+  "faq": {
+    "faq1": {
+      "question": "Co powinienem zrobić w razie nagłego wypadku?",
+      "answer": "Wezwij karetkę, policję lub straż pożarną. Jest za darmo i działa, nawet jeśli nie masz mobilnego kredytu."
+    },
+    "faq2": {
+      "question": "Jak skontaktować się z ambasadą?",
+      "answer": "Szukaj w internecie ambasady swojego kraju w Belgii. Mogą pomóc przy utraconych dokumentach, kwestiach prawnych i nagłych przypadkach."
+    },
+    "faq3": {
+      "question": "Gdzie mogę znaleźć darmową poradę prawną?",
+      "answer": "Niektóre organizacje takie jak \"Juridisch Loket\" lub \"CAW\" oferują bezpłatne konsultacje prawne. Sprawdź oficjalną stronę miasta lub zapytaj OCMW."
+    },
+    "faq4": {
+      "question": "Gdzie mogę uzyskać pomoc, jeśli czuję się zagrożony lub wykorzystany?",
+      "answer": "Wezwij 1712 (bezpłatnie) o pomoc w przypadku przemocy lub wyzysku. To poufne i wielojęzyczne. Można również skontaktować się z FairWork Belgium."
+    },
+    "faq5": {
+      "question": "Czy mogę otrzymać darmową pomoc w interpretacji?",
+      "answer": "W niektórych przypadkach tak. Centra integracyjne i usługi socjalne czasami zapewniają tłumaczy. Zawsze pytaj!"
+    },
+    "faq6": {
+      "question": "Jak mogę się uczyć holenderskiego czy francuskiego?",
+      "answer": "Możesz wziąć bezpłatny lub niskokosztowy kurs przez 'Huis van het Nederlands' lub 'Ligo'. Zapytaj gminę, gdzie się zarejestrować."
+    },
+    "faq7": {
+      "question": "Jakie aplikacje są przydatne w Belgii?",
+      "answer": "Przydatne aplikacje to: 'DeLijn' (autobus), 'NMBS' (pociągi), 'Google Translate' oraz aplikacja Twojego banku."
+    },
+    "faq8": {
+      "question": "Jaka jest różnica między OCMW a gemeente?",
+      "answer": "Gemeente zajmuje się rejestracją i dokumentami. OCMW pomaga w udzielaniu wsparcia społecznego, jak mieszkalnictwo czy finanse."
+    }
   }
-}
-
 }

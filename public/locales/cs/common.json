@@ -26,49 +26,39 @@
   "noEUTitle": "Požadováno evropské ID",
   "noEUMessage": "Tato aplikace je v současné době k dispozici pouze pro lidi s evropskými ID. Možnost pro neevropské lidi ještě není.",
   "understood": "Pochopeno",
-
   "faqTitle": "Často kladené otázky",
-"faq": {
-
-  "faq1": {
-    "question": "Co mám dělat v případě nouze?",
-    "answer": "Zavolejte 112 pro sanitku, policii nebo hasiče. Je to zdarma a funguje i bez kreditu na mobilu."
-  },
-
-  "faq2": {
-    "question": "Jak kontaktuji svou ambasádu?",
-    "answer": "Vyhledejte online ambasádu své země v Belgii. Pomohou vám s doklady, právními problémy a v nouzových situacích."
-  },
-
-  "faq3": {
-    "question": "Kde mohu najít bezplatné právní poradenství?",
-    "answer": "Některé organizace jako 'Juridisch Loket' nebo 'CAW' nabízejí bezplatné právní konzultace. Zkontrolujte oficiální web své obce nebo se zeptejte OCMW."
-  },
-
-  "faq4": {
-    "question": "Kde najdu pomoc, když se necítím v bezpečí nebo jsem vykořisťován/a?",
-    "answer": "Zavolejte na číslo 1712 (zdarma) při násilí nebo vykořisťování. Je to důvěrné a vícejazyčné. Můžete také kontaktovat FairWork Belgium."
-  },
-
-  "faq5": {
-    "question": "Mohu získat pomoc s tlumočením zdarma?",
-    "answer": "V některých případech ano. Integrační centra a sociální služby někdy poskytují tlumočníky. Vždy se zeptejte!"
-  },
-
-  "faq6": {
-    "question": "Jak se mohu naučit nizozemsky nebo francouzsky?",
-    "answer": "Můžete navštěvovat bezplatné nebo levné kurzy přes 'Huis van het Nederlands' nebo 'Ligo'. Zeptejte se na úřadě, kde se zapsat."
-  },
-
-  "faq7": {
-    "question": "Jaké aplikace jsou v Belgii užitečné?",
-    "answer": "Užitečné aplikace jsou: 'DeLijn' (autobusy), 'NMBS' (vlaky), 'Google Translate' a aplikace vaší banky."
-  },
-
-  "faq8": {
-    "question": "Jaký je rozdíl mezi OCMW a gemeente?",
-    "answer": "Gemeente řeší vaši registraci a dokumenty. OCMW pomáhá se sociální podporou jako je bydlení nebo finance."
+  "faq": {
+    "faq1": {
+      "question": "Co mám dělat v případě nouze?",
+      "answer": "Zavolejte záchranku, policii nebo hasiče. Je zdarma a funguje, i když nemáte mobilní kredity."
+    },
+    "faq2": {
+      "question": "Jak se spojím s ambasádou?",
+      "answer": "Hledejte online na ambasádě vaší země v Belgii. Mohou pomoci se ztracenými dokumenty, právními problémy a naléhavými případy."
+    },
+    "faq3": {
+      "question": "Kde najdu právní radu zdarma?",
+      "answer": "Některé organizace jako \"Juridisch Loket\" nebo \"CAW\" nabízejí bezplatné právní konzultace. Zkontrolujte oficiální stránky svého města nebo se zeptejte OCMW."
+    },
+    "faq4": {
+      "question": "Kde seženu pomoc, když se budu cítit v bezpečí nebo zneužit?",
+      "answer": "Zavolejte 1712 (zdarma) o pomoc v případě násilí nebo vykořisťování. Je to důvěrné a mnohojazyčné. Můžete také kontaktovat FairWork Belgie."
+    },
+    "faq5": {
+      "question": "Můžu dostat tlumočnickou pomoc zdarma?",
+      "answer": "V některých případech ano. Integrační centra a sociální služby někdy poskytují tlumočníky. Vždycky se ptej!"
+    },
+    "faq6": {
+      "question": "Jak se můžu naučit holandsky nebo francouzsky?",
+      "answer": "Můžete si vzít zdarma nebo low-cost kurzy přes 'Huis van het Nederlands' nebo 'Ligo'. Zeptejte se své obce, kde se zaregistrovat."
+    },
+    "faq7": {
+      "question": "Jaké aplikace jsou užitečné v Belgii?",
+      "answer": "Užitečné aplikace zahrnují: 'DeLijn' (autobus), 'NMBS' (vlaky), 'Google Translate' a aplikaci vaší banky."
+    },
+    "faq8": {
+      "question": "Jaký je rozdíl mezi OCMW a gemeente?",
+      "answer": "Gemeente zpracovává vaši registraci a dokumenty. OCMW pomáhá se sociální podporou, jako je bydlení nebo finance."
+    }
   }
-}
-
 }

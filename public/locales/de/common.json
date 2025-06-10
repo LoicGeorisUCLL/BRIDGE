@@ -26,49 +26,39 @@
   "noEUTitle": "Europäischer Ausweis erforderlich",
   "noEUMessage": "Diese App ist derzeit nur für Menschen mit europäischen IDs verfügbar. Die Option für Nicht-Europäische Menschen ist noch nicht heraus.",
   "understood": "Verstanden",
-
   "faqTitle": "Häufig gestellte Fragen",
-"faq": {
-
-  "faq1": {
-    "question": "Was soll ich im Notfall tun?",
-    "answer": "Rufen Sie 112 für Krankenwagen, Polizei oder Feuerwehr. Der Anruf ist kostenlos und funktioniert auch ohne Guthaben."
-  },
-
-  "faq2": {
-    "question": "Wie kontaktiere ich meine Botschaft?",
-    "answer": "Suchen Sie online nach der Botschaft Ihres Landes in Belgien. Sie helfen bei verlorenen Dokumenten, rechtlichen Problemen und Notfällen."
-  },
-
-  "faq3": {
-    "question": "Wo finde ich kostenlose Rechtsberatung?",
-    "answer": "Einige Organisationen wie 'Juridisch Loket' oder 'CAW' bieten kostenlose Rechtsberatung an. Schauen Sie auf der offiziellen Website Ihrer Stadt oder fragen Sie beim OCMW nach."
-  },
-
-  "faq4": {
-    "question": "Wo bekomme ich Hilfe, wenn ich mich unsicher oder ausgebeutet fühle?",
-    "answer": "Rufen Sie 1712 (kostenlos) bei Gewalt oder Ausbeutung an. Es ist vertraulich und mehrsprachig. Sie können auch FairWork Belgium kontaktieren."
-  },
-
-  "faq5": {
-    "question": "Kann ich kostenlose Dolmetschhilfe bekommen?",
-    "answer": "In manchen Fällen ja. Integrationszentren und soziale Dienste stellen manchmal Dolmetscher zur Verfügung. Fragen Sie einfach nach!"
-  },
-
-  "faq6": {
-    "question": "Wie kann ich Niederländisch oder Französisch lernen?",
-    "answer": "Sie können kostenlose oder günstige Kurse über 'Huis van het Nederlands' oder 'Ligo' besuchen. Fragen Sie bei Ihrer Gemeinde nach, wo Sie sich anmelden können."
-  },
-
-  "faq7": {
-    "question": "Welche Apps sind in Belgien nützlich?",
-    "answer": "Nützliche Apps sind: 'DeLijn' (Bus), 'NMBS' (Züge), 'Google Translate' und die App Ihrer Bank."
-  },
-
-  "faq8": {
-    "question": "Was ist der Unterschied zwischen OCMW und Gemeinde?",
-    "answer": "Die Gemeinde ist für Ihre Anmeldung und Dokumente zuständig. Das OCMW hilft bei sozialer Unterstützung wie Wohnen oder Finanzen."
+  "faq": {
+    "faq1": {
+      "question": "Was sollte ich im Notfall tun?",
+      "answer": "Ruf 112 für Krankenwagen, Polizei oder Feuerwehr. Es ist kostenlos und funktioniert auch, wenn Sie keinen mobilen Kredit haben."
+    },
+    "faq2": {
+      "question": "Wie kontaktiere ich meine Botschaft?",
+      "answer": "Suchen Sie online nach der Botschaft Ihres Landes in Belgien. Sie können bei verlorenen Dokumenten, rechtlichen Fragen und Notfällen helfen."
+    },
+    "faq3": {
+      "question": "Wo finde ich kostenlose Rechtsberatung?",
+      "answer": "Einige Organisationen wie \"Juridisch Loket\" oder \"CAW\" bieten kostenlose Rechtsberatungen. Überprüfen Sie die offizielle Website Ihrer Stadt oder fragen Sie die OCMW."
+    },
+    "faq4": {
+      "question": "Wo kann ich Hilfe bekommen, wenn ich mich unsicher oder ausgenutzt fühle?",
+      "answer": "Rufen Sie 1712 (frei) für Hilfe bei Gewalt oder Ausbeutung an. Es ist vertraulich und mehrsprachig. Sie können sich auch mit FairWork Belgien in Verbindung setzen."
+    },
+    "faq5": {
+      "question": "Kann ich kostenlose Interpretationshilfe bekommen?",
+      "answer": "In einigen Fällen, ja. Integrationszentren und soziale Dienste bieten manchmal Dolmetscher. Fragen Sie immer!"
+    },
+    "faq6": {
+      "question": "Wie kann ich Niederländisch oder Französisch lernen?",
+      "answer": "Sie können kostenlose oder kostengünstige Kurse über 'Huis van het Nederlands' oder 'Ligo' nehmen. Fragen Sie Ihre Gemeinde, wo Sie sich registrieren."
+    },
+    "faq7": {
+      "question": "Welche Apps sind in Belgien nützlich?",
+      "answer": "Nützliche Apps beinhalten: 'DeLijn' (Bus), 'NMBS' (Züge), 'Google Translate' und die App Ihrer Bank."
+    },
+    "faq8": {
+      "question": "Was ist der Unterschied zwischen OCMW und gemeente?",
+      "answer": "Das Juweleente behandelt Ihre Registrierung und Dokumente. Das OCMW hilft mit sozialer Unterstützung wie Wohnen oder Finanzen."
+    }
   }
-}
-
 }

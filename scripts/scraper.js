@@ -198,13 +198,13 @@ class RegulationScraper {
 You are an expert in Belgian administrative procedures for foreign workers.
 
 CONTEXT:
-Bridge is an app that helps foreign workers navigate Belgian bureaucracy by providing personalized task lists based on their situation.
+Bridge is an app that helps foreign seasonal workers navigate Belgian bureaucracy by providing personalized task lists based on their situation.
 
 UPDATED REGULATIONS:
 ${regulations.regulations.map(reg => `${reg.id}. ${reg.content}`).join('\n')}
 
 BRIDGE APP CONTEXT:
-- The app helps foreign workers understand what administrative tasks they need to complete
+- The app helps foreign seasonal workers understand what administrative tasks they need to complete
 - Tasks include: municipality registration, employment contracts, health insurance, residence documents, emergency contacts, bank accounts, and practical information
 - Different requirements apply based on EU vs non-EU citizenship, work duration, location, and other factors
 
@@ -275,10 +275,10 @@ Generate the questions now:
       .join('\n');
 
     return `
-You are an expert in Belgian administrative procedures for foreign workers and a TypeScript developer.
+You are an expert in Belgian administrative procedures for foreign seasonal workers and a TypeScript developer.
 
 CONTEXT:
-Bridge is an app that helps foreign workers navigate Belgian bureaucracy by providing personalized task lists based on their situation.
+Bridge is an app that helps foreign seasonal workers navigate Belgian bureaucracy by providing personalized task lists based on their situation.
 
 UPDATED REGULATIONS:
 ${regulations.regulations.map(reg => `${reg.id}. ${reg.content}`).join('\n')}
@@ -474,7 +474,7 @@ Generate the tasks now:
 You are an expert TypeScript developer working on a Belgian administrative guidance app called "BRIDGE".
 
 CONTEXT:
-Bridge helps foreign workers navigate Belgian bureaucracy by providing personalized task lists based on their situation.
+Bridge helps foreign seasonal workers navigate Belgian bureaucracy by providing personalized task lists based on their situation.
 
 CURRENT LOGIC FILE:
 \`\`\`typescript
@@ -585,7 +585,8 @@ RETURN ONLY THE UPDATED LOGIC FILE CONTENT NO EXTRA TEXT OR COMMENTS
       }
 
       // Cleanup prompt
-      const cleaned = newLogic.replace(/^```[a-zA-Z]*\n?/, '').replace(/```$/, '');
+      const cleaned = newLogic.replace(/^.*?```typescript\n?/, '').replace(/```/g, '');
+      
 
       // Write new logic
       await fs.writeFile(this.outputPath, cleaned);

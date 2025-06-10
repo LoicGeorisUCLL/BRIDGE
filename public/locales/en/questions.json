@@ -3,43 +3,43 @@
     "0": {
       "question": "What is your citizenship status?",
       "options": [
-        "EU citizen",
-        "Non-EU citizen"
+        "I am a citizen of an EU/EEA country",
+        "I am a citizen of a non-EU/EEA country"
       ]
     },
     "1": {
       "question": "How long will you be working in Belgium?",
       "options": [
         "Less than 3 months",
-        "More than 3 months"
+        "3 months or longer"
       ]
     },
     "2": {
       "question": "Do you have a valid work contract issued by your employer?",
       "options": [
         "Yes, I have a valid work contract",
-        "No, I don't have a work contract"
+        "No, I do not have a work contract"
       ]
     },
     "3": {
       "question": "Do you have health insurance coverage for the duration of your stay in Belgium?",
       "options": [
-        "Yes, I have health insurance",
-        "No, I don't have health insurance"
+        "Yes, I have health insurance coverage",
+        "No, I do not have health insurance coverage"
       ]
     },
     "4": {
       "question": "Do you have a bank account in Belgium to receive your wages?",
       "options": [
         "Yes, I have a Belgian bank account",
-        "No, I don't have a Belgian bank account"
+        "No, I do not have a Belgian bank account"
       ]
     },
     "5": {
       "question": "What is your age?",
       "options": [
-        "Under 25 years old",
-        "25 years old or above"
+        "I am at least 25 years old",
+        "I am under 25 years old"
       ]
     }
   }

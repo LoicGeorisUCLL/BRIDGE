@@ -2,79 +2,78 @@
   "tasks": {
     "municipal_registration": {
       "title": "Municipal Registration",
-      "description": "Register with the local authorities for stays longer than 3 months",
+      "description": "Register at the local municipality",
       "icon": "Building",
       "steps": [
-        "Visit your local municipality",
+        "Visit your local municipality office",
         "Bring your passport/ID and proof of address",
         "Complete the registration process"
       ],
       "documents": [
         "Passport or ID",
         "Proof of address",
-        "Employment contract"
+        "Work contract"
       ],
       "estimatedTime": "1 hour"
     },
-    "work_contract_validation": {
-      "title": "Validate Work Contract",
-      "description": "Ensure you have a valid work contract issued by your employer",
+    "work_contract_acquisition": {
+      "title": "Obtain Work Contract",
+      "description": "Secure a valid work contract from your employer",
       "icon": "Briefcase",
       "steps": [
-        "Obtain a work contract from your employer",
+        "Request a work contract from your employer",
         "Review the contract to ensure it meets legal requirements",
-        "Submit the contract to the authorities if required"
-      ],
-      "documents": [
-        "Employment contract"
-      ],
-      "estimatedTime": "30 minutes"
-    },
-    "health_insurance_coverage": {
-      "title": "Obtain Health Insurance",
-      "description": "Arrange health insurance coverage for the duration of your stay",
-      "icon": "Shield",
-      "steps": [
-        "Check if your employer provides health insurance",
-        "If not, choose a health insurance provider (mutualiteit)",
-        "Register and submit required documents"
-      ],
-      "documents": [
-        "Passport or ID",
-        "Employment contract",
-        "Municipal registration"
-      ],
-      "estimatedTime": "45 minutes"
-    },
-    "open_belgian_bank_account": {
-      "title": "Open Belgian Bank Account",
-      "description": "Obtain a bank account in Belgium to receive your wages",
-      "icon": "CreditCard",
-      "steps": [
-        "Visit a local bank",
-        "Provide required identification documents",
-        "Complete the account opening process"
-      ],
-      "documents": [
-        "Passport or ID",
-        "Proof of address",
-        "Employment contract"
-      ],
-      "estimatedTime": "1 hour"
-    },
-    "age_verification": {
-      "title": "Age Verification",
-      "description": "Confirm you are at least 25 years old to be eligible for seasonal work",
-      "icon": "FileText",
-      "steps": [
-        "Provide a valid identification document",
-        "Verify your age meets the minimum requirement",
-        "Submit the age verification to the authorities"
+        "Sign the contract"
       ],
       "documents": [
         "Passport or ID"
       ],
       "estimatedTime": "30 minutes"
+    },
+    "health_insurance_enrollment": {
+      "title": "Enroll in Health Insurance",
+      "description": "Arrange health insurance coverage for your stay",
+      "icon": "Shield",
+      "steps": [
+        "Check if your employer provides health insurance",
+        "If not, research and select a health insurance provider",
+        "Submit required documents to enroll"
+      ],
+      "documents": [
+        "Passport or ID",
+        "Work contract",
+        "Municipal registration"
+      ],
+      "estimatedTime": "45 minutes"
+    },
+    "bank_account_setup": {
+      "title": "Open Belgian Bank Account",
+      "description": "Set up a bank account in Belgium to receive your wages",
+      "icon": "CreditCard",
+      "steps": [
+        "Visit a local bank branch",
+        "Provide required identification documents",
+        "Complete the account opening process"
+      ],
+      "documents": [
+        "Passport or ID",
+        "Work contract",
+        "Municipal registration"
+      ],
+      "estimatedTime": "1 hour"
+    },
+    "age_verification": {
+      "title": "Verify Age Requirement",
+      "description": "Confirm you are at least 25 years old",
+      "icon": "FileText",
+      "steps": [
+        "Provide a valid government-issued ID",
+        "Ensure your age meets the minimum requirement"
+      ],
+      "documents": [
+        "Passport or ID"
+      ],
+      "estimatedTime": "15 minutes"
     }
   }
 }

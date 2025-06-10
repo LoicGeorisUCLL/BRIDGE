@@ -1,0 +1,47 @@
+import { UserProfile } from "@/types";
+
+export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
+  const allTasks: string[] = [];
+
+  // Extract user profile answers for easier reference
+  const citizenshipStatus = profile.answers[0];
+  const workDuration = profile.answers[1];
+  const workType = profile.answers[2];
+  const userAge = profile.answers[3];
+  const workContractStatus = profile.answers[4];
+  const healthInsuranceStatus = profile.answers[5];
+
+  // Check if user is a seasonal worker staying more than 3 months
+  const isSeasonalWorker = workType === 0 && (workDuration === 1 || workDuration === 2);
+  const isLongTermStay = workDuration === 1 || workDuration === 2;
+
+  // Regulatory requirements for seasonal workers
+  if (isSeasonalWorker) {
+    // Local registration requirement for stays over 3 months
+    if (isLongTermStay) {
+      allTasks.push('local_registration');
+    }
+
+    // Work contract validation for seasonal workers
+    if (workContractStatus === 1 || workContractStatus === 2) {
+      allTasks.push('work_contract_validation');
+    }
+
+    // Health insurance registration
+    if (healthInsuranceStatus === 1) {
+      allTasks.push('health_insurance_registration');
+    }
+
+    // Bank account setup for wage receipt
+    if (workContractStatus !== 0) {
+      allTasks.push('bank_account_setup');
+    }
+
+    // Age verification for seasonal workers
+    if (userAge === 0) {
+      allTasks.push('age_verification');
+    }
+  }
+
+  return allTasks;
+};

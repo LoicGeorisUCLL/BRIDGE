@@ -1,0 +1,52 @@
+import { UserProfile } from "@/types";
+
+export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
+  const allTasks: string[] = [];
+
+  console.log('Generating tasks for profile:', profile.answers);
+
+  // Check if the user is an EU or non-EU citizen
+  const isEUCitizen = profile.answers[0] === 0;
+
+  // Check if the user will be working in Belgium for more than 3 months
+  const isLongTermStay = profile.answers[1] === 1;
+
+  // Check if the user has a valid work contract
+  const hasValidContract = profile.answers[2] === 0;
+
+  // Check if the user has health insurance coverage
+  const hasHealthInsurance = profile.answers[3] === 0;
+
+  // Check if the user has a bank account in Belgium
+  const hasBankAccount = profile.answers[4] === 0;
+
+  // Check if the user is at least 25 years old
+  const isAtLeast25 = profile.answers[5] === 0;
+
+  // All seasonal workers staying for more than 3 months must be registered with the local authorities
+  if (isLongTermStay) {
+    allTasks.push('municipal_registration');
+  }
+
+  // All seasonal workers must have a valid work contract issued by their employer
+  if (!hasValidContract) {
+    allTasks.push('work_contract_validation');
+  }
+
+  // All seasonal workers must have health insurance coverage for the duration of their stay
+  if (!hasHealthInsurance) {
+    allTasks.push('health_insurance_coverage');
+  }
+
+  // All seasonal workers must have a bank account in the country of employment to receive their wages
+  if (!hasBankAccount) {
+    allTasks.push('open_belgian_bank_account');
+  }
+
+  // All seasonal workers must be at least 25 years old
+  if (!isAtLeast25) {
+    allTasks.push('age_verification');
+  }
+
+  return allTasks;
+};

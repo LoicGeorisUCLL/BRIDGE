@@ -1,0 +1,20 @@
+export const generateRequirements = (currentQuestionIndex: number, answerIndex: number): boolean => {
+  
+    // Check if the user meets the requirements based on their answers
+    // If user is not a EU citizen, return true
+    if (currentQuestionIndex === 0 && answerIndex === 1) {
+        return true
+    }
+
+    // If user is under 25 years old, return true
+    if (currentQuestionIndex === 5 && answerIndex === 0) {
+        return true
+    }
+
+    // If user has less than 6 kids, return true
+    if (currentQuestionIndex === 6 && answerIndex === 0) {
+        return true;
+    }
+
+  return false;
+};

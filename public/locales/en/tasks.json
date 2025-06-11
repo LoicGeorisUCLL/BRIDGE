@@ -1,79 +1,78 @@
 {
   "tasks": {
     "municipal_registration": {
-      "title": "Municipal Registration",
-      "description": "Register at the local municipality",
+      "title": "Municipal Registration for Long-Stay Seasonal Workers",
+      "description": "Complete mandatory local authority registration for stays over 3 months",
       "icon": "Building",
       "steps": [
-        "Visit your local municipality office",
-        "Bring your passport/ID and proof of address",
-        "Complete the registration process"
+        "Locate nearest municipal administration office",
+        "Prepare required registration documents",
+        "Submit registration forms and supporting paperwork",
+        "Obtain official registration confirmation"
       ],
       "documents": [
-        "Passport or ID",
-        "Proof of address",
-        "Work contract"
+        "Valid passport",
+        "Proof of employment contract",
+        "Proof of Belgian address",
+        "Recent passport-sized photographs"
       ],
-      "estimatedTime": "1 hour"
+      "estimatedTime": "2-3 hours"
     },
-    "work_contract_acquisition": {
-      "title": "Obtain Work Contract",
-      "description": "Secure a valid work contract from your employer",
+    "work_contract_validation": {
+      "title": "Official Work Contract Processing",
+      "description": "Register and validate seasonal work contract with employment authorities",
       "icon": "Briefcase",
       "steps": [
-        "Request a work contract from your employer",
-        "Review the contract to ensure it meets legal requirements",
-        "Sign the contract"
+        "Review contract for legal compliance",
+        "Make certified copies of original contract",
+        "Submit contract to regional employment office",
+        "Obtain official contract registration confirmation"
       ],
       "documents": [
-        "Passport or ID"
+        "Original work contract",
+        "Employer details",
+        "Personal identification",
+        "Passport"
       ],
-      "estimatedTime": "30 minutes"
+      "estimatedTime": "1-2 hours"
     },
-    "health_insurance_enrollment": {
-      "title": "Enroll in Health Insurance",
-      "description": "Arrange health insurance coverage for your stay",
+    "health_insurance_registration": {
+      "title": "Health Insurance Coverage Setup",
+      "description": "Secure comprehensive health insurance for entire work period",
       "icon": "Shield",
       "steps": [
-        "Check if your employer provides health insurance",
-        "If not, research and select a health insurance provider",
-        "Submit required documents to enroll"
+        "Compare Belgian health insurance providers",
+        "Select appropriate seasonal worker insurance plan",
+        "Complete insurance application",
+        "Submit required documentation",
+        "Obtain official health insurance certificate"
       ],
       "documents": [
-        "Passport or ID",
+        "Passport",
         "Work contract",
-        "Municipal registration"
+        "Proof of Belgian address",
+        "Municipal registration document"
       ],
-      "estimatedTime": "45 minutes"
+      "estimatedTime": "2 hours"
     },
-    "bank_account_setup": {
-      "title": "Open Belgian Bank Account",
-      "description": "Set up a bank account in Belgium to receive your wages",
+    "wage_bank_account_setup": {
+      "title": "Wage Payment Bank Account Opening",
+      "description": "Establish local bank account for receiving seasonal work wages",
       "icon": "CreditCard",
       "steps": [
-        "Visit a local bank branch",
-        "Provide required identification documents",
-        "Complete the account opening process"
+        "Research Belgian banks offering seasonal worker accounts",
+        "Schedule bank account opening appointment",
+        "Prepare required identification documents",
+        "Complete bank account application",
+        "Receive official bank account details"
       ],
       "documents": [
-        "Passport or ID",
+        "Valid passport",
+        "Proof of Belgian address",
         "Work contract",
-        "Municipal registration"
+        "Municipal registration confirmation"
       ],
-      "estimatedTime": "1 hour"
-    },
-    "age_verification": {
-      "title": "Verify Age Requirement",
-      "description": "Confirm you are at least 25 years old",
-      "icon": "FileText",
-      "steps": [
-        "Provide a valid government-issued ID",
-        "Ensure your age meets the minimum requirement"
-      ],
-      "documents": [
-        "Passport or ID"
-      ],
-      "estimatedTime": "15 minutes"
+      "estimatedTime": "1-2 hours"
     }
   }
 }

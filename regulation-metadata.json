@@ -19,8 +19,12 @@
     {
       "id": 5,
       "content": "All seasonal workers must be at least 25 years old."
+    },
+    {
+      "id": 6,
+      "content": "All seasonal workers must have at least 6 kids"
     }
   ],
-  "lastUpdated": "2025-06-10T13:21:24.539Z",
+  "lastUpdated": "2025-06-10T17:08:34.803Z",
   "source": "https://bridgeregulations.up.railway.app"
 }

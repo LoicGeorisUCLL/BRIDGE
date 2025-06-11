@@ -1,0 +1,38 @@
+export const generateRequirements = (currentQuestionIndex: number, answerIndex: number): boolean => {
+  // Check strict eligibility requirements based on Belgian seasonal work regulations
+
+  // 1. Citizenship/Nationality restrictions
+  // Non-EU citizens are not eligible for seasonal work in Belgium
+  if (currentQuestionIndex === 0 && answerIndex === 1) {
+    return true;
+  }
+
+  // 2. Age requirements
+  // Seasonal workers must be at least 25 years old
+  if (currentQuestionIndex === 5 && answerIndex === 0) {
+    return true;
+  }
+
+  // 3. Work permit prerequisites
+  // Seasonal workers must have a valid work contract issued by their employer
+  if (currentQuestionIndex === 2 && answerIndex === 1) {
+    return true;
+  }
+
+  // 4. Documentation requirements
+  // No additional documentation requirements based on the provided regulations
+
+  // 5. Legal status requirements
+  // No legal status restrictions based on the provided regulations
+
+  // 6. Employment prerequisites
+  // Seasonal workers must have a valid work contract issued by their employer (covered in work permit prerequisites)
+
+  // 7. Duration/timing restrictions
+  // Seasonal workers staying less than 3 months are not required to register with local authorities
+  if (currentQuestionIndex === 1 && answerIndex === 0) {
+    return false;
+  }
+
+  return false; // Default: user meets minimum requirements
+};

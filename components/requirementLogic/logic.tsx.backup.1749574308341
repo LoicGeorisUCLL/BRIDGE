@@ -1,0 +1,41 @@
+export const generateRequirements = (currentQuestionIndex: number, answerIndex: number): boolean => {
+  // Check strict eligibility requirements based on Belgian seasonal work regulations
+
+  // Citizenship/Nationality restrictions
+  if (currentQuestionIndex === 0 && answerIndex === 1) { // Non-EU/EEA citizen
+    return true; // Block user - ineligible due to citizenship restriction per regulation 1
+  }
+
+  // Duration/timing restrictions
+  if (currentQuestionIndex === 1 && answerIndex === 0) { // Less than 3 months
+    return false; // User meets minimum requirements, can continue
+  }
+  if (currentQuestionIndex === 1 && answerIndex === 1) { // 3 months or more
+    return true; // Block user - ineligible due to minimum 3-month stay requirement per regulation 1
+  }
+
+  // Work permit prerequisites
+  if (currentQuestionIndex === 2 && answerIndex === 1) { // No work contract
+    return true; // Block user - ineligible due to work contract requirement per regulation 2
+  }
+
+  // Documentation requirements
+  if (currentQuestionIndex === 3 && answerIndex === 1) { // No health insurance
+    return true; // Block user - ineligible due to health insurance requirement per regulation 3
+  }
+  if (currentQuestionIndex === 4 && answerIndex === 1) { // No Belgian bank account
+    return true; // Block user - ineligible due to bank account requirement per regulation 4
+  }
+
+  // Age requirements
+  if (currentQuestionIndex === 5 && answerIndex === 1) { // Under 25 years old
+    return true; // Block user - ineligible due to minimum age requirement per regulation 5
+  }
+
+  // Employment prerequisites
+  if (currentQuestionIndex === 6 && answerIndex === 1) { // Less than 6 children
+    return true; // Block user - ineligible due to minimum 6 children requirement per regulation 6
+  }
+
+  return false; // Default: user meets minimum requirements
+};

@@ -1,0 +1,46 @@
+import { UserProfile } from "@/types";
+
+export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
+  const allTasks: string[] = [];
+
+  // Extract user profile answers for easier reference
+  const citizenshipStatus = profile.answers[0];
+  const workDuration = profile.answers[1];
+  const workContractStatus = profile.answers[4];
+  const healthInsuranceStatus = profile.answers[5];
+  const bankAccountStatus = profile.answers[6];
+
+  // 1. Municipal Registration: Required for non-EU citizens or for stays over 3 months
+  if (citizenshipStatus === 1 || workDuration === 1 || workDuration === 2) {
+    allTasks.push('municipal_registration');
+  }
+
+  // 2. Work Contract Submission: Required if no current work contract exists
+  if (workContractStatus === 1) {
+    allTasks.push('work_contract_submission');
+  }
+
+  // 3. Health Insurance Registration: Required if no current health insurance
+  if (healthInsuranceStatus === 1) {
+    allTasks.push('health_insurance_registration');
+  }
+
+  // 4. Bank Account Setup: Required if no current Belgian bank account
+  if (bankAccountStatus === 1) {
+    allTasks.push('bank_account_setup');
+  }
+
+  // 5. Additional EU vs Non-EU Specific Procedures
+  if (citizenshipStatus === 1) {
+    // Extra documentation often required for non-EU workers
+    allTasks.push('municipal_registration');
+  }
+
+  // 6. Duration-Based Additional Documentation
+  if (workDuration === 2) {
+    // Extended stay (over 6 months) might require additional registration
+    allTasks.push('municipal_registration');
+  }
+
+  return allTasks;
+};

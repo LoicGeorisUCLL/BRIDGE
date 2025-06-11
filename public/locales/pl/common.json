@@ -26,6 +26,8 @@
   "noEUTitle": "Wymagany jest identyfikator europejski",
   "noEUMessage": "Ta aplikacja jest obecnie dostępna tylko dla osób z europejskimi identyfikatorami. Opcja dla ludności nieeuropejskiej jeszcze nie jest dostępna.",
   "understood": "Zrozumiany",
+  "noMeetingRequirementsTitle": "Wymagania nie spełnione",
+  "noMeetingRequirements": "Nie spełniasz wymagań pracy w Belgii.",
   "faqTitle": "Często zadawane pytania",
   "faq": {
     "faq1": {

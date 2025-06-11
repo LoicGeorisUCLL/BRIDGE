@@ -1,0 +1,33 @@
+export const generateRequirements = (currentQuestionIndex: number, answerIndex: number): boolean => {
+  // Block if worker is under 25 years old (Regulation 5: All seasonal workers must be at least 25 years old)
+  if (currentQuestionIndex === 2 && answerIndex === 0) {
+    return true; // Ineligible due to age restriction
+  }
+
+  // Block if worker has fewer than 6 children (Regulation 6: All seasonal workers must have at least 6 kids)
+  if (currentQuestionIndex === 3 && answerIndex === 0) {
+    return true; // Ineligible due to insufficient number of children
+  }
+
+  // Block if worker does not have a valid work contract (Regulation 2: All seasonal workers must have a valid work contract)
+  if (currentQuestionIndex === 4 && answerIndex === 1) {
+    return true; // Ineligible due to lack of work contract
+  }
+
+  // Block if worker lacks health insurance coverage (Regulation 3: All seasonal workers must have health insurance)
+  if (currentQuestionIndex === 5 && answerIndex === 1) {
+    return true; // Ineligible due to lack of health insurance
+  }
+
+  // Block if worker staying longer than 3 months without local registration (Regulation 1: Must register with local authorities for stays over 3 months)
+  if (currentQuestionIndex === 1 && (answerIndex === 1 || answerIndex === 2)) {
+    return true; // Ineligible due to potential lack of local registration
+  }
+
+  // Block if worker lacks a bank account (Regulation 4: Must have a bank account to receive wages)
+  if (currentQuestionIndex === 6 && answerIndex === 1) {
+    return true; // Ineligible due to lack of bank account
+  }
+
+  return false; // Default: user meets minimum requirements
+};

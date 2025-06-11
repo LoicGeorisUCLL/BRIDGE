@@ -26,6 +26,8 @@
   "noEUTitle": "European ID Required",
   "noEUMessage": "This app is currently only available for people with European IDs. The option for non-European people is not out yet.",
   "understood": "Understood",
+  "noMeetingRequirementsTitle": "Requirements not met",
+  "noMeetingRequirements": "You do not meet the requirements to work in Belgium.",
   "faqTitle": "Frequently Asked Questions",
   "faq": {
     "faq1": {

@@ -10,36 +10,58 @@ const supportedLocales = fs.readdirSync(localesDir).filter((l) => l !== baseLang
 
 async function translateText(text, to) {
   try {
+    // Add delay to avoid rate limiting
     await new Promise(resolve => setTimeout(resolve, 200));
     
-    const baseUrl = process.env.TRANSLATE_URL;
-    console.log(`Using translation service: ${baseUrl}`);
+    console.log(`Translating "${text}" from ${baseLang} to ${to}`);
     
-    const response = await fetch(`${baseUrl}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        q: text,
-        source: 'en',
-        target: to,
-        format: 'text'
-      })
+    // Use the imported translate function directly
+    const result = await translate(text, { 
+      to: to 
     });
     
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
+    console.log(`Translation result: "${result.text}"`);
+    return result.text;
     
-    const result = await response.json();
-
-    return result.translatedText;
   } catch (e) {
     console.error(`Translation failed for "${text}" to "${to}":`, e);
+    // Return original text if translation fails
     return text;
   }
 }
+
+// async function translateText(text, to) {
+//   try {
+//     await new Promise(resolve => setTimeout(resolve, 200));
+    
+//     const baseUrl = process.env.TRANSLATE_URL;
+//     console.log(`Using translation service: ${baseUrl}`);
+    
+//     const response = await fetch(`${baseUrl}`, {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify({
+//         q: text,
+//         source: 'en',
+//         target: to,
+//         format: 'text'
+//       })
+//     });
+    
+//     if (!response.ok) {
+//       throw new Error(`HTTP error! status: ${response.status}`);
+//     }
+    
+//     const result = await response.json();
+
+//     return result.translatedText;
+//   } catch (e) {
+//     console.error(`Translation failed for "${text}" to "${to}":`, e);
+//     return text;
+//   }
+// }
 
 // Helper function to get nested value from object using dot notation path
 function getNestedValue(obj, path) {

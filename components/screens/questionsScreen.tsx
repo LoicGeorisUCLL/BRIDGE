@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 import { useTranslation } from "next-i18next";
 import { Screen, UserProfile } from '@/types';
-import NoEUPopup from '../popups/noEUPopup';
 import QuestionsJSON from '../../public/locales/en/questions.json';
+import NoMeetingRequirementsPopup from '../popups/noMeetingRequirementsPopup';
+import { generateRequirements } from '../requirementLogic/logic';
 
 interface QuestionsScreenProps {
   setUserProfile: (profile: any) => void;
@@ -21,7 +22,7 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
   setCurrentScreen
 }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  // const [showNoEUPopup, setShowNoEUPopup] = useState(false);
+  const [showNoMeetingRequirements, setShowNoMeetingRequirements] = useState(false);
   const { t: tq } = useTranslation("questions");
   const { t } = useTranslation("common");
 
@@ -36,6 +37,11 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
   };
 
   const handleQuestionAnswer = (answerIndex: number) => {
+
+    if (generateRequirements(currentQuestionIndex, answerIndex)) {
+      setShowNoMeetingRequirements(true);
+      return;
+    }
     // Initialize answers array if it doesn't exist
     const currentAnswers = userProfile?.answers || [];
     
@@ -58,9 +64,9 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
     }
   };
 
-  // const handleCloseNoEUPopup = () => {
-  //   setShowNoEUPopup(false);
-  // };
+  const handleCloseNoMeetingRequirements = () => {
+    setShowNoMeetingRequirements(false);
+  };
 
   const currentAnswer = userProfile?.answers?.[currentQuestionIndex];
 
@@ -130,10 +136,10 @@ const QuestionsScreen: React.FC<QuestionsScreenProps> = ({
         </div>
       </div>
 
-      {/* <NoEUPopup 
-        show={showNoEUPopup} 
-        onClose={handleCloseNoEUPopup} 
-      /> */}
+      <NoMeetingRequirementsPopup
+        show={showNoMeetingRequirements} 
+        onClose={handleCloseNoMeetingRequirements} 
+      />
     </>
   );
 };

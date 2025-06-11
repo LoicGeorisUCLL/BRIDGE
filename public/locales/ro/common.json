@@ -26,6 +26,8 @@
   "noEUTitle": "ID-ul european necesar",
   "noEUMessage": "Această aplicație este disponibilă doar pentru persoanele cu ID-uri europene. Opțiunea pentru cetățenii neeuropeni nu a expirat încă.",
   "understood": "Am înţeles",
+  "noMeetingRequirementsTitle": "Cerințele care nu sunt îndeplinite",
+  "noMeetingRequirements": "Nu îndepliniți cerințele pentru a lucra în Belgia.",
   "faqTitle": "Întrebări frecvente",
   "faq": {
     "faq1": {

@@ -26,6 +26,8 @@
   "noEUTitle": "Požadováno evropské ID",
   "noEUMessage": "Tato aplikace je v současné době k dispozici pouze pro lidi s evropskými ID. Možnost pro neevropské lidi ještě není.",
   "understood": "Pochopeno",
+  "noMeetingRequirementsTitle": "Požadavky nebyly splněny",
+  "noMeetingRequirements": "Nesplňujete požadavky na práci v Belgii.",
   "faqTitle": "Často kladené otázky",
   "faq": {
     "faq1": {

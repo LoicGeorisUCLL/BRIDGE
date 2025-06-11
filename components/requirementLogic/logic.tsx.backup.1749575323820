@@ -1,0 +1,17 @@
+export const generateRequirements = (currentQuestionIndex: number, answerIndex: number): boolean => {
+  // Check for truly immutable conditions that legally prevent seasonal work
+  
+  // Block users under 25 - Age is an absolute, immutable condition per Regulation 5
+  if (currentQuestionIndex === 2 && answerIndex === 0) {
+    return true; // Under 25 years old - cannot work as seasonal worker
+  }
+
+  // Block users with fewer than 6 children (extremely specific immutable condition)
+  // Note: This seems unusual but is part of the provided regulations
+  if (currentQuestionIndex === 5 && answerIndex === 1) {
+    return true; // Implies insufficient number of children
+  }
+
+  // Default: allow user to continue
+  return false;
+};

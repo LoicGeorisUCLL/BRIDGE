@@ -26,6 +26,8 @@
   "noEUTitle": "Europäischer Ausweis erforderlich",
   "noEUMessage": "Diese App ist derzeit nur für Menschen mit europäischen IDs verfügbar. Die Option für Nicht-Europäische Menschen ist noch nicht heraus.",
   "understood": "Verstanden",
+  "noMeetingRequirementsTitle": "Anforderungen nicht erfüllt",
+  "noMeetingRequirements": "Sie erfüllen nicht die Anforderungen für die Arbeit in Belgien.",
   "faqTitle": "Häufig gestellte Fragen",
   "faq": {
     "faq1": {

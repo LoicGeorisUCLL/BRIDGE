@@ -1,0 +1,51 @@
+import { UserProfile } from "@/types";
+
+export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
+  const allTasks: string[] = [];
+
+  // Extract user profile answers for precise task assignment
+  const citizenshipStatus = profile.answers[0];
+  const workDuration = profile.answers[1];
+  const workContractStatus = profile.answers[3];
+  const healthInsuranceStatus = profile.answers[4];
+
+  // 1. Long-Stay Municipal Registration for Extended Work Periods
+  // Required for non-EU workers or for stays longer than 3 months
+  if (citizenshipStatus === 1 || workDuration === 1 || workDuration === 2) {
+    allTasks.push('municipal_long_stay_registration');
+  }
+
+  // 2. Work Contract Registration 
+  // Required for workers without a confirmed work contract
+  if (workContractStatus === 1 || workContractStatus === 2) {
+    allTasks.push('work_contract_registration');
+  }
+
+  // 3. Health Insurance Arrangement
+  // Required for workers lacking comprehensive health coverage
+  if (healthInsuranceStatus === 1) {
+    allTasks.push('health_insurance_arrangement');
+  }
+
+  // 4. Belgian Bank Account Setup
+  // Recommended for all seasonal workers to receive wages
+  allTasks.push('belgian_bank_account_setup');
+
+  // 5. Additional Non-EU Worker Specific Documentation
+  if (citizenshipStatus === 1) {
+    // Extra documentation often required for non-EU seasonal workers
+    if (!allTasks.includes('municipal_long_stay_registration')) {
+      allTasks.push('municipal_long_stay_registration');
+    }
+  }
+
+  // 6. Extended Stay Additional Requirements
+  if (workDuration === 2) {
+    // Extra documentation for stays over 6 months
+    if (!allTasks.includes('municipal_long_stay_registration')) {
+      allTasks.push('municipal_long_stay_registration');
+    }
+  }
+
+  return allTasks;
+};

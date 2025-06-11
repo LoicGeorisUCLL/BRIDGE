@@ -738,11 +738,11 @@ RETURN ONLY THE COMPLETE TYPESCRIPT FUNCTION, NO ADDITIONAL TEXT OR COMMENTS`;
 
       console.log(existingMetadata)
 
-      // // 3. Compare scraped regulations with metadata
-      // if (existingMetadata && JSON.stringify(regulations.regulations) === JSON.stringify(existingMetadata.regulations)) {
-      //   console.log('✅ Scraped regulations are identical to existing metadata. Exiting update process.');
-      //   return; // Exit early if no changes
-      // }
+      // 3. Compare scraped regulations with metadata
+      if (existingMetadata && JSON.stringify(regulations.regulations) === JSON.stringify(existingMetadata.regulations)) {
+        console.log('✅ Scraped regulations are identical to existing metadata. Exiting update process.');
+        return; // Exit early if no changes
+      }
 
       // 4. Save regulation metadata
       await this.saveRegulationMetadata(regulations);

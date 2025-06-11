@@ -27,7 +27,9 @@ const ChecklistScreen: React.FC<ChecklistScreenProps> = ({
 }) => {
 
 const [showCongratulations, setShowCongratulations] = useState(false);
+const [showRestart, setShowRestart] = useState(false);
 const [selectedTaskDetails, setSelectedTaskDetails] = useState<string | null>(null);
+const [congratulationsManuallyDismissed, setCongratulationsManuallyDismissed] = useState(false);
 const [showFAQ, setShowFAQ] = useState(false);
 const faqButtonRef = React.useRef<HTMLButtonElement>(null);
 
@@ -40,14 +42,38 @@ const router = useRouter();
 
 const personalizedTasks = generatePersonalizedTasks(userProfile);
 const allCompleted = completedTasks.length === personalizedTasks.length;
+const noTasks = personalizedTasks.length === 0;
 
 useEffect(() => {
-    if (allCompleted && personalizedTasks.length > 0) {
-      setShowCongratulations(true);
+    // Reset the manually dismissed flag when conditions change significantly
+    // (e.g., when tasks are added/removed or completion status changes)
+    const shouldResetDismissed = personalizedTasks.length > 0 && !allCompleted;
+    if (shouldResetDismissed && congratulationsManuallyDismissed) {
+      setCongratulationsManuallyDismissed(false);
     }
-  }, [allCompleted, personalizedTasks.length]);
-  
 
+    // When all tasks are completed OR there are no tasks
+    if ((allCompleted || noTasks) && !congratulationsManuallyDismissed) {
+      if (!showCongratulations) {
+        setShowCongratulations(true);
+        setShowRestart(false); // Hide restart when showing congratulations
+      }
+    } else {
+      // There are tasks but not all completed, OR congratulations was manually dismissed
+      if (showCongratulations) {
+        setShowCongratulations(false);
+      }
+    }
+
+    // Show restart button only when:
+    // - (All tasks completed OR no tasks) AND congratulations is not showing
+    if ((allCompleted || noTasks) && !showCongratulations) {
+      setShowRestart(true);
+    } else {
+      setShowRestart(false);
+    }
+  }, [allCompleted, noTasks, personalizedTasks.length, showCongratulations, congratulationsManuallyDismissed]);
+  
   
 
   const getIconComponent = (iconName: string) => {
@@ -64,6 +90,7 @@ useEffect(() => {
 
   const handleCloseCongratulations = () => {
     setShowCongratulations(false);
+    setCongratulationsManuallyDismissed(true);
   };
 
   const handleViewDetails = (taskId: string) => {
@@ -73,6 +100,11 @@ useEffect(() => {
   const handleCloseDetails = () => {
     setSelectedTaskDetails(null);
   };
+
+  // if (!personalizedTasks || personalizedTasks.length === 0) {
+  //   setShowCongratulations(true);
+  // }
+
   
   return (
     <div className="min-h-screen bg-gray-50">
@@ -89,6 +121,7 @@ useEffect(() => {
           const tasks = tt('tasks', { returnObjects: true }) as Tasks;
           const task = tasks[taskId];
           const isCompleted = completedTasks.includes(taskId);
+          console.log("Task ID:", taskId, "Task:", task);
           const IconComponent = getIconComponent(task.icon);
           
           return (
@@ -153,6 +186,7 @@ useEffect(() => {
           </button>
         </div>
       </div>
+
 
 
       {selectedTaskDetails && (
@@ -272,16 +306,14 @@ useEffect(() => {
                 {t("congratulationsMessage")}
               </p>
             </div>
-            
             <div className="space-y-3">
               <button
                 onClick={onResetAndGoToWelcome}
-                className="w-full flex items-center justify-center space-x-2 py-3 bg-blue-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
-              >
+                className="w-full flex items-center justify-center space-x-2 py-3 bg-blue-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
                 <RotateCcw className="w-5 h-5" />
                 <span>{t("startOver")}</span>
               </button>
-            </div>
+          </div>
           </div>
         </div>
       )}
@@ -310,9 +342,23 @@ useEffect(() => {
               
             })}
             
+            
           </div>
         </div>
         )}
+        { 
+          showRestart && (
+            <div className="fixed bottom-25 left-0 right-0 px-4 max-w-md mx-auto z-40">
+              <button
+                onClick={onResetAndGoToWelcome}
+                className="w-full flex items-center justify-center space-x-2 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-lg font-medium"
+              >
+                <RotateCcw className="w-5 h-5" />
+                <span>{t("startOver")}</span>
+              </button>
+            </div>
+          )
+        }
     </div>
     
   );

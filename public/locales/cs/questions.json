@@ -1,47 +1,47 @@
 {
-  "intakeQuestions": {
-    "0": {
-      "question": "Máte platný evropský občanský průkaz nebo pas?",
+  "intakeQuestions": [
+    {
+      "question": "Jaký je váš status občanství?",
       "options": [
-        "Ano, mám evropský občanský průkaz nebo pas",
-        "Ne, mám pouze dokument mimo EU"
+        "Občan EU",
+        "Občan mimo EU"
       ]
     },
-    "1": {
-      "question": "Máte již podepsanou pracovní smlouvu?",
-      "options": [
-        "Ano, už je podepsaná",
-        "Ne, zatím ne"
-      ]
-    },
-    "2": {
-      "question": "Máte plukkaart (povolení k sezónní práci)?",
-      "options": [
-        "Ano, už ji mám",
-        "Ne, ještě ji musím získat"
-      ]
-    },
-    "3": {
-      "question": "Jak dlouho plánujete pracovat v Belgii?",
+    {
+      "question": "Jak dlouho budete pracovat v Belgii?",
       "options": [
         "Méně než 3 měsíce",
-        "3–6 měsíců"
+        "3 měsíce nebo více"
       ]
     },
-    "4": {
-      "question": "Ve které provincii budete pracovat?",
+    {
+      "question": "Máte platnou pracovní smlouvu vydanou vaším zaměstnavatelem?",
       "options": [
-        "Antverpy",
-        "Limburk"
+        "Ano, mám platnou pracovní smlouvu",
+        "Ne, nemám pracovní smlouvu"
       ]
     },
-    "5": {
-      "question": "Máte již belgický bankovní účet?",
+    {
+      "question": "Máte zdravotní pojištění po dobu pobytu v Belgii?",
       "options": [
-        "Ano, už jsem si ho založil(a)",
-        "Ne, potřebuji si ho založit",
-        "Plánuji používat zahraniční účet"
+        "Ano, mám zdravotní pojištění",
+        "Ne, nemám zdravotní pojištění"
+      ]
+    },
+    {
+      "question": "Máte v Belgii bankovní účet, který vám bude platit?",
+      "options": [
+        "Ano, mám belgický bankovní účet",
+        "Ne, nemám belgický bankovní účet"
+      ]
+    },
+    {
+      "question": "Kolik máš rodičů?",
+      "options": [
+        "6 až 12 dětí",
+        "Méně než 6 dětí",
+        "Více než 12 dětí"
       ]
     }
-  }
+  ]
 }

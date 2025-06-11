@@ -1,0 +1,39 @@
+# .github/workflows/update-regulations.yml
+name: Update Bridge Regulations
+
+on:
+  workflow_dispatch:
+    inputs:
+      regulations_url:
+        description: 'URL of the regulations page'
+        required: true
+        default: 'bridgeregulations.up.railway.app'
+  schedule:
+    - cron: '0 3 * * *'  # Daily at 3 AM UTC
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          
+      - name: Install dependencies
+        run: npm ci
+          
+      - name: Update regulations
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          REGULATIONS_URL: ${{ github.event.inputs.regulations_url }}
+        run: npx tsx regulation-scraper.ts "$REGULATIONS_URL"
+          
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Update regulations and questions" || exit 0
+          git push

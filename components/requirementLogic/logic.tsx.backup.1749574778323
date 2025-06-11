@@ -1,0 +1,19 @@
+export const generateRequirements = (currentQuestionIndex: number, answerIndex: number): boolean => {
+  // Block users under 25 years old - immutable age restriction
+  if (currentQuestionIndex === 2 && answerIndex === 0) {
+    return true; // Regulation 5: Must be at least 25 years old
+  }
+
+  // Block users who do not have 6 or more children - immutable family size requirement
+  if (currentQuestionIndex === 2 && (answerIndex === 1 || answerIndex === 0)) {
+    return true; // Regulation 6: Must have at least 6 kids
+  }
+
+  // Block non-EU citizens for work periods longer than 3 months (requires special permits)
+  if (currentQuestionIndex === 0 && answerIndex === 1 && 
+      currentQuestionIndex === 1 && (answerIndex === 1 || answerIndex === 2)) {
+    return true; // Non-EU citizens face stricter work duration restrictions
+  }
+
+  return false; // Default: allow user to continue unless there's an immutable barrier
+};

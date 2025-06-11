@@ -1,47 +1,47 @@
 {
-  "intakeQuestions": {
-    "0": {
-      "question": "Aveți un ID european sau pașaport valabil?",
+  "intakeQuestions": [
+    {
+      "question": "Care este statutul dumneavoastră de cetăţenie?",
       "options": [
-        "Da, am un ID european sau un pașaport",
-        "Nu, am doar un document non-UE"
+        "Cetățean UE",
+        "Cetăţean din afara UE"
       ]
     },
-    "1": {
-      "question": "Aveți deja un contract de muncă semnat?",
+    {
+      "question": "Cât timp vei lucra în Belgia?",
       "options": [
-        "Da, este deja semnat",
-        "Nu, încă nu"
+        "Sub 3 luni",
+        "de minimum 3 luni"
       ]
     },
-    "2": {
-      "question": "Aveți un Plukkaart (permis de muncă sezonier)?",
+    {
+      "question": "Aveţi un contract de muncă valabil emis de angajatorul dumneavoastră?",
       "options": [
-        "Da, îl am deja",
-        "Nu, mai trebuie să -l obțin"
+        "Da, am un contract de muncă valabil",
+        "Nu, nu am un contract de muncă"
       ]
     },
-    "3": {
-      "question": "Cât timp intenționați să lucrați în Belgia?",
+    {
+      "question": "Aveţi asigurare de sănătate pe durata şederii în Belgia?",
       "options": [
-        "Mai puțin de 3 luni",
-        "3–6 luni"
+        "Da, am asigurare de sănătate",
+        "Nu, nu am asigurare de sănătate"
       ]
     },
-    "4": {
-      "question": "În ce provincie veți lucra?",
+    {
+      "question": "Aveţi un cont bancar în Belgia pentru a vă primi salariile?",
       "options": [
-        "Anvers",
-        "Limburg"
+        "Da, am un cont bancar belgian",
+        "Nu, nu am un cont bancar belgian"
       ]
     },
-    "5": {
-      "question": "Aveți deja un cont bancar belgian?",
+    {
+      "question": "Câţi părinţi ai?",
       "options": [
-        "Da, am deschis deja unul",
-        "Nu, trebuie să deschid unul",
-        "Am de gând să folosesc un cont străin"
+        "6 până la 12 copii",
+        "Mai puţin de 6 copii",
+        "Peste 12 copii"
       ]
     }
-  }
+  ]
 }

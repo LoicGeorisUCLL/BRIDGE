@@ -1,52 +1,47 @@
 import { UserProfile } from "@/types";
 
 export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
-  const allTasks = [];
+  const allTasks: string[] = [];
 
-  console.log('Generating tasks for profile:', profile.answers);
+  // Extract user profile answers for precise task assignment
+  const workDuration = profile.answers[0];
+  const workContractStatus = profile.answers[1];
+  const healthInsuranceStatus = profile.answers[2];
+  const bankAccountStatus = profile.answers[3];
 
-  // Check if the user is an EU or non-EU citizen
-  const isEUCitizen = profile.answers[0] === 0;
-
-  // Check if the user will be working in Belgium for more than 3 months
-  const isLongTermStay = profile.answers[1] === 1;
-
-  // Check if the user has a valid work contract
-  const hasValidContract = profile.answers[2] === 0;
-
-  // Check if the user has health insurance coverage
-  const hasHealthInsurance = profile.answers[3] === 0;
-
-  // Check if the user has a bank account in Belgium
-  const hasBankAccount = profile.answers[4] === 0;
-
-  // Check if the user has between 6 and 12 children
-  const has6to12Children = profile.answers[5] === 0;
-
-  // All seasonal workers staying for more than 3 months must be registered with the local authorities (municipality)
-  if (isLongTermStay) {
-    allTasks.push('municipality');
+  // 1. Municipal Registration: Required for stays of 3 months or more
+  // Regulation: All seasonal workers staying over 3 months must register locally
+  if (workDuration === 1) {
+    allTasks.push('municipal_registration');
   }
 
-  // All seasonal workers must have a valid work contract issued by their employer (contract)
-  allTasks.push('contract');
-
-  // All seasonal workers must have health insurance coverage for the duration of their stay (health)
-  allTasks.push('health');
-
-  // All seasonal workers must have a bank account in the country of employment to receive their wages (bank)
-  allTasks.push('bank');
-
-  // All seasonal workers must have between 6 and 12 kids
-  if (has6to12Children) {
-    allTasks.push('practical');
+  // 2. Work Contract Validation: Required for workers without confirmed contract
+  // Regulation: All seasonal workers must have a valid work contract
+  if (workContractStatus === 1 || workContractStatus === 2) {
+    allTasks.push('work_contract_validation');
   }
 
-  // Always add Annex 3 (bijlage3) for temporary residence document
-  allTasks.push('bijlage3');
+  // 3. Health Insurance Registration: Required for workers lacking coverage
+  // Regulation: All seasonal workers must have health insurance for entire stay
+  if (healthInsuranceStatus === 1 || healthInsuranceStatus === 2) {
+    allTasks.push('health_insurance_registration');
+  }
 
-  // Always add emergency contact setup
-  allTasks.push('emergency');
+  // 4. Wage Bank Account Setup: Required for workers without Belgian bank account
+  // Regulation: All seasonal workers need a bank account to receive wages
+  if (bankAccountStatus === 1) {
+    allTasks.push('wage_bank_account_setup');
+  }
+
+  // 5. Extended Stay Additional Requirements
+  // Add specific tasks for workers staying 3 months or more
+  if (workDuration === 1) {
+    // Ensure municipal registration is included for longer stays
+    if (!allTasks.includes('municipal_registration')) {
+      allTasks.push('municipal_registration');
+    }
+    // Additional tasks could be added here for extended stays if needed
+  }
 
   return allTasks;
 };

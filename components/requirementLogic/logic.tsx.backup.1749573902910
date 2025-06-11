@@ -1,0 +1,56 @@
+Here is the TypeScript function `generateRequirements` that identifies the strict eligibility criteria for foreign workers to be eligible for seasonal work in Belgium:
+
+typescript
+export const generateRequirements = (currentQuestionIndex: number, answerIndex: number): boolean => {
+  // Check strict eligibility requirements based on Belgian seasonal work regulations
+
+  // Citizenship/Nationality restrictions
+  if (currentQuestionIndex === 0 && answerIndex === 1) { // Non-EU citizen
+    return true; // Block user - only EU citizens are eligible for seasonal work in Belgium per regulation 1
+  }
+
+  // Duration/timing restrictions
+  if (currentQuestionIndex === 1 && answerIndex === 0) { // Less than 3 months
+    return false; // User meets the minimum requirement of staying more than 3 months per regulation 1
+  }
+  if (currentQuestionIndex === 1 && answerIndex === 1) { // More than 3 months
+    return false; // User meets the minimum requirement of staying more than 3 months per regulation 1
+  }
+
+  // Work permit prerequisites
+  if (currentQuestionIndex === 2 && answerIndex === 1) { // No valid work contract
+    return true; // Block user - a valid work contract is required per regulation 2
+  }
+
+  // Documentation requirements
+  if (currentQuestionIndex === 3 && answerIndex === 1) { // No health insurance
+    return true; // Block user - health insurance coverage is required per regulation 3
+  }
+  if (currentQuestionIndex === 4 && answerIndex === 1) { // No Belgian bank account
+    return true; // Block user - a Belgian bank account is required per regulation 4
+  }
+
+  // Age requirements
+  if (currentQuestionIndex === 5 && answerIndex === 1) { // Under 25 years old
+    return true; // Block user - the minimum age requirement is 25 years old per regulation 5
+  }
+
+  // Employment prerequisites
+  if (currentQuestionIndex === 6 && answerIndex === 1) { // Less than 6 children
+    return true; // Block user - the minimum requirement is 6 children per regulation 6
+  }
+
+  return false; // Default: user meets minimum requirements
+};
+
+
+Here's a breakdown of the logic:
+
+1. **Citizenship/Nationality restrictions**: Non-EU citizens are not eligible for seasonal work in Belgium, as per regulation 1.
+2. **Duration/timing restrictions**: Users who plan to stay for less than 3 months or more than 3 months meet the minimum requirement of staying more than 3 months, as per regulation 1.
+3. **Work permit prerequisites**: Users who do not have a valid work contract are not eligible, as per regulation 2.
+4. **Documentation requirements**: Users who do not have health insurance coverage or a Belgian bank account are not eligible, as per regulations 3 and 4.
+5. **Age requirements**: Users who are under 25 years old are not eligible, as per regulation 5.
+6. **Employment prerequisites**: Users who have less than 6 children are not eligible, as per regulation 6.
+
+The function returns `true` if the user fails to meet any of the minimum requirements, effectively blocking them from proceeding with the application process. Otherwise, it returns `false`, indicating that the user meets the minimum eligibility criteria.

@@ -1,0 +1,56 @@
+import { UserProfile } from "@/types";
+
+export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
+  const allTasks: string[] = [];
+
+  // Extract user profile answers for precise task assignment
+  const citizenshipStatus = profile.answers[0];
+  const workDuration = profile.answers[1];
+  const workContractStatus = profile.answers[3];
+  const healthInsuranceStatus = profile.answers[4];
+  const bankAccountStatus = profile.answers[5];
+
+  // 1. Municipal Registration: Required for non-EU workers or extended stays
+  // Regulation: All seasonal workers staying over 3 months must register locally
+  if (citizenshipStatus === 1 || workDuration === 1 || workDuration === 2) {
+    allTasks.push('municipal_registration');
+  }
+
+  // 2. Work Contract Validation: Required for workers without confirmed contract
+  // Regulation: All seasonal workers must have a valid work contract
+  if (workContractStatus === 1) {
+    allTasks.push('work_contract_validation');
+  }
+
+  // 3. Health Insurance Registration: Required for workers lacking coverage
+  // Regulation: All seasonal workers must have health insurance for entire stay
+  if (healthInsuranceStatus === 1) {
+    allTasks.push('health_insurance_registration');
+  }
+
+  // 4. Wage Bank Account Setup: Required for workers without Belgian bank account
+  // Regulation: All seasonal workers need a bank account to receive wages
+  if (bankAccountStatus === 1) {
+    allTasks.push('wage_bank_account_setup');
+  }
+
+  // 5. Additional Non-EU Worker Documentation
+  // Provides extra support for non-EU workers with more complex administrative requirements
+  if (citizenshipStatus === 1) {
+    // Ensure municipal registration is included for non-EU workers
+    if (!allTasks.includes('municipal_registration')) {
+      allTasks.push('municipal_registration');
+    }
+  }
+
+  // 6. Extended Stay Additional Requirements
+  // Add specific tasks for workers staying longer than 6 months
+  if (workDuration === 2) {
+    // May require additional municipal documentation or extended permit processing
+    if (!allTasks.includes('municipal_registration')) {
+      allTasks.push('municipal_registration');
+    }
+  }
+
+  return allTasks;
+};

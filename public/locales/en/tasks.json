@@ -1,109 +1,78 @@
-  {"tasks": {
-    "municipality": {
-      "title": "Municipal Registration",
-      "description": "Register at the town hall",
+{
+  "tasks": {
+    "municipal_registration": {
+      "title": "Municipal Registration for Long-Stay Seasonal Workers",
+      "description": "Complete mandatory local authority registration for stays over 3 months",
       "icon": "Building",
       "steps": [
-        "Visit your local municipality",
-        "Bring your documents",
-        "Complete the registration process"
+        "Locate nearest municipal administration office",
+        "Prepare required registration documents",
+        "Submit registration forms and supporting paperwork",
+        "Obtain official registration confirmation"
       ],
       "documents": [
-        "Passport or ID",
-        "Proof of address",
-        "Employment contract"
+        "Valid passport",
+        "Proof of employment contract",
+        "Proof of Belgian address",
+        "Recent passport-sized photographs"
       ],
-      "estimatedTime": "1 hour"
+      "estimatedTime": "2-3 hours"
     },
-    "contract": {
-      "title": "Employment Contract & Plukkaart",
-      "description": "Sign your contract and receive your plukkaart",
-      "icon": "FileText",
+    "work_contract_validation": {
+      "title": "Official Work Contract Processing",
+      "description": "Register and validate seasonal work contract with employment authorities",
+      "icon": "Briefcase",
       "steps": [
-        "Review and sign the employment contract",
-        "Request and obtain your plukkaart",
-        "Store both documents safely"
+        "Review contract for legal compliance",
+        "Make certified copies of original contract",
+        "Submit contract to regional employment office",
+        "Obtain official contract registration confirmation"
       ],
       "documents": [
-        "Passport or ID",
-        "Employer details"
+        "Original work contract",
+        "Employer details",
+        "Personal identification",
+        "Passport"
       ],
-      "estimatedTime": "30 minutes"
+      "estimatedTime": "1-2 hours"
     },
-    "health": {
-      "title": "Health Insurance",
-      "description": "Arrange health insurance via your employer or independently",
+    "health_insurance_registration": {
+      "title": "Health Insurance Coverage Setup",
+      "description": "Secure comprehensive health insurance for entire work period",
       "icon": "Shield",
       "steps": [
-        "Ask your employer about included health insurance",
-        "If not covered, choose a health fund (mutualiteit)",
-        "Register and submit required documents"
+        "Compare Belgian health insurance providers",
+        "Select appropriate seasonal worker insurance plan",
+        "Complete insurance application",
+        "Submit required documentation",
+        "Obtain official health insurance certificate"
       ],
       "documents": [
-        "Passport or ID",
-        "Employment contract",
-        "Municipal registration"
+        "Passport",
+        "Work contract",
+        "Proof of Belgian address",
+        "Municipal registration document"
       ],
-      "estimatedTime": "45 minutes"
+      "estimatedTime": "2 hours"
     },
-    "bijlage3": {
-      "title": "Bijlage 3",
-      "description": "Temporary residence document (Annex 3)",
-      "icon": "FileText",
-      "steps": [
-        "Go to the local municipality",
-        "Request Bijlage 3 document",
-        "Wait for approval and collect"
-      ],
-      "documents": [
-        "Passport or ID",
-        "Proof of residence",
-        "Employment contract"
-      ],
-      "estimatedTime": "30 minutes"
-    },
-    "emergency": {
-      "title": "Emergency Contact",
-      "description": "Set up an emergency contact",
-      "icon": "Phone",
-      "steps": [
-        "Choose a contact person",
-        "Share their information with your employer",
-        "Keep their details accessible"
-      ],
-      "documents": [
-        "Name and phone number",
-        "Relationship to you"
-      ],
-      "estimatedTime": "15 minutes"
-    },
-    "bank": {
-      "title": "Bank Account",
-      "description": "Open a Belgian bank account",
+    "wage_bank_account_setup": {
+      "title": "Wage Payment Bank Account Opening",
+      "description": "Establish local bank account for receiving seasonal work wages",
       "icon": "CreditCard",
       "steps": [
-        "Choose a bank",
-        "Visit a branch or apply online",
-        "Submit the required documents"
+        "Research Belgian banks offering seasonal worker accounts",
+        "Schedule bank account opening appointment",
+        "Prepare required identification documents",
+        "Complete bank account application",
+        "Receive official bank account details"
       ],
       "documents": [
-        "Passport or ID",
-        "Proof of address",
-        "Employment contract"
+        "Valid passport",
+        "Proof of Belgian address",
+        "Work contract",
+        "Municipal registration confirmation"
       ],
-      "estimatedTime": "1 hour"
-    },
-    "practical": {
-      "title": "Practical Information",
-      "description": "Useful tips for living and working in Belgium",
-      "icon": "FileText",
-      "steps": [
-        "Understand your worker rights",
-        "Learn local emergency numbers",
-        "Know your employer responsibilities"
-      ],
-      "documents": [],
-      "estimatedTime": "Variable"
+      "estimatedTime": "1-2 hours"
     }
   }
 }

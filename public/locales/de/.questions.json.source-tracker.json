@@ -1,0 +1,47 @@
+{
+  "intakeQuestions": [
+    {
+      "question": "What is your citizenship status?",
+      "options": [
+        "EU citizen",
+        "Non-EU citizen"
+      ]
+    },
+    {
+      "question": "How long will you be working in Belgium?",
+      "options": [
+        "Less than 3 months",
+        "3 months or more"
+      ]
+    },
+    {
+      "question": "Do you have a valid work contract issued by your employer?",
+      "options": [
+        "Yes, I have a valid work contract",
+        "No, I don't have a work contract"
+      ]
+    },
+    {
+      "question": "Do you have health insurance coverage for the duration of your stay in Belgium?",
+      "options": [
+        "Yes, I have health insurance",
+        "No, I don't have health insurance"
+      ]
+    },
+    {
+      "question": "Do you have a bank account in Belgium to receive your wages?",
+      "options": [
+        "Yes, I have a Belgian bank account",
+        "No, I don't have a Belgian bank account"
+      ]
+    },
+    {
+      "question": "How many parents do you have?",
+      "options": [
+        "6 to 12 children",
+        "Less than 6 children",
+        "More than 12 children"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+import { UserProfile } from "@/types";
+
+export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
+  const allTasks: string[] = [];
+
+  // Extract user profile answers for easier reference
+  const citizenshipStatus = profile.answers[0];
+  const workDuration = profile.answers[1];
+  const workContractStatus = profile.answers[2];
+  const healthInsuranceStatus = profile.answers[3];
+  const bankAccountStatus = profile.answers[4];
+  const userAge = profile.answers[5];
+  const familySize = profile.answers[6];
+
+  // 1. All seasonal workers must register with local authorities (Regulation 1)
+  // EU citizens staying more than 3 months and non-EU citizens must register
+  if (workDuration === 1 && (citizenshipStatus === 0 || citizenshipStatus === 1)) {
+    allTasks.push('municipal_registration');
+  }
+
+  // 2. All seasonal workers must have a valid work contract issued by their employer (Regulation 2)
+  if (workContractStatus === 1) {
+    allTasks.push('work_contract');
+  }
+
+  // 3. All seasonal workers must have health insurance coverage for the duration of their stay (Regulation 3)
+  if (healthInsuranceStatus === 1) {
+    allTasks.push('health_insurance');
+  }
+
+  // 4. All seasonal workers must have a bank account in the country of employment to receive their wages (Regulation 4)
+  if (bankAccountStatus === 1) {
+    allTasks.push('bank_account');
+  }
+
+  // 5. All seasonal workers must be at least 25 years old (Regulation 5)
+  if (userAge === 1) {
+    allTasks.push('age_verification');
+  }
+
+  // 6. All seasonal workers must have at least 6 kids (Regulation 6)
+  if (familySize === 1) {
+    allTasks.push('family_size');
+  }
+
+  return allTasks;
+};

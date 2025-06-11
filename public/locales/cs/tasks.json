@@ -1,76 +1,76 @@
 {
   "tasks": {
     "municipality": {
-      "title": "Registrace na obecním úřadě",
-      "description": "Přihlášení k pobytu na městském úřadě",
+      "title": "Obecní registrace",
+      "description": "Zaregistrujte se na radnici",
       "icon": "Building",
       "steps": [
-        "Navštiv místní obecní úřad",
-        "Přines požadované dokumenty",
-        "Vyplň přihlašovací formulář"
+        "Navštivte místní obec",
+        "Přineste své dokumenty",
+        "Dokončit proces registrace"
       ],
       "documents": [
-        "Cestovní pas nebo občanský průkaz",
-        "Doklad o adrese bydliště",
+        "Cestovní pas nebo průkaz totožnosti",
+        "Důkaz adresy",
         "Pracovní smlouva"
       ],
       "estimatedTime": "1 hodina"
     },
     "contract": {
-      "title": "Pracovní smlouva a Plukkaart",
-      "description": "Podepiš pracovní smlouvu a získej plukkaart",
+      "title": "Pracovní smlouva & Plukkaart",
+      "description": "Podepište smlouvu a přijměte plukkaart",
       "icon": "FileText",
       "steps": [
-        "Přečti si a podepiš pracovní smlouvu",
-        "Požádej o plukkaart",
-        "Uchovej oba dokumenty na bezpečném místě"
+        "Přezkum a podpis pracovní smlouvy",
+        "Vyžádejte si a získejte svůj plukkaart",
+        "Oba dokumenty uchovávejte bezpečně"
       ],
       "documents": [
-        "Cestovní pas nebo občanský průkaz",
+        "Cestovní pas nebo průkaz totožnosti",
         "Údaje o zaměstnavateli"
       ],
       "estimatedTime": "30 minut"
     },
     "health": {
       "title": "Zdravotní pojištění",
-      "description": "Přihlas se ke zdravotnímu pojištění",
+      "description": "Zajistit zdravotní pojištění prostřednictvím svého zaměstnavatele nebo nezávisle",
       "icon": "Shield",
       "steps": [
-        "Zeptej se zaměstnavatele, zda tě pojišťuje",
-        "Pokud ne, vyber si zdravotní pojišťovnu (mutualiteit)",
-        "Zaregistruj se a odevzdej potřebné dokumenty"
+        "Zeptejte se svého zaměstnavatele na zahrnuté zdravotní pojištění",
+        "Pokud není zahrnuto, zvolte zdravotní fond (mutualiteit)",
+        "Registrovat a předkládat požadované dokumenty"
       ],
       "documents": [
-        "Cestovní pas nebo občanský průkaz",
+        "Cestovní pas nebo průkaz totožnosti",
         "Pracovní smlouva",
-        "Registrace na obecním úřadě"
+        "Obecní zápis"
       ],
       "estimatedTime": "45 minut"
     },
     "bijlage3": {
-      "title": "Příloha 3",
-      "description": "Dočasný pobytový dokument (Bijlage 3)",
+      "title": "Bijlage 3",
+      "description": "Doklad o dočasném pobytu (příloha 3)",
       "icon": "FileText",
       "steps": [
-        "Navštiv místní obecní úřad",
-        "Požádej o dokument Bijlage 3",
-        "Počkej na schválení a vyzvedni dokument"
+        "Přejít do místní obce",
+        "Žádost o dokument Bijlage 3",
+        "Čekat na schválení a sbírat"
       ],
       "documents": [
-        "Cestovní pas nebo občanský průkaz",
-        "Doklad o adrese bydliště",
+        "Cestovní pas nebo průkaz totožnosti",
+        "Důkaz o pobytu",
         "Pracovní smlouva"
       ],
       "estimatedTime": "30 minut"
     },
     "emergency": {
       "title": "Nouzový kontakt",
-      "description": "Nastav si nouzový kontakt",
+      "description": "Nastavit nouzový kontakt",
       "icon": "Phone",
       "steps": [
-        "Vyber kontaktní osobu",
-        "Dej jí informace o svém zaměstnavateli",
-        "Uchovej kontaktní údaje na snadno dostupném místě"
+        "Vyberte kontaktní osobu",
+        "Sdílejte jejich informace se svým zaměstnavatelem",
+        "Udržet jejich údaje přístupné"
       ],
       "documents": [
         "Jméno a telefonní číslo",
@@ -80,31 +80,31 @@
     },
     "bank": {
       "title": "Bankovní účet",
-      "description": "Založ si belgický bankovní účet",
+      "description": "Otevřít belgický bankovní účet",
       "icon": "CreditCard",
       "steps": [
-        "Vyber si banku",
-        "Navštiv pobočku nebo zažádej online",
-        "Odevzdej potřebné dokumenty"
+        "Vyberte si banku",
+        "Navštivte pobočku nebo aplikujte online",
+        "Předložení požadovaných dokumentů"
       ],
       "documents": [
-        "Cestovní pas nebo občanský průkaz",
-        "Doklad o adrese bydliště",
+        "Cestovní pas nebo průkaz totožnosti",
+        "Důkaz adresy",
         "Pracovní smlouva"
       ],
       "estimatedTime": "1 hodina"
     },
     "practical": {
       "title": "Praktické informace",
-      "description": "Užitečné tipy pro život a práci v Belgii",
+      "description": "Užitečné tipy pro bydlení a práci v Belgii",
       "icon": "FileText",
       "steps": [
-        "Zjisti svá práva jako zaměstnanec",
-        "Zapamatuj si tísňová čísla",
-        "Informuj se o povinnostech zaměstnavatele"
+        "Pochopte svá pracovní práva",
+        "Naučte se místní nouzová čísla",
+        "Znát povinnosti zaměstnavatele"
       ],
       "documents": [],
-      "estimatedTime": "Různé"
+      "estimatedTime": "Proměnná"
     }
   }
 }

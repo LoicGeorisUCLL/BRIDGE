@@ -1,47 +1,47 @@
 {
-  "intakeQuestions": {
-    "0": {
-      "question": "Czy masz ważny europejski dowód osobisty lub paszport?",
+  "intakeQuestions": [
+    {
+      "question": "Jaki jest status twojego obywatelstwa?",
       "options": [
-        "Tak, mam europejski dokument tożsamości lub paszport",
-        "Nie, mam tylko dokument spoza UE"
+        "Obywatel UE",
+        "Obywatel spoza UE"
       ]
     },
-    "1": {
-      "question": "Czy masz już podpisaną umowę o pracę?",
-      "options": [
-        "Tak, już podpisana",
-        "Nie, jeszcze nie"
-      ]
-    },
-    "2": {
-      "question": "Czy masz plukkaart (zezwolenie na pracę sezonową)?",
-      "options": [
-        "Tak, już mam",
-        "Nie, muszę ją jeszcze uzyskać"
-      ]
-    },
-    "3": {
-      "question": "Jak długo planujesz zostać w Belgii?",
+    {
+      "question": "Jak długo będziesz pracował w Belgii?",
       "options": [
         "Mniej niż 3 miesiące",
-        "3–6 miesięcy"
+        "3 miesiące lub więcej"
       ]
     },
-    "4": {
-      "question": "W jakiej prowincji będziesz pracować?",
+    {
+      "question": "Czy masz ważną umowę o pracę wydaną przez pracodawcę?",
       "options": [
-        "Antwerpia",
-        "Limburgia"
+        "Tak, mam ważną umowę o pracę",
+        "Nie, nie mam umowy o pracę"
       ]
     },
-    "5": {
-      "question": "Czy masz już belgijskie konto bankowe?",
+    {
+      "question": "Czy masz ubezpieczenie zdrowotne na czas pobytu w Belgii?",
       "options": [
-        "Tak, już je otworzyłem(-am)",
-        "Nie, muszę je otworzyć",
-        "Planuję korzystać z zagranicznego konta"
+        "Tak, mam ubezpieczenie zdrowotne",
+        "Nie, nie mam ubezpieczenia zdrowotnego"
+      ]
+    },
+    {
+      "question": "Czy masz konto bankowe w Belgii, aby otrzymać wynagrodzenie?",
+      "options": [
+        "Tak, mam belgijskie konto bankowe",
+        "Nie, nie mam belgijskiego konta bankowego"
+      ]
+    },
+    {
+      "question": "Ilu masz rodziców?",
+      "options": [
+        "6 do 12 dzieci",
+        "Mniej niż 6 dzieci",
+        "Ponad 12 dzieci"
       ]
     }
-  }
+  ]
 }

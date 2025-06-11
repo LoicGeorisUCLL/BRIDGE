@@ -1,79 +1,80 @@
-{  "tasks": {
+{
+  "tasks": {
     "municipality": {
-      "title": "Înregistrare la Primărie",
-      "description": "Înregistrează-te la primărie",
+      "title": "Înregistrarea municipală",
+      "description": "Înregistraţi-vă la primărie",
       "icon": "Building",
       "steps": [
-        "Vizitează primăria locală",
-        "Adu documentele necesare",
-        "Finalizează procesul de înregistrare"
+        "Vizitați municipalitatea locală",
+        "Adu-ţi documentele",
+        "Completați procesul de înregistrare"
       ],
       "documents": [
-        "Pașaport sau carte de identitate",
+        "Pașaport sau ID",
         "Dovada adresei",
-        "Contract de muncă"
+        "Contractul de muncă"
       ],
       "estimatedTime": "1 oră"
     },
     "contract": {
       "title": "Contract de muncă și Plukkaart",
-      "description": "Semnează contractul și primește plukkaart-ul",
+      "description": "Semnaţi contractul şi primiţi plukkaart",
       "icon": "FileText",
       "steps": [
-        "Citește și semnează contractul de muncă",
-        "Solicită și obține plukkaart-ul",
-        "Păstrează ambele documente în siguranță"
+        "Revizuirea și semnarea contractului de muncă",
+        "Cere şi obţine plukkaart dvs",
+        "Păstraţi în siguranţă ambele documente"
       ],
       "documents": [
-        "Pașaport sau carte de identitate",
-        "Datele angajatorului"
+        "Pașaport sau ID",
+        "Detalii privind angajatorul"
       ],
-      "estimatedTime": "30 de minute"
+      "estimatedTime": "30 minute"
     },
     "health": {
-      "title": "Asigurare de sănătate",
-      "description": "Încheie o asigurare de sănătate prin angajator sau pe cont propriu",
+      "title": "Asigurarea de sănătate",
+      "description": "Aranjează asigurări de sănătate prin intermediul angajatorului sau independent",
       "icon": "Shield",
       "steps": [
-        "Întreabă angajatorul dacă oferă asigurare de sănătate",
-        "Dacă nu este inclusă, alege o casă de asigurări (mutualiteit)",
-        "Înregistrează-te și trimite documentele necesare"
+        "Întrebaţi angajatorul despre asigurarea de sănătate inclusă",
+        "Dacă nu este acoperit, alegeţi un fond de sănătate (mutualiteit)",
+        "Înregistrează și prezintă documentele necesare"
       ],
       "documents": [
-        "Pașaport sau carte de identitate",
-        "Contract de muncă",
-        "Înregistrare la primărie"
+        "Pașaport sau ID",
+        "Contractul de muncă",
+        "Înregistrarea municipală"
       ],
-      "estimatedTime": "45 de minute"
+      "estimatedTime": "45 minute"
     },
     "bijlage3": {
       "title": "Bijlage 3",
-      "description": "Document de ședere temporară (Anexa 3)",
+      "description": "Documentul de ședere temporară (anexa 3)",
       "icon": "FileText",
       "steps": [
-        "Mergi la primăria locală",
-        "Solicită documentul Bijlage 3",
-        "Așteaptă aprobarea și colectează-l"
+        "Du-te la municipalitatea locală",
+        "Cerere document Bijlage 3",
+        "Aşteptaţi aprobarea şi colectaţi"
       ],
       "documents": [
-        "Pașaport sau carte de identitate",
+        "Pașaport sau ID",
         "Dovada reședinței",
-        "Contract de muncă"
+        "Contractul de muncă"
       ],
-      "estimatedTime": "30 de minute"
+      "estimatedTime": "30 minute"
     },
     "emergency": {
       "title": "Contact de urgență",
-      "description": "Stabilește un contact de urgență",
+      "description": "Configurați un contact de urgență",
       "icon": "Phone",
       "steps": [
-        "Alege o persoană de contact",
-        "Trimite informațiile sale angajatorului",
-        "Păstrează detaliile la îndemână"
+        "Alegeți o persoană de contact",
+        "Partajați informațiile lor cu angajatorul dumneavoastră",
+        "Păstrați-le detaliile accesibile"
       ],
       "documents": [
-        "Nume și număr de telefon",
-        "Relația cu tine"
+        "Numele și numărul de telefon",
+        "Relaţia cu tine"
       ],
       "estimatedTime": "15 minute"
     },
@@ -83,26 +84,27 @@
       "icon": "CreditCard",
       "steps": [
         "Alege o bancă",
-        "Mergi la o sucursală sau aplică online",
+        "Vizitați o sucursală sau aplicați online",
         "Trimite documentele necesare"
       ],
       "documents": [
-        "Pașaport sau carte de identitate",
+        "Pașaport sau ID",
         "Dovada adresei",
-        "Contract de muncă"
+        "Contractul de muncă"
       ],
       "estimatedTime": "1 oră"
     },
     "practical": {
       "title": "Informații practice",
-      "description": "Sfaturi utile pentru a trăi și lucra în Belgia",
+      "description": "Sfaturi utile pentru viață și de lucru în Belgia",
       "icon": "FileText",
       "steps": [
-        "Înțelege-ți drepturile ca lucrător",
-        "Învață numerele de urgență locale",
-        "Cunoaște responsabilitățile angajatorului"
+        "Înţelege-ţi drepturile de lucrător",
+        "Aflați numerele de urgență locale",
+        "Cunoaşteţi responsabilităţile angajatorului"
       ],
       "documents": [],
-      "estimatedTime": "Variabil"
+      "estimatedTime": "Variabilă"
     }
-  }}
+  }
+}

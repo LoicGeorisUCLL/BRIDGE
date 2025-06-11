@@ -1,74 +1,66 @@
 {
-  "welcome": "Welcome to Bridge",
-  "subtitle": "Your guide through Belgian administration",
-  "startButton": "Get Started",
-  "languageSelector": "Select Language",
-  "backButton": "Back",
-  "nextButton": "Next",
-  "homeButton": "Home",
-  "editProfileButton": "Edit Profile",
-  "questionsTitle": "A few questions about your situation",
-  "checklistTitle": "Your task list",
-  "taskCompleted": "Completed",
-  "taskPending": "To do",
-  "viewDetails": "View details",
-  "completed": "Completed",
-  "pending": "Pending",
-  "congratulations": "Congratulations!",
-  "congratulationsMessage": "You have completed all your tasks! Good luck on your journey in Belgium.",
-  "startOver": "Start Over",
-  "stepsToComplete": "Steps to complete",
-  "requiredDocuments": "Documents required",
-  "estimatedTime": "Estimated time to complete",
-  "detailedStepsComingSoon": "Detailed steps coming soon",
-  "markIncomplete": "Mark as Incomplete",
-  "markComplete": "Mark as Complete",
-  "noEUTitle": "European ID Required",
-  "noEUMessage": "This app is currently only available for people with European IDs. The option for non-European people is not out yet.",
-  "understood": "Understood",
-
+  "welcome": "Добро пожаловать на мост",
+  "subtitle": "Ваш гид по бельгийской администрации",
+  "startButton": "Начинай",
+  "languageSelector": "Выберите язык",
+  "backButton": "Назад",
+  "nextButton": "Следующий",
+  "homeButton": "Домой",
+  "editProfileButton": "Редактировать профиль",
+  "questionsTitle": "Несколько вопросов о вашей ситуации",
+  "checklistTitle": "Ваш список задач",
+  "taskCompleted": "Завершенный",
+  "taskPending": "Делать",
+  "viewDetails": "Посмотреть детали",
+  "completed": "Завершенный",
+  "pending": "В ожидании",
+  "congratulations": "Поздравляю!",
+  "congratulationsMessage": "Вы выполнили все свои задачи! Удачи вам в путешествии по Бельгии.",
+  "startOver": "Начать все сначала",
+  "stepsToComplete": "Шаги для завершения",
+  "requiredDocuments": "Необходимые документы",
+  "estimatedTime": "Предполагаемое время для завершения",
+  "detailedStepsComingSoon": "Подробные шаги скоро",
+  "markIncomplete": "Марк неполный",
+  "markComplete": "Марк как полный",
+  "noEUTitle": "Требуется европейский ID",
+  "noEUMessage": "В настоящее время это приложение доступно только для людей с европейскими идентификаторами. Вариант для неевропейских людей пока не существует.",
+  "understood": "Понятно",
+  "noMeetingRequirementsTitle": "Требования не выполнены",
+  "noMeetingRequirements": "Вы не отвечаете требованиям для работы в Бельгии.",
   "faqTitle": "Часто задаваемые вопросы",
-"faq": {
-
-  "faq1": {
-    "question": "Что делать в случае чрезвычайной ситуации?",
-    "answer": "Позвоните по номеру 112 для вызова скорой помощи, полиции или пожарных. Звонок бесплатный и работает даже без мобильного баланса."
-  },
-
-  "faq2": {
-    "question": "Как связаться с посольством?",
-    "answer": "Найдите в интернете посольство вашей страны в Бельгии. Они могут помочь с утерянными документами, юридическими вопросами и чрезвычайными ситуациями."
-  },
-
-  "faq3": {
-    "question": "Где можно получить бесплатную юридическую консультацию?",
-    "answer": "Некоторые организации, такие как 'Juridisch Loket' или 'CAW', предлагают бесплатные юридические консультации. Проверьте официальный сайт вашего города или обратитесь в OCMW."
-  },
-
-  "faq4": {
-    "question": "Где можно получить помощь, если я чувствую себя небезопасно или меня эксплуатируют?",
-    "answer": "Позвоните по номеру 1712 (бесплатно) за помощью в случае насилия или эксплуатации. Это конфиденциально и многоязычно. Вы также можете связаться с FairWork Belgium."
-  },
-
-  "faq5": {
-    "question": "Могу ли я получить бесплатную помощь переводчика?",
-    "answer": "В некоторых случаях — да. Центры интеграции и социальные службы иногда предоставляют переводчиков. Всегда спрашивайте!"
-  },
-
-  "faq6": {
-    "question": "Как я могу выучить нидерландский или французский язык?",
-    "answer": "Вы можете посещать бесплатные или недорогие курсы через 'Huis van het Nederlands' или 'Ligo'. Спросите в муниципалитете, где можно записаться."
-  },
-
-  "faq7": {
-    "question": "Какие приложения полезны в Бельгии?",
-    "answer": "Полезные приложения: 'DeLijn' (автобусы), 'NMBS' (поезда), 'Google Translate' и приложение вашего банка."
-  },
-
-  "faq8": {
-    "question": "В чём разница между OCMW и gemeente?",
-    "answer": "Gemeente занимается вашей регистрацией и документами. OCMW помогает с социальной поддержкой, такой как жильё или финансы."
+  "faq": {
+    "faq1": {
+      "question": "Что делать в случае чрезвычайной ситуации?",
+      "answer": "Вызовите 112 для скорой помощи, полиции или пожарной команды. Он бесплатный и работает, даже если у вас нет мобильного кредита."
+    },
+    "faq2": {
+      "question": "Как связаться с посольством?",
+      "answer": "Ищите в Интернете посольство вашей страны в Бельгии. Они могут помочь с потерянными документами, юридическими вопросами и чрезвычайными ситуациями."
+    },
+    "faq3": {
+      "question": "Где можно получить бесплатную юридическую консультацию?",
+      "answer": "Некоторые организации, такие как «Juridisch Loket» или «CAW», предлагают бесплатные юридические консультации. Проверьте официальный сайт вашего города или спросите OCMW."
+    },
+    "faq4": {
+      "question": "Где я могу получить помощь, если я чувствую себя небезопасным или эксплуатируемым?",
+      "answer": "Позвоните по телефону 1712 (бесплатно) для получения помощи в случае насилия или эксплуатации. Это конфиденциально и многоязычно. Вы также можете связаться с FairWork Belgium."
+    },
+    "faq5": {
+      "question": "Могу ли я получить бесплатную помощь в интерпретации?",
+      "answer": "В некоторых случаях – да. Интеграционные центры и социальные службы иногда предоставляют переводчиков. Всегда спрашивай!"
+    },
+    "faq6": {
+      "question": "Как выучить голландский или французский?",
+      "answer": "Вы можете пройти бесплатные или недорогие курсы через «Huis van het Nederlands» или «Ligo». Спросите свой муниципалитет, где можно зарегистрироваться."
+    },
+    "faq7": {
+      "question": "Какие приложения полезны в Бельгии?",
+      "answer": "Полезные приложения включают в себя: DeLijn (автобус), NMBS (поезда), Google Translate и приложение вашего банка."
+    },
+    "faq8": {
+      "question": "В чем разница между OCMW и gemeente?",
+      "answer": "Gemeente обрабатывает вашу регистрацию и документы. OCMW помогает с социальной поддержкой, такой как жилье или финансы."
+    }
   }
-}
-
 }

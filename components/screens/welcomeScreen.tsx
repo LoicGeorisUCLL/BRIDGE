@@ -27,7 +27,12 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
       <div className="flex-1 flex flex-col justify-center items-center text-center px-6">
         <div className="mb-8">
           <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg">
-            <Building className="w-12 h-12 text-blue-800" />
+            <img
+              src="images/white-logo.png"
+              alt="Logo"
+              className="scale-150 object-contain"
+            />
+            {/* <Building className="w-12 h-12 text-blue-800" /> */}
           </div>
           <h1 className="text-4xl font-bold text-white mb-4">{t("welcome")}</h1>
           <p className="text-blue-100 text-lg mb-8 max-w-md">{t("subtitle")}</p>

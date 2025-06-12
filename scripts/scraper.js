@@ -1,10 +1,15 @@
 // regulation-scraper.js
 const { JSDOM } = require('jsdom');
-const fetch = require('node-fetch').default || require('node-fetch');
 const fs = require('fs').promises;
 const path = require('path');
 require('dotenv/config');
 const puppeteer = require('puppeteer');
+
+// Use dynamic import for node-fetch
+let fetch;
+(async () => {
+  fetch = (await import('node-fetch')).default;
+})();
 
 class RegulationScraper {
   constructor(

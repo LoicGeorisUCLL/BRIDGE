@@ -28,7 +28,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           REGULATIONS_URL: ${{ secrets.regulations_url }}
-        run: npx tsx regulation-scraper.ts "$REGULATIONS_URL"
+        run: node scripts/scraper.js
           
       - name: Commit changes
         run: |

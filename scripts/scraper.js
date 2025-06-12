@@ -38,7 +38,9 @@ class RegulationScraper {
       console.log('🔍 Scraping regulations from:', this.htmlUrl);
       
       // Option 1: Use Puppeteer for full browser automation
-      const browser = await puppeteer.launch();
+      const browser = await puppeteer.launch({
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+      });
       try {
         const page = await browser.newPage();
         

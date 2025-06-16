@@ -2,11 +2,6 @@ name: Update Bridge Regulations
 
 on:
   workflow_dispatch:
-    inputs:
-      regulations_url:
-        description: 'URL of the regulations page'
-        required: true
-        default: 'bridgeregulations.up.railway.app'
   schedule:
     - cron: '0 3 * * *'  # Daily at 3 AM UTC
 
@@ -28,7 +23,7 @@ jobs:
       - name: Update regulations
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          REGULATIONS_URL: ${{ inputs.regulations_url }}
+          REGULATIONS_URL: ${{ secrets.REGULATIONS_URL }}
         run: node scripts/scraper.js
           
       - name: Commit and push changes

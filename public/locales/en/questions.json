@@ -1,17 +1,17 @@
 {
   "intakeQuestions": {
     "0": {
-      "question": "What is your citizenship status?",
+      "question": "Are you a citizen of a European Union (EU) country?",
       "options": [
-        "EU citizen",
-        "Non-EU citizen"
+        "Yes",
+        "No"
       ]
     },
     "1": {
-      "question": "How long do you plan to work in Belgium?",
+      "question": "How long do you plan to work in Belgium as a seasonal worker?",
       "options": [
-        "3 months or less",
-        "More than 3 months"
+        "Less than 3 months",
+        "3 months or more"
       ]
     },
     "2": {
@@ -19,29 +19,31 @@
       "options": [
         "Yes",
         "No",
-        "Not sure"
+        "Not yet, but I'm in the process of getting one"
       ]
     },
     "3": {
-      "question": "Do you have health insurance coverage for your entire stay in Belgium?",
+      "question": "Do you have health insurance coverage for the duration of your stay in Belgium?",
       "options": [
         "Yes",
         "No",
-        "Not sure"
+        "I'm not sure"
       ]
     },
     "4": {
       "question": "Do you have a bank account in Belgium?",
       "options": [
         "Yes",
-        "No"
+        "No",
+        "I have one in another EU country, but not in Belgium"
       ]
     },
     "5": {
-      "question": "Are you 65 years old or older?",
+      "question": "Have you already registered with the local authorities in Belgium?",
       "options": [
         "Yes",
-        "No"
+        "No",
+        "I'm not sure what this means"
       ]
     }
   }

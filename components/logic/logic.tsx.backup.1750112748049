@@ -9,11 +9,11 @@ export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
   const workContractStatus = profile.answers[2];
   const healthInsuranceStatus = profile.answers[3];
   const bankAccountStatus = profile.answers[4];
-  const localRegistrationStatus = profile.answers[5];
+  const isOver65 = profile.answers[5] === 0;
 
-  // 1. Municipal Registration: Required for stays of 3 months or more
-  // Regulation 1: All seasonal workers staying for 3 months or more must register with local authorities
-  if (workDuration === 1 && localRegistrationStatus !== 0) {
+  // 1. Municipal Registration: Required for stays of more than 3 months
+  // Regulation 1: All seasonal workers staying for more than 3 months must register locally
+  if (workDuration === 1) {
     allTasks.push('municipal_registration');
   }
 
@@ -23,8 +23,8 @@ export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
     allTasks.push('work_contract_processing');
   }
 
-  // 3. Health Insurance Setup: Required for workers lacking coverage or unsure
-  // Regulation 3: All seasonal workers must have health insurance coverage for the duration of their stay
+  // 3. Health Insurance Setup: Required for workers lacking coverage
+  // Regulation 3: All seasonal workers must have health insurance for entire stay
   if (healthInsuranceStatus === 1 || healthInsuranceStatus === 2) {
     allTasks.push('health_insurance_setup');
   }
@@ -33,32 +33,28 @@ export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
   // Regulation 4: All seasonal workers must have a bank account in the country of employment
   if (bankAccountStatus === 1) {
     allTasks.push('bank_account_opening');
-  } else if (bankAccountStatus === 2) {
-    // Workers with EU bank accounts might still need to open a Belgian account or update their existing one
-    allTasks.push('bank_account_opening');
   }
 
   // 5. Additional considerations for non-EU citizens
-  // While both EU and non-EU citizens are eligible, non-EU citizens may need extra documentation
+  // While not explicitly stated in regulations, non-EU citizens may need extra documentation
   if (!isEUCitizen) {
-    // Ensure work contract processing is included for non-EU citizens
+    // Non-EU citizens might need additional work contract processing
     if (!allTasks.includes('work_contract_processing')) {
       allTasks.push('work_contract_processing');
-    }
-    // Non-EU citizens might need additional steps for health insurance
-    if (!allTasks.includes('health_insurance_setup')) {
-      allTasks.push('health_insurance_setup');
     }
   }
 
   // 6. Extended Stay Additional Requirements
-  // Add specific tasks for workers staying 3 months or more
+  // Add specific tasks for workers staying more than 3 months
   if (workDuration === 1) {
     // Ensure municipal registration is included for longer stays
     if (!allTasks.includes('municipal_registration')) {
       allTasks.push('municipal_registration');
     }
   }
+
+  // Note: Age requirement (Regulation 5) is not handled here as it's an eligibility criterion,
+  // not a task. It should be checked in the generateRequirements function.
 
   return allTasks;
 };

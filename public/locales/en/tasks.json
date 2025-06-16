@@ -1,32 +1,32 @@
 {
   "tasks": {
     "municipal_registration": {
-      "title": "Municipal Registration for Long-Stay Seasonal Workers",
-      "description": "Complete mandatory local authority registration for stays over 3 months",
+      "title": "Municipal Registration for Long-Stay Workers",
+      "description": "Register with local authorities for stays over 3 months",
       "icon": "Building",
       "steps": [
-        "Locate nearest municipal administration office",
-        "Prepare required registration documents",
+        "Locate the nearest municipal office",
+        "Gather required registration documents",
         "Submit registration forms and supporting paperwork",
         "Obtain official registration confirmation"
       ],
       "documents": [
         "Valid passport",
-        "Proof of employment contract",
-        "Proof of Belgian address",
+        "Work contract",
+        "Proof of address in Belgium",
         "Recent passport-sized photographs"
       ],
       "estimatedTime": "2-3 hours"
     },
-    "work_contract_validation": {
-      "title": "Official Work Contract Processing",
-      "description": "Register and validate seasonal work contract with employment authorities",
+    "work_contract_processing": {
+      "title": "Work Contract Validation",
+      "description": "Process and validate the seasonal work contract",
       "icon": "Briefcase",
       "steps": [
-        "Review contract for legal compliance",
-        "Make certified copies of original contract",
-        "Submit contract to regional employment office",
-        "Obtain official contract registration confirmation"
+        "Review contract for completeness",
+        "Make copies of the original contract",
+        "Submit contract to relevant employment authority",
+        "Obtain official contract validation"
       ],
       "documents": [
         "Original work contract",
@@ -36,41 +36,41 @@
       ],
       "estimatedTime": "1-2 hours"
     },
-    "health_insurance_registration": {
-      "title": "Health Insurance Coverage Setup",
-      "description": "Secure comprehensive health insurance for entire work period",
+    "health_insurance_setup": {
+      "title": "Health Insurance Registration",
+      "description": "Secure health insurance coverage for the work duration",
       "icon": "Shield",
       "steps": [
-        "Compare Belgian health insurance providers",
-        "Select appropriate seasonal worker insurance plan",
+        "Research Belgian health insurance options",
+        "Choose appropriate insurance plan",
         "Complete insurance application",
         "Submit required documentation",
-        "Obtain official health insurance certificate"
+        "Receive health insurance certificate"
       ],
       "documents": [
         "Passport",
         "Work contract",
-        "Proof of Belgian address",
-        "Municipal registration document"
+        "Proof of address in Belgium",
+        "Municipal registration document (if applicable)"
       ],
       "estimatedTime": "2 hours"
     },
-    "wage_bank_account_setup": {
-      "title": "Wage Payment Bank Account Opening",
-      "description": "Establish local bank account for receiving seasonal work wages",
+    "bank_account_opening": {
+      "title": "Belgian Bank Account Setup",
+      "description": "Open a bank account to receive wages",
       "icon": "CreditCard",
       "steps": [
-        "Research Belgian banks offering seasonal worker accounts",
-        "Schedule bank account opening appointment",
-        "Prepare required identification documents",
+        "Research banks offering accounts for seasonal workers",
+        "Schedule an appointment with chosen bank",
+        "Prepare necessary identification documents",
         "Complete bank account application",
-        "Receive official bank account details"
+        "Receive account details and banking information"
       ],
       "documents": [
         "Valid passport",
-        "Proof of Belgian address",
         "Work contract",
-        "Municipal registration confirmation"
+        "Proof of address in Belgium",
+        "Municipal registration confirmation (if applicable)"
       ],
       "estimatedTime": "1-2 hours"
     }

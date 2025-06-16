@@ -1,4 +1,3 @@
-# .github/workflows/update-regulations.yml
 name: Update Bridge Regulations
 
 on:
@@ -14,6 +13,8 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v3
       
@@ -27,15 +28,13 @@ jobs:
       - name: Update regulations
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          REGULATIONS_URL: ${{ secrets.regulations_url }}
+          REGULATIONS_URL: ${{ inputs.regulations_url }}
         run: node scripts/scraper.js
           
-      - name: Commit changes
+      - name: Commit and push changes
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git add .
-          git commit -m "Update regulations and questions" || exit 0
+          git commit -m "Update regulations and questions" || echo "No changes to commit"
           git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

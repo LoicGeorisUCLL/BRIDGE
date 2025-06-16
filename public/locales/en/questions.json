@@ -1,17 +1,17 @@
 {
   "intakeQuestions": {
     "0": {
-      "question": "Are you a citizen of an EU country?",
+      "question": "What is your citizenship status?",
       "options": [
-        "Yes",
-        "No"
+        "EU citizen",
+        "Non-EU citizen"
       ]
     },
     "1": {
-      "question": "How long will you be working in Belgium?",
+      "question": "How long do you plan to work in Belgium?",
       "options": [
-        "Less than 3 months",
-        "3 months or more"
+        "3 months or less",
+        "More than 3 months"
       ]
     },
     "2": {
@@ -19,7 +19,7 @@
       "options": [
         "Yes",
         "No",
-        "Not yet"
+        "Not sure"
       ]
     },
     "3": {
@@ -38,7 +38,7 @@
       ]
     },
     "5": {
-      "question": "Do you have a high school diploma or equivalent?",
+      "question": "Are you 65 years old or older?",
       "options": [
         "Yes",
         "No"

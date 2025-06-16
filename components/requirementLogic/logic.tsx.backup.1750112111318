@@ -4,12 +4,12 @@ export const generateRequirements = (currentQuestionIndex: number, answerIndex: 
   // IMPORTANT: Only block for conditions that are impossible to change or resolve
   // Examples: citizenship restrictions, age limits, legal prohibitions
   
-  // Age restriction: Seasonal worker must be at least 65 years old (Regulation 5)
-  if (currentQuestionIndex === 5 && answerIndex === 1) {
-    // Block if user is under 65 years old
-    // This is immutable as age cannot be changed through administrative processes
-    return true;
-  }
+  // Based on the provided regulations, there are no truly immutable conditions
+  // that would prevent a foreign worker from being eligible for seasonal work in Belgium.
+  
+  // All conditions mentioned in the regulations (registration, work contract, health insurance,
+  // bank account, high school diploma) can potentially be resolved through administrative tasks
+  // or procedures. Therefore, we don't implement any blocking logic here.
   
   return false; // Default: allow user to continue unless there's an immutable barrier
 };

@@ -1,7 +1,7 @@
 {
   "tasks": {
     "municipal_registration": {
-      "title": "Municipal Registration for Long-Stay Workers",
+      "title": "Municipal Registration",
       "description": "Register with local authorities for stays over 3 months",
       "icon": "Building",
       "steps": [
@@ -13,8 +13,7 @@
       "documents": [
         "Valid passport",
         "Work contract",
-        "Proof of address in Belgium",
-        "Recent passport-sized photographs"
+        "Proof of address in Belgium"
       ],
       "estimatedTime": "2-3 hours"
     },
@@ -31,8 +30,7 @@
       "documents": [
         "Original work contract",
         "Employer details",
-        "Personal identification",
-        "Passport"
+        "Personal identification"
       ],
       "estimatedTime": "1-2 hours"
     },
@@ -50,8 +48,7 @@
       "documents": [
         "Passport",
         "Work contract",
-        "Proof of address in Belgium",
-        "Municipal registration document (if applicable)"
+        "Proof of address in Belgium"
       ],
       "estimatedTime": "2 hours"
     },
@@ -69,8 +66,7 @@
       "documents": [
         "Valid passport",
         "Work contract",
-        "Proof of address in Belgium",
-        "Municipal registration confirmation (if applicable)"
+        "Proof of address in Belgium"
       ],
       "estimatedTime": "1-2 hours"
     }

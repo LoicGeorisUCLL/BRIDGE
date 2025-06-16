@@ -9,10 +9,10 @@ export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
   const workContractStatus = profile.answers[2];
   const healthInsuranceStatus = profile.answers[3];
   const bankAccountStatus = profile.answers[4];
-  const isOver65 = profile.answers[5] === 0;
+  const hasHighSchoolDiploma = profile.answers[5] === 0;
 
-  // 1. Municipal Registration: Required for stays of more than 3 months
-  // Regulation 1: All seasonal workers staying for more than 3 months must register locally
+  // 1. Municipal Registration: Required for stays of 3 months or more
+  // Regulation 1: All seasonal workers staying over 3 months must register locally
   if (workDuration === 1) {
     allTasks.push('municipal_registration');
   }
@@ -30,7 +30,7 @@ export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
   }
 
   // 4. Bank Account Opening: Required for workers without Belgian bank account
-  // Regulation 4: All seasonal workers must have a bank account in the country of employment
+  // Regulation 4: All seasonal workers need a bank account to receive wages
   if (bankAccountStatus === 1) {
     allTasks.push('bank_account_opening');
   }
@@ -38,14 +38,14 @@ export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
   // 5. Additional considerations for non-EU citizens
   // While not explicitly stated in regulations, non-EU citizens may need extra documentation
   if (!isEUCitizen) {
-    // Non-EU citizens might need additional work contract processing
+    // Non-EU citizens might need additional work permit processing
     if (!allTasks.includes('work_contract_processing')) {
       allTasks.push('work_contract_processing');
     }
   }
 
   // 6. Extended Stay Additional Requirements
-  // Add specific tasks for workers staying more than 3 months
+  // Add specific tasks for workers staying 3 months or more
   if (workDuration === 1) {
     // Ensure municipal registration is included for longer stays
     if (!allTasks.includes('municipal_registration')) {
@@ -53,8 +53,10 @@ export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
     }
   }
 
-  // Note: Age requirement (Regulation 5) is not handled here as it's an eligibility criterion,
-  // not a task. It should be checked in the generateRequirements function.
+  // 7. High School Diploma Verification
+  // Regulation 5: All seasonal workers need a high school diploma
+  // Note: This is not a task, but a requirement. We assume it's checked in eligibility,
+  // but we could add a task for diploma verification if needed in the future.
 
   return allTasks;
 };

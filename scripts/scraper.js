@@ -18,9 +18,9 @@ class RegulationScraper {
     requiredLogicPath = './components/requirementLogic/logic.tsx',
     questionsPath = './public/locales/en/questions.json',
     tasksPath = './public/locales/en/tasks.json',
-    model = 'claude-3-haiku-20240307' // Cheapest model, but you can use a different one if needed
+    // model = 'claude-3-haiku-20240307' // Cheapest model, but you can use a different one if needed
     // model = 'claude-3-5-haiku-20241022' //
-    // model = 'claude-3-5-sonnet-20240620' // Use the latest model for better performance
+    model = 'claude-3-5-sonnet-20240620' // Use the latest model for better performance
   ) {
     this.htmlUrl = htmlUrl;
     this.outputPath = outputPath;

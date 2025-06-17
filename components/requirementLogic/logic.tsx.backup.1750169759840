@@ -4,14 +4,11 @@ export const generateRequirements = (currentQuestionIndex: number, answerIndex: 
   // IMPORTANT: Only block for conditions that are impossible to change or resolve
   // Examples: citizenship restrictions, age limits, legal prohibitions
   
-  // Block non-EU citizens (Regulation 5: Seasonal workers have to be from the EU)
+  // Block non-EU citizens (immutable citizenship requirement)
   if (currentQuestionIndex === 0 && answerIndex === 1) {
-    return true; // Non-EU citizenship is an immutable condition
-  }
-
-  // Block those with teeth (Regulation 6: Seasonal workers can't have any teeth)
-  if (currentQuestionIndex === 6 && answerIndex === 0) {
-    return true; // Having all natural teeth is considered an immutable condition based on the given regulation
+    // Regulation 5 explicitly states seasonal workers must be from the EU
+    // Citizenship is an immutable condition that cannot be changed through administrative processes
+    return true;
   }
   
   return false; // Default: allow user to continue unless there's an immutable barrier

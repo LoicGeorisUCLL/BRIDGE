@@ -8,7 +8,7 @@
       ]
     },
     "1": {
-      "question": "How long do you plan to work in Belgium as a seasonal worker?",
+      "question": "How long do you plan to work in Belgium?",
       "options": [
         "Less than 3 months",
         "3 months or more"
@@ -19,7 +19,7 @@
       "options": [
         "Yes",
         "No",
-        "Not yet, but I'm in the process of getting one"
+        "Not yet, but I'm in the process of obtaining one"
       ]
     },
     "3": {
@@ -44,6 +44,14 @@
         "Yes",
         "No",
         "I'm not sure if I need to"
+      ]
+    },
+    "6": {
+      "question": "Do you have all of your natural teeth?",
+      "options": [
+        "Yes",
+        "No",
+        "I'm not sure"
       ]
     }
   }

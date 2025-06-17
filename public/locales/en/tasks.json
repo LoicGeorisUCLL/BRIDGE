@@ -34,8 +34,8 @@
       "estimatedTime": "1 hour"
     },
     "health_insurance_setup": {
-      "title": "Health Insurance Setup",
-      "description": "Secure health insurance coverage for the duration of your stay",
+      "title": "Health Insurance Coverage",
+      "description": "Secure health insurance for the duration of your stay",
       "icon": "Shield",
       "steps": [
         "Research Belgian health insurance options",
@@ -52,7 +52,7 @@
       "estimatedTime": "2-3 hours"
     },
     "belgian_bank_account_creation": {
-      "title": "Belgian Bank Account Creation",
+      "title": "Belgian Bank Account Setup",
       "description": "Open a bank account in Belgium to receive wages",
       "icon": "CreditCard",
       "steps": [

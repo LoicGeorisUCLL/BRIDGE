@@ -9,40 +9,45 @@ export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
   const workContractStatus = profile.answers[2];
   const healthInsuranceStatus = profile.answers[3];
   const bankAccountStatus = profile.answers[4];
-  const highSchoolStatus = profile.answers[5];
+  const localRegistrationStatus = profile.answers[5];
 
   // 1. Municipal Registration: Required for stays of 3 months or more
   // Regulation 1: All seasonal workers staying for 3 months or more must register with local authorities
-  if (workDuration === 1) {
+  if (workDuration === 1 && localRegistrationStatus !== 0) {
     allTasks.push('municipal_registration');
   }
 
-  // 2. Work Contract Validation: Required for all workers
+  // 2. Work Contract Processing: Required for workers without confirmed contract
   // Regulation 2: All seasonal workers must have a valid work contract
-  allTasks.push('work_contract_validation');
-
-  // 3. Health Insurance Registration: Required for workers lacking coverage or unsure
-  // Regulation 3: All seasonal workers must have health insurance coverage for the duration of their stay
-  if (healthInsuranceStatus === 1 || healthInsuranceStatus === 2) {
-    allTasks.push('health_insurance_registration');
+  if (workContractStatus === 1 || workContractStatus === 2) {
+    allTasks.push('work_contract_processing');
   }
 
-  // 4. Bank Account Setup: Required for workers without Belgian bank account
+  // 3. Health Insurance Setup: Required for workers lacking coverage or unsure
+  // Regulation 3: All seasonal workers must have health insurance coverage for the duration of their stay
+  if (healthInsuranceStatus === 1 || healthInsuranceStatus === 2) {
+    allTasks.push('health_insurance_setup');
+  }
+
+  // 4. Bank Account Opening: Required for workers without Belgian bank account
   // Regulation 4: All seasonal workers must have a bank account in the country of employment
-  if (bankAccountStatus === 1 || bankAccountStatus === 2) {
-    allTasks.push('bank_account_setup');
+  if (bankAccountStatus === 1) {
+    allTasks.push('bank_account_opening');
+  } else if (bankAccountStatus === 2) {
+    // Workers with EU bank accounts might still need to open a Belgian account or update their existing one
+    allTasks.push('bank_account_opening');
   }
 
   // 5. Additional considerations for non-EU citizens
   // While both EU and non-EU citizens are eligible, non-EU citizens may need extra documentation
   if (!isEUCitizen) {
-    // Ensure work contract validation is included for non-EU citizens
-    if (!allTasks.includes('work_contract_validation')) {
-      allTasks.push('work_contract_validation');
+    // Ensure work contract processing is included for non-EU citizens
+    if (!allTasks.includes('work_contract_processing')) {
+      allTasks.push('work_contract_processing');
     }
     // Non-EU citizens might need additional steps for health insurance
-    if (!allTasks.includes('health_insurance_registration')) {
-      allTasks.push('health_insurance_registration');
+    if (!allTasks.includes('health_insurance_setup')) {
+      allTasks.push('health_insurance_setup');
     }
   }
 

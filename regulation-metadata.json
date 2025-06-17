@@ -19,8 +19,12 @@
     {
       "id": 5,
       "content": "Seasonal workers have to be from the EU"
+    },
+    {
+      "id": 6,
+      "content": "All seasonal workers have to have completed their highschool"
     }
   ],
-  "lastUpdated": "2025-06-16T22:25:22.089Z",
+  "lastUpdated": "2025-06-17T10:08:23.234Z",
   "source": "https://bridgeregulations.up.railway.app"
 }

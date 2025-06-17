@@ -17,7 +17,7 @@
       ],
       "estimatedTime": "2-3 hours"
     },
-    "work_contract_processing": {
+    "work_contract_validation": {
       "title": "Work Contract Validation",
       "description": "Process and validate the seasonal work contract",
       "icon": "Briefcase",
@@ -34,7 +34,7 @@
       ],
       "estimatedTime": "1-2 hours"
     },
-    "health_insurance_setup": {
+    "health_insurance_registration": {
       "title": "Health Insurance Registration",
       "description": "Secure health insurance coverage for the work duration",
       "icon": "Shield",
@@ -52,7 +52,7 @@
       ],
       "estimatedTime": "2 hours"
     },
-    "bank_account_opening": {
+    "bank_account_setup": {
       "title": "Belgian Bank Account Setup",
       "description": "Open a bank account to receive wages",
       "icon": "CreditCard",

@@ -8,7 +8,7 @@
       ]
     },
     "1": {
-      "question": "How long do you plan to work in Belgium?",
+      "question": "How long do you plan to work in Belgium as a seasonal worker?",
       "options": [
         "Less than 3 months",
         "3 months or more"
@@ -23,7 +23,7 @@
       ]
     },
     "3": {
-      "question": "Do you have health insurance coverage for your entire stay in Belgium?",
+      "question": "Do you have health insurance coverage for the duration of your stay in Belgium?",
       "options": [
         "Yes",
         "No",
@@ -39,11 +39,11 @@
       ]
     },
     "5": {
-      "question": "Have you completed your high school education?",
+      "question": "Have you already registered with the local authorities in Belgium?",
       "options": [
         "Yes",
         "No",
-        "I'm currently completing it"
+        "I'm not sure if I need to"
       ]
     }
   }

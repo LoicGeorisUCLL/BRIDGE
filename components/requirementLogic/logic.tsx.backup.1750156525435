@@ -4,12 +4,15 @@ export const generateRequirements = (currentQuestionIndex: number, answerIndex: 
   // IMPORTANT: Only block for conditions that are impossible to change or resolve
   // Examples: citizenship restrictions, age limits, legal prohibitions
   
-  // Block non-EU citizens (immutable citizenship requirement)
+  // Citizenship restriction: Non-EU citizens are not eligible (Regulation 5)
   if (currentQuestionIndex === 0 && answerIndex === 1) {
-    // Regulation 5 explicitly states seasonal workers must be from the EU
-    // Citizenship is an immutable condition that cannot be changed through administrative processes
-    return true;
+    return true; // Block - Non-EU citizenship is an immutable condition
   }
-  
+
+  // Education requirement: High school completion is mandatory (Regulation 6)
+  if (currentQuestionIndex === 5 && answerIndex === 1) {
+    return true; // Block - Not having completed high school is immutable for seasonal work purposes
+  }
+
   return false; // Default: allow user to continue unless there's an immutable barrier
 };

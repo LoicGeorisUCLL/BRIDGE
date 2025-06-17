@@ -11,32 +11,31 @@
         "Obtain official registration confirmation"
       ],
       "documents": [
-        "Valid passport",
+        "Valid EU passport",
         "Work contract",
         "Proof of address in Belgium"
       ],
       "estimatedTime": "2-3 hours"
     },
-    "work_contract_validation": {
-      "title": "Work Contract Validation",
-      "description": "Process and validate the seasonal work contract",
+    "work_contract_processing": {
+      "title": "Work Contract Processing",
+      "description": "Ensure your work contract is valid and properly issued",
       "icon": "Briefcase",
       "steps": [
-        "Review contract for completeness",
+        "Review contract details for completeness",
+        "Confirm contract is issued by Belgian employer",
         "Make copies of the original contract",
-        "Submit contract to relevant employment authority",
-        "Obtain official contract validation"
+        "Store contract safely for future reference"
       ],
       "documents": [
         "Original work contract",
-        "Employer details",
         "Personal identification"
       ],
-      "estimatedTime": "1-2 hours"
+      "estimatedTime": "1 hour"
     },
-    "health_insurance_registration": {
-      "title": "Health Insurance Registration",
-      "description": "Secure health insurance coverage for the work duration",
+    "health_insurance_setup": {
+      "title": "Health Insurance Setup",
+      "description": "Secure health insurance coverage for the duration of your stay",
       "icon": "Shield",
       "steps": [
         "Research Belgian health insurance options",
@@ -46,15 +45,15 @@
         "Receive health insurance certificate"
       ],
       "documents": [
-        "Passport",
+        "EU passport",
         "Work contract",
         "Proof of address in Belgium"
       ],
-      "estimatedTime": "2 hours"
+      "estimatedTime": "2-3 hours"
     },
-    "bank_account_setup": {
-      "title": "Belgian Bank Account Setup",
-      "description": "Open a bank account to receive wages",
+    "belgian_bank_account_creation": {
+      "title": "Belgian Bank Account Creation",
+      "description": "Open a bank account in Belgium to receive wages",
       "icon": "CreditCard",
       "steps": [
         "Research banks offering accounts for seasonal workers",
@@ -64,11 +63,11 @@
         "Receive account details and banking information"
       ],
       "documents": [
-        "Valid passport",
+        "Valid EU passport",
         "Work contract",
         "Proof of address in Belgium"
       ],
-      "estimatedTime": "1-2 hours"
+      "estimatedTime": "2 hours"
     }
   }
 }

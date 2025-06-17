@@ -9,41 +9,40 @@ export const generatePersonalizedTasks = (profile: UserProfile): string[] => {
   const workContractStatus = profile.answers[2];
   const healthInsuranceStatus = profile.answers[3];
   const bankAccountStatus = profile.answers[4];
-  const municipalRegistrationStatus = profile.answers[5];
+  const highSchoolStatus = profile.answers[5];
 
   // 1. Municipal Registration: Required for stays of 3 months or more
   // Regulation 1: All seasonal workers staying for 3 months or more must register with local authorities
-  if (workDuration === 1 && (municipalRegistrationStatus === 1 || municipalRegistrationStatus === 2)) {
+  if (workDuration === 1) {
     allTasks.push('municipal_registration');
   }
 
-  // 2. Work Contract Processing: Required for all workers without a valid contract
+  // 2. Work Contract Validation: Required for all workers
   // Regulation 2: All seasonal workers must have a valid work contract
-  if (workContractStatus === 1 || workContractStatus === 2) {
-    allTasks.push('work_contract_processing');
-  }
+  allTasks.push('work_contract_validation');
 
-  // 3. Health Insurance Setup: Required for workers lacking coverage or unsure
+  // 3. Health Insurance Registration: Required for workers lacking coverage or unsure
   // Regulation 3: All seasonal workers must have health insurance coverage for the duration of their stay
   if (healthInsuranceStatus === 1 || healthInsuranceStatus === 2) {
-    allTasks.push('health_insurance_setup');
+    allTasks.push('health_insurance_registration');
   }
 
-  // 4. Belgian Bank Account Creation: Required for workers without a Belgian bank account
+  // 4. Bank Account Setup: Required for workers without Belgian bank account
   // Regulation 4: All seasonal workers must have a bank account in the country of employment
-  if (bankAccountStatus === 1) {
-    allTasks.push('belgian_bank_account_creation');
+  if (bankAccountStatus === 1 || bankAccountStatus === 2) {
+    allTasks.push('bank_account_setup');
   }
 
-  // 5. Additional considerations for EU citizens
-  // While both EU and non-EU citizens are eligible, EU citizens might have different administrative processes
-  if (isEUCitizen) {
-    // EU citizens might have simplified procedures for health insurance and bank account setup
-    // These tasks are still included to ensure all requirements are met
-  } else {
-    // Non-EU citizens might need additional verification for their work contract
-    if (!allTasks.includes('work_contract_processing')) {
-      allTasks.push('work_contract_processing');
+  // 5. Additional considerations for non-EU citizens
+  // While both EU and non-EU citizens are eligible, non-EU citizens may need extra documentation
+  if (!isEUCitizen) {
+    // Ensure work contract validation is included for non-EU citizens
+    if (!allTasks.includes('work_contract_validation')) {
+      allTasks.push('work_contract_validation');
+    }
+    // Non-EU citizens might need additional steps for health insurance
+    if (!allTasks.includes('health_insurance_registration')) {
+      allTasks.push('health_insurance_registration');
     }
   }
 
